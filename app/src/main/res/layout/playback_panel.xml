@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*   == This file is part of Tomahawk Player - <http://tomahawk-player.org> ===
+ *
+ *   Copyright 2014, Enno Gottschalk <mrmaffen@googlemail.com>
+ *
+ *   Tomahawk is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   Tomahawk is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with Tomahawk. If not, see <http://www.gnu.org/licenses/>.
+ */
+-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:clickable="false">
+
+    <FrameLayout android:id="@+id/textview_container"
+                 android:layout_width="match_parent"
+                 android:layout_height="@dimen/playback_panel_height"
+                 android:layout_marginLeft="76dp"
+                 android:layout_marginRight="76dp">
+
+        <LinearLayout android:id="@+id/textview_container_inner"
+                      android:layout_width="wrap_content"
+                      android:layout_height="match_parent"
+                      android:layout_gravity="center"
+                      android:orientation="vertical"
+                      android:paddingBottom="6dp"
+                      android:paddingTop="10dp"
+                      android:paddingLeft="@dimen/padding_medium"
+                      android:paddingRight="@dimen/padding_medium"
+                      android:background="@color/tertiary_transparent_playbackpanel">
+
+            <TextView android:id="@+id/track_textview"
+                      android:layout_width="wrap_content"
+                      android:layout_height="0dp"
+                      android:layout_weight="1"
+                      android:layout_gravity="center"
+                      android:gravity="center_vertical"
+                      android:singleLine="true"
+                      android:textSize="@dimen/text_size_micro"
+                      android:textColor="@color/primary_textcolor_inverted"/>
+
+            <FrameLayout android:id="@+id/artist_name_button"
+                         android:layout_width="wrap_content"
+                         android:layout_height="0dp"
+                         android:layout_weight="1.5"
+                         android:layout_gravity="center"
+                         android:background="@drawable/selectable_background_button_white_transition"
+                         android:clickable="false">
+
+                <TextView android:id="@+id/artist_textview"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center"
+                          android:singleLine="true"
+                          android:textSize="@dimen/text_size_micro"
+                          android:textColor="@color/primary_textcolor_inverted"/>
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <ViewStub android:id="@+id/playbackpanel_seek_coachmark_stub"
+              android:inflatedId="@+id/playbackpanel_seek_coachmark"
+              android:layout="@layout/playbackpanel_seek_coachmark"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginBottom="@dimen/playback_panel_height"
+              android:layout_alignParentBottom="true"/>
+
+    <RelativeLayout android:id="@+id/panel_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/playback_panel_height"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/above_shadow_slightly_darker">
+
+        <FrameLayout android:id="@+id/circularprogressbar_container"
+                     android:layout_width="@dimen/playback_panel_height"
+                     android:layout_height="match_parent"
+                     android:padding="@dimen/padding_medium">
+
+            <com.github.rahatarmanahmed.cpv.CircularProgressView
+                    android:id="@+id/circularprogressbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="@drawable/selectable_background_ring_tomahawk"
+                    app:cpv_progress="500"
+                    app:cpv_maxProgress="1000"
+                    app:cpv_thickness="1.5dp"
+                    app:cpv_color="@android:color/white"
+                    app:cpv_bgThickness="1.5dp"
+                    app:cpv_bgColor="#777"/>
+
+            <ImageView android:id="@+id/pause_button"
+                       android:layout_width="18dp"
+                       android:layout_height="18dp"
+                       android:layout_gravity="center"
+                       android:scaleType="fitCenter"
+                       android:src="@drawable/ic_av_pause"
+                       android:visibility="gone"/>
+
+            <ImageView android:id="@+id/play_button"
+                       android:layout_width="18dp"
+                       android:layout_height="18dp"
+                       android:layout_gravity="center"
+                       android:scaleType="fitCenter"
+                       android:src="@drawable/ic_av_play_arrow"/>
+
+        </FrameLayout>
+
+        <TextView android:id="@+id/seektime_textview"
+                  android:layout_width="@dimen/playback_panel_height"
+                  android:layout_height="match_parent"
+                  android:paddingLeft="@dimen/padding_medium"
+                  android:paddingRight="@dimen/padding_medium"
+                  android:gravity="center"
+                  android:textSize="@dimen/text_size_micro"
+                  android:textColor="@color/primary_textcolor_inverted"
+                  android:visibility="gone"/>
+
+        <ImageView android:id="@+id/resolver_imageview"
+                   android:layout_width="@dimen/playback_panel_resolver_icon_size"
+                   android:layout_height="match_parent"
+                   android:layout_toRightOf="@id/circularprogressbar_container"/>
+
+        <TextView android:id="@+id/currenttime_textview"
+                  android:layout_width="@dimen/playback_panel_height"
+                  android:layout_height="match_parent"
+                  android:layout_alignParentRight="true"
+                  android:gravity="center"
+                  android:textSize="@dimen/text_size_micro"
+                  android:textColor="@color/primary_textcolor_inverted"
+                  android:visibility="gone"/>
+
+        <TextView android:id="@+id/completiontime_textview"
+                  android:layout_width="@dimen/playback_panel_height"
+                  android:layout_height="match_parent"
+                  android:layout_alignParentRight="true"
+                  android:gravity="center"
+                  android:textSize="@dimen/text_size_micro"
+                  android:textColor="@color/primary_textcolor_inverted"/>
+
+        <FrameLayout android:id="@+id/station_container"
+                     android:layout_width="match_parent"
+                     android:layout_height="@dimen/playback_panel_height"
+                     android:layout_marginLeft="@dimen/playback_panel_height"
+                     android:layout_marginRight="@dimen/playback_panel_height">
+
+            <LinearLayout android:id="@+id/station_container_inner"
+                          android:layout_width="wrap_content"
+                          android:layout_height="match_parent">
+
+                <ImageView android:id="@+id/station_imageview"
+                           android:layout_width="@dimen/playback_panel_resolver_icon_size"
+                           android:layout_height="match_parent"
+                           android:src="@drawable/ic_action_station"/>
+
+                <TextView android:id="@+id/station_textview"
+                          android:layout_width="wrap_content"
+                          android:layout_height="match_parent"
+                          android:layout_marginLeft="@dimen/padding_verysmall"
+                          android:gravity="center"
+                          android:textSize="@dimen/text_size_micro"
+                          android:textColor="@color/primary_textcolor_inverted"
+                          android:singleLine="true"/>
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <include layout="@layout/progressbar_white"
+                 android:id="@+id/progressbar"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_toRightOf="@id/resolver_imageview"
+                 android:layout_toLeftOf="@id/completiontime_textview"
+                 android:layout_alignParentTop="true"
+                 android:visibility="gone"/>
+
+        <View android:id="@+id/progressbar_thumb"
+              android:layout_width="2px"
+              android:layout_height="@dimen/playback_panel_thumb_height"
+              android:layout_centerVertical="true"
+              android:background="#fff"
+              android:visibility="gone"
+              tools:ignore="PxUsage"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

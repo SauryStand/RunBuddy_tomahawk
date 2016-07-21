@@ -1,0 +1,24 @@
+{
+    "name": "Spotify",
+    "pluginName": "spotify",
+    "author": "Uwe L. Korn, Enno Gottschalk",
+    "email": "uwelk@xhochy.com",
+    "version": "0.4.1",
+    "website": "http://gettomahawk.com",
+    "description": "Stream music from Spotify. Requires a Premium account.",
+    "type": "resolver/javascript",
+    "manifest": {
+        "main": "contents/code/spotify.js",
+        "icon": "contents/images/icon.png",
+        "iconWhite": "contents/images/iconWhite.png",
+        "iconBackground": "contents/images/iconBackground.png",
+        "scripts": [],
+        "resources": [
+            "contents/code/config.ui",
+            "contents/code/spotify.png"
+        ]
+    },
+     "staticCapabilities": [
+         "configTestable"
+     ]
+}

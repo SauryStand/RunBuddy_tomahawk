@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--
+/*   == This file is part of Tomahawk Player - <http://tomahawk-player.org> ===
+ *
+ *   Copyright 2013, Enno Gottschalk <mrmaffen@googlemail.com>
+ *
+ *   Tomahawk is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   Tomahawk is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with Tomahawk. If not, see <http://www.gnu.org/licenses/>.
+ */
+-->
+<resources>
+
+    <color name="tomahawk_red">#FFff004c</color>
+    <color name="tomahawk_red_transparent">#DDff004c</color>
+    <color name="tomahawk_red_very_transparent">#44ff004c</color>
+    <color name="divider">#3B3F45</color>
+    <color name="primary_background">#FFffffff</color>
+    <color name="secondary_background">#FF777777</color>
+    <color name="primary_background_inverted">#FF0f0f11</color>
+    <color name="userpage_default_background">#FF333333</color>
+    <color name="primary_transparent">#EEffffff</color>
+    <color name="secondary_transparent">#99151515</color>
+    <color name="tertiary_transparent">#99000000</color>
+    <color name="tertiary_transparent_playbackpanel">#AA000000</color>
+    <color name="playerview_transparent">#55000000</color>
+    <color name="playerview_default_bg">#333</color>
+    <color name="navdrawer_background">#BB000000</color>
+    <color name="coach_mark_background">#CC000000</color>
+    <color name="disabled">#FF999999</color>
+    <color name="disabled_resolver">#55FFFFFF</color>
+    <color name="primary_textcolor">#FF222222</color>
+    <color name="secondary_textcolor">#FF777777</color>
+    <color name="primary_textcolor_inverted">#FFffffff</color>
+    <color name="secondary_textcolor_inverted">#FF777777</color>
+    <color name="tertiary_textcolor_inverted">#FFcccccc</color>
+    <color name="list_focused_opaque">#FFe8837c</color>
+    <color name="list_pressed_opaque">#FFf1f1f1</color>
+    <color name="list_pressed_transparent">#88cbcbcb</color>
+    <color name="sliding_layout_background">#11000000</color>
+    <color name="notification_bg">#151515</color>
+
+    <color name="local_collection_resolver_bg">#3e454b</color>
+    <color name="spotify_resolver_bg">#84bd00</color>
+    <color name="hatchet_resolver_bg">#3892e3</color>
+    <color name="hatchet_resolver_bg_transparent">#993892e3</color>
+    <color name="deezer_resolver_bg">#22222c</color>
+    <color name="fallback_resolver_bg">#FF999999</color>
+
+</resources>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*   == This file is part of Tomahawk Player - <http://tomahawk-player.org> ===
+ *
+ *   Copyright 2014, Enno Gottschalk <mrmaffen@googlemail.com>
+ *
+ *   Tomahawk is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   Tomahawk is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with Tomahawk. If not, see <http://www.gnu.org/licenses/>.
+ */
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:background="@color/playerview_default_bg">
+
+    <ImageView android:id="@+id/background"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:scaleType="centerCrop"/>
+
+    <ImageView android:id="@+id/background_alt"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:scaleType="centerCrop"
+               android:alpha="0"/>
+
+    <View android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:background="@color/playerview_transparent"/>
+
+    <FrameLayout android:id="@+id/top_buttonpanel"
+                 android:layout_width="match_parent"
+                 android:layout_height="@dimen/playback_panel_height"
+                 android:paddingLeft="@dimen/padding_superlarge"
+                 android:paddingRight="@dimen/padding_superlarge">
+
+        <ImageButton
+                android:id="@+id/imageButton_repeat"
+                android:layout_width="@dimen/player_button_size_repeatshuffle"
+                android:layout_height="@dimen/player_button_size_repeatshuffle"
+                android:layout_gravity="left|center_vertical"
+                android:background="@drawable/selectable_background_ring_tomahawk"
+                android:scaleType="fitCenter"
+                android:src="@drawable/repeat_all"
+                android:visibility="gone"/>
+
+        <LinearLayout android:id="@+id/close_button"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_gravity="center"
+                      android:paddingLeft="@dimen/padding_superlarge"
+                      android:paddingRight="@dimen/padding_superlarge"
+                      android:paddingBottom="@dimen/padding_verysmall"
+                      android:paddingTop="@dimen/padding_verysmall"
+                      android:background="@drawable/selectable_background_button_white"
+                      android:clickable="true"
+                      android:visibility="gone">
+
+            <TextView android:id="@+id/close_button_text"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_gravity="center_vertical"
+                      android:singleLine="true"
+                      android:textSize="@dimen/text_size_micro"
+                      android:textColor="@color/primary_textcolor_inverted"/>
+
+            <ImageView android:layout_width="12dp"
+                       android:layout_height="12dp"
+                       android:layout_marginLeft="@dimen/padding_small"
+                       android:layout_gravity="center_vertical"
+                       android:src="@drawable/ic_navigation_close"/>
+
+        </LinearLayout>
+
+        <ImageButton
+                android:id="@+id/imageButton_shuffle"
+                android:layout_width="@dimen/player_button_size_repeatshuffle"
+                android:layout_height="@dimen/player_button_size_repeatshuffle"
+                android:layout_gravity="right|center_vertical"
+                android:background="@drawable/selectable_background_ring_tomahawk"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_player_shuffle_light"
+                android:visibility="gone"/>
+
+    </FrameLayout>
+
+    <FrameLayout android:id="@+id/albumart_viewpager_frame"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 android:layout_marginTop="@dimen/playback_panel_height"
+                 android:layout_marginBottom="@dimen/playback_clear_space_bottom">
+
+        <org.runbuddy.tomahawk_android.views.AlbumArtViewPager
+                android:id="@+id/albumart_viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        <ImageView android:id="@+id/swipe_hint_left"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_gravity="center_vertical"
+                   android:layout_marginLeft="-6dp"
+                   android:src="@drawable/ic_navigation_chevron_left"
+                   android:visibility="gone"/>
+
+        <ImageView android:id="@+id/swipe_hint_right"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_gravity="center_vertical|right"
+                   android:layout_marginRight="-6dp"
+                   android:src="@drawable/ic_navigation_chevron_right"
+                   android:visibility="gone"/>
+
+    </FrameLayout>
+
+    <ImageView android:id="@+id/swipe_hint_bottom"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_gravity="center_horizontal|bottom"
+               android:layout_marginBottom="-4dp"
+               android:src="@drawable/ic_navigation_expand_more"
+               android:visibility="gone"/>
+
+    <ViewStub android:id="@+id/listview_stub"
+              android:layout="@layout/listview"
+              android:inflatedId="@+id/listview"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"/>
+
+    <ImageView android:id="@+id/imageview_favorite_doubletap"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:layout_marginTop="@dimen/playback_panel_height"
+               android:layout_marginBottom="@dimen/playback_clear_space_bottom"
+               android:scaleType="centerInside"
+               android:background="@color/tertiary_transparent"
+               android:visibility="gone"/>
+
+    <ViewStub android:id="@+id/playbackfragment_navigation_coachmark_stub"
+              android:layout="@layout/playbackfragment_navigation_coachmark"
+              android:inflatedId="@+id/playbackfragment_navigation_coachmark"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:layout_marginTop="@dimen/playback_panel_height"
+              android:layout_marginBottom="@dimen/playback_clear_space_bottom"/>
+
+</FrameLayout>

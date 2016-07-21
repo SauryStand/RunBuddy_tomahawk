@@ -1,0 +1,250 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="ok">确定</string>
+  <string name="cancel">取消</string>
+  <string name="login">登录</string>
+  <string name="logout">注销</string>
+  <string name="register">注册</string>
+  <string name="register_and_login">注册 &amp; 登陆</string>
+  <string name="rescan">立刻重新扫描</string>
+  <string name="internal_storage">内部存储</string>
+  <string name="tracks">曲目</string>
+  <string name="albums">专辑</string>
+  <string name="artists">艺术家</string>
+  <string name="users">用户</string>
+  <string name="top_hits">热单</string>
+  <string name="top_albums">热门专辑</string>
+  <string name="albums_and_eps">专辑和EP</string>
+  <string name="other_releases">其他发行版</string>
+  <string name="playlist_details">播放列表详情</string>
+  <string name="album_details">专辑详情</string>
+  <string name="search">搜索</string>
+  <string name="playlist">播放列表</string>
+  <string name="shuffle_on_label">随机开</string>
+  <string name="shuffle_off_label">随机关</string>
+  <string name="repeat_on_label">重复开</string>
+  <string name="repeat_off_label">重复关</string>
+  <string name="unknown">未知</string>
+  <string name="no_track">无曲目</string>
+  <string name="save_playlist">保存当前播放列表</string>
+  <string name="create_playlist">创建播放列表</string>
+  <!--Shown as a textfield hint in the "create playlist"-dialog. Indicates that the user should type the playlist's title into the textfield.-->
+  <string name="name_playlist">名称</string>
+  <string name="create_station">创建电台</string>
+  <string name="create_station_search_hint">搜索艺术家/歌曲/风格</string>
+  <string name="genres">风格</string>
+  <string name="moods">情绪</string>
+  <string name="login_name_label">邮箱/用户名</string>
+  <string name="login_username">用户名</string>
+  <string name="login_password">密码</string>
+  <string name="login_password_confirmation">密码确认</string>
+  <string name="account_email_label">邮箱（可选）</string>
+  <string name="error_field_required">此项必填</string>
+  <string name="error_passwords_dont_match">密码不匹配</string>
+  <string name="error_invalid_credentials">用户名或密码不正确</string>
+  <string name="error_invalid_account">账户被服务器拒绝</string>
+  <string name="error_communication">无法认证。请检查您的连接</string>
+  <string name="error_simultaneous_streams">操作不允许，账户已在别处使用</string>
+  <string name="error_account_expired">您的账户已过期</string>
+  <!--Shown as a toast message. Indicates that the user has logged into a certain service. (e.g. Logged into Spotify)-->
+  <string name="auth_logged_in">已登录到 %1$s</string>
+  <!--Shown as a toast message. Indicates that the user has logged out of a certain service. (e.g. Logged out of Spotify)-->
+  <string name="auth_logged_out">已从 %1$s 注销</string>
+  <string name="local_collection_pretty_name">本地收藏</string>
+  <string name="local">本地</string>
+  <string name="all">所有</string>
+  <string name="preferences_local_collection_text">请选择需要扫描的本地文件夹</string>
+  <string name="preferences_hatchet_text">使用 %1$s 同步数据</string>
+  <string name="preferences_playback">回放</string>
+  <string name="preferences_equalizer">均衡器</string>
+  <string name="preferences_equalizer_text">自定义音频输出。</string>
+  <string name="preferences_playback_data">收藏所有内容</string>
+  <string name="preferences_playback_data_text">将手机中所有音乐播放软件的曲目收藏到 %1$s</string>
+  <string name="preferences_plug_and_play">即插即播</string>
+  <string name="preferences_plug_and_play_text">只要插入耳机就开始播放音乐</string>
+  <string name="preferences_audio_quality">优先采用音质</string>
+  <string name="preferences_audio_quality_text">如果未连接到 WiFi 优先使用的音质</string>
+  <string name="preferences_info">信息</string>
+  <string name="preferences_app_version">软件版本</string>
+  <string name="preferences_app_uservoice">反馈</string>
+  <string name="preferences_app_uservoice_text">分享您的想法或获取帮助</string>
+  <string name="preferences_app_playstore_link">评价此APP</string>
+  <string name="preferences_app_playstore_link_text">在 Google Play 商店对 Tomahawk 评分。</string>
+  <string name="preferences_app_website_link">访问我们的网站</string>
+  <string name="preferences_app_website_link_text">在浏览器中打开 tomahawk-player.org 。</string>
+  <string name="preferences_app_sendlog">发送日志</string>
+  <string name="preferences_app_sendlog_text">发送日志，用于诊断。</string>
+  <string name="preferences_app_sendlog_dialog_text">请简单描述您遇到的问题并留下您的邮箱，以便我们想更进一步了解问题信息时联系您。</string>
+  <string name="preferences_app_sendlog_email">邮箱地址</string>
+  <string name="preferences_app_sendlog_issue">问题描述</string>
+  <string name="crash_dialog_title">Tomahawk 已崩溃</string>
+  <string name="crash_dialog_text">因为不可意料的错误导致程序停止运行。请通过发送错误信息帮助我们修复此问题，您只需点击确定即可</string>
+  <string name="crash_dialog_comment_prompt">你可以在下面添加关于问题的描述：</string>
+  <string name="crash_dialog_ok_toast">感谢您！</string>
+  <string name="context_menu_play">播放</string>
+  <string name="context_menu_add_to_queue">添加到队列</string>
+  <string name="context_menu_add_to_playlist">添加到播放列表</string>
+  <string name="context_menu_create_station">创建电台</string>
+  <string name="context_menu_delete">删除</string>
+  <string name="context_menu_removefromplaylist">从播放列表中移除</string>
+  <!--Shown in the context menu as an "remove from collection"-button (meant in the context of: Remove the currently selected item from your collection)-->
+  <string name="context_menu_removefromcollection">从收藏中移除</string>
+  <!--Shown in the context menu as an "add to collection"-button (meant in the context of: Add the currently selected item to your collection)-->
+  <string name="context_menu_addtocollection">添加到收藏</string>
+  <!--Shown in the context menu as a "love"-button (meant in the context of: Add the currently selected item to your loved tracks)-->
+  <string name="context_menu_love">喜欢</string>
+  <!--Shown in the context menu as an "unlove"-button (meant in the context of: Remove the currently selected item from your loved tracks)-->
+  <string name="context_menu_unlove">不喜欢</string>
+  <string name="context_menu_share">分享</string>
+  <string name="contest_menu_share_error">你必须登陆到 Hatchet 才能分享此播放列表。</string>
+  <string name="drawer_title_feed">订阅</string>
+  <string name="drawer_title_charts">榜单</string>
+  <string name="drawer_title_collection">收藏</string>
+  <string name="drawer_title_playlists">播放列表</string>
+  <string name="drawer_title_stations">电台</string>
+  <string name="drawer_title_lovedtracks">收藏</string>
+  <string name="drawer_title_settings">设置</string>
+  <string name="drawer_header_cloudcollections">云收藏</string>
+  <string name="collection_dropdown_recently_added">最近添加</string>
+  <string name="collection_dropdown_alpha_artists">艺术家 A-Z</string>
+  <string name="collection_dropdown_play_count">播发统计</string>
+  <string name="collection_dropdown_alpha_albums">专辑 A-Z</string>
+  <string name="collection_dropdown_alpha">A-Z</string>
+  <string name="history">历史</string>
+  <string name="preferences_bitrate_low">正常</string>
+  <string name="preferences_bitrate_medium">好</string>
+  <string name="preferences_bitrate_high">最佳</string>
+  <string name="drawer_open">打开导航抽屉</string>
+  <string name="drawer_close">关闭导航抽屉</string>
+  <!--Shown on the user page as a button. The text should indicate that you are already following the corresponding user.-->
+  <string name="content_header_following">正在关注</string>
+  <!--Shown on the user page as a button. The text should indicate an action. A press of the button will make you follow the corresponding user.-->
+  <string name="content_header_follow">关注</string>
+  <!--Shown in the user's social feed, if he/she doesn't follow any users. The phrase is followed by a list of suggested users to follow.-->
+  <string name="suggest_users">推荐的关注</string>
+  <!--Shown in the user's social feed (e.g. "mrmaffen is now following" followed by a list of users)-->
+  <string name="socialaction_type_follow">%1$s 正在关注</string>
+  <!--Shown in the user's social feed (e.g. "mrmaffen loved a track" followed by a link to the loved track(s))-->
+  <plurals name="socialaction_type_love_track">
+    <item quantity="other">%1$s 喜欢了 %2$d 个曲目</item>
+  </plurals>
+  <!--Shown in the user's social feed (e.g. "mrmaffen collected a track" followed by a link to the collected track(s))-->
+  <plurals name="socialaction_type_collected_track">
+    <item quantity="other">%1$s 收藏了 %2$d 个曲目</item>
+  </plurals>
+  <!--Shown in the user's social feed (e.g. "mrmaffen collected an album" followed by a link to the collected album(s))-->
+  <plurals name="socialaction_type_collected_album">
+    <item quantity="other">%1$s 收藏了%2$d 张专辑</item>
+  </plurals>
+  <!--Shown in the user's social feed (e.g. "mrmaffen collected an artist" followed by a link to the collected artist(s))-->
+  <plurals name="socialaction_type_collected_artist">
+    <item quantity="other">%1$s 收藏了%2$d 个艺术家</item>
+  </plurals>
+  <!--Shown in the user's social feed (e.g. "mrmaffen commented on "Greatest Hits" by Queen")-->
+  <string name="socialaction_type_createcomment">%1$s 评论了</string>
+  <!--Shown in the user's social feed (e.g. "mrmaffen listened along to a friend" followed by a single user or a list of users)-->
+  <plurals name="socialaction_type_latchon">
+    <item quantity="other">%1$s 跟随收听 %2$d 个好友</item>
+  </plurals>
+  <!--Shown in the user's social feed (e.g. "mrmaffen created a playlist" followed by a link to the created playlist(s))-->
+  <plurals name="socialaction_type_createplaylist">
+    <item quantity="other">%1$s  创建了 %2$d 个播放列表</item>
+  </plurals>
+  <!--$Album/$Track by $Artist (examples: "Greatest Hits" by Queen, "We will rock you" by Queen)-->
+  <string name="album_by_artist">%1$s - %2$s</string>
+  <string name="time_afewseconds">几秒前</string>
+  <plurals name="time_minute">
+    <item quantity="other">%1$d 分钟前</item>
+  </plurals>
+  <plurals name="time_hour">
+    <item quantity="other">%1$d 小时前</item>
+  </plurals>
+  <plurals name="time_day">
+    <item quantity="other">%1$d 天前</item>
+  </plurals>
+  <string name="users_playbacklog_suffix">%1$s 最近播放的</string>
+  <string name="users_favorites_suffix">%1$s 的收藏</string>
+  <string name="users_playlist_suffix">%1$s 的播放列表</string>
+  <string name="my_playbacklog">最近播放的</string>
+  <string name="my_favorites">我的收藏</string>
+  <string name="my_playlist">我的播放列表</string>
+  <string name="music">音乐</string>
+  <string name="biography">简介</string>
+  <!--"Similar" in the sense of "similar artists" or "similar songs" on an artist/track page.-->
+  <string name="similar">类似的</string>
+  <!--Shown as a title for a list of songs in the search results view.-->
+  <string name="songs">歌曲</string>
+  <!--Shown as part of a count string. E.g.: "3 Songs", "1 Song"-->
+  <plurals name="songs_with_count">
+    <item quantity="other">%1$d 首歌</item>
+  </plurals>
+  <string name="activity">活动</string>
+  <!--Shown on the user page as a column title. The text should say something in the sense of: "list of users by which the corresponding user is being followed".-->
+  <string name="followers">跟随者</string>
+  <!--Shown on the user page as a column title. The text should say something in the sense of: "list of users which the corresponding user is following".-->
+  <string name="following">在关注</string>
+  <!--Shown next to a user's name to indicate how many followers he/she has and how many users he/she is following.-->
+  <string name="followers_count">粉丝：%1$d，关注：%2$d</string>
+  <string name="resolver_config_enable_button_enable">启用</string>
+  <string name="resolver_config_enable_button_disable">禁用</string>
+  <string name="resolver_config_redirect_button_text_log_into">登录到</string>
+  <string name="resolver_config_redirect_button_text_log_out_of">注销</string>
+  <string name="resolver_config_redirect_button_text_download_plugin">下载插件：</string>
+  <string name="ask_access_activity_header">自动保存您在 Hatchet 上播放的曲目的数据？</string>
+  <string name="ask_access_activity_text1">只需要在系统设置中启用此服务</string>
+  <string name="button_close">关闭</string>
+  <string name="view_album">查看专辑</string>
+  <string name="connect">连接</string>
+  <string name="connect_headertext">请选择要使用的服务。激活的服务更多，Tomahawk 工作的越好。</string>
+  <string name="connect_header_manualresolvers">手动安装的</string>
+  <string name="advanced">高级</string>
+  <string name="info">信息</string>
+  <string name="playbackpanel_seek_coachmark">你可以长按播放键来快进/快退。</string>
+  <string name="slidinglayout_enqueue_coachmark">轻击添加曲目到播放队列。</string>
+  <string name="playbackfragment_navigation_coachmark_down">上拉显示当前播放列表。</string>
+  <string name="playbackfragment_navigation_coachmark_up">下拉关闭播放控制栏。</string>
+  <string name="playbackfragment_navigation_coachmark_center">左/右滑跳到上首/下首歌曲。长按打开文本菜单。双击添加到收藏。</string>
+  <!--Shown as a button in the welcome view. A press of the button gets you to the next page.-->
+  <string name="next_page">下一首</string>
+  <string name="welcome_fragment_explanation_title">入门指南</string>
+  <string name="welcome_fragment_explanation_heading">到处都是音乐。\n 现在一切都不必如此。</string>
+  <string name="welcome_fragment_explanation_text">不用再为找音乐资源头疼。只需指定歌名，专辑名或者播放列表，Tomahawk 会自动搜索最佳的源并播放</string>
+  <string name="welcome_fragment_hatchet_title">需要社交？</string>
+  <string name="welcome_fragment_hatchet_text">Hatchet 在手，再多音乐收藏也不愁。分享，收藏，手机桌面同步。</string>
+  <string name="welcome_fragment_setup_title">连接</string>
+  <string name="welcome_fragment_done_title">完成！</string>
+  <string name="welcome_fragment_done_heading">全部完成！</string>
+  <string name="welcome_fragment_done_text">祝您探索愉快，别忘了给我们反馈哦！</string>
+  <plurals name="add_to_playlist_headertext">
+    <item quantity="other">将 %1$d 添加到播放列表：</item>
+  </plurals>
+  <string name="seeking_not_supported">抱歉，此解析器不支持寻位。</string>
+  <string name="install_plugin_title">插件安装</string>
+  <string name="install_plugin_warning">将会从未知源安装 Tomahawk 插件。此操作存在安全风险。</string>
+  <string name="install_plugin_warning2">您是否想安装此插件？</string>
+  <string name="uninstall_plugin_title">卸载插件</string>
+  <string name="uninstall_plugin_warning">您是否想卸载此插件？</string>
+  <string name="gmusic_info_text">请选择一个账号：</string>
+  <string name="invalid_file">无法打开文件</string>
+  <string name="unknown_album">未知专辑</string>
+  <string name="unknown_artist">未知艺术家</string>
+  <string name="notification_settings_activity_not_found">无法在你的设备上找到设置应用。请通过系统设置允许 Tomahawk 访问你的通知。</string>
+  <string name="warn_closed_source_text">警告：你即将下载包含闭源组件的插件。</string>
+  <string name="warn_old_plugin">一个必需的插件应用已过期且不再兼容。你希望更新这个插件吗？</string>
+  <string name="warn_no_plugin">一个必需的插件应用未安装。你希望安装这个插件吗？</string>
+  <!--Shown on the playlist page. This is the text on the button that lets the user create a new playlist/station.-->
+  <string name="create_new">新建</string>
+  <string name="playback_pause">暂停</string>
+  <string name="playback_play">播放</string>
+  <string name="playback_previous">上个曲目</string>
+  <string name="playback_next">下个曲目</string>
+  <string name="playback_favorite">添加到收藏</string>
+  <string name="playback_unfavorite">从收藏中移除</string>
+  <!--Shown on external UIs as a title for the currently playing queue. Android Auto and Wear are using this.-->
+  <string name="mediabrowser_queue_title">正在播放</string>
+  <!--Shown on external UIs as a title for a category that shows a selection of tracks that can be shuffled and played. Android Auto and Wear are using this.-->
+  <string name="mediabrowser_shuffledplay">随机播放</string>
+  <string name="loading_station">载入电台中:</string>
+  <string name="suggested_stations">推荐的电台</string>
+  <string name="my_stations">我的电台</string>
+</resources>

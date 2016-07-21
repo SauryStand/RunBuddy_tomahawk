@@ -1,0 +1,23 @@
+{
+    "name": "TIDAL",
+    "pluginName": "tidal",
+    "author": "Anton Romanov and Will Stott",
+    "email": "",
+    "version": "0.0.7",
+    "website": "http://gettomahawk.com",
+    "description": "Streams music from tidal.com (requires subscription)",
+    "type": "resolver/javascript",
+    "manifest": {
+        "main": "contents/code/tidal.js",
+        "icon": "contents/images/icon.png",
+        "iconWhite": "contents/images/iconWhite.png",
+        "iconBackground": "contents/images/iconBackground.png",
+        "scripts": [],
+        "resources": [
+            "contents/code/config.ui"
+        ]
+    },
+    "staticCapabilities": [
+        "configTestable"
+    ]
+}

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Generated with http://android-holo-colors.com -->
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="ProgressBarTomahawk" parent="android:Widget.ProgressBar.Horizontal">
+        <item name="android:progressDrawable">@drawable/tomahawk_progress_horizontal_holo_light
+        </item>
+        <item name="android:minHeight">16dip</item>
+        <item name="android:maxHeight">16dip</item>
+    </style>
+
+    <style name="ProgressBarWhiteTomahawk" parent="android:Widget.ProgressBar.Horizontal">
+        <item name="android:progressDrawable">@drawable/tomahawk_progress_horizontal_white
+        </item>
+        <item name="android:minHeight">16dip</item>
+        <item name="android:maxHeight">16dip</item>
+    </style>
+
+    <style name="SeekBarAppTheme" parent="android:Widget.Holo.Light.SeekBar">
+        <item name="android:progressDrawable">
+            @drawable/apptheme_scrubber_progress_horizontal_holo_light
+        </item>
+        <item name="android:indeterminateDrawable">
+            @drawable/apptheme_scrubber_progress_horizontal_holo_light
+        </item>
+        <item name="android:thumb">@drawable/apptheme_scrubber_control_selector_holo_light</item>
+    </style>
+
+    <style name="ActionBar.Solid.Tomahawk"
+           parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+        <item name="android:background">@color/primary_background_inverted</item>
+        <item name="android:backgroundStacked">@drawable/ab_stacked_solid_tomahawk</item>
+        <item name="android:backgroundSplit">@drawable/ab_bottom_solid_tomahawk</item>
+        <item name="android:progressBarStyle">@style/ProgressBar.Tomahawk</item>
+    </style>
+
+    <style name="ActionBar.Transparent.Tomahawk" parent="@style/Widget.AppCompat.ActionBar">
+        <item name="background">@android:color/transparent</item>
+        <item name="progressBarStyle">@style/ProgressBar.Tomahawk</item>
+        <item name="titleTextStyle">@style/TitleBarTextColor</item>
+    </style>
+
+    <style name="TitleBarTextColor" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/primary_textcolor_inverted</item>
+    </style>
+
+    <style name="PopupMenu.Tomahawk" parent="@style/Widget.AppCompat.PopupMenu">
+        <item name="android:popupBackground">@color/primary_transparent</item>
+    </style>
+
+    <style name="ProgressBar.Tomahawk" parent="@style/Widget.AppCompat.ProgressBar.Horizontal">
+        <item name="android:progressDrawable">@drawable/tomahawk_progress_horizontal_holo_light</item>
+    </style>
+
+</resources>
