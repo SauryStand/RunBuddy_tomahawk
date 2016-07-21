@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## tomahawk-android
 
 *Music is everywhere, now you don’t have to be!*
@@ -67,3 +68,7 @@ For a larger overview you should read the official Android "Code Style Guideline
 
 [Spotify Plugin App](https://github.com/tomahawk-player/tomahawk-android-spotify)     
 [Deezer Plugin App](https://github.com/tomahawk-player/tomahawk-android-deezer)
+=======
+# RunBuddy_tomahawk
+combine open source project tomahawk with RunBuddy project
+>>>>>>> 56f0a25d71bd1e4b65f077642fd4b4de654902a5
