@@ -19,65 +19,71 @@
  */
 -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/header_clear_space_nonscrollable_static_user">
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/header_clear_space_nonscrollable_static_user">
 
-    <FrameLayout android:id="@+id/userimageview_container"
-                 android:layout_width="@dimen/header_roundedimage_height"
-                 android:layout_height="@dimen/header_roundedimage_height"
-                 android:layout_marginTop="@dimen/abc_action_bar_default_height_material"
-                 android:layout_marginLeft="@dimen/padding_superlarge">
+    <FrameLayout
+        android:id="@+id/userimageview_container"
+        android:layout_width="@dimen/header_roundedimage_height"
+        android:layout_height="@dimen/header_roundedimage_height"
+        android:layout_marginLeft="@dimen/padding_superlarge"
+        android:layout_marginTop="@dimen/abc_action_bar_default_height_material">
 
-        <ImageView android:id="@+id/userimageview1"
-                   android:layout_width="match_parent"
-                   android:layout_height="match_parent"
-                   android:src="@drawable/circle_black"/>
+        <ImageView
+            android:id="@+id/userimageview1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/circle_black" />
 
-        <TextView android:id="@+id/usertextview1"
-                  android:layout_width="match_parent"
-                  android:layout_height="match_parent"
-                  android:gravity="center"
-                  android:textSize="@dimen/text_size_verylarge"
-                  android:textColor="@color/primary_textcolor_inverted"/>
+        <TextView
+            android:id="@+id/usertextview1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textColor="@color/primary_textcolor_inverted"
+            android:textSize="@dimen/text_size_verylarge" />
 
     </FrameLayout>
 
-    <LinearLayout android:layout_width="match_parent"
-                  android:layout_height="@dimen/header_roundedimage_height"
-                  android:layout_alignTop="@id/userimageview_container"
-                  android:layout_toRightOf="@id/userimageview_container"
-                  android:layout_marginRight="@dimen/padding_superlarge">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/header_roundedimage_height"
+        android:layout_alignTop="@id/userimageview_container"
+        android:layout_marginRight="@dimen/padding_superlarge"
+        android:layout_toRightOf="@id/userimageview_container">
 
-        <TextView android:id="@+id/textview1"
-                  android:layout_width="0dp"
-                  android:layout_height="match_parent"
-                  android:layout_weight="1"
-                  android:ellipsize="marquee"
-                  android:singleLine="true"
-                  android:gravity="center_vertical"
-                  android:textColor="@color/primary_textcolor_inverted"
-                  android:textSize="@dimen/text_size_verylarge"
-                  android:paddingRight="@dimen/padding_large"
-                  android:paddingLeft="@dimen/padding_large"/>
+        <TextView
+            android:id="@+id/textview1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:ellipsize="marquee"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/padding_large"
+            android:paddingRight="@dimen/padding_large"
+            android:singleLine="true"
+            android:textColor="@color/primary_textcolor_inverted"
+            android:textSize="@dimen/text_size_verylarge" />
 
-        <TextView android:id="@+id/followbutton1"
-                  android:layout_width="wrap_content"
-                  android:layout_height="@dimen/header_following_height"
-                  android:layout_gravity="center_vertical"
-                  android:textSize="@dimen/text_size_small"
-                  android:textColor="@color/primary_textcolor_inverted"
-                  android:background="@drawable/selectable_background_button_green"/>
+        <TextView
+            android:id="@+id/followbutton1"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/header_following_height"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/selectable_background_button_green"
+            android:textColor="@color/primary_textcolor_inverted"
+            android:textSize="@dimen/text_size_small" />
 
     </LinearLayout>
 
     <org.runbuddy.tomahawk_android.views.PageIndicator
-            android:id="@+id/page_indicator"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/pager_indicator_height"
-            android:paddingLeft="@dimen/padding_large"
-            android:paddingRight="@dimen/padding_large"
-            android:background="@drawable/above_shadow_page_indicator"
-            android:layout_alignParentBottom="true"
-            android:visibility="gone"/>
+        android:id="@+id/page_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/pager_indicator_height"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/above_shadow_page_indicator"
+        android:paddingLeft="@dimen/padding_large"
+        android:paddingRight="@dimen/padding_large"
+        android:visibility="gone" />
 
 </RelativeLayout>

@@ -19,6 +19,7 @@
 -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/content_header_user_navdrawer"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -41,13 +42,21 @@
             android:paddingLeft="@dimen/padding_large">
 
             <!--circle_black圆形头像-->
-
-            <ImageView
+            <!--ImageView
                 android:id="@+id/userimageview1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:src="@drawable/common_google_signin_btn_icon_light_pressed"
-                android:layout_gravity="center" />
+                android:layout_gravity="center" /-->
+
+            <org.runbuddy.CircleImageView.CircleImageView
+                android:id="@+id/userimageview1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/hugh"
+                app:civ_border_color="@color/tomahawk_red"
+                app:civ_border_width="2dp" />
 
             <TextView
                 android:id="@+id/usertextview1"
