@@ -106,6 +106,7 @@
   <string name="drawer_title_stations">Stations</string>
   <string name="drawer_title_lovedtracks">Favorites</string>
   <string name="drawer_title_settings">Settings</string>
+  <string name="drawer_title_localList">localList</string>
   <string name="drawer_header_cloudcollections">Cloud Collections</string>
   <string name="collection_dropdown_recently_added">Recently Added</string>
   <string name="collection_dropdown_alpha_artists">Artist A-Z</string>
