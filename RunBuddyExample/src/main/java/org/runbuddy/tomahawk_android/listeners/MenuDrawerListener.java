@@ -17,6 +17,13 @@
  */
 package org.runbuddy.tomahawk_android.listeners;
 
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
+
 import org.jdeferred.DoneCallback;
 import org.runbuddy.libtomahawk.infosystem.User;
 import org.runbuddy.tomahawk_android.TomahawkApp;
@@ -31,16 +38,10 @@ import org.runbuddy.tomahawk_android.fragments.PreferencePagerFragment;
 import org.runbuddy.tomahawk_android.fragments.SocialActionsFragment;
 import org.runbuddy.tomahawk_android.fragments.StationsFragment;
 import org.runbuddy.tomahawk_android.fragments.TomahawkFragment;
+import org.runbuddy.tomahawk_android.fragments.TranningListFragment;
 import org.runbuddy.tomahawk_android.fragments.UserPagerFragment;
 import org.runbuddy.tomahawk_android.utils.FragmentUtils;
 import org.runbuddy.tomahawk_android.utils.MenuDrawer;
-
-import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ListView;
 
 import se.emilsjolander.stickylistheaders.StickyListHeadersListView;
 
@@ -53,7 +54,7 @@ public class MenuDrawerListener implements ListView.OnItemClickListener {
     private MenuDrawer mMenuDrawer;
 
     public MenuDrawerListener(TomahawkMainActivity activity, StickyListHeadersListView drawerList,
-            MenuDrawer menuDrawer) {
+                              MenuDrawer menuDrawer) {
         mActivity = activity;
         mDrawerList = drawerList;
         mMenuDrawer = menuDrawer;
@@ -171,6 +172,12 @@ public class MenuDrawerListener implements ListView.OnItemClickListener {
                     ContentHeaderFragment.MODE_HEADER_STATIC_SMALL);
             FragmentUtils.replace(mActivity, PreferencePagerFragment.class, bundle);
         }
+        else if(holder.id.equals(MenuDrawer.HUB_ID_MYSETTING)){
+            bundle.putInt(TomahawkFragment.CONTENT_HEADER_MODE,
+                    ContentHeaderFragment.MODE_HEADER_STATIC_SMALL);//flag
+            FragmentUtils.replace(mActivity, TranningListFragment.class,bundle);
+        }
+
         if (mMenuDrawer != null) {
             mMenuDrawer.closeDrawer();
         }

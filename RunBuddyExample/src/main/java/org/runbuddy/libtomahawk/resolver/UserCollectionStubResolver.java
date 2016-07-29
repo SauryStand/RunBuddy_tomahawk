@@ -84,7 +84,9 @@ public class UserCollectionStubResolver implements Resolver {
             imageView.clearColorFilter();
         }
     }
-
+    /*
+    *显示Local Collection的textfield
+     */
     @Override
     public String getPrettyName() {
         return TomahawkApp.getContext().getString(R.string.local_collection_pretty_name);

@@ -62,6 +62,8 @@ public class MenuDrawer extends DrawerLayout {
 
     public static final String HUB_ID_SETTINGS = "settings";
 
+    public static final String HUB_ID_MYSETTING = "myset";
+
     public StickyListHeadersListView mDrawerList;
 
     public MenuDrawer(Context context) {
@@ -91,7 +93,7 @@ public class MenuDrawer extends DrawerLayout {
     }
 
     private static void updateDrawer(final StickyListHeadersListView drawerList,
-            final MenuDrawer menuDrawer, final TomahawkMainActivity activity) {
+                                     final MenuDrawer menuDrawer, final TomahawkMainActivity activity) {
         User.getSelf().done(new DoneCallback<User>() {
             @Override
             public void onDone(User user) {
@@ -146,6 +148,17 @@ public class MenuDrawer extends DrawerLayout {
                 holder.title = resources.getString(R.string.drawer_title_settings);
                 holder.iconResId = R.drawable.ic_action_settings;
                 holders.add(holder);
+                holder = new TomahawkMenuAdapter.ResourceHolder();
+                holder.id = HUB_ID_MYSETTING;
+                holder.title = resources.getString(R.string.drawer_title_localList);
+                holder.iconResId = R.drawable.ic_action_settings;
+                holders.add(holder);
+                /*
+                holder.id = HUB_ID_MYSETTING;
+                holder.title = resources.getString(R.string.welcome_fragment_setup_title);
+                holder.iconResId = R.drawable.ic_action_settings;
+                holders.add(holder);
+                */
                 for (Collection collection : CollectionManager.get().getCollections()) {
                     if (collection instanceof ScriptResolverCollection) {
                         ScriptResolverCollection resolverCollection

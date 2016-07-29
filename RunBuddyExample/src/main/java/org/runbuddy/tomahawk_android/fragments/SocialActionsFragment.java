@@ -203,7 +203,7 @@ public class SocialActionsFragment extends TomahawkFragment implements
 
     @Override
     public void onHeaderClick(StickyListHeadersListView l, View header, int itemPosition,
-            long headerId, boolean currentlySticky) {
+                              long headerId, boolean currentlySticky) {
         TomahawkMainActivity activity = (TomahawkMainActivity) getActivity();
         Object item = getListAdapter().getItem(itemPosition);
         if (item instanceof List && !((List) item).isEmpty()) {
@@ -269,7 +269,7 @@ public class SocialActionsFragment extends TomahawkFragment implements
 
     @Override
     public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount,
-            int totalItemCount) {
+                         int totalItemCount) {
         super.onScroll(view, firstVisibleItem, visibleItemCount, totalItemCount);
 
         if (mUser != null && firstVisibleItem + visibleItemCount + 5 > totalItemCount) {
@@ -337,7 +337,7 @@ public class SocialActionsFragment extends TomahawkFragment implements
     }
 
     private static boolean shouldMergeAction(SocialAction actionToCompare,
-            SocialAction socialAction) {
+                                             SocialAction socialAction) {
         return actionToCompare.getUser() == socialAction.getUser()
                 && actionToCompare.getType().equals(socialAction.getType())
                 && actionToCompare.getTargetObject().getClass()

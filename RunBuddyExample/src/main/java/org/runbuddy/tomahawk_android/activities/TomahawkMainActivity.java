@@ -119,6 +119,7 @@ import java.util.List;
 
 import de.greenrobot.event.EventBus;
 import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
+
 /**
  * The main Tomahawk activity
  */
@@ -138,9 +139,6 @@ public class TomahawkMainActivity extends AppCompatActivity {
     private int mPlaybackState = PlaybackStateCompat.STATE_NONE;
 
     NavigationView navigationView;
-
-
-
 
 
     private final MediaBrowserCompat.ConnectionCallback mConnectionCallback =
@@ -304,8 +302,7 @@ public class TomahawkMainActivity extends AppCompatActivity {
                 new Handler(Looper.getMainLooper()).post(new Runnable() {
                     @Override
                     public void run() {
-                        FragmentUtils.replace(
-                                TomahawkMainActivity.this, PlaylistEntriesFragment.class, bundle);
+                        FragmentUtils.replace(TomahawkMainActivity.this, PlaylistEntriesFragment.class, bundle);
                     }
                 });
                 break;

@@ -84,7 +84,7 @@ public class CollectionPagerFragment extends PagerFragment {
         fragmentInfoList = new FragmentInfoList();
         fragmentInfo = new FragmentInfo();
         fragmentInfo.mClass = PlaylistEntriesFragment.class;
-        fragmentInfo.mTitle = getString(R.string.tracks);
+        fragmentInfo.mTitle = getString(R.string.tracks);//Track,也就是本地列表的歌曲,貌似不能扫描到外部sd卡
         fragmentInfo.mBundle = getChildFragmentBundle();
         fragmentInfoList.addFragmentInfo(fragmentInfo);
         fragmentInfoLists.add(fragmentInfoList);

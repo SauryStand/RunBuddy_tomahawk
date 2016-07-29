@@ -160,7 +160,7 @@ public class AlbumsFragment extends TomahawkFragment {
                         new AlwaysCallback<MultipleResults, OneReject>() {
                             @Override
                             public void onAlways(Promise.State state, MultipleResults resolved,
-                                    OneReject rejected) {
+                                                 OneReject rejected) {
                                 Playlist artistTracks = (Playlist) resolved.get(0).getResult();
                                 Segment segment = new Segment.Builder(artistTracks)
                                         .headerLayout(R.layout.single_line_list_header)
@@ -199,7 +199,7 @@ public class AlbumsFragment extends TomahawkFragment {
                         new AlwaysCallback<MultipleResults, OneReject>() {
                             @Override
                             public void onAlways(Promise.State state, MultipleResults resolved,
-                                    OneReject rejected) {
+                                                 OneReject rejected) {
                                 Playlist artistTophits = (Playlist) resolved.get(0).getResult();
                                 Segment segment = new Segment.Builder(artistTophits)
                                         .headerLayout(R.layout.single_line_list_header)
