@@ -110,7 +110,7 @@ android {
             versionName getNewVersionName() + "_x86"
             versionCode Integer.parseInt("6$defaultConfig.versionCode")
         }
-       /* x86_64 {
+        /* x86_64 {
             ndk {
                 abiFilter "x86_64"
             }
@@ -139,17 +139,26 @@ if (propFile.canRead()) {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile(name: 'circularprogressview-debug', ext: 'aar')
-    compile 'com.android.support:appcompat-v7:23.4.0'
-    compile 'com.android.support:support-v4:23.4.0'
-    compile 'se.emilsjolander:stickylistheaders:2.7.0'
     compile('ch.acra:acra:4.7.0') {
         transitive = false
     }
-    compile 'com.google.code.gson:gson:2.5'
-    compile 'com.google.android.gms:play-services-base:8.4.0'
     compile('com.stanfy:gson-xml-java:0.1.7') {
         exclude group: 'xmlpull', module: 'xmlpull'
     }
+    compile project(':MPchartlibs')
+    compile files('libs/realm-android-library-1.1.0-sources.jar')
+    compile files('libs/realm-annotations-1.1.0.jar')
+    compile files('libs/realm-annotations-processor-1.1.0.jar')
+    compile files('libs/realm-gradle-plugin-1.1.0.jar')
+    compile files('libs/realm-transformer-1.1.0.jar')
+    compile files('libs/RemoteMetadataProvider.jar')
+
+
+    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile 'com.android.support:support-v4:23.4.0'
+    compile 'se.emilsjolander:stickylistheaders:2.7.0'
+    compile 'com.google.code.gson:gson:2.5'
+    compile 'com.google.android.gms:play-services-base:8.4.0'
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'com.squareup.okhttp:okhttp:2.7.2'
     compile 'com.squareup.okhttp:okhttp-urlconnection:2.7.2'
@@ -171,13 +180,7 @@ dependencies {
     compile 'com.android.support:design:23.4.0'
     compile 'com.github.PhilJay:MPAndroidChart:v2.2.5'
     compile 'com.github.PhilJay:MPAndroidChart-Realm:v1.1.0@aar'
-    compile project(':MPchartlibs')
-    compile files('libs/realm-android-library-1.1.0-sources.jar')
-    compile files('libs/realm-annotations-1.1.0.jar')
-    compile files('libs/realm-annotations-processor-1.1.0.jar')
-    compile files('libs/realm-gradle-plugin-1.1.0.jar')
-    compile files('libs/realm-transformer-1.1.0.jar')
-    compile files('libs/RemoteMetadataProvider.jar')
+    compile 'com.android.support:cardview-v7:23.4.0'
 }
 
 repositories {

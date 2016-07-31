@@ -18,6 +18,14 @@
  */
 package org.runbuddy.libtomahawk.collection;
 
+import android.net.Uri;
+import android.os.Environment;
+import android.os.Looper;
+import android.os.Message;
+import android.text.TextUtils;
+import android.util.Log;
+import android.widget.ImageView;
+
 import org.jdeferred.Deferred;
 import org.jdeferred.Promise;
 import org.runbuddy.libtomahawk.database.CollectionDb;
@@ -36,14 +44,6 @@ import org.runbuddy.tomahawk_android.utils.WeakReferenceHandler;
 import org.videolan.libvlc.Media;
 import org.videolan.libvlc.util.AndroidUtil;
 import org.videolan.libvlc.util.Extensions;
-
-import android.net.Uri;
-import android.os.Environment;
-import android.os.Looper;
-import android.os.Message;
-import android.text.TextUtils;
-import android.util.Log;
-import android.widget.ImageView;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -80,7 +80,7 @@ public class UserCollection extends DbCollection {
 
     private static final List<String> TYPE_BLACKLIST = Collections.singletonList("tmpfs");
 
-    private static final String[] MOUNT_WHITELIST = {"/mnt", "/Removable", "/storage"};
+    private static final String[] MOUNT_WHITELIST = {"/mnt", "/Removable", "/storage","/sdcard0","/sdcard1"};//搜索local media白名单,识别不了外部储存卡的信息
 
     private static final String[] MOUNT_BLACKLIST = {"/mnt/secure", "/mnt/shell", "/mnt/asec",
             "/mnt/obb", "/mnt/media_rw/extSdCard", "/mnt/media_rw/sdcard", "/storage/emulated"};
@@ -439,6 +439,7 @@ public class UserCollection extends DbCollection {
                 }
 
                 // check that device is in whitelist, and either type or mountpoint is in a whitelist
+                //在这里找音频文件？
                 if (doStringsStartWith(DEVICE_WHITELIST, device) && (TYPE_WHITELIST.contains(type)
                         || doStringsStartWith(MOUNT_WHITELIST, mountpoint))) {
                     list.add(mountpoint);

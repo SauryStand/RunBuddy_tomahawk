@@ -47,8 +47,14 @@ public class DirectoryChooserConfigDialog extends ConfigDialog {
         directoryChooser.setup();
 
         setDialogTitle(getString(R.string.local_collection_pretty_name));
+
+
+
         onResolverStateUpdated(UserCollectionStubResolver.get());
         setPositiveButtonText(R.string.rescan);
+
+
+
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setView(getDialogView());
         return builder.create();

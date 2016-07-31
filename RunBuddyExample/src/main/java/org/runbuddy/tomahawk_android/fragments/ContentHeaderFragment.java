@@ -70,41 +70,24 @@ import se.emilsjolander.stickylistheaders.StickyListHeadersListView;
 public class ContentHeaderFragment extends Fragment {
 
     private static final String TAG = ContentHeaderFragment.class.getSimpleName();
-
     public static final String COLLECTION_ID = "collection_id";
-
     public static final String CONTENT_HEADER_MODE = "content_header_mode";
-
     public static final String CONTAINER_FRAGMENT_ID = "container_fragment_id";
-
     public static final String CONTAINER_FRAGMENT_PAGE = "container_fragment_page";
-
     public static final int MODE_HEADER_DYNAMIC = 0;
-
     public static final int MODE_HEADER_DYNAMIC_PAGER = 1;
-
     public static final int MODE_HEADER_STATIC = 2;
-
     public static final int MODE_HEADER_STATIC_USER = 3;
-
     public static final int MODE_ACTIONBAR_FILLED = 4;
-
     public static final int MODE_HEADER_STATIC_SMALL = 5;
-
     public static final int MODE_HEADER_PLAYBACK = 6;
-
     public static final int MODE_HEADER_STATIC_CHARTS = 7;
-
     public static final int MODE_HEADER_NONE = 8;
-
+    public static final int MODE_MYLOCALPLAYLIST = 9;
     public static final int ANIM_BUTTON_ID = 0;
-
     public static final int ANIM_FANCYDROPDOWN_ID = 1;
-
     public static final int ANIM_IMAGEVIEW_ID = 2;
-
     public static final int ANIM_ALBUMART_ID = 3;
-
     public static final int ANIM_PAGEINDICATOR_ID = 4;
 
     public static class AnimateEvent {
@@ -225,6 +208,8 @@ public class ContentHeaderFragment extends Fragment {
                     break;
                 case MODE_HEADER_NONE:
                     break;
+                case  MODE_MYLOCALPLAYLIST:
+                    break;
                 default:
                     throw new RuntimeException("Missing or invalid ContentHeaderFragment mode");
             }
@@ -248,7 +233,6 @@ public class ContentHeaderFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-
         if (mCurrentMode == MODE_ACTIONBAR_FILLED) {
             ((TomahawkMainActivity) getActivity()).showFilledActionBar();
         } else if (mCurrentMode == MODE_HEADER_STATIC_SMALL) {
@@ -306,8 +290,8 @@ public class ContentHeaderFragment extends Fragment {
     }
 
     protected void showFancyDropDown(int initialSelection, String text,
-            List<FancyDropDown.DropDownItemInfo> dropDownItemInfos,
-            FancyDropDown.DropDownListener dropDownListener) {
+                                     List<FancyDropDown.DropDownItemInfo> dropDownItemInfos,
+                                     FancyDropDown.DropDownListener dropDownListener) {
         if (getView() == null) {
             Log.e(TAG, "Couldn't setup FancyDropDown, because getView() is null!");
             return;
@@ -553,7 +537,7 @@ public class ContentHeaderFragment extends Fragment {
     }
 
     protected void setupScrollableSpacer(TomahawkListAdapter adapter,
-            StickyListHeadersListView listView, View headerSpacerForwardView) {
+                                         StickyListHeadersListView listView, View headerSpacerForwardView) {
         if (adapter != null) {
             adapter.setShowContentHeaderSpacer(mHeaderScrollableHeight, listView,
                     headerSpacerForwardView);
