@@ -32,3 +32,4 @@
           android:textSize="@dimen/text_size_medium"
           android:textStyle="bold"
           android:background="@drawable/selectable_background_tomahawk_opaque"/>
+<!--selectable_background_tomahawk_opaque-->

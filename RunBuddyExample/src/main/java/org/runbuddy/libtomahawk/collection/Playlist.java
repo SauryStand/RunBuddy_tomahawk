@@ -17,10 +17,10 @@
  */
 package org.runbuddy.libtomahawk.collection;
 
+import android.util.Log;
+
 import org.runbuddy.libtomahawk.resolver.Query;
 import org.runbuddy.tomahawk_android.utils.IdGenerator;
-
-import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -131,7 +131,7 @@ public class Playlist extends Cacheable implements AlphaComparable {
      * @return a reference to the constructed {@link Playlist}
      */
     public static Playlist fromEntryList(String id, String name, String currentRevision,
-            List<PlaylistEntry> entries) {
+                                         List<PlaylistEntry> entries) {
         CollectionCursor<PlaylistEntry> cursor =
                 new CollectionCursor<>(entries, PlaylistEntry.class);
         return fromCursor(id, name, currentRevision, cursor);
@@ -154,7 +154,7 @@ public class Playlist extends Cacheable implements AlphaComparable {
      * @return a reference to the constructed {@link Playlist}
      */
     public static Playlist fromQueryList(String id, String name, String currentRevision,
-            List<Query> queries) {
+                                         List<Query> queries) {
         List<PlaylistEntry> entries = new ArrayList<>();
         for (Query query : queries) {
             entries.add(PlaylistEntry.get(id, query,
@@ -171,7 +171,7 @@ public class Playlist extends Cacheable implements AlphaComparable {
      * @return a reference to the constructed {@link Playlist}
      */
     private static Playlist fromCursor(String id, String name, String currentRevision,
-            CollectionCursor<PlaylistEntry> cursor) {
+                                       CollectionCursor<PlaylistEntry> cursor) {
         Playlist pl = Playlist.get(id);
         pl.setName(name);
         pl.setCurrentRevision(currentRevision);

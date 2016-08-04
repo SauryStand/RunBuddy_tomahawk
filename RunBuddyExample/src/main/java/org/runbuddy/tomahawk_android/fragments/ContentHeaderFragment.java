@@ -208,7 +208,7 @@ public class ContentHeaderFragment extends Fragment {
                     break;
                 case MODE_HEADER_NONE:
                     break;
-                case  MODE_MYLOCALPLAYLIST:
+                case MODE_MYLOCALPLAYLIST:
                     break;
                 default:
                     throw new RuntimeException("Missing or invalid ContentHeaderFragment mode");
@@ -535,7 +535,7 @@ public class ContentHeaderFragment extends Fragment {
         FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) view.getLayoutParams();
         params.topMargin = mHeaderNonscrollableHeight;
     }
-
+    //这里有用到TomahawkListAdapter
     protected void setupScrollableSpacer(TomahawkListAdapter adapter,
                                          StickyListHeadersListView listView, View headerSpacerForwardView) {
         if (adapter != null) {
@@ -581,7 +581,7 @@ public class ContentHeaderFragment extends Fragment {
             if (headerImage == null || headerImage.getVisibility() == View.GONE) {
                 headerImage = getView()
                         .findViewById(isPagerFragment ? R.id.imageview_grid_three_pager
-                                : R.id.imageview_grid_three);
+                                : R.id.imageview_grid_three);//collection集成子这个类
             }
 
             setupImageViewAnimation(headerImage);

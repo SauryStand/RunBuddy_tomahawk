@@ -73,6 +73,7 @@
             <ViewStub android:id="@+id/content_header_user_pager_stub"
                       android:inflatedId="@+id/content_header_user_pager"
                       android:layout="@layout/content_header_user"
+                        android:background="@color/tomahawk_red"
                       android:layout_width="match_parent"
                       android:layout_height="wrap_content"/>
         </FrameLayout>

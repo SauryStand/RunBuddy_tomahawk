@@ -89,6 +89,16 @@ public class CollectionPagerFragment extends PagerFragment {
         fragmentInfoList.addFragmentInfo(fragmentInfo);
         fragmentInfoLists.add(fragmentInfoList);
 
-        setupPager(fragmentInfoLists, initialPage, null, 2);
+        fragmentInfoList = new FragmentInfoList();
+        fragmentInfo = new FragmentInfo();
+        fragmentInfo.mClass = PlaylistEntriesFragment.class;
+        fragmentInfo.mTitle = getString(R.string.testing);//Testing2016.08.01
+        fragmentInfo.mBundle = getChildFragmentBundle();
+        fragmentInfoList.addFragmentInfo(fragmentInfo);
+        fragmentInfoLists.add(fragmentInfoList);
+
+
+
+        setupPager(fragmentInfoLists, initialPage, null, 3);
     }
 }
