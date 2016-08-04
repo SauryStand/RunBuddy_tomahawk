@@ -127,11 +127,9 @@ public class ContextMenuFragment extends Fragment {
     @Override
     public void onViewCreated(final View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
         setupCloseButton(view);
         setupContextMenuItems(view);
         setupBlurredBackground(view);
-
         TomahawkMainActivity activity = (TomahawkMainActivity) getActivity();
         if (mFromPlaybackFragment) {
             setupPlaybackTextViews(view, activity.getPlaybackPanel());

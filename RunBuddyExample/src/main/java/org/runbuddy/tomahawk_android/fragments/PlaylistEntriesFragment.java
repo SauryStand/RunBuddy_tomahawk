@@ -61,6 +61,8 @@ public class PlaylistEntriesFragment extends TomahawkFragment {
 
     private Playlist mCurrentPlaylist;
 
+    private String TAG_PLAYLIST = "PLAYLIST";//貌似没有排场用场
+
     @SuppressWarnings("unused")
     public void onEvent(DatabaseHelper.PlaylistsUpdatedEvent event) {
         if (mPlaylist != null && mPlaylist.getId().equals(event.mPlaylistId)) {
@@ -121,8 +123,9 @@ public class PlaylistEntriesFragment extends TomahawkFragment {
 
     /**
      * Called every time an item inside a ListView or GridView is clicked
-     *  @param view the clicked view
-     * @param item the Object which corresponds to the click
+     *
+     * @param view    the clicked view
+     * @param item    the Object which corresponds to the click
      * @param segment
      */
     @Override
@@ -178,6 +181,7 @@ public class PlaylistEntriesFragment extends TomahawkFragment {
                     }
                     builder.showNumeration(true, 1);
                     fillAdapter(builder.build());
+                    Log.i(TAG_PLAYLIST, mCurrentPlaylist.toString());//set tag in 2016.08.01
                 }
             });
         } else if (mUser != null || mPlaylist != null) {

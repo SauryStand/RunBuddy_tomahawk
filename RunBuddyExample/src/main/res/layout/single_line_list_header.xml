@@ -44,4 +44,11 @@
             android:layout_height="1px"
             android:background="@color/secondary_background"/>
 
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="list header"
+        android:id="@+id/checkBox2"
+        android:layout_gravity="center_horizontal" />
+
 </LinearLayout>

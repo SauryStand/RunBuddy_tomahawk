@@ -236,7 +236,7 @@ public class TomahawkListAdapter extends StickyBaseAdapter implements
             expectedViewHoldersCount = 0;
             for (Object object : (List) o) {
                 if (object != null) {
-                    expectedViewHoldersCount++;
+                    expectedViewHoldersCount++;//计数一共有几个list，然后一并显示出来
                 }
             }
         }
@@ -356,6 +356,7 @@ public class TomahawkListAdapter extends StickyBaseAdapter implements
 
         // After we've setup the correct view and viewHolder, we now can fill the View's
         // components with the correct data
+        //有track
         for (int i = 0; i < viewHolders.size(); i++) {
             ViewHolder viewHolder = viewHolders.get(i);
             Object item = getItem(position);
@@ -423,7 +424,7 @@ public class TomahawkListAdapter extends StickyBaseAdapter implements
                         || viewType == R.layout.list_item_numeration_track_duration
                         || viewType == R.layout.list_item_track_artist_queued) {
                     if (targetItem instanceof Track) {
-                        viewHolder.fillView((Track) targetItem);
+                        viewHolder.fillView((Track) targetItem);//我找到了！！！！！
                     } else {
                         View coachMark =
                                 viewHolder.findViewById(R.id.swipelayout_enqueue_coachmark);
@@ -665,10 +666,13 @@ public class TomahawkListAdapter extends StickyBaseAdapter implements
                 }
             }
         }
+        //这里是if item是SocialAction
         if (item instanceof SocialAction && ((SocialAction) item).getTargetObject() != null) {
             item = ((SocialAction) item).getTargetObject();
         }
+
         Segment segment = getSegment(position);
+
         if (isContentHeaderItem) {
             return R.layout.content_header_spacer;
         } else if (isFooter) {
