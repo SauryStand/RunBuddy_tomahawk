@@ -99,8 +99,8 @@ public class TomahawkListAdapter extends StickyBaseAdapter implements
      * Constructs a new {@link TomahawkListAdapter}.
      */
     public TomahawkListAdapter(TomahawkMainActivity activity, LayoutInflater layoutInflater,
-            List<Segment> segments, Collection collection, StickyListHeadersListView listView,
-            MultiColumnClickListener clickListener) {
+                               List<Segment> segments, Collection collection, StickyListHeadersListView listView,
+                               MultiColumnClickListener clickListener) {
         mActivity = activity;
         mLayoutInflater = layoutInflater;
         mClickListener = clickListener;
@@ -114,8 +114,8 @@ public class TomahawkListAdapter extends StickyBaseAdapter implements
      * Constructs a new {@link TomahawkListAdapter}.
      */
     public TomahawkListAdapter(TomahawkMainActivity activity, LayoutInflater layoutInflater,
-            List<Segment> segments, StickyListHeadersListView listView,
-            MultiColumnClickListener clickListener) {
+                               List<Segment> segments, StickyListHeadersListView listView,
+                               MultiColumnClickListener clickListener) {
         mActivity = activity;
         mLayoutInflater = layoutInflater;
         mClickListener = clickListener;
@@ -128,8 +128,8 @@ public class TomahawkListAdapter extends StickyBaseAdapter implements
      * Constructs a new {@link TomahawkListAdapter}.
      */
     public TomahawkListAdapter(TomahawkMainActivity activity, LayoutInflater layoutInflater,
-            Segment segment, StickyListHeadersListView listView,
-            MultiColumnClickListener clickListener) {
+                               Segment segment, StickyListHeadersListView listView,
+                               MultiColumnClickListener clickListener) {
         mActivity = activity;
         mLayoutInflater = layoutInflater;
         mClickListener = clickListener;
@@ -170,7 +170,7 @@ public class TomahawkListAdapter extends StickyBaseAdapter implements
     }
 
     public void setShowContentHeaderSpacer(int headerSpacerHeight,
-            StickyListHeadersListView listView, View headerSpacerForwardView) {
+                                           StickyListHeadersListView listView, View headerSpacerForwardView) {
         mHeaderSpacerHeight = headerSpacerHeight;
         mHeaderSpacerForwardView = headerSpacerForwardView;
         updateFooterSpacerHeight(listView);
@@ -638,7 +638,7 @@ public class TomahawkListAdapter extends StickyBaseAdapter implements
     }
 
     private int getViewType(Object item, int position, boolean isContentHeaderItem,
-            boolean isFooter) {
+                            boolean isFooter) {
         if (item instanceof List) {
             // We have a grid item
             // Don't display the socialAction item directly, but rather the item that is its target
@@ -667,6 +667,7 @@ public class TomahawkListAdapter extends StickyBaseAdapter implements
             }
         }
         //这里是if item是SocialAction
+        //到这里才调用啊，这不科学啊，非常复杂啊
         if (item instanceof SocialAction && ((SocialAction) item).getTargetObject() != null) {
             item = ((SocialAction) item).getTargetObject();
         }

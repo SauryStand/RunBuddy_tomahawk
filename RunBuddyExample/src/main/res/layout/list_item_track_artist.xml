@@ -23,8 +23,8 @@
              android:layout_width="match_parent"
              android:layout_height="@dimen/list_item_track_height"
              android:paddingLeft="@dimen/padding_superlarge"
-             android:background="@color/primary_background">
-
+             android:background="@color/tomahawk_red">
+    <!--primary_background-->
     <LinearLayout android:layout_width="match_parent"
                   android:layout_height="match_parent"
                   android:paddingRight="@dimen/padding_superlarge"

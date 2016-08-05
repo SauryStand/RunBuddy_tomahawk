@@ -373,7 +373,7 @@ public class ContentHeaderFragment extends Fragment {
             ImageView imageView = (ImageView) v.findViewById(R.id.imageview1);
             imageView.setImageDrawable((ColorDrawable) item);
         } else if (mHeaderScrollableHeight > 0) {
-            View moreButton = getView().findViewById(R.id.more_button);
+            View moreButton = getView().findViewById(R.id.more_button);//+号的button
             moreButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -535,6 +535,7 @@ public class ContentHeaderFragment extends Fragment {
         FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) view.getLayoutParams();
         params.topMargin = mHeaderNonscrollableHeight;
     }
+
     //这里有用到TomahawkListAdapter
     protected void setupScrollableSpacer(TomahawkListAdapter adapter,
                                          StickyListHeadersListView listView, View headerSpacerForwardView) {
@@ -593,6 +594,7 @@ public class ContentHeaderFragment extends Fragment {
     }
 
     private void setupFancyDropDownAnimation(final View view) {
+        //是用来确定view的
         if (view != null) {
             final FancyDropDown fancyDropDown =
                     (FancyDropDown) view.findViewById(R.id.fancydropdown);

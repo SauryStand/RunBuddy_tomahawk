@@ -47,9 +47,9 @@ public class CollectionPagerFragment extends PagerFragment {
                 getActivity().getSupportFragmentManager().popBackStack();
                 return;
             }
-            getActivity().setTitle(collection.getName());
+            getActivity().setTitle(collection.getName());//设置title咯，没有layout，layout是后面自己画出来
             if (collection instanceof UserCollection) {
-                showContentHeader(R.drawable.collection_header);
+                showContentHeader(R.drawable.drawer_background);
             } else if (collection instanceof DbCollection) {
                 showContentHeader(((DbCollection) collection).getIconBackgroundPath());
             }
@@ -99,6 +99,6 @@ public class CollectionPagerFragment extends PagerFragment {
 
 
 
-        setupPager(fragmentInfoLists, initialPage, null, 3);
+        setupPager(fragmentInfoLists, initialPage, null, 3);//就一共4个子fragment啦
     }
 }
