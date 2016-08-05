@@ -156,7 +156,7 @@ public class ViewHolder {
             setTextViewEnabled(durationTextView, query.isPlayable(), false);
         }
     }
-
+    //填充item
     public void fillView(Track track) {
         TextView trackNameTextView = (TextView) findViewById(R.id.track_textview);
         trackNameTextView.setText(track.getName());

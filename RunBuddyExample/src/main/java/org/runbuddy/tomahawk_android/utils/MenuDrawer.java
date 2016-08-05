@@ -47,22 +47,15 @@ public class MenuDrawer extends DrawerLayout {
     private final static String TAG = MenuDrawer.class.getSimpleName();
 
     public static final String HUB_ID_USERPAGE = "userpage";
-
     public static final String HUB_ID_FEED = "feed";
-
     public static final String HUB_ID_CHARTS = "charts";
-
     public static final String HUB_ID_COLLECTION = "collection";
-
     public static final String HUB_ID_LOVEDTRACKS = "lovedtracks";
-
     public static final String HUB_ID_PLAYLISTS = "playlists";
-
     public static final String HUB_ID_STATIONS = "stations";
-
     public static final String HUB_ID_SETTINGS = "settings";
-
     public static final String HUB_ID_MYSETTING = "myset";
+    public static final String HUB_ID_LOCALPLAYLIST = "localplaylist";
 
     public StickyListHeadersListView mDrawerList;
 
@@ -151,10 +144,10 @@ public class MenuDrawer extends DrawerLayout {
                 holder = new TomahawkMenuAdapter.ResourceHolder();
                 holder.id = HUB_ID_MYSETTING;
                 holder.title = resources.getString(R.string.drawer_title_localList);
-                holder.iconResId = R.drawable.ic_action_settings;
+                holder.iconResId = R.drawable.ic_image_music_note;
                 holders.add(holder);
                 /*
-                holder.id = HUB_ID_MYSETTING;
+                holder.id = HUB_ID_LOCALPLAYLIST;
                 holder.title = resources.getString(R.string.welcome_fragment_setup_title);
                 holder.iconResId = R.drawable.ic_action_settings;
                 holders.add(holder);

@@ -181,7 +181,7 @@ public class PlaylistEntriesFragment extends TomahawkFragment {
                     }
                     builder.showNumeration(true, 1);
                     fillAdapter(builder.build());
-                    Log.i(TAG_PLAYLIST, mCurrentPlaylist.toString());//set tag in 2016.08.01
+                    //Log.i(TAG_PLAYLIST, mCurrentPlaylist.toString());//set tag in 2016.08.01
                 }
             });
         } else if (mUser != null || mPlaylist != null) {

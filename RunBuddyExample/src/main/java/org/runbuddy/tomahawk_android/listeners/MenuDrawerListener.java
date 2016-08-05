@@ -38,7 +38,7 @@ import org.runbuddy.tomahawk_android.fragments.PreferencePagerFragment;
 import org.runbuddy.tomahawk_android.fragments.SocialActionsFragment;
 import org.runbuddy.tomahawk_android.fragments.StationsFragment;
 import org.runbuddy.tomahawk_android.fragments.TomahawkFragment;
-import org.runbuddy.tomahawk_android.fragments.TranningListFragment;
+import org.runbuddy.tomahawk_android.fragments.LocalMusicListFragment;
 import org.runbuddy.tomahawk_android.fragments.UserPagerFragment;
 import org.runbuddy.tomahawk_android.utils.FragmentUtils;
 import org.runbuddy.tomahawk_android.utils.MenuDrawer;
@@ -171,11 +171,10 @@ public class MenuDrawerListener implements ListView.OnItemClickListener {
             bundle.putInt(TomahawkFragment.CONTENT_HEADER_MODE,
                     ContentHeaderFragment.MODE_HEADER_STATIC_SMALL);
             FragmentUtils.replace(mActivity, PreferencePagerFragment.class, bundle);
-        }
-        else if(holder.id.equals(MenuDrawer.HUB_ID_MYSETTING)){
+        } else if (holder.id.equals(MenuDrawer.HUB_ID_MYSETTING)) {
             bundle.putInt(TomahawkFragment.CONTENT_HEADER_MODE,
                     ContentHeaderFragment.MODE_HEADER_STATIC_SMALL);//flag
-            FragmentUtils.replace(mActivity, TranningListFragment.class,bundle);
+            FragmentUtils.replace(mActivity, LocalMusicListFragment.class, bundle);
         }
 
         if (mMenuDrawer != null) {

@@ -114,7 +114,7 @@ public abstract class PagerFragment extends ContentHeaderFragment implements
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState) {
+                             Bundle savedInstanceState) {
         return inflater.inflate(R.layout.pagerfragment_layout, container, false);
     }
 
@@ -142,7 +142,7 @@ public abstract class PagerFragment extends ContentHeaderFragment implements
                 // so we get the one to the right by asking for the fragment at position + 1
                 event.mReceiverFragmentPage = position + 1;
             } else {
-                // first visible fragment is the left fragment
+                // first visible fragment is the left fragment 也就是第一个能被看到的fragment咯
                 event.mReceiverFragmentPage = position;
             }
             event.mPerformerFragmentPage = mViewPager.getCurrentItem();
@@ -186,7 +186,7 @@ public abstract class PagerFragment extends ContentHeaderFragment implements
     }
 
     protected void setupPager(List<FragmentInfoList> fragmentInfoLists, int initialPage,
-            String selectorPosStorageKey, int offscreenPageLimit) {
+                              String selectorPosStorageKey, int offscreenPageLimit) {
         if (getView() == null) {
             return;
         }
@@ -198,11 +198,8 @@ public abstract class PagerFragment extends ContentHeaderFragment implements
 
         mPageIndicator = (PageIndicator) getView().findViewById(R.id.page_indicator);
         mPageIndicator.setVisibility(View.VISIBLE);
-        mPageIndicator.setup(mViewPager, fragmentInfoLists,
-                getActivity().findViewById(R.id.sliding_layout),
-                (Selector) getView().findViewById(R.id.selector), selectorPosStorageKey);
-        if (((TomahawkMainActivity) getActivity()).getSlidingUpPanelLayout().getPanelState()
-                == SlidingUpPanelLayout.PanelState.HIDDEN) {
+        mPageIndicator.setup(mViewPager, fragmentInfoLists, getActivity().findViewById(R.id.sliding_layout), (Selector) getView().findViewById(R.id.selector), selectorPosStorageKey);
+        if (((TomahawkMainActivity) getActivity()).getSlidingUpPanelLayout().getPanelState() == SlidingUpPanelLayout.PanelState.HIDDEN) {
             onSlidingLayoutHidden();
         } else {
             onSlidingLayoutShown();
@@ -210,7 +207,7 @@ public abstract class PagerFragment extends ContentHeaderFragment implements
     }
 
     protected void fillAdapter(List<FragmentInfoList> fragmentInfoLists, int initialPage,
-            int offscreenPageLimit) {
+                               int offscreenPageLimit) {
         if (getView() == null) {
             return;
         }

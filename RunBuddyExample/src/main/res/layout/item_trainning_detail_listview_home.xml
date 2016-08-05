@@ -4,23 +4,15 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
     <!-- 可能会报错-->
-    <include layout="@layout/toolbar" />
+    <!--include layout="@layout/toolbar" /-->
 
-    <android.support.v4.widget.SwipeRefreshLayout
-        android:id="@+id/refresh_layout"
+    <ImageView
+        android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="?actionBarSize">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-100dp"
+        android:background="@drawable/drawer_background" />
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recy"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:clipChildren="false"
-            android:paddingLeft="-12dp"
-            android:paddingRight="-12dp" />
-
-    </android.support.v4.widget.SwipeRefreshLayout>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
@@ -30,5 +22,11 @@
         android:layout_marginBottom="24dp"
         android:layout_marginRight="24dp"
         android:src="@drawable/ic_home_white_24dp" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/localmusic_fragmentpager"
+        android:layout_width="match_parent"
+        android:layout_height="360dp"
+        android:layout_gravity="center_horizontal|bottom" />
 
 </FrameLayout>

@@ -83,7 +83,7 @@ public class ArtistPagerFragment extends PagerFragment {
     private void updatePager() {
         showContentHeader(mArtist);
 
-        setupPager(getFragmentInfoLists(), mInitialPage, null, 1);
+        setupPager(getFragmentInfoLists(), mInitialPage, null, 1);//设置啦
         CollectionManager.get().getAvailableCollections(mArtist)
                 .done(new DoneCallback<List<Collection>>() {
                     @Override

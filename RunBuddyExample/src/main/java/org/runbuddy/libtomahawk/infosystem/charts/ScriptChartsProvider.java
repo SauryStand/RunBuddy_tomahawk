@@ -17,6 +17,9 @@
  */
 package org.runbuddy.libtomahawk.infosystem.charts;
 
+import android.support.v4.util.Pair;
+import android.util.Log;
+
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -29,9 +32,6 @@ import org.runbuddy.libtomahawk.resolver.ScriptObject;
 import org.runbuddy.libtomahawk.resolver.ScriptPlugin;
 import org.runbuddy.libtomahawk.utils.ADeferredObject;
 import org.runbuddy.libtomahawk.utils.GsonHelper;
-
-import android.support.v4.util.Pair;
-import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -60,6 +60,7 @@ public class ScriptChartsProvider implements ScriptPlugin {
     public Promise<ScriptChartsCountryCodes, Throwable, Void> getCountryCodes() {
         final Deferred<ScriptChartsCountryCodes, Throwable, Void> deferred =
                 new ADeferredObject<>();
+        //国家编号
         ScriptJob.start(mScriptObject, "countryCodes", new ScriptJob.ResultsObjectCallback() {
             @Override
             public void onReportResults(JsonObject results) {
@@ -104,7 +105,7 @@ public class ScriptChartsProvider implements ScriptPlugin {
     }
 
     public Promise<ScriptChartsResult, Throwable, Void> getCharts(final String countryCode,
-            final String type) {
+                                                                  final String type) {
         final Deferred<ScriptChartsResult, Throwable, Void> deferred = new ADeferredObject<>();
 
         final String cacheKey = getCacheKey(countryCode, type);
