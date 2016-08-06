@@ -6,12 +6,61 @@
     <!-- 可能会报错-->
     <!--include layout="@layout/toolbar" /-->
 
-    <ImageView
-        android:id="@+id/imageView"
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="-100dp"
-        android:background="@drawable/drawer_background" />
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/drawer_background" />
+
+        <Button
+            android:id="@+id/ClearText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:text="clearn counter"
+            android:textSize="11dp" />
+
+        <Switch
+            android:id="@+id/SwitchTextPrint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/ClearText"
+            android:layout_toRightOf="@id/ClearText" />
+
+        <Button
+            android:id="@+id/ClearFile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/ClearText"
+            android:layout_toRightOf="@id/SwitchTextPrint"
+            android:text="testing"
+            android:textSize="11dp" />
+
+        <Switch
+            android:id="@+id/SwitchFilePrint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/ClearText"
+            android:layout_toRightOf="@id/ClearFile" />
+
+        <TextView
+            android:id="@+id/sensor"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/SwitchFilePrint"
+            android:scrollbars="vertical"
+            android:text="@string/sensor"
+            android:layout_alignBottom="@+id/imageView" />
+
+    </RelativeLayout>
 
 
     <android.support.design.widget.FloatingActionButton
@@ -26,7 +75,7 @@
     <android.support.v4.view.ViewPager
         android:id="@+id/localmusic_fragmentpager"
         android:layout_width="match_parent"
-        android:layout_height="360dp"
+        android:layout_height="258dp"
         android:layout_gravity="center_horizontal|bottom" />
 
 </FrameLayout>

@@ -567,6 +567,7 @@ public class TomahawkListAdapter extends StickyBaseAdapter implements
 
     /**
      * Get the id of the item for the given position. (Id is equal to given position)
+     * 获取当前item的位置
      */
     @Override
     public long getItemId(int position) {
@@ -599,6 +600,7 @@ public class TomahawkListAdapter extends StickyBaseAdapter implements
                 view.setTag(viewHolder);
             }
 
+            //这个if是collection里面的recently added的layout，果然是同的fragment他会有不同的选择，屌啊
             if (layoutId == R.layout.dropdown_header) {
                 ArrayList<CharSequence> spinnerItems = new ArrayList<>();
                 for (String headerString : segment.getHeaderStrings()) {
@@ -659,7 +661,7 @@ public class TomahawkListAdapter extends StickyBaseAdapter implements
                 } else if (firstItem instanceof StationPlaylist) {
                     return R.layout.grid_item_station;
                 } else if (firstItem instanceof Playlist) {
-                    return R.layout.grid_item_playlist;
+                    return R.layout.grid_item_playlist;//
                 } else {
                     Log.e(TAG, "getViewType - Couldn't find appropriate viewType!");
                     return 0;
@@ -703,7 +705,7 @@ public class TomahawkListAdapter extends StickyBaseAdapter implements
         } else if (segment != null && segment.isShowResolverIcon()) {
             return R.layout.list_item_numeration_track_artist;
         } else {
-            return R.layout.list_item_track_artist;
+            return R.layout.list_item_track_artist;//这里显示track的歌单
         }
     }
 
