@@ -1,6 +1,7 @@
 package org.runbuddy.tomahawk_android.fragments;
 
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,7 +16,7 @@ import java.util.List;
 /**
  * Created by Jonney Chou on 2016/7/27.
  */
-public class LocalMusicListFragment extends PagerFragment {
+public class LocalMusicListFragment extends Fragment {
 
     public static final int MODE_HEADER_STATIC_SMALL = 8;
 
@@ -33,8 +34,6 @@ public class LocalMusicListFragment extends PagerFragment {
         getActivity().setTitle(R.string.drawer_title_localList);
         return inflater.inflate(R.layout.item_trainning_detail_listview_home, container, false);
     }
-
-
 
 
 

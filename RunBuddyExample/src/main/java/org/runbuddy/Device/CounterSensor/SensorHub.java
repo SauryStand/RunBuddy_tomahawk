@@ -1,4 +1,4 @@
-package org.runbuddy.Device.SenorManagment;
+package org.runbuddy.Device.CounterSensor;
 
 import android.content.Context;
 import android.hardware.Sensor;
@@ -119,7 +119,7 @@ public class SensorHub implements SensorEventListener {
         String text = "-->>" + event.timestamp;
 
         for (int i = 0; i < event.values.length; i++) {
-            text += "show cout:" + event.values[i];//这里原来是把芯片计步的数据都算出来再显示，应该是算一个时间戳之类的
+            text += "echo:" + event.values[i];//这里原来是把芯片计步的数据都算出来再显示，应该是算一个时间戳之类的
         }
 
         ArrayList<DataClient> clientList = mClients.get(event.sensor);

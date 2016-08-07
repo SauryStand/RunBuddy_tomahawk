@@ -7,7 +7,6 @@
     <!--include layout="@layout/toolbar" /-->
 
 
-
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -35,30 +34,14 @@
             android:layout_alignBottom="@id/ClearText"
             android:layout_toRightOf="@id/ClearText" />
 
-        <Button
-            android:id="@+id/ClearFile"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@id/ClearText"
-            android:layout_toRightOf="@id/SwitchTextPrint"
-            android:text="testing"
-            android:textSize="11dp" />
-
-        <Switch
-            android:id="@+id/SwitchFilePrint"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@id/ClearText"
-            android:layout_toRightOf="@id/ClearFile" />
-
         <TextView
             android:id="@+id/sensor"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@id/SwitchFilePrint"
+            android:layout_alignBottom="@+id/imageView"
+            android:layout_below="@+id/ClearText"
             android:scrollbars="vertical"
-            android:text="@string/sensor"
-            android:layout_alignBottom="@+id/imageView" />
+            android:text="@string/sensor" />
 
     </RelativeLayout>
 

@@ -29,6 +29,7 @@ import org.runbuddy.libtomahawk.infosystem.User;
 import org.runbuddy.tomahawk_android.TomahawkApp;
 import org.runbuddy.tomahawk_android.activities.TomahawkMainActivity;
 import org.runbuddy.tomahawk_android.adapters.TomahawkMenuAdapter;
+import org.runbuddy.tomahawk_android.demo_zhihu.ui.fragment.PopularPageFragment;
 import org.runbuddy.tomahawk_android.fragments.ChartsSelectorFragment;
 import org.runbuddy.tomahawk_android.fragments.CollectionPagerFragment;
 import org.runbuddy.tomahawk_android.fragments.ContentHeaderFragment;
@@ -175,6 +176,10 @@ public class MenuDrawerListener implements ListView.OnItemClickListener {
             bundle.putInt(TomahawkFragment.CONTENT_HEADER_MODE,
                     ContentHeaderFragment.MODE_HEADER_STATIC_SMALL);//flag
             FragmentUtils.replace(mActivity, LocalMusicListFragment.class, bundle);
+        }else if(holder.id.equals(MenuDrawer.HUB_ID_POPULARPAGE)){
+            bundle.putInt(TomahawkFragment.CONTENT_HEADER_MODE,
+                    ContentHeaderFragment.MODE_HEADER_STATIC_SMALL);//2016.08.07
+            FragmentUtils.replace(mActivity, PopularPageFragment.class, bundle);
         }
 
         if (mMenuDrawer != null) {
