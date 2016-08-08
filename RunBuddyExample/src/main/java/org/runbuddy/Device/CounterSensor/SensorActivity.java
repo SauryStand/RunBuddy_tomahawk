@@ -33,6 +33,7 @@ public class SensorActivity extends Activity implements SensorHub.DataClient {
 
     private void resetConsole() {
         String text = "Name: " + mSensor.getName() +
+                "\nType: " + SensorListAdapter.sensorName(Sensor.TYPE_STEP_COUNTER) +
                 "\nVendor: " + mSensor.getVendor() +
                 "\nVersion: " + mSensor.getVersion() +
                 "\nRange: " + mSensor.getMaximumRange() +

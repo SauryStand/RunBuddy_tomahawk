@@ -561,7 +561,7 @@ public class SupportFragment extends Fragment implements ISupportFragment {
     /**
      * 入场动画结束时,回调
      */
-    void notifyEnterAnimEnd() {
+    public void notifyEnterAnimEnd() {
         notifyEnterAnimationEnd(null);
         _mActivity.setFragmentClickable(true);
 
