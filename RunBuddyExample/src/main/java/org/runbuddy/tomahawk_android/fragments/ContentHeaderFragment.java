@@ -83,7 +83,7 @@ public class ContentHeaderFragment extends Fragment {
     public static final int MODE_HEADER_PLAYBACK = 6;
     public static final int MODE_HEADER_STATIC_CHARTS = 7;
     public static final int MODE_HEADER_NONE = 8;
-    public static final int MODE_MYLOCALPLAYLIST = 9;
+    public static final int MODE_MYLOCALPLAYLIST = 9;//
     public static final int ANIM_BUTTON_ID = 0;
     public static final int ANIM_FANCYDROPDOWN_ID = 1;
     public static final int ANIM_IMAGEVIEW_ID = 2;
@@ -91,31 +91,21 @@ public class ContentHeaderFragment extends Fragment {
     public static final int ANIM_PAGEINDICATOR_ID = 4;
 
     public static class AnimateEvent {
-
         public int mPlayTime;
-
         public long mContainerFragmentId;
-
         public int mContainerFragmentPage;
     }
 
     public static class PerformSyncEvent {
-
         public int mContainerFragmentPage;
-
         public long mContainerFragmentId;
-
         public int mFirstVisiblePosition;
-
         public int mTop;
     }
-
+    //这个就是跟换页有关的
     public static class RequestSyncEvent {
-
         public long mContainerFragmentId;
-
         public int mPerformerFragmentPage;
-
         public int mReceiverFragmentPage;
     }
 

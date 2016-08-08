@@ -6,12 +6,47 @@
     <!-- 可能会报错-->
     <!--include layout="@layout/toolbar" /-->
 
-    <ImageView
-        android:id="@+id/imageView"
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="-100dp"
-        android:background="@drawable/drawer_background" />
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/drawer_background"
+            android:layout_marginTop="-80dp"/>
+
+        <Button
+            android:id="@+id/ClearText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:text="clearn counter"
+            android:textSize="11dp" />
+
+        <Switch
+            android:id="@+id/SwitchTextPrint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/ClearText"
+            android:layout_toRightOf="@id/ClearText" />
+
+        <TextView
+            android:id="@+id/sensor"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignBottom="@+id/imageView"
+            android:layout_below="@+id/ClearText"
+            android:scrollbars="vertical"
+            android:text="@string/sensor" />
+
+    </LinearLayout>
 
 
     <android.support.design.widget.FloatingActionButton
@@ -26,7 +61,7 @@
     <android.support.v4.view.ViewPager
         android:id="@+id/localmusic_fragmentpager"
         android:layout_width="match_parent"
-        android:layout_height="360dp"
+        android:layout_height="258dp"
         android:layout_gravity="center_horizontal|bottom" />
 
 </FrameLayout>

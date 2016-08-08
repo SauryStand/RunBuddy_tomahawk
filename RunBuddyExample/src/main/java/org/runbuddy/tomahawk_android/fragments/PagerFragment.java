@@ -135,7 +135,7 @@ public abstract class PagerFragment extends ContentHeaderFragment implements
         }
 
         if (mShouldSyncListStates && positionOffset != 0f && isDynamicHeader()) {
-            mShouldSyncListStates = false;
+            mShouldSyncListStates = false;//重新改为false，换页的时候又改为true？
             RequestSyncEvent event = new RequestSyncEvent();
             if (mViewPager.getCurrentItem() == position) {
                 // first visible fragment is the current fragment,
@@ -145,7 +145,7 @@ public abstract class PagerFragment extends ContentHeaderFragment implements
                 // first visible fragment is the left fragment 也就是第一个能被看到的fragment咯
                 event.mReceiverFragmentPage = position;
             }
-            event.mPerformerFragmentPage = mViewPager.getCurrentItem();
+            event.mPerformerFragmentPage = mViewPager.getCurrentItem();//把目前的item给到track，如果你切换到track的话
             event.mContainerFragmentId = mContainerFragmentId;
             EventBus.getDefault().post(event);
         }
@@ -228,7 +228,7 @@ public abstract class PagerFragment extends ContentHeaderFragment implements
             mViewPager.setAdapter(pagerAdapter);
         } else {
             TomahawkPagerAdapter pagerAdapter = (TomahawkPagerAdapter) mViewPager.getAdapter();
-            pagerAdapter.changeFragments(currentFragmentInfos);
+            pagerAdapter.changeFragments(currentFragmentInfos);//这里切换了fragment
         }
     }
 

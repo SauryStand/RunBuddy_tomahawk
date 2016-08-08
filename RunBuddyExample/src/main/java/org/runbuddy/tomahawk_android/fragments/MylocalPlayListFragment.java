@@ -37,9 +37,6 @@ public class MylocalPlayListFragment extends PagerFragment {
         }
 
 
-
-
-
     }
 
 

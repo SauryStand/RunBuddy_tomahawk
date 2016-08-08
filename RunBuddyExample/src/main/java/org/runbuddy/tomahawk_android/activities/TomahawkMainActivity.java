@@ -198,29 +198,17 @@ public class TomahawkMainActivity extends AppCompatActivity {
     };
 
     private MenuItem mSearchItem;
-
     private MenuDrawer mMenuDrawer;
-
     private ActionBarDrawerToggle mDrawerToggle;
-
     private CharSequence mTitle;
-
     private CharSequence mDrawerTitle;
-
     private TomahawkMainReceiver mTomahawkMainReceiver;
-
     private SmoothProgressBar mSmoothProgressBar;
-
     private SlidingUpPanelLayout mSlidingUpPanelLayout;
-
     private TomahawkPanelSlideListener mPanelSlideListener;
-
     private PlaybackPanel mPlaybackPanel;
-
     private View mActionBarBg;
-
     private boolean mDestroyed;
-
     private Handler mShouldShowAnimationHandler;
 
     private final Runnable mShouldShowAnimationRunnable = new Runnable() {
