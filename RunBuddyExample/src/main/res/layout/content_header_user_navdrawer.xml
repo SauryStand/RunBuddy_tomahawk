@@ -30,10 +30,10 @@
     android:paddingTop="@dimen/padding_medium"
 
     android:weightSum="1">
-
+    <!--嵌套framelayout会有效率问题，一般只能做简单的ui绘制，所以你这个肯定要改的-->
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="116dp">
 
         <FrameLayout
             android:layout_width="100dp"
@@ -41,7 +41,7 @@
             android:padding="@dimen/padding_verysmall"
             android:paddingLeft="@dimen/padding_large">
 
-            <!--circle_black圆形头像-->
+            <!--circle_black圆形头像,这个是系统原本的recycleview-->
             <!--ImageView
                 android:id="@+id/userimageview1"
                 android:layout_width="match_parent"
@@ -55,7 +55,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:src="@drawable/hugh"
-                app:civ_border_color="@color/tomahawk_red"
+                app:civ_border_color="@color/tomahawk_red_transparent"
+
                 app:civ_border_width="2dp" />
 
             <TextView

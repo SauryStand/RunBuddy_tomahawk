@@ -7,6 +7,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.fragmentation.SupportFragment;
+
+import org.runbuddy.tomahawk_android.demo_zhihu.ui.fragment.first.ZhihuFirstFragment;
+import org.runbuddy.tomahawk_android.demo_zhihu.ui.fragment.fourth.ZhihuFourthFragment;
+import org.runbuddy.tomahawk_android.demo_zhihu.ui.fragment.second.ZhihuSecondFragment;
+import org.runbuddy.tomahawk_android.demo_zhihu.ui.fragment.third.ZhihuThirdFragment;
 import org.runbuddy.tomahawk_android.demo_zhihu.ui.view.BottomBar;
 import org.runbuddy.tomahawk_android.demo_zhihu.ui.view.BottomBarTab;
 import org.tomahawk.tomahawk_android.R;
@@ -21,7 +27,7 @@ public class PopularPageFragment extends Fragment {
     public static final int THIRD = 2;
     public static final int FOURTH = 3;
 
-
+    private SupportFragment[] mFragments = new SupportFragment[4];
     private BottomBar mBottomBar;
 
 
@@ -31,6 +37,20 @@ public class PopularPageFragment extends Fragment {
         super.onCreate(savedInstanceState);
         getActivity().setTitle(R.string.drawer_title_popularpage);
         View view = inflater.inflate(R.layout.zhihu_activity_main, container, false);
+
+
+        if(savedInstanceState == null){
+            mFragments[FIRST] = ZhihuFirstFragment.newInstance();
+            mFragments[SECOND] = ZhihuSecondFragment.newInstance();
+            mFragments[THIRD] = ZhihuThirdFragment.newInstance();
+            mFragments[FOURTH] = ZhihuFourthFragment.newInstance();
+        }
+
+
+
+
+
+
 
         initView(view);
 
