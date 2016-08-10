@@ -79,7 +79,7 @@ public class Fragmentation {
     /**
      * 加载多个根Fragment
      */
-    void loadMultipleRootTransaction(FragmentManager fragmentManager, int containerId, int showPosition, SupportFragment... tos) {
+    public void loadMultipleRootTransaction(FragmentManager fragmentManager, int containerId, int showPosition, SupportFragment... tos) {
         FragmentTransaction ft = fragmentManager.beginTransaction()
                 .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
         for (int i = 0; i < tos.length; i++) {

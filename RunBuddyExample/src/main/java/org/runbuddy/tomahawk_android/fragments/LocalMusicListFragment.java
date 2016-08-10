@@ -33,6 +33,7 @@ public class LocalMusicListFragment extends Fragment {
         //showContentHeader(R.drawable.drawer_background);
         getActivity().setTitle(R.string.drawer_title_localList);
         return inflater.inflate(R.layout.item_trainning_detail_listview_home, container, false);
+        //item_trainning_detail_listview_home
     }
 
 

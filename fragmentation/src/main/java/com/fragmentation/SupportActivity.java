@@ -54,7 +54,6 @@ public class SupportActivity extends AppCompatActivity implements ISupport {
 
     /**
      * 获取设置的全局动画, copy
-     *
      * @return FragmentAnimator
      */
     public FragmentAnimator getFragmentAnimator() {

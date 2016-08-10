@@ -23,6 +23,7 @@ import java.lang.annotation.RetentionPolicy;
 
 /**
  * Created by YoKeyword on 16/1/22.
+ * 移植的是偶有个方法非要编程public的错误，这个要注意下，很可能会有潜在bug
  */
 public class SupportFragment extends Fragment implements ISupportFragment {
     // LaunchMode
