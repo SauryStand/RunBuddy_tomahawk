@@ -38,7 +38,6 @@ import android.os.Looper;
 import android.os.RemoteException;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
-import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.media.MediaBrowserCompat;
 import android.support.v4.media.MediaMetadataCompat;
@@ -49,7 +48,6 @@ import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
 import android.text.TextUtils;
 import android.util.Log;
@@ -58,6 +56,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.fragmentation.Fragmentation;
+import com.fragmentation.SupportActivity;
+import com.fragmentation.SupportFragment;
 import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 import com.uservoice.uservoicesdk.Config;
 import com.uservoice.uservoicesdk.UserVoice;
@@ -86,6 +87,11 @@ import org.runbuddy.libtomahawk.utils.ViewUtils;
 import org.runbuddy.libtomahawk.utils.parser.XspfParser;
 import org.runbuddy.tomahawk_android.TomahawkApp;
 import org.runbuddy.tomahawk_android.adapters.SuggestionSimpleCursorAdapter;
+import org.runbuddy.tomahawk_android.demo_zhihu.ui.fragment.first.ZhihuFirstFragment;
+import org.runbuddy.tomahawk_android.demo_zhihu.ui.fragment.fourth.ZhihuFourthFragment;
+import org.runbuddy.tomahawk_android.demo_zhihu.ui.fragment.second.ZhihuSecondFragment;
+import org.runbuddy.tomahawk_android.demo_zhihu.ui.fragment.third.ZhihuThirdFragment;
+import org.runbuddy.tomahawk_android.demo_zhihu.ui.view.BottomBar;
 import org.runbuddy.tomahawk_android.dialogs.GMusicConfigDialog;
 import org.runbuddy.tomahawk_android.dialogs.InstallPluginConfigDialog;
 import org.runbuddy.tomahawk_android.dialogs.WarnOldPluginDialog;
@@ -123,22 +129,25 @@ import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
 /**
  * The main Tomahawk activity
  */
-public class TomahawkMainActivity extends AppCompatActivity {
+public class TomahawkMainActivity extends SupportActivity {
+
+    public static final int FIRST = 0;
+    public static final int SECOND = 1;
+    public static final int THIRD = 2;
+    public static final int FOURTH = 3;
 
     private final static String TAG = TomahawkMainActivity.class.getSimpleName();
-
     public static final String SAVED_PLAYBACK_STATE = "saved_playback_state";
-
     public static final String SHOW_PLAYBACKFRAGMENT_ON_STARTUP
             = "show_playbackfragment_on_startup";
-
     protected final HashSet<String> mCorrespondingRequestIds = new HashSet<>();
-
     private MediaBrowserCompat mMediaBrowser;
-
     private int mPlaybackState = PlaybackStateCompat.STATE_NONE;
+    //NavigationView navigationView;2016.08.10设置成注释状态
+    private SupportFragment[] mFragments = new SupportFragment[4];
+    private BottomBar mBottomBar;
 
-    NavigationView navigationView;
+    private Fragmentation mFragmentation;
 
 
     private final MediaBrowserCompat.ConnectionCallback mConnectionCallback =
@@ -436,26 +445,38 @@ public class TomahawkMainActivity extends AppCompatActivity {
 
         if (savedInstanceState != null) {
             mPlaybackState = savedInstanceState.getInt(SAVED_PLAYBACK_STATE);
+            /*添加于2016.08.10*/
+            mFragments[FIRST] = ZhihuFirstFragment.newInstance();
+            mFragments[SECOND] = ZhihuSecondFragment.newInstance();
+            mFragments[THIRD] = ZhihuThirdFragment.newInstance();
+            mFragments[FOURTH] = ZhihuFourthFragment.newInstance();
+            loadMultipleRootFragment(R.id.fl_container, FIRST,
+                    mFragments[FIRST],
+                    mFragments[SECOND],
+                    mFragments[THIRD],
+                    mFragments[FOURTH]);
+
+        }else{
+            // 这里库已经做了Fragment恢复,所有不需要额外的处理了, 不会出现重叠问题
+
+            // 这里我们需要拿到mFragments的引用,也可以通过getSupportFragmentManager.getFragments()自行进行判断查找(效率更高些),用下面的方法查找更方便些
+            mFragments[FIRST] = findFragment(ZhihuFirstFragment.class);
+            mFragments[SECOND] = findFragment(ZhihuSecondFragment.class);
+            mFragments[THIRD] = findFragment(ZhihuThirdFragment.class);
+            mFragments[FOURTH] = findFragment(ZhihuFourthFragment.class);
         }
 
+
         PipeLine.get();
-
         CollectionManager.get().getUserCollection().loadMediaItems(false);
-
         setContentView(R.layout.tomahawk_main_activity);
-
         mMediaBrowser = new MediaBrowserCompat(this,
                 new ComponentName(this, PlaybackService.class), mConnectionCallback, null);
-
         setVolumeControlStream(AudioManager.STREAM_MUSIC);
-
         mSmoothProgressBar = (SmoothProgressBar) findViewById(R.id.smoothprogressbar);
-
         mTitle = mDrawerTitle = getTitle().toString().toUpperCase();
         getSupportActionBar().setTitle("");
-
         mPlaybackPanel = (PlaybackPanel) findViewById(R.id.playback_panel);
-
         mSlidingUpPanelLayout = (SlidingUpPanelLayout) findViewById(R.id.sliding_layout);
         FragmentUtils.addPlaybackFragment(this);
         mPanelSlideListener =
@@ -473,12 +494,10 @@ public class TomahawkMainActivity extends AppCompatActivity {
         if (mMenuDrawer != null) {
             mDrawerToggle = new ActionBarDrawerToggle(this, mMenuDrawer, R.string.drawer_open,
                     R.string.drawer_close) {
-
                 /** Called when a drawer has settled in a completely closed state. */
                 public void onDrawerClosed(View view) {
                     getSupportActionBar().setTitle(mTitle);
                 }
-
                 /** Called when a drawer has settled in a completely open state. */
                 public void onDrawerOpened(View drawerView) {
                     getSupportActionBar().setTitle(mDrawerTitle);
@@ -537,9 +556,30 @@ public class TomahawkMainActivity extends AppCompatActivity {
                 });
             }
         });
-
         handleIntent(getIntent());
+
+        /********************2016.08.10**********************/
+
+
+        /*
+        public void loadMultipleRootFragment(int containerId, int showPosition, SupportFragment... toFragments) {
+            mFragmentation.loadMultipleRootTransaction(getSupportFragmentManager(), containerId, showPosition, toFragments);//设置成public了,封装出了问题
+        }*/
+
+
+
+
+
+
+
+
+
+
     }
+
+
+
+
 
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
