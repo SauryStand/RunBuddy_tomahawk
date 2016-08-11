@@ -87,10 +87,6 @@ import org.runbuddy.libtomahawk.utils.ViewUtils;
 import org.runbuddy.libtomahawk.utils.parser.XspfParser;
 import org.runbuddy.tomahawk_android.TomahawkApp;
 import org.runbuddy.tomahawk_android.adapters.SuggestionSimpleCursorAdapter;
-import org.runbuddy.tomahawk_android.demo_zhihu.ui.fragment.first.ZhihuFirstFragment;
-import org.runbuddy.tomahawk_android.demo_zhihu.ui.fragment.fourth.ZhihuFourthFragment;
-import org.runbuddy.tomahawk_android.demo_zhihu.ui.fragment.second.ZhihuSecondFragment;
-import org.runbuddy.tomahawk_android.demo_zhihu.ui.fragment.third.ZhihuThirdFragment;
 import org.runbuddy.tomahawk_android.demo_zhihu.ui.view.BottomBar;
 import org.runbuddy.tomahawk_android.dialogs.GMusicConfigDialog;
 import org.runbuddy.tomahawk_android.dialogs.InstallPluginConfigDialog;
@@ -128,6 +124,7 @@ import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
 
 /**
  * The main Tomahawk activity
+ * 原本继承的是appcompaActivity的
  */
 public class TomahawkMainActivity extends SupportActivity {
 
@@ -443,30 +440,6 @@ public class TomahawkMainActivity extends SupportActivity {
     public void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if (savedInstanceState != null) {
-            mPlaybackState = savedInstanceState.getInt(SAVED_PLAYBACK_STATE);
-            /*添加于2016.08.10*/
-            mFragments[FIRST] = ZhihuFirstFragment.newInstance();
-            mFragments[SECOND] = ZhihuSecondFragment.newInstance();
-            mFragments[THIRD] = ZhihuThirdFragment.newInstance();
-            mFragments[FOURTH] = ZhihuFourthFragment.newInstance();
-            loadMultipleRootFragment(R.id.fl_container, FIRST,
-                    mFragments[FIRST],
-                    mFragments[SECOND],
-                    mFragments[THIRD],
-                    mFragments[FOURTH]);
-
-        }else{
-            // 这里库已经做了Fragment恢复,所有不需要额外的处理了, 不会出现重叠问题
-
-            // 这里我们需要拿到mFragments的引用,也可以通过getSupportFragmentManager.getFragments()自行进行判断查找(效率更高些),用下面的方法查找更方便些
-            mFragments[FIRST] = findFragment(ZhihuFirstFragment.class);
-            mFragments[SECOND] = findFragment(ZhihuSecondFragment.class);
-            mFragments[THIRD] = findFragment(ZhihuThirdFragment.class);
-            mFragments[FOURTH] = findFragment(ZhihuFourthFragment.class);
-        }
-
-
         PipeLine.get();
         CollectionManager.get().getUserCollection().loadMediaItems(false);
         setContentView(R.layout.tomahawk_main_activity);
@@ -567,11 +540,7 @@ public class TomahawkMainActivity extends SupportActivity {
         }*/
 
 
-
-
-
-
-
+        //initView();
 
 
 
@@ -1098,4 +1067,14 @@ public class TomahawkMainActivity extends SupportActivity {
     public void showGradientActionBar() {
         findViewById(R.id.action_bar_background).setBackgroundResource(R.drawable.below_shadow);
     }
+
+
+
+
+
+
+
+
+
+
 }

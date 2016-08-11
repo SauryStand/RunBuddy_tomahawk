@@ -11,7 +11,6 @@ import com.fragmentation.Fragmentation;
 import com.fragmentation.SupportFragment;
 
 import org.runbuddy.tomahawk_android.demo_zhihu.ui.fragment.first.ZhihuFirstFragment;
-import org.runbuddy.tomahawk_android.demo_zhihu.ui.fragment.first.child.FirstHomeFragment;
 import org.runbuddy.tomahawk_android.demo_zhihu.ui.fragment.fourth.ZhihuFourthFragment;
 import org.runbuddy.tomahawk_android.demo_zhihu.ui.fragment.second.ZhihuSecondFragment;
 import org.runbuddy.tomahawk_android.demo_zhihu.ui.fragment.third.ZhihuThirdFragment;
@@ -38,10 +37,10 @@ public class PopularPageFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                          Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //getActivity().setTitle(R.string.drawer_title_popularpage);
+        getActivity().setTitle(R.string.drawer_title_popularpage);
         View view = inflater.inflate(R.layout.zhihu_activity_main, container, false);
 
-        /*一定要继承activity的
+        /*
         if(savedInstanceState == null){
             mFragments[FIRST] = ZhihuFirstFragment.newInstance();
             mFragments[SECOND] = ZhihuSecondFragment.newInstance();
@@ -92,11 +91,11 @@ public class PopularPageFragment extends Fragment {
             public void onTabReselected(int position) {
                 SupportFragment currentFragment = mFragments[position];
                 int count = currentFragment.getChildFragmentManager().getBackStackEntryCount();
-
+                //Toast.makeText(getContext(), "asd", Toast.LENGTH_SHORT).show();
                 // 如果不在该类别Fragment的主页,则回到主页;
                 if (count > 1) {
                     if (currentFragment instanceof ZhihuFirstFragment) {
-                        currentFragment.popToChild(FirstHomeFragment.class, false);
+                        //currentFragment.popToChild(FirstHomeFragment.class, false);
                     } else if (currentFragment instanceof ZhihuSecondFragment) {
                         //currentFragment.popToChild(ViewPagerFragment.class, false);
                     } else if (currentFragment instanceof ZhihuThirdFragment) {

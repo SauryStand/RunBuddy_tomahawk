@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
 /*   == This file is part of Tomahawk Player - <http://tomahawk-player.org> ===
  *
  *   Copyright 2014, Enno Gottschalk <mrmaffen@googlemail.com>
@@ -19,50 +18,58 @@
  */
 -->
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:id="@+id/fragment_layout"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+    android:id="@+id/fragment_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <ViewStub android:id="@+id/imageview_grid_one_stub"
-              android:inflatedId="@+id/imageview_grid_one"
-              android:layout="@layout/imageview_grid_one_content_header"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"/>
+    <ViewStub
+        android:id="@+id/imageview_grid_one_stub"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inflatedId="@+id/imageview_grid_one"
+        android:layout="@layout/imageview_grid_one_content_header" />
 
-    <ViewStub android:id="@+id/imageview_grid_two_stub"
-              android:inflatedId="@+id/imageview_grid_two"
-              android:layout="@layout/imageview_grid_two_content_header"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"/>
+    <ViewStub
+        android:id="@+id/imageview_grid_two_stub"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inflatedId="@+id/imageview_grid_two"
+        android:layout="@layout/imageview_grid_two_content_header" />
 
-    <ViewStub android:id="@+id/imageview_grid_three_stub"
-              android:inflatedId="@+id/imageview_grid_three"
-              android:layout="@layout/imageview_grid_three_content_header"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"/>
+    <ViewStub
+        android:id="@+id/imageview_grid_three_stub"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inflatedId="@+id/imageview_grid_three"
+        android:layout="@layout/imageview_grid_three_content_header" />
 
-    <ViewStub android:id="@+id/listview_stub"
-              android:inflatedId="@+id/listview"
-              android:layout="@layout/listview"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"/>
+    <ViewStub
+        android:id="@+id/listview_stub"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:inflatedId="@+id/listview"
+        android:layout="@layout/listview" />
 
-    <ViewStub android:id="@+id/content_header_stub"
-              android:inflatedId="@+id/content_header"
-              android:layout="@layout/content_header"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"/>
+    <ViewStub
+        android:id="@+id/content_header_stub"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inflatedId="@+id/content_header"
+        android:layout="@layout/content_header" />
 
-    <ViewStub android:id="@+id/content_header_static_stub"
-              android:inflatedId="@+id/content_header_static"
-              android:layout="@layout/content_header_static"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"/>
+    <ViewStub
+        android:id="@+id/content_header_static_stub"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inflatedId="@+id/content_header_static"
+        android:layout="@layout/content_header_static" />
 
-    <ViewStub android:id="@+id/content_header_user_stub"
-              android:inflatedId="@+id/content_header_user"
-              android:layout="@layout/content_header_user"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"/>
+    <ViewStub
+        android:id="@+id/content_header_user_stub"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inflatedId="@+id/content_header_user"
+        android:layout="@layout/content_header_user" />
+
 
 </FrameLayout>
