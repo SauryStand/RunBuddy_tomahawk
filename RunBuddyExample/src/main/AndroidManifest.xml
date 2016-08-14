@@ -803,6 +803,12 @@
                   android:launchMode="singleInstance"
                   android:excludeFromRecents="true"
                   android:finishOnTaskLaunch="true"/>
+
+        <activity android:name="org.runbuddy.Device.CounterSensor.SensorActivity">
+
+        </activity>
+
+
     </application>
 
 </manifest>

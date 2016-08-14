@@ -2,7 +2,6 @@ package org.runbuddy.tomahawk_android.demo_zhihu.ui.fragment;
 
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +9,10 @@ import android.view.ViewGroup;
 import com.fragmentation.Fragmentation;
 import com.fragmentation.SupportFragment;
 
+import org.greenrobot.eventbus.EventBus;
+import org.runbuddy.tomahawk_android.demo_zhihu.basic.BaseFragment;
+import org.runbuddy.tomahawk_android.demo_zhihu.basic.BaseLazyMainFragment;
+import org.runbuddy.tomahawk_android.demo_zhihu.event.TabSelectedEvent;
 import org.runbuddy.tomahawk_android.demo_zhihu.ui.fragment.first.ZhihuFirstFragment;
 import org.runbuddy.tomahawk_android.demo_zhihu.ui.fragment.first.child.FirstHomeFragment;
 import org.runbuddy.tomahawk_android.demo_zhihu.ui.fragment.fourth.ZhihuFourthFragment;
@@ -19,10 +22,12 @@ import org.runbuddy.tomahawk_android.demo_zhihu.ui.view.BottomBar;
 import org.runbuddy.tomahawk_android.demo_zhihu.ui.view.BottomBarTab;
 import org.tomahawk.tomahawk_android.R;
 
+import javax.annotation.Nullable;
+
 /**
  * Created by Johnny Chow on 2016/8/7.
  */
-public class PopularPageFragment extends Fragment {
+public class PopularPageFragment extends BaseFragment implements BaseLazyMainFragment.OnBackToFirstListener {
     private Fragmentation mFragmentation;
     public static final int FIRST = 0;
     public static final int SECOND = 1;
@@ -32,16 +37,17 @@ public class PopularPageFragment extends Fragment {
     private SupportFragment[] mFragments = new SupportFragment[4];
     private BottomBar mBottomBar;
 
-
+    /*
+    @Override 重写父类的方法.
+    @Nullable 表示定义的字段可以为空.
+     */
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                         Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //getActivity().setTitle(R.string.drawer_title_popularpage);
+        getActivity().setTitle(R.string.drawer_title_popularpage);
         View view = inflater.inflate(R.layout.zhihu_activity_main, container, false);
 
-        /*一定要继承activity的
         if(savedInstanceState == null){
             mFragments[FIRST] = ZhihuFirstFragment.newInstance();
             mFragments[SECOND] = ZhihuSecondFragment.newInstance();
@@ -59,7 +65,7 @@ public class PopularPageFragment extends Fragment {
             mFragments[SECOND] = findFragment(ZhihuSecondFragment.class);
             mFragments[THIRD] = findFragment(ZhihuThirdFragment.class);
             mFragments[FOURTH] = findFragment(ZhihuFourthFragment.class);
-        }*/
+        }
 
         initView(view);
 
@@ -92,7 +98,7 @@ public class PopularPageFragment extends Fragment {
             public void onTabReselected(int position) {
                 SupportFragment currentFragment = mFragments[position];
                 int count = currentFragment.getChildFragmentManager().getBackStackEntryCount();
-
+                //Toast.makeText(getContext(), "asd", Toast.LENGTH_SHORT).show();
                 // 如果不在该类别Fragment的主页,则回到主页;
                 if (count > 1) {
                     if (currentFragment instanceof ZhihuFirstFragment) {
@@ -106,6 +112,14 @@ public class PopularPageFragment extends Fragment {
                     }
                     return;
                 }
+                // 这里推荐使用EventBus来实现 -> 解耦
+                if(count == 1){
+                    // 在FirstPagerFragment中接收, 因为是嵌套的孙子Fragment 所以用EventBus比较方便
+                    // 主要为了交互: 重选tab 如果列表不在顶部则移动到顶部,如果已经在顶部,则刷新
+                    EventBus.getDefault().post(new TabSelectedEvent(position));
+                }
+
+
 
             }
         });
@@ -113,4 +127,8 @@ public class PopularPageFragment extends Fragment {
     }
 
 
+    @Override
+    public void onBackToFirstFragment() {
+
+    }
 }
