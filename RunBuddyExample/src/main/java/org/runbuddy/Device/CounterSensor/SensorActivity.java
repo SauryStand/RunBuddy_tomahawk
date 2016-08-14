@@ -21,10 +21,11 @@ import java.util.ArrayList;
  */
 public class SensorActivity extends Activity implements SensorHub.DataClient {
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.item_trainning_detail_listview_home);
-
+        //getSupportActionBar().setTitle("");
+        //这里应该加个title,flag2016.08.14
         Bundle data = getIntent().getExtras();
         Long sid = data.getLong("sensorID");
         mSensorHub = SensorHub.getInstance(getApplicationContext());
@@ -33,7 +34,7 @@ public class SensorActivity extends Activity implements SensorHub.DataClient {
 
     private void resetConsole() {
         String text = "Name: " + mSensor.getName() +
-                "\nType: " + SensorListAdapter.sensorName(Sensor.TYPE_STEP_COUNTER) +
+                "\nType: " + SensorListAdapter.sensorName(mSensor.getType()) +
                 "\nVendor: " + mSensor.getVendor() +
                 "\nVersion: " + mSensor.getVersion() +
                 "\nRange: " + mSensor.getMaximumRange() +
@@ -94,7 +95,7 @@ public class SensorActivity extends Activity implements SensorHub.DataClient {
         super.onPause();
         mSensorHub.stopSensor(mSensor, this);
     }
-
+    /******************flag is on top****************************/
 
     private SensorHub mSensorHub;
     private Sensor mSensor;
@@ -110,7 +111,7 @@ public class SensorActivity extends Activity implements SensorHub.DataClient {
         if (Thread.currentThread().getId() == mTID) {
             //In the main thread
             mTextView.append("\n");
-            mTextView.append(data + "www");
+            mTextView.append(data + "step");
         } else {
             mHandler.post(new Runnable() {
                 @Override

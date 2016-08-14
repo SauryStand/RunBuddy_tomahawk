@@ -10,10 +10,10 @@ import org.runbuddy.libtomahawk.collection.UserCollection;
 import org.tomahawk.tomahawk_android.R;
 
 /**
- * Created by Jonney Chou on 2016/7/26.
+ * Created by Jnhnny Chow on 2016/7/26.
+ * 这个类暂时不用
  */
 public class MylocalPlayListFragment extends PagerFragment {
-
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {

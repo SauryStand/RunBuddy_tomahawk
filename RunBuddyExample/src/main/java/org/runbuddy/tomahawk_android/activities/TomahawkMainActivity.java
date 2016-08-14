@@ -87,6 +87,7 @@ import org.runbuddy.libtomahawk.utils.ViewUtils;
 import org.runbuddy.libtomahawk.utils.parser.XspfParser;
 import org.runbuddy.tomahawk_android.TomahawkApp;
 import org.runbuddy.tomahawk_android.adapters.SuggestionSimpleCursorAdapter;
+import org.runbuddy.tomahawk_android.demo_zhihu.basic.BaseLazyMainFragment;
 import org.runbuddy.tomahawk_android.demo_zhihu.ui.view.BottomBar;
 import org.runbuddy.tomahawk_android.dialogs.GMusicConfigDialog;
 import org.runbuddy.tomahawk_android.dialogs.InstallPluginConfigDialog;
@@ -126,7 +127,7 @@ import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
  * The main Tomahawk activity
  * 原本继承的是appcompaActivity的
  */
-public class TomahawkMainActivity extends SupportActivity {
+public class TomahawkMainActivity extends SupportActivity implements BaseLazyMainFragment.OnBackToFirstListener {
 
     public static final int FIRST = 0;
     public static final int SECOND = 1;
@@ -230,6 +231,11 @@ public class TomahawkMainActivity extends SupportActivity {
             mShouldShowAnimationHandler.postDelayed(mShouldShowAnimationRunnable, 500);
         }
     };
+
+    @Override
+    public void onBackToFirstFragment() {
+
+    }
 
     public static class ShowWebViewEvent {
 

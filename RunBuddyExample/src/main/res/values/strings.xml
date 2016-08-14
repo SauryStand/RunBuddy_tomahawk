@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-    <string name="app_name" translate="false">Tomahawk</string>
+    <string name="app_name" translate="false">RunBuddy</string>
     <string name="hello_world">Hello world!</string>
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
