@@ -95,7 +95,10 @@ public class SensorActivity extends Activity implements SensorHub.DataClient {
         super.onPause();
         mSensorHub.stopSensor(mSensor, this);
     }
-    /******************flag is on top****************************/
+
+    /******************
+     * flag is on top
+     ****************************/
 
     private SensorHub mSensorHub;
     private Sensor mSensor;

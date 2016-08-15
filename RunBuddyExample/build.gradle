@@ -118,6 +118,7 @@ android {
             versionCode Integer.parseInt("7$defaultConfig.versionCode")
         }*/
     }
+    sourceSets { main { jni.srcDirs = ['src/main/jni', 'src/main/jni/'] } }
 }
 
 def Properties props = new Properties()
