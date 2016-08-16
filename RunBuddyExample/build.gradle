@@ -19,6 +19,9 @@ android {
         versionName '0.984'
         versionCode 984
     }
+    /*构建jnl，生成.so文件的吧？*/
+
+
 
     lintOptions {
         abortOnError false
@@ -118,6 +121,7 @@ android {
             versionCode Integer.parseInt("7$defaultConfig.versionCode")
         }*/
     }
+    sourceSets { main { jni.srcDirs = ['src/main/jni', 'src/main/jni/'] } }
 }
 
 def Properties props = new Properties()
