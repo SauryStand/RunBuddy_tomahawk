@@ -7,13 +7,13 @@ repositories {
 }
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion '23.0.3'
+    compileSdkVersion 24
+    buildToolsVersion '24.0.1'
 
     defaultConfig {
         minSdkVersion 21
-        targetSdkVersion 23
-        renderscriptTargetApi 21
+        targetSdkVersion 24
+        //renderscriptTargetApi 21
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         renderscriptSupportModeEnabled true
         versionName '0.984'
@@ -149,17 +149,15 @@ dependencies {
     compile('com.stanfy:gson-xml-java:0.1.7') {
         exclude group: 'xmlpull', module: 'xmlpull'
     }
-    compile project(':MPchartlibs')
+    testCompile 'junit:junit:4.12'
     compile files('libs/realm-android-library-1.1.0-sources.jar')
     compile files('libs/realm-annotations-1.1.0.jar')
     compile files('libs/realm-annotations-processor-1.1.0.jar')
     compile files('libs/realm-gradle-plugin-1.1.0.jar')
     compile files('libs/realm-transformer-1.1.0.jar')
     compile files('libs/RemoteMetadataProvider.jar')
-
-
-    compile 'com.android.support:appcompat-v7:23.4.0'
-    compile 'com.android.support:support-v4:23.4.0'
+    compile 'com.android.support:appcompat-v7:24.1.1'
+    compile 'com.android.support:support-v4:24.1.1'
     compile 'se.emilsjolander:stickylistheaders:2.7.0'
     compile 'com.google.code.gson:gson:2.5'
     compile 'com.google.android.gms:play-services-base:8.4.0'
@@ -181,19 +179,21 @@ dependencies {
     compile 'com.daimajia.swipelayout:library:1.2.0@aar'
     compile 'org.jdeferred:jdeferred-android-aar:1.2.4'
     compile 'org.slf4j:slf4j-android:1.7.13'
-    compile 'com.android.support:design:23.4.0'
-    compile 'com.github.PhilJay:MPAndroidChart:v2.2.5'
+    compile 'com.android.support:design:24.1.1'
+    //compile 'com.github.PhilJay:MPAndroidChart:v2.2.5'
     compile 'com.github.PhilJay:MPAndroidChart-Realm:v1.1.0@aar'
-    compile 'com.android.support:cardview-v7:23.4.0'
+    compile 'com.android.support:cardview-v7:24.1.1'
     compile 'org.greenrobot:eventbus:3.0.0'
     //module dependency
     compile project(':fragmentation_swipeback')
     compile project(':fragmentation')
+    compile project(':MPChartLib')
 }
 
 repositories {
     maven { url "https://jitpack.io" }
-    maven { // this is for realm-db
+    maven {
+        // this is for realm-db
         url 'http://oss.jfrog.org/artifactory/oss-snapshot-local'
     }
 }

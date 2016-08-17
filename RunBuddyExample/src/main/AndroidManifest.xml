@@ -804,9 +804,7 @@
                   android:excludeFromRecents="true"
                   android:finishOnTaskLaunch="true"/>
 
-        <activity android:name="org.runbuddy.Device.CounterSensor.SensorActivity">
-
-        </activity>
+        <activity android:name="org.runbuddy.Device.CounterSensor.SensorActivity"></activity>
 
 
     </application>

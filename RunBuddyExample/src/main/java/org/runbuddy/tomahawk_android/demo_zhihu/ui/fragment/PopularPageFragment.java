@@ -2,6 +2,7 @@ package org.runbuddy.tomahawk_android.demo_zhihu.ui.fragment;
 
 
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,8 +11,6 @@ import com.fragmentation.Fragmentation;
 import com.fragmentation.SupportFragment;
 
 import org.greenrobot.eventbus.EventBus;
-import org.runbuddy.tomahawk_android.demo_zhihu.basic.BaseFragment;
-import org.runbuddy.tomahawk_android.demo_zhihu.basic.BaseLazyMainFragment;
 import org.runbuddy.tomahawk_android.demo_zhihu.event.TabSelectedEvent;
 import org.runbuddy.tomahawk_android.demo_zhihu.ui.fragment.first.ZhihuFirstFragment;
 import org.runbuddy.tomahawk_android.demo_zhihu.ui.fragment.first.child.FirstHomeFragment;
@@ -26,8 +25,9 @@ import javax.annotation.Nullable;
 
 /**
  * Created by Johnny Chow on 2016/8/7.
+ * 暂时不能用basefragment，因为会无法监听返回,2016.08.17
  */
-public class PopularPageFragment extends BaseFragment implements BaseLazyMainFragment.OnBackToFirstListener {
+public class PopularPageFragment extends Fragment {
     private Fragmentation mFragmentation;
     public static final int FIRST = 0;
     public static final int SECOND = 1;
@@ -44,10 +44,10 @@ public class PopularPageFragment extends BaseFragment implements BaseLazyMainFra
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        getActivity().setTitle(R.string.drawer_title_popularpage);
+        //super.onCreate(savedInstanceState);
+        //getActivity().setTitle(R.string.drawer_title_popularpage);
         View view = inflater.inflate(R.layout.zhihu_activity_main, container, false);
-
+        /*
         if(savedInstanceState == null){
             mFragments[FIRST] = ZhihuFirstFragment.newInstance();
             mFragments[SECOND] = ZhihuSecondFragment.newInstance();
@@ -65,7 +65,7 @@ public class PopularPageFragment extends BaseFragment implements BaseLazyMainFra
             mFragments[SECOND] = findFragment(ZhihuSecondFragment.class);
             mFragments[THIRD] = findFragment(ZhihuThirdFragment.class);
             mFragments[FOURTH] = findFragment(ZhihuFourthFragment.class);
-        }
+        }*/
 
         initView(view);
 
@@ -126,9 +126,4 @@ public class PopularPageFragment extends BaseFragment implements BaseLazyMainFra
 
     }
 
-
-    @Override
-    public void onBackToFirstFragment() {
-
-    }
 }

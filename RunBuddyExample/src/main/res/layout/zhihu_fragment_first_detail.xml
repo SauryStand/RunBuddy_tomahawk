@@ -27,7 +27,6 @@
         android:textSize="18sp" />
 
 
-
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -40,6 +39,8 @@
         android:id="@+id/click_me"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="click me"
-        android:layout_gravity="left|bottom" />
+        android:layout_gravity="left|bottom"
+        android:text="click me" />
+
+
 </FrameLayout>
