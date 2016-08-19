@@ -1,8 +1,10 @@
 <<<<<<< HEAD
-## tomahawk-android
+## RunBuddy is open source code 
+## you can get more information from tomahawk-android , which alse is open source codes
 
+*You kown thins will change ,life is fun yet so strange*
 *Music is everywhere, now you don’t have to be!*
-
+**
 Tomahawk, the critically acclaimed multi-source music player, is now available on Android. Given the name of an artist, album or song Tomahawk will find the best available source and play it - whether that be from Spotify, Deezer, GMusic, Soundcloud, Tidal, Official.fm, Jamendo, Beets, Ampache, Subsonic or your phone’s local storage.
 Tomahawk for Android also syncs your history, your loved tracks, artists, albums and your playlists to/from the desktop version of Tomahawk via our new music community, Hatchet. On Hatchet you can hear your friends' favorite tracks and see what they're currently listening to.
 

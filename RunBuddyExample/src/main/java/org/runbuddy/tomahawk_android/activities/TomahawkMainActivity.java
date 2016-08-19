@@ -56,9 +56,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.fragmentation.Fragmentation;
 import com.fragmentation.SupportActivity;
-import com.fragmentation.SupportFragment;
 import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 import com.uservoice.uservoicesdk.Config;
 import com.uservoice.uservoicesdk.UserVoice;
@@ -88,7 +86,6 @@ import org.runbuddy.libtomahawk.utils.parser.XspfParser;
 import org.runbuddy.tomahawk_android.TomahawkApp;
 import org.runbuddy.tomahawk_android.adapters.SuggestionSimpleCursorAdapter;
 import org.runbuddy.tomahawk_android.demo_zhihu.basic.BaseLazyMainFragment;
-import org.runbuddy.tomahawk_android.demo_zhihu.ui.view.BottomBar;
 import org.runbuddy.tomahawk_android.dialogs.GMusicConfigDialog;
 import org.runbuddy.tomahawk_android.dialogs.InstallPluginConfigDialog;
 import org.runbuddy.tomahawk_android.dialogs.WarnOldPluginDialog;
@@ -129,11 +126,6 @@ import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
  */
 public class TomahawkMainActivity extends SupportActivity implements BaseLazyMainFragment.OnBackToFirstListener {
 
-    public static final int FIRST = 0;
-    public static final int SECOND = 1;
-    public static final int THIRD = 2;
-    public static final int FOURTH = 3;
-
     private final static String TAG = TomahawkMainActivity.class.getSimpleName();
     public static final String SAVED_PLAYBACK_STATE = "saved_playback_state";
     public static final String SHOW_PLAYBACKFRAGMENT_ON_STARTUP
@@ -142,11 +134,6 @@ public class TomahawkMainActivity extends SupportActivity implements BaseLazyMai
     private MediaBrowserCompat mMediaBrowser;
     private int mPlaybackState = PlaybackStateCompat.STATE_NONE;
     //NavigationView navigationView;2016.08.10设置成注释状态
-    private SupportFragment[] mFragments = new SupportFragment[4];
-    private BottomBar mBottomBar;
-
-    private Fragmentation mFragmentation;
-
 
     private final MediaBrowserCompat.ConnectionCallback mConnectionCallback =
             new MediaBrowserCompat.ConnectionCallback() {

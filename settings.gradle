@@ -1,1 +1,1 @@
-include ':RunBuddyExample', ':MPchartlibs', ':fragmentation', ':fragmentation_swipeback'
+include ':RunBuddyExample', ':MPChartLib', ':fragmentation', ':fragmentation_swipeback'
