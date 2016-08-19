@@ -47,7 +47,7 @@
 
     <application
             android:name="org.runbuddy.tomahawk_android.TomahawkApp"
-            android:icon="@drawable/ic_action_headphones"
+            android:icon="@drawable/zombies"
             android:label="@string/app_name"
             android:allowBackup="true"
             android:theme="@style/Theme.Tomahawk">
@@ -805,6 +805,7 @@
                   android:finishOnTaskLaunch="true"/>
 
         <activity android:name="org.runbuddy.Device.CounterSensor.SensorActivity"></activity>
+        <activity android:name="org.runbuddy.Intricate_Charts.ListViewMultiChartActivity"></activity>
 
 
     </application>

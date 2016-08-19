@@ -16,8 +16,8 @@ android {
         //renderscriptTargetApi 21
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         renderscriptSupportModeEnabled true
-        versionName '0.984'
-        versionCode 984
+        versionName '0.5.1'
+        versionCode 1
     }
     /*构建jnl，生成.so文件的吧？*/
 
