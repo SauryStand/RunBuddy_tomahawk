@@ -1,4 +1,4 @@
-package org.runbuddy.tomahawk_android.demo_zhihu.ui.fragment.second;
+package org.runbuddy.tomahawk_android.demo_zhihu.ui.fragment.second.child;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,14 +8,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import org.runbuddy.tomahawk_android.demo_zhihu.basic.BaseBackFragment;
+import org.runbuddy.tomahawk_android.demo_zhihu.adapter.ZhihuPagerFragmentAdapter;
+import org.runbuddy.tomahawk_android.demo_zhihu.basic.BaseFragment;
 import org.tomahawk.tomahawk_android.R;
 
-/**
- * Created by Johnny Chow on 2016/8/11.
- */
-public class ViewPagerFragment extends BaseBackFragment{
 
+/**
+ * Created by YoKeyword on 16/6/5.
+ */
+public class ViewPagerFragment extends BaseFragment {
     private TabLayout mTab;
     private ViewPager mViewPager;
 
@@ -44,8 +45,7 @@ public class ViewPagerFragment extends BaseBackFragment{
         mTab.addTab(mTab.newTab());
         mTab.addTab(mTab.newTab());
 
-        //mViewPager.setAdapter(new ZhihuPagerFragmentAdapter(getChildFragmentManager()));
+        mViewPager.setAdapter(new ZhihuPagerFragmentAdapter(getChildFragmentManager()));
         mTab.setupWithViewPager(mViewPager);
     }
-
 }
