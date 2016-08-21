@@ -12,11 +12,6 @@ import com.fragmentation.SupportFragment;
 
 import org.greenrobot.eventbus.EventBus;
 import org.runbuddy.tomahawk_android.demo_zhihu.event.TabSelectedEvent;
-import org.runbuddy.tomahawk_android.demo_zhihu.ui.fragment.first.ZhihuFirstFragment;
-import org.runbuddy.tomahawk_android.demo_zhihu.ui.fragment.first.child.FirstHomeFragment;
-import org.runbuddy.tomahawk_android.demo_zhihu.ui.fragment.fourth.ZhihuFourthFragment;
-import org.runbuddy.tomahawk_android.demo_zhihu.ui.fragment.second.ZhihuSecondFragment;
-import org.runbuddy.tomahawk_android.demo_zhihu.ui.fragment.third.ZhihuThirdFragment;
 import org.runbuddy.tomahawk_android.demo_zhihu.ui.view.BottomBar;
 import org.runbuddy.tomahawk_android.demo_zhihu.ui.view.BottomBarTab;
 import org.tomahawk.tomahawk_android.R;
@@ -100,7 +95,7 @@ public class PopularPageFragment extends Fragment {
                 int count = currentFragment.getChildFragmentManager().getBackStackEntryCount();
                 //Toast.makeText(getContext(), "asd", Toast.LENGTH_SHORT).show();
                 // 如果不在该类别Fragment的主页,则回到主页;
-                if (count > 1) {
+                /*if (count > 1) {
                     if (currentFragment instanceof ZhihuFirstFragment) {
                         currentFragment.popToChild(FirstHomeFragment.class, false);
                     } else if (currentFragment instanceof ZhihuSecondFragment) {
@@ -111,7 +106,7 @@ public class PopularPageFragment extends Fragment {
                         //currentFragment.popToChild(MeFragment.class, false);
                     }
                     return;
-                }
+                }*/
                 // 这里推荐使用EventBus来实现 -> 解耦
                 if(count == 1){
                     // 在FirstPagerFragment中接收, 因为是嵌套的孙子Fragment 所以用EventBus比较方便

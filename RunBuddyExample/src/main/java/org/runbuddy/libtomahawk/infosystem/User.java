@@ -32,7 +32,7 @@ import org.runbuddy.libtomahawk.collection.PlaylistEntry;
 import org.runbuddy.libtomahawk.resolver.Query;
 import org.runbuddy.libtomahawk.utils.ADeferredObject;
 import org.runbuddy.tomahawk_android.TomahawkApp;
-import org.runbuddy.tomahawk_android.fragments.SocialActionsFragment;
+import org.runbuddy.tomahawk_android.fragments.star_page.SocialActionsFragment;
 import org.tomahawk.tomahawk_android.R;
 
 import java.util.ArrayList;

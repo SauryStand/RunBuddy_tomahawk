@@ -37,10 +37,10 @@ import org.runbuddy.tomahawk_android.fragments.LocalMusicListFragment;
 import org.runbuddy.tomahawk_android.fragments.PlaylistEntriesFragment;
 import org.runbuddy.tomahawk_android.fragments.PlaylistsFragment;
 import org.runbuddy.tomahawk_android.fragments.PreferencePagerFragment;
-import org.runbuddy.tomahawk_android.fragments.SocialActionsFragment;
 import org.runbuddy.tomahawk_android.fragments.StationsFragment;
 import org.runbuddy.tomahawk_android.fragments.TomahawkFragment;
 import org.runbuddy.tomahawk_android.fragments.UserPagerFragment;
+import org.runbuddy.tomahawk_android.fragments.star_page.StarPageFragment;
 import org.runbuddy.tomahawk_android.utils.FragmentUtils;
 import org.runbuddy.tomahawk_android.utils.MenuDrawer;
 
@@ -96,6 +96,10 @@ public class MenuDrawerListener implements ListView.OnItemClickListener {
                 }
             });
         } else if (holder.id.equals(MenuDrawer.HUB_ID_FEED)) {
+            bundle.putInt(TomahawkFragment.CONTENT_HEADER_MODE,
+                    ContentHeaderFragment.MODE_ACTIONBAR_FILLED);
+            FragmentUtils.replace(mActivity, StarPageFragment.class, bundle);//测试用，临时改了
+            /*不需要传用户信息
             User.getSelf().done(new DoneCallback<User>() {
                 @Override
                 public void onDone(User user) {
@@ -111,7 +115,8 @@ public class MenuDrawerListener implements ListView.OnItemClickListener {
                         }
                     });
                 }
-            });
+            });*/
+
         } else if (holder.id.equals(MenuDrawer.HUB_ID_CHARTS)) {
             FragmentUtils
                     .replace(mActivity, ChartsSelectorFragment.class, bundle);
@@ -176,7 +181,7 @@ public class MenuDrawerListener implements ListView.OnItemClickListener {
             bundle.putInt(TomahawkFragment.CONTENT_HEADER_MODE,
                     ContentHeaderFragment.MODE_HEADER_STATIC_SMALL);//flag
             FragmentUtils.replace(mActivity, LocalMusicListFragment.class, bundle);
-        }else if(holder.id.equals(MenuDrawer.HUB_ID_POPULARPAGE)){
+        } else if (holder.id.equals(MenuDrawer.HUB_ID_POPULARPAGE)) {
             bundle.putInt(TomahawkFragment.CONTENT_HEADER_MODE,
                     ContentHeaderFragment.MODE_HEADER_STATIC_SMALL);//2016.08.07
             FragmentUtils.replace(mActivity, ViewPagerFragment.class, bundle);//测试用，临时改了
