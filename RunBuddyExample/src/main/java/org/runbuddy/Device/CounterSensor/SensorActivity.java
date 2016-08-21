@@ -82,7 +82,6 @@ public class SensorActivity extends Activity implements SensorHub.DataClient {
         mTextView = (TextView) findViewById(R.id.sensor);
         mConsoleButton = (Button) findViewById(R.id.ClearText);
         mConsoleSwitch = (Switch) findViewById(R.id.SwitchTextPrint);
-        bar_charts = (Button)findViewById(R.id.Chart_complex);
         resetConsole();
         mTextView.setMovementMethod(new ScrollingMovementMethod());
         mConsoleSwitch.setChecked(false);
@@ -103,7 +102,7 @@ public class SensorActivity extends Activity implements SensorHub.DataClient {
     private SensorHub mSensorHub;
     private Sensor mSensor;
     private TextView mTextView;
-    private Button mConsoleButton,bar_charts;
+    private Button mConsoleButton;
     private Switch mConsoleSwitch;
     private Handler mHandler;
     private long mTID;

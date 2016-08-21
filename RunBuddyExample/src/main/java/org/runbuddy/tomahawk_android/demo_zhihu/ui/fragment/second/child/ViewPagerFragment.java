@@ -33,6 +33,8 @@ public class ViewPagerFragment extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.zhihu_fragment_second_pager, container, false);
+        getActivity().setTitle(R.string.drawer_title_popularpage);
+
         initView(view);
         return view;
     }
@@ -48,4 +50,15 @@ public class ViewPagerFragment extends BaseFragment {
         mViewPager.setAdapter(new ZhihuPagerFragmentAdapter(getChildFragmentManager()));
         mTab.setupWithViewPager(mViewPager);
     }
+
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+
+    }
+
+
+
+
 }

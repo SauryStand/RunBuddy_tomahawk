@@ -36,7 +36,7 @@ import org.runbuddy.tomahawk_android.fragments.CollectionPagerFragment;
 import org.runbuddy.tomahawk_android.fragments.ContentHeaderFragment;
 import org.runbuddy.tomahawk_android.fragments.ContextMenuFragment;
 import org.runbuddy.tomahawk_android.fragments.PlaybackFragment;
-import org.runbuddy.tomahawk_android.fragments.SocialActionsFragment;
+import org.runbuddy.tomahawk_android.fragments.star_page.SocialActionsFragment;
 import org.runbuddy.tomahawk_android.fragments.TomahawkFragment;
 import org.tomahawk.tomahawk_android.R;
 

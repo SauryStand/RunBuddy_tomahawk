@@ -15,11 +15,13 @@
  *   You should have received a copy of the GNU General Public License
  *   along with Tomahawk. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.runbuddy.tomahawk_android.fragments;
+package org.runbuddy.tomahawk_android.fragments.star_page;
 
 import android.os.Bundle;
+import android.support.design.widget.NavigationView;
 import android.support.v4.media.session.PlaybackStateCompat;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AbsListView;
 
@@ -38,6 +40,11 @@ import org.runbuddy.tomahawk_android.TomahawkApp;
 import org.runbuddy.tomahawk_android.activities.TomahawkMainActivity;
 import org.runbuddy.tomahawk_android.adapters.Segment;
 import org.runbuddy.tomahawk_android.adapters.TomahawkListAdapter;
+import org.runbuddy.tomahawk_android.fragments.ArtistPagerFragment;
+import org.runbuddy.tomahawk_android.fragments.ContentHeaderFragment;
+import org.runbuddy.tomahawk_android.fragments.PlaylistEntriesFragment;
+import org.runbuddy.tomahawk_android.fragments.TomahawkFragment;
+import org.runbuddy.tomahawk_android.fragments.UserPagerFragment;
 import org.runbuddy.tomahawk_android.utils.FragmentUtils;
 import org.runbuddy.tomahawk_android.utils.IdGenerator;
 import org.runbuddy.tomahawk_android.utils.ThreadManager;
@@ -58,7 +65,7 @@ import se.emilsjolander.stickylistheaders.StickyListHeadersListView;
  * by a User object. Such as the image, feed and nowPlaying info of a user.
  */
 public class SocialActionsFragment extends TomahawkFragment implements
-        StickyListHeadersListView.OnHeaderClickListener {
+        StickyListHeadersListView.OnHeaderClickListener,NavigationView.OnNavigationItemSelectedListener {
 
     private static final String TAG = SocialActionsFragment.class.getSimpleName();
 
@@ -365,4 +372,16 @@ public class SocialActionsFragment extends TomahawkFragment implements
         builder.leftExtraPadding(extraPadding);
         return builder.build();
     }
+
+
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+
+        return false;
+    }
+
+
+
+
+
 }

@@ -28,6 +28,7 @@ import org.runbuddy.libtomahawk.infosystem.InfoRequestData;
 import org.runbuddy.libtomahawk.infosystem.InfoSystem;
 import org.runbuddy.libtomahawk.infosystem.User;
 import org.runbuddy.tomahawk_android.TomahawkApp;
+import org.runbuddy.tomahawk_android.fragments.star_page.SocialActionsFragment;
 import org.runbuddy.tomahawk_android.utils.FragmentInfo;
 import org.runbuddy.tomahawk_android.utils.PreferenceUtils;
 import org.tomahawk.tomahawk_android.R;
