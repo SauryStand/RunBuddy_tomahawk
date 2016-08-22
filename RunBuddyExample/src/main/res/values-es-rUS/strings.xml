@@ -89,7 +89,7 @@
   <string name="context_menu_unlove">Ya no me gusta</string>
   <string name="context_menu_share">Compartir</string>
   <string name="contest_menu_share_error">Debes ingresar a Hatchet para poder compartir esta lista de reproducción.</string>
-  <string name="drawer_title_feed">Actividad Reciente</string>
+  <string name="drawer_title_star_runner">Actividad Reciente</string>
   <string name="drawer_title_collection">Colección</string>
   <string name="drawer_title_playlists">Playlists</string>
   <string name="drawer_title_lovedtracks">Favoritas</string>

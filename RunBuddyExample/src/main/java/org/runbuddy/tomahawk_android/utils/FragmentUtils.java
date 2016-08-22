@@ -36,7 +36,6 @@ import org.runbuddy.tomahawk_android.fragments.CollectionPagerFragment;
 import org.runbuddy.tomahawk_android.fragments.ContentHeaderFragment;
 import org.runbuddy.tomahawk_android.fragments.ContextMenuFragment;
 import org.runbuddy.tomahawk_android.fragments.PlaybackFragment;
-import org.runbuddy.tomahawk_android.fragments.star_page.SocialActionsFragment;
 import org.runbuddy.tomahawk_android.fragments.TomahawkFragment;
 import org.tomahawk.tomahawk_android.R;
 
@@ -66,7 +65,18 @@ public class FragmentUtils {
         if (activity.getSupportFragmentManager().findFragmentByTag(ROOT_FRAGMENT_TAG) == null) {
             FragmentTransaction ft = activity.getSupportFragmentManager().beginTransaction();
             Fragment fragment;
+            //judge who is root fragment if account is online
             if (!loggedInUser.isOffline()) {
+                Bundle bundle = new Bundle();
+                bundle.putString(TomahawkFragment.COLLECTION_ID,
+                        TomahawkApp.PLUGINNAME_USERCOLLECTION);
+                bundle.putInt(TomahawkFragment.CONTENT_HEADER_MODE,
+                        ContentHeaderFragment.MODE_HEADER_STATIC);
+                fragment = Fragment.instantiate(activity, CollectionPagerFragment.class.getName(),
+                        bundle);
+                Log.d(TAG, "Added " + CollectionPagerFragment.class.getSimpleName()
+                        + " as root fragment.");
+                /*
                 Bundle bundle = new Bundle();
                 bundle.putString(TomahawkFragment.USER, loggedInUser.getId());
                 bundle.putInt(TomahawkFragment.SHOW_MODE,
@@ -77,6 +87,7 @@ public class FragmentUtils {
                         bundle);
                 Log.d(TAG, "Added " + SocialActionsFragment.class.getSimpleName()
                         + " as root fragment.");
+                */
             } else {
                 Bundle bundle = new Bundle();
                 bundle.putString(TomahawkFragment.COLLECTION_ID,

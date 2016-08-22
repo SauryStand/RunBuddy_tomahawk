@@ -23,25 +23,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Jonney Chou on 2016/8/21.
+ * Created by Johnny Chow on 2016/8/21.
  */
 public class StarPageFragment extends Fragment implements NavigationView.OnNavigationItemSelectedListener,RecyclerViewAdapter.OnItemClickListener {
 
-
+    private static final int PAGE_SIZE = 15;
     public static final String AVATAR_URL = "http://lorempixel.com/200/200/people/1/";
 
     private static List<ViewModel> items = new ArrayList<>();
 
     static {
         for (int i = 1; i <= 20; i++) {
-            items.add(new ViewModel("User:" + i, "http://www.voyager2511.top/temp_file/images/" + i + ".jpg"));//http://lorempixel.com/500/500/animals/
+            items.add(new ViewModel("User:" + i, "http://www.voyager2511.top/temp_file/images/" + i + ".jpg"));
+            //items.add(new ViewModel("test:" + i , "http://gank.io/api/data/%E7%A6%8F%E5%88%A9/" + PAGE_SIZE + "/" + i));
         }
     }
 
     private DrawerLayout drawerLayout;
     private View content;
     private RecyclerView recyclerView;
-    private NavigationView navigationView;
 
 
     @Override

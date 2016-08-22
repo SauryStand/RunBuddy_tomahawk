@@ -13,7 +13,6 @@ import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.view.ViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.graphics.Palette;
-import android.support.v7.widget.Toolbar;
 import android.transition.Slide;
 import android.view.MotionEvent;
 import android.view.View;
@@ -45,15 +44,16 @@ public class DetailActivity extends AppCompatActivity {
 
     @SuppressWarnings("ConstantConditions")
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initActivityTransitions();
         setContentView(R.layout.star_activity_detail);
 
         ViewCompat.setTransitionName(findViewById(R.id.app_bar_layout), EXTRA_IMAGE);
         supportPostponeEnterTransition();
-
-        setSupportActionBar((Toolbar) findViewById(R.id.toolbar));//调用不起toolbar,这里有个bug
+        //此处需要做优化就是让tooltar能够返回数据啊啊撒啊啊啊
+        //// TODO: 2016/8/22  
+        //setSupportActionBar((Toolbar) findViewById(R.id.stat_detial_toolbar));//调用不起toolbar,这里有个bug
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         String itemTitle = getIntent().getStringExtra(EXTRA_TITLE);

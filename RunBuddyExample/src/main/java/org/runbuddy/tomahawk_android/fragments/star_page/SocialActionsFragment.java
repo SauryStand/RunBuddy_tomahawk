@@ -100,7 +100,7 @@ public class SocialActionsFragment extends TomahawkFragment implements
 
         if (mShowMode == SHOW_MODE_DASHBOARD) {
             if (mContainerFragmentClass == null) {
-                getActivity().setTitle(getString(R.string.drawer_title_feed).toUpperCase());
+                getActivity().setTitle(getString(R.string.drawer_title_star_runner).toUpperCase());
             }
             for (Date date : mUser.getFriendsFeed().keySet()) {
                 String requestId = InfoSystem.get().resolveFriendsFeed(mUser, date);

@@ -3,10 +3,10 @@
 
     <item android:drawable="@color/primary_background">
     </item>
-    <!--item>
+    <item>
         <bitmap
             android:gravity="center"
             android:src="@drawable/splash_run">
         </bitmap>
-    </item-->
+    </item>
 </layer-list>
