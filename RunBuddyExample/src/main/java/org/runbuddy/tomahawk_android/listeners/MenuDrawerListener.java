@@ -37,10 +37,10 @@ import org.runbuddy.tomahawk_android.fragments.LocalMusicListFragment;
 import org.runbuddy.tomahawk_android.fragments.PlaylistEntriesFragment;
 import org.runbuddy.tomahawk_android.fragments.PlaylistsFragment;
 import org.runbuddy.tomahawk_android.fragments.PreferencePagerFragment;
-import org.runbuddy.tomahawk_android.fragments.StationsFragment;
 import org.runbuddy.tomahawk_android.fragments.TomahawkFragment;
 import org.runbuddy.tomahawk_android.fragments.UserPagerFragment;
 import org.runbuddy.tomahawk_android.fragments.star_page.StarPageFragment;
+import org.runbuddy.tomahawk_android.ren.solid.ganhuoio.ui.fragment.CategoryFragment;
 import org.runbuddy.tomahawk_android.utils.FragmentUtils;
 import org.runbuddy.tomahawk_android.utils.MenuDrawer;
 
@@ -159,6 +159,10 @@ public class MenuDrawerListener implements ListView.OnItemClickListener {
                 }
             });
         } else if (holder.id.equals(MenuDrawer.HUB_ID_STATIONS)) {
+            bundle.putInt(TomahawkFragment.CONTENT_HEADER_MODE,
+                    ContentHeaderFragment.MODE_HEADER_STATIC);
+            FragmentUtils.replace(mActivity, CategoryFragment.class, bundle);
+            /*
             User.getSelf().done(new DoneCallback<User>() {
                 @Override
                 public void onDone(User user) {
@@ -172,7 +176,7 @@ public class MenuDrawerListener implements ListView.OnItemClickListener {
                         }
                     });
                 }
-            });
+            });*/
         } else if (holder.id.equals(MenuDrawer.HUB_ID_SETTINGS)) {
             bundle.putInt(TomahawkFragment.CONTENT_HEADER_MODE,
                     ContentHeaderFragment.MODE_HEADER_STATIC_SMALL);

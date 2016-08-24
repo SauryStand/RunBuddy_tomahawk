@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.fragmentation.Fragmentation;
 import com.fragmentation.SupportFragment;
 
 import org.greenrobot.eventbus.EventBus;
@@ -23,7 +22,6 @@ import javax.annotation.Nullable;
  * 暂时不能用basefragment，因为会无法监听返回,2016.08.17
  */
 public class PopularPageFragment extends Fragment {
-    private Fragmentation mFragmentation;
     public static final int FIRST = 0;
     public static final int SECOND = 1;
     public static final int THIRD = 2;

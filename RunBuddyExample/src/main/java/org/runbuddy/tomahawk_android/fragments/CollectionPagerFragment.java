@@ -89,14 +89,6 @@ public class CollectionPagerFragment extends PagerFragment {
         fragmentInfoList.addFragmentInfo(fragmentInfo);
         fragmentInfoLists.add(fragmentInfoList);
 
-        fragmentInfoList = new FragmentInfoList();
-        fragmentInfo = new FragmentInfo();
-        fragmentInfo.mClass = PlaylistEntriesFragment.class;
-        fragmentInfo.mTitle = getString(R.string.testing);//Testing2016.08.01
-        fragmentInfo.mBundle = getChildFragmentBundle();
-        fragmentInfoList.addFragmentInfo(fragmentInfo);
-        fragmentInfoLists.add(fragmentInfoList);
-
-        setupPager(fragmentInfoLists, initialPage, null, 3);//就一共4个子fragment啦
+        setupPager(fragmentInfoLists, initialPage, null, 2);//就一共4个子fragment啦
     }
 }
