@@ -37,7 +37,7 @@ public class DetailFragment extends BaseBackFragment {
         fragment.setArguments(bundle);
         return fragment;
     }
-
+    /*
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,9 +46,9 @@ public class DetailFragment extends BaseBackFragment {
         if (bundle != null) {
             mTitle = bundle.getString(ARG_TITLE);
         }
-    }
+    }*/
 
-    @Nullable
+
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_detail, container, false);
@@ -85,7 +85,7 @@ public class DetailFragment extends BaseBackFragment {
         mFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startForResult(ModifyDetailFragment.newInstance(mTitle), REQ_MODIFY_FRAGMENT);
+                //startForResult(ModifyDetailFragment.newInstance(mTitle), REQ_MODIFY_FRAGMENT);
             }
         });
     }
