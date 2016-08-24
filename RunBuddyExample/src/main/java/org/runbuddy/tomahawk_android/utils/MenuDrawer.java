@@ -106,7 +106,7 @@ public class MenuDrawer extends DrawerLayout {
                     holders.add(holder);
                     holder = new TomahawkMenuAdapter.ResourceHolder();
                     holder.id = HUB_ID_FEED;
-                    holder.title = resources.getString(R.string.drawer_title_feed);
+                    holder.title = resources.getString(R.string.drawer_title_star_runner);
                     holder.iconResId = R.drawable.ic_action_dashboard;
                     holders.add(holder);
                 }

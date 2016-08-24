@@ -92,6 +92,8 @@ public class FirstPagerFragment extends BaseFragment implements SwipeRefreshLayo
                 // 这里的DetailFragment在flow包里
                 // 这里是父Fragment启动,要注意 栈层级
                 ((SupportFragment) getParentFragment()).start(DetailFragment.newInstance(mAdapter.getItem(position).getTitle()));
+
+                //DetailFragment.newInstance(mAdapter.getItem(position).getTitle());
             }
         });
 

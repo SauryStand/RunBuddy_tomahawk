@@ -97,7 +97,7 @@
   <string name="context_menu_unlove">不喜欢</string>
   <string name="context_menu_share">分享</string>
   <string name="contest_menu_share_error">你必须登陆到 Hatchet 才能分享此播放列表。</string>
-  <string name="drawer_title_feed">订阅</string>
+  <string name="drawer_title_star_runner">订阅</string>
   <string name="drawer_title_charts">榜单</string>
   <string name="drawer_title_collection">收藏</string>
   <string name="drawer_title_playlists">播放列表</string>
