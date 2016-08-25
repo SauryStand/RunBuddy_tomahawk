@@ -8,16 +8,16 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.fragmentation.SupportFragment;
+
 import org.greenrobot.eventbus.EventBus;
-import org.greenrobot.eventbus.Subscribe;
-import org.runbuddy.tomahawk_android.demo_zhihu.adapter.FirstHomeAdapter;
+import org.runbuddy.tomahawk_android.demo_zhihu.adapter.SecondHomeAdapter;
 import org.runbuddy.tomahawk_android.demo_zhihu.basic.BaseFragment;
 import org.runbuddy.tomahawk_android.demo_zhihu.entity.Article;
-import org.runbuddy.tomahawk_android.demo_zhihu.event.TabSelectedEvent;
 import org.runbuddy.tomahawk_android.demo_zhihu.listener.OnItemClickListener;
-import org.runbuddy.tomahawk_android.demo_zhihu.ui.fragment.PopularPageFragment;
 import org.runbuddy.tomahawk_android.demo_zhihu.ui.fragment.second.child.DetailFragment;
 import org.tomahawk.tomahawk_android.R;
 
@@ -25,28 +25,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-
-
-
-
-
 /**
- * Created by YoKeyword on 16/6/3.
+ * Created by YoKeyword on 16/6/5.
  */
-public class FirstPagerFragment extends BaseFragment implements SwipeRefreshLayout.OnRefreshListener {
+public class SecondPagerFragment extends BaseFragment implements SwipeRefreshLayout.OnRefreshListener  {
+    private static final String ARG_TYPE = "arg_pos";
+    public static int TYPE_HOT = 1;
+    private int mType = TYPE_HOT;
+    private TextView mTvTitle;
     private RecyclerView mRecy;
     private SwipeRefreshLayout mRefreshLayout;
-
-    private FirstHomeAdapter mAdapter;
-
+    private SecondHomeAdapter mAdapter;
     private boolean mAtTop = true;
-
     private int mScrollTotal;
 
     private String[] mTitles = new String[]{
-            "航拍“摩托大军”返乡高峰 如蚂蚁搬家（组图）",
-            "苹果因漏电召回部分电源插头",
-            "IS宣称对叙利亚爆炸案负责"
+            "2航拍“摩托大军”返乡高峰 如蚂蚁搬家（组图）",
+            "2苹果因漏电召回部分电源插头",
+            "2IS宣称对叙利亚爆炸案负责"
     };
 
     private String[] mContents = new String[]{
@@ -55,20 +51,26 @@ public class FirstPagerFragment extends BaseFragment implements SwipeRefreshLayo
             "极端组织“伊斯兰国”31日在社交媒体上宣称，该组织制造了当天在叙利亚首都大马士革发生的连环爆炸案。"
     };
 
-    public static FirstPagerFragment newInstance() {
+
+    public static SecondPagerFragment newInstance(int type) {
 
         Bundle args = new Bundle();
-
-        FirstPagerFragment fragment = new FirstPagerFragment();
+        args.putInt(ARG_TYPE, type);
+        SecondPagerFragment fragment = new SecondPagerFragment();
         fragment.setArguments(args);
         return fragment;
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        mType = getArguments().getInt(ARG_TYPE);
     }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.zhihu_fragment_second_pager_first, container, false);
-        EventBus.getDefault().register(this);
+        View view = inflater.inflate(R.layout.zhihu_fragment_second_pager_second, container, false);
         initView(view);
         return view;
     }
@@ -80,7 +82,7 @@ public class FirstPagerFragment extends BaseFragment implements SwipeRefreshLayo
         mRefreshLayout.setColorSchemeResources(R.color.colorPrimary);
         mRefreshLayout.setOnRefreshListener(this);
 
-        mAdapter = new FirstHomeAdapter(_mActivity);
+        mAdapter = new SecondHomeAdapter(_mActivity);
         LinearLayoutManager manager = new LinearLayoutManager(_mActivity);
         mRecy.setLayoutManager(manager);
         mRecy.setAdapter(mAdapter);
@@ -90,11 +92,10 @@ public class FirstPagerFragment extends BaseFragment implements SwipeRefreshLayo
             public void onItemClick(int position, View view, RecyclerView.ViewHolder vh) {
                 // 这里的DetailFragment在flow包里
                 // 这里是父Fragment启动,要注意 栈层级
-                //((SupportFragment) getParentFragment()).start(DetailFragment.newInstance(mAdapter.getItem(position).getTitle()));
-                //Toast.makeText(getActivity(),"seek for help",Toast.LENGTH_SHORT).show();
-                //((SupportFragment) getParentFragment()).start(DetailFragment.newInstance(position));
-                DetailFragment.newInstance(mAdapter.getItem(position).getTitle());
-                Toast.makeText(getActivity(),"seek for help",Toast.LENGTH_SHORT).show();
+                ((SupportFragment) getParentFragment()).start(DetailFragment.newInstance(mAdapter.getItem(position).getTitle()));
+                Toast.makeText(getContext(),"seek for help",Toast.LENGTH_SHORT).show();
+
+                //DetailFragment.newInstance(mAdapter.getItem(position).getTitle());
             }
         });
 
@@ -121,6 +122,10 @@ public class FirstPagerFragment extends BaseFragment implements SwipeRefreshLayo
         });
     }
 
+    private void scrollToTop() {
+        mRecy.smoothScrollToPosition(0);
+    }
+
     @Override
     public void onRefresh() {
         mRefreshLayout.postDelayed(new Runnable() {
@@ -129,26 +134,6 @@ public class FirstPagerFragment extends BaseFragment implements SwipeRefreshLayo
                 mRefreshLayout.setRefreshing(false);
             }
         }, 2000);
-    }
-
-    private void scrollToTop() {
-        mRecy.smoothScrollToPosition(0);
-    }
-
-    /**
-     * 选择tab事件
-     * 主页面选择，要删掉很多代码
-     */
-    @Subscribe
-    public void onTabSelectedEvent(TabSelectedEvent event) {
-        if (event.position != PopularPageFragment.SECOND) return;
-
-        if (mAtTop) {
-            mRefreshLayout.setRefreshing(true);
-            onRefresh();
-        } else {
-            scrollToTop();
-        }
     }
 
     @Override
