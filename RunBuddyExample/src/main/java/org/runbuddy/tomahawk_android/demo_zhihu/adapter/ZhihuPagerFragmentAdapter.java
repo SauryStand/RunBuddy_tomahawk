@@ -5,14 +5,15 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import org.runbuddy.tomahawk_android.demo_zhihu.ui.fragment.second.child.childpager.FirstPagerFragment;
-import org.runbuddy.tomahawk_android.demo_zhihu.ui.fragment.second.child.childpager.OtherPagerFragment;
+import org.runbuddy.tomahawk_android.demo_zhihu.ui.fragment.second.child.childpager.SecondPagerFragment;
+import org.runbuddy.tomahawk_android.demo_zhihu.ui.fragment.second.child.childpager.ThridPagerFragment;
 
 
 /**
  * Created by YoKeyword on 16/6/5.
  */
 public class ZhihuPagerFragmentAdapter extends FragmentPagerAdapter {
-    private String[] mTab = new String[]{"推荐", "发现", "收藏"};
+    private String[] mTab = new String[]{"推荐", "发现", "身边"};
 
     public ZhihuPagerFragmentAdapter(FragmentManager fm) {
         super(fm);
@@ -22,8 +23,11 @@ public class ZhihuPagerFragmentAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         if (position == 0) {
             return FirstPagerFragment.newInstance();
-        } else {
-            return OtherPagerFragment.newInstance(position);
+        }else if(position == 1){
+            return SecondPagerFragment.newInstance(position);
+        }
+        else {
+            return ThridPagerFragment.newInstance(position);
         }
     }
 

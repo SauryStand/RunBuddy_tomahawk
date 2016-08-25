@@ -20,13 +20,13 @@ import java.util.List;
  * 主页HomeFragment  Adapter
  * Created by YoKeyword on 16/2/1.
  */
-public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> {
+public class FirstHomeAdapter extends RecyclerView.Adapter<FirstHomeAdapter.MyViewHolder> {
     private List<Article> mItems = new ArrayList<>();
     private LayoutInflater mInflater;
 
     private OnItemClickListener mClickListener;
 
-    public HomeAdapter(Context context) {
+    public FirstHomeAdapter(Context context) {
         this.mInflater = LayoutInflater.from(context);
     }
 

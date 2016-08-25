@@ -17,6 +17,13 @@
  */
 package org.runbuddy.libtomahawk.database;
 
+import android.content.ContentValues;
+import android.database.Cursor;
+import android.database.DatabaseUtils;
+import android.database.sqlite.SQLiteDatabase;
+import android.net.Uri;
+import android.util.Log;
+
 import org.runbuddy.libtomahawk.collection.Playlist;
 import org.runbuddy.libtomahawk.collection.PlaylistComparator;
 import org.runbuddy.libtomahawk.collection.PlaylistEntry;
@@ -30,13 +37,6 @@ import org.runbuddy.tomahawk_android.TomahawkApp;
 import org.runbuddy.tomahawk_android.utils.IdGenerator;
 import org.runbuddy.tomahawk_android.utils.MediaWrapper;
 import org.videolan.libvlc.util.AndroidUtil;
-
-import android.content.ContentValues;
-import android.database.Cursor;
-import android.database.DatabaseUtils;
-import android.database.sqlite.SQLiteDatabase;
-import android.net.Uri;
-import android.util.Log;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -119,7 +119,7 @@ public class DatabaseHelper {
      *                       storing in the database
      */
     private void storePlaylist(final String playlistId, final Playlist playlist,
-            final boolean reverseEntries) {
+                               final boolean reverseEntries) {
         List<PlaylistEntry> entries = playlist.getEntries();
 
         ContentValues values = new ContentValues();
@@ -263,7 +263,7 @@ public class DatabaseHelper {
      * @param hatchetId  the new hatchet id to set
      */
     public void updatePlaylistHatchetId(final String playlistId,
-            final String hatchetId) {
+                                        final String hatchetId) {
         Playlist playlist = getEmptyPlaylist(playlistId);
         if (playlist != null) {
             String topArtistsString = "";
@@ -612,7 +612,7 @@ public class DatabaseHelper {
      * org.runbuddy.libtomahawk.collection.Playlist} with the given playlistId
      */
     public void addEntriesToPlaylist(final String playlistId,
-            final ArrayList<PlaylistEntry> entries) {
+                                     final ArrayList<PlaylistEntry> entries) {
         long trackCount = getPlaylistTrackCount(playlistId);
 
         mDatabase.beginTransaction();
