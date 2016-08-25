@@ -24,7 +24,7 @@ public class MyAdapter extends ArrayAdapter<ContentItem> {
         super(context, 0, objects);
 
         mTypeFaceLight = Typeface.createFromAsset(context.getAssets(), "OpenSans-Light.ttf");
-        mTypeFaceRegular = Typeface.createFromAsset(context.getAssets(), "OpenSans-Regular.ttf");
+        mTypeFaceRegular = Typeface.createFromAsset(context.getAssets(), "penSans-Regular.ttf");
     }
 
     @Override

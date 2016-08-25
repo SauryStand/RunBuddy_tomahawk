@@ -17,6 +17,13 @@
  */
 package org.runbuddy.libtomahawk.database;
 
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
+
 import org.runbuddy.libtomahawk.collection.Artist;
 import org.runbuddy.libtomahawk.collection.CollectionManager;
 import org.runbuddy.libtomahawk.collection.DbCollection;
@@ -24,13 +31,6 @@ import org.runbuddy.libtomahawk.resolver.FuzzyIndex;
 import org.runbuddy.libtomahawk.resolver.models.ScriptResolverTrack;
 import org.runbuddy.libtomahawk.utils.StringUtils;
 import org.runbuddy.tomahawk_android.utils.PreferenceUtils;
-
-import android.content.ContentValues;
-import android.content.Context;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -57,7 +57,7 @@ public class CollectionDb extends SQLiteOpenHelper {
 
     public static final String TABLE_ALBUMARTISTS = "albumArtists";
 
-    public static final String ALBUMARTISTS_ALBUMARTIST = "albumArtist";
+    public static final String ALBUMARTISTS_ALBUMARTIST = "albumArtist";// is also a table
 
     public static final String ALBUMARTISTS_ALBUMARTISTDISAMBIGUATION = "albumArtistDisambiguation";
 
@@ -75,13 +75,13 @@ public class CollectionDb extends SQLiteOpenHelper {
 
     public static final String ALBUMS_TYPE = "albumType";
 
-    public static final String TABLE_ARTISTALBUMS = "artistAlbums";
+    public static final String TABLE_ARTISTALBUMS = "artistAlbums";//is a table
 
     public static final String ARTISTALBUMS_ALBUMID = "albumId";
 
     public static final String ARTISTALBUMS_ARTISTID = "artistId";
 
-    public static final String TABLE_TRACKS = "tracks";
+    public static final String TABLE_TRACKS = "tracks";// is a table
 
     public static final String TRACKS_TRACK = "track";
 
@@ -97,9 +97,9 @@ public class CollectionDb extends SQLiteOpenHelper {
 
     public static final String TRACKS_LINKURL = "linkUrl";
 
-    public static final String TRACKS_LASTMODIFIED = "trackLastModified";
+    public static final String TRACKS_LASTMODIFIED = "trackLastModified";//track表
 
-    public static final String TABLE_REVISIONHISTORY = "revisionHistory";
+    public static final String TABLE_REVISIONHISTORY = "revisionHistory";// is a table
 
     public static final String REVISIONHISTORY_ACTION = "action";
 
@@ -195,10 +195,20 @@ public class CollectionDb extends SQLiteOpenHelper {
             + REVISIONHISTORY_REVISION + " TEXT,"
             + REVISIONHISTORY_TIMESTAMP + " INTEGER );";
 
+
+    /*********
+     * 创建stepCounter表
+     **************/
+    public static final String TABLE_STEPCOUNT = "stepCount";
+    private static final String CREATE_TABLE_STEPCOUNT = "CREATE TABLE IF NOT EXISTS"
+            + TABLE_STEPCOUNT + " ("
+            + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,";
+    // // TODO: 2016/8/25
+
+
     private static final int DB_VERSION = 5;
 
-    private static final String DB_FILE_SUFFIX = "_collection.db";
-
+    private static final String DB_FILE_SUFFIX = "_collection.db";//db name
     protected final SQLiteDatabase mDb;
 
     private static final String LAST_COLLECTION_DB_UPDATE_SUFFIX = "_last_collection_db_update";
@@ -619,7 +629,7 @@ public class CollectionDb extends SQLiteOpenHelper {
     }
 
     public synchronized long albumCurrentRevision(String album, String albumArtist,
-            String albumArtistDisambiguation) {
+                                                  String albumArtistDisambiguation) {
         String[] fields = new String[]{ID};
         WhereInfo whereInfo = new WhereInfo();
         whereInfo.connection = "AND";
@@ -666,7 +676,7 @@ public class CollectionDb extends SQLiteOpenHelper {
     }
 
     public synchronized Cursor albumTracks(String album, String albumArtist,
-            String albumArtistDisambiguation) {
+                                           String albumArtistDisambiguation) {
         String[] fields = new String[]{ID};
         WhereInfo whereInfo = new WhereInfo();
         whereInfo.connection = "AND";
@@ -746,8 +756,8 @@ public class CollectionDb extends SQLiteOpenHelper {
     }
 
     private Cursor sqlSelect(String table, String[] fields, WhereInfo where,
-            List<JoinInfo> joinInfos, String[] orderBy, String[] groupBy, String typeColumn,
-            String lastModifiedColumn, boolean filterAllLoved) {
+                             List<JoinInfo> joinInfos, String[] orderBy, String[] groupBy, String typeColumn,
+                             String lastModifiedColumn, boolean filterAllLoved) {
         String whereString = "";
         List<String> allWhereValues = new ArrayList<>();
         if (where != null) {
