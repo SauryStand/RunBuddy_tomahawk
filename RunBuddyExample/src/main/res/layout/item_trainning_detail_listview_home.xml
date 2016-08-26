@@ -50,19 +50,6 @@
     </LinearLayout>
 
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right|bottom"
-        android:layout_marginBottom="24dp"
-        android:layout_marginRight="24dp"
-        android:src="@drawable/ic_home_white_24dp" />
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/localmusic_fragmentpager"
-        android:layout_width="match_parent"
-        android:layout_height="258dp"
-        android:layout_gravity="center_horizontal|bottom" />
 
 </FrameLayout>

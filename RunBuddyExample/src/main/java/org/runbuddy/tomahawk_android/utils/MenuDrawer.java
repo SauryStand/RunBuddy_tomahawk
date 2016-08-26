@@ -143,7 +143,7 @@ public class MenuDrawer extends DrawerLayout {
                 holders.add(holder);
                 holder = new TomahawkMenuAdapter.ResourceHolder();
                 holder.id = HUB_ID_MYSETTING;
-                holder.title = resources.getString(R.string.drawer_title_localList);
+                holder.title = resources.getString(R.string.drawer_title_running_page);
                 holder.iconResId = R.drawable.ic_image_music_note;
                 holders.add(holder);
                 holder = new TomahawkMenuAdapter.ResourceHolder();

@@ -85,6 +85,12 @@ android {
         }
     }
     //多渠道打包
+//    productFlavors {
+//        play {
+//            applicationId = "com.github.glomadrian.dashedprogressbar.demo"
+//        }
+//
+//    }
     /*
     productFlavors {
         armv7a {

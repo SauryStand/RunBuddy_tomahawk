@@ -11,21 +11,32 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.tomahawk.tomahawk_android.R;
-
-import java.util.ArrayList;
 
 /**
  * Created by Jonney Chou on 2016/8/7.
  */
 public class SensorActivity extends Activity implements SensorHub.DataClient {
+
+    private static String step_temp_count;
+
+    public static String getStep_temp_count() {
+        return step_temp_count;
+    }
+
+    public void setStep_temp_count(String step_temp_count) {
+        this.step_temp_count = step_temp_count;
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.item_trainning_detail_listview_home);
         //getSupportActionBar().setTitle("");
         //这里应该加个title,flag2016.08.14
+
         Bundle data = getIntent().getExtras();
         Long sid = data.getLong("sensorID");
         mSensorHub = SensorHub.getInstance(getApplicationContext());
@@ -85,7 +96,6 @@ public class SensorActivity extends Activity implements SensorHub.DataClient {
         resetConsole();
         mTextView.setMovementMethod(new ScrollingMovementMethod());
         mConsoleSwitch.setChecked(false);
-        ArrayList<SensorHub.DataClient> list = mSensorHub.peekSensorClients(mSensor);
         registerHandlers();
 
     }
@@ -109,16 +119,17 @@ public class SensorActivity extends Activity implements SensorHub.DataClient {
 
     @Override
     public void onData(SensorEvent event, final String data) {
-        // TODO Auto-generated method stub
         if (Thread.currentThread().getId() == mTID) {
             //In the main thread
             mTextView.append("\n");
-            mTextView.append(data + "step");
+            String str_num = data.replace(".0", "");
+            mTextView.append(str_num + "step");
+            setStep_temp_count(str_num);
+            Toast.makeText(getApplicationContext(), getStep_temp_count() + "", Toast.LENGTH_LONG).show();
         } else {
             mHandler.post(new Runnable() {
                 @Override
                 public void run() {
-                    // TODO Auto-generated method stub
                     mTextView.append("\n");
                     mTextView.append(data + "asd");
                 }

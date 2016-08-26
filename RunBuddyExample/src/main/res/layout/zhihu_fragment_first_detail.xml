@@ -9,39 +9,31 @@
     <ImageView
         android:id="@+id/img_detail"
         android:layout_width="match_parent"
-        android:layout_height="240dp"
+        android:layout_height="140dp"
         android:scaleType="centerCrop"
         android:src="@drawable/img_1"
         android:transitionName="@string/image_transition"
         tools:ignore="UnusedAttribute" />
 
-    <TextView
-        android:id="@+id/tv_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="272dp"
-        android:text="title"
-        android:textColor="@android:color/black"
-        android:textSize="18sp" />
 
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:popupTheme="@style/AppTheme.NoActionBar.PopupOverlay"
-        app:titleTextAppearance="@style/Toolbar_TextAppearance_White" />
 
-    <Button
-        android:id="@+id/charts_info"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right|bottom"
-        android:text="Charts_info" />
 
+    <com.github.glomadrian.dashedcircularprogress.DashedCircularProgress
+        android:id="@+id/simple_circle"
+        app:external_color="#1affffff"
+        app:base_color="@color/pager_base_color"
+        app:min="0"
+        app:max="100"
+        app:progress_color="@color/material_pink"
+        app:progress_icon="@drawable/speed"
+        app:duration="1000"
+        android:layout_centerInParent="true"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_gravity="center">
+
+    </com.github.glomadrian.dashedcircularprogress.DashedCircularProgress>
 
     <ImageButton
         android:id="@+id/step_counting_btn"
@@ -50,6 +42,13 @@
         android:layout_gravity="center"
         android:src="@drawable/running_48px"
         android:background="#00000000"/>
+
+    <Button
+        android:id="@+id/charts_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|bottom"
+        android:text="Charts_info" />
 
 
 </FrameLayout>
