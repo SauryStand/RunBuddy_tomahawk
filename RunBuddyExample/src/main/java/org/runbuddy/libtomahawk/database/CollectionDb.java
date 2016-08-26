@@ -200,10 +200,14 @@ public class CollectionDb extends SQLiteOpenHelper {
      * 创建stepCounter表
      **************/
     public static final String TABLE_STEPCOUNT = "stepCount";
+    public static final String STEP_COUNT = "stepCount";
+    public static final String FINAL_STEPS = "finalSteps";
     private static final String CREATE_TABLE_STEPCOUNT = "CREATE TABLE IF NOT EXISTS"
             + TABLE_STEPCOUNT + " ("
-            + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,";
-    // // TODO: 2016/8/25
+            + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + STEP_COUNT + "INTEGER ,"
+            + FINAL_STEPS + "INTEGER );";
+
 
 
     private static final int DB_VERSION = 5;
@@ -214,13 +218,9 @@ public class CollectionDb extends SQLiteOpenHelper {
     private static final String LAST_COLLECTION_DB_UPDATE_SUFFIX = "_last_collection_db_update";
 
     public static class WhereInfo {
-
         public String connection;
-
         public Map<String, String[]> where = new HashMap<>();
-
         public boolean equals = true;
-
     }
 
     private static class JoinInfo {
@@ -320,6 +320,7 @@ public class CollectionDb extends SQLiteOpenHelper {
 
         Map<String, Long> artistLastModifiedMap = new HashMap<>();
         // First we insert all artists and albumArtists
+        //这个是插入方法
         mDb.beginTransaction();
         for (ScriptResolverTrack track : tracks) {
             if (albumArtists.get(track.album + "♠" + track.albumArtist).size() > 1) {

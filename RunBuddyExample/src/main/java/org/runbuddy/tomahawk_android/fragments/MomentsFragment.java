@@ -17,7 +17,7 @@ public class MomentsFragment extends PagerFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getActivity().setTitle(R.string.drawer_title_localList);
+        getActivity().setTitle(R.string.drawer_title_running_page);
         View view = inflater.inflate(R.layout.moments_fragments, container, false);
         initView(view);
         return view;

@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -38,16 +39,13 @@ public class ListViewMultiChartActivity extends DemoBase {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_listview_charts);
-
         ListView lv = (ListView) findViewById(R.id.listView1);
-
         ArrayList<ChartItem> list = new ArrayList<ChartItem>();
 
         // 30 items
         for (int i = 0; i < 30; i++) {
-
             if (i % 3 == 0) {
                 list.add(new LineChartItem(generateDataLine(i + 1), getApplicationContext()));
             } else if (i % 3 == 1) {
