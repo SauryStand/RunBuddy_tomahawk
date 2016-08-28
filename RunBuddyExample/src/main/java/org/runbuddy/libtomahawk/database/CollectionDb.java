@@ -200,14 +200,15 @@ public class CollectionDb extends SQLiteOpenHelper {
      * 创建stepCounter表
      **************/
     public static final String TABLE_STEPCOUNT = "stepCount";
-    public static final String STEP_COUNT = "stepCount";
+    public static final String CURRENT_COUNT = "currentStep";
     public static final String FINAL_STEPS = "finalSteps";
-    private static final String CREATE_TABLE_STEPCOUNT = "CREATE TABLE IF NOT EXISTS"
+    public static final String SUBMISSION_DATE = "submissionDate";
+    private static final String CREATE_TABLE_STEPCOUNT = "CREATE TABLE IF NOT EXISTS "
             + TABLE_STEPCOUNT + " ("
             + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-            + STEP_COUNT + "INTEGER ,"
-            + FINAL_STEPS + "INTEGER );";
-
+            + CURRENT_COUNT + " INTEGER,"
+            + FINAL_STEPS + " INTEGER,"
+            + SUBMISSION_DATE + " DATE );";
 
 
     private static final int DB_VERSION = 5;
@@ -263,6 +264,7 @@ public class CollectionDb extends SQLiteOpenHelper {
         db.execSQL(CREATE_TABLE_ARTISTALBUMS);
         db.execSQL(CREATE_TABLE_TRACKS);
         db.execSQL(CREATE_TABLE_REVISIONHISTORY);
+        db.execSQL(CREATE_TABLE_STEPCOUNT);
         Log.d(TAG, "onCreate finished - CollectionDb '" + db.getPath() + "' with version "
                 + db.getVersion() + ", objectId: " + this.hashCode());
     }
