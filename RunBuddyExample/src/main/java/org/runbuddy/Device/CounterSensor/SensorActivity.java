@@ -20,15 +20,16 @@ import org.tomahawk.tomahawk_android.R;
  */
 public class SensorActivity extends Activity implements SensorHub.DataClient {
 
-    private static String step_temp_count;
+    private static int step_temp_count;
 
-    public static String getStep_temp_count() {
+    public static int getStep_temp_count() {
         return step_temp_count;
     }
 
-    public void setStep_temp_count(String step_temp_count) {
+    public void setStep_temp_count(int step_temp_count) {
         this.step_temp_count = step_temp_count;
     }
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -61,31 +62,36 @@ public class SensorActivity extends Activity implements SensorHub.DataClient {
     }
 
     private void registerHandlers() {
-
         mConsoleButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 resetConsole();
             }
         });
-
         final SensorActivity inst = this;
         mConsoleSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 // TODO Auto-generated method stub
+                //打开了开关
                 if (isChecked) {
                     mTID = Thread.currentThread().getId();
                     mHandler = new Handler();
-
                     mSensorHub.startSensor(mSensor, inst);
                 } else {
                     mSensorHub.stopSensor(mSensor, inst);
                 }
             }
         });
+    }
+
+    //入库操作
+    private void insertIntoDB(){
 
     }
+
+
+
 
     public void onResume() {
         super.onResume();
@@ -124,7 +130,7 @@ public class SensorActivity extends Activity implements SensorHub.DataClient {
             mTextView.append("\n");
             String str_num = data.replace(".0", "");
             mTextView.append(str_num + "step");
-            setStep_temp_count(str_num);
+            //setStep_temp_count(Integer.valueOf(str_num));
             Toast.makeText(getApplicationContext(), getStep_temp_count() + "", Toast.LENGTH_LONG).show();
         } else {
             mHandler.post(new Runnable() {

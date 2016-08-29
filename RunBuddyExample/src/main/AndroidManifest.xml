@@ -22,6 +22,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="org.tomahawk.tomahawk_android">
 
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.INTERNET"/>
     <!-- Keep wifi from getting disabled while streaming music -->
     <uses-permission android:name="android.permission.WAKE_LOCK"/>
@@ -37,6 +38,13 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+    <uses-feature
+        android:name="android.hardware.bluetooth_le"
+        android:required="true" />
+
 
     <supports-screens
             android:anyDensity="true"
@@ -228,7 +236,7 @@
                 <category android:name="android.intent.category.BROWSABLE" />
                 <category android:name="android.intent.category.APP_MUSIC"/>
 
-                <data android:scheme="" />
+                <data android:scheme="scheme" />
                 <data android:scheme="file" />
                 <data android:scheme="ftp" />
                 <data android:scheme="content" />
@@ -267,7 +275,7 @@
                 <category android:name="android.intent.category.BROWSABLE" />
                 <category android:name="android.intent.category.APP_MUSIC"/>
 
-                <data android:scheme="" />
+                <data android:scheme="scheme" />
                 <data android:scheme="file" />
                 <data android:scheme="ftp" />
                 <data android:scheme="content" />
@@ -534,7 +542,7 @@
                    android:value="@integer/google_play_services_version"/>
 
         <meta-data android:name="com.google.android.gms.car.notification.SmallIcon"
-                   android:resource="@drawable/ic_notification"/>
+                   android:resource="@drawable/ic_launcher"/>
 
         <receiver android:name="android.support.v4.media.session.MediaButtonReceiver">
             <intent-filter>
@@ -807,6 +815,9 @@
         <activity android:name="org.runbuddy.Device.CounterSensor.SensorActivity"></activity>
         <activity android:name="org.runbuddy.Intricate_Charts.ListViewMultiChartActivity"></activity>
         <activity android:name="org.runbuddy.tomahawk_android.fragments.star_page.widgets.DetailActivity"></activity>
+        <activity android:name="org.runbuddy.Device.BlueTooth.DeviceScanActivity"></activity>
+        <activity android:name="org.runbuddy.Device.BlueTooth.AmoComActivity"></activity>
+        <activity android:name="org.runbuddy.Device.BlueTooth.DetailActivity"></activity>
 
 
     </application>
