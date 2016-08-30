@@ -1,4 +1,4 @@
-package org.runbuddy.CircleImageView;
+package org.runbuddy.tomahawk_android.CircleImageView;
 
 import android.content.Context;
 import android.content.res.TypedArray;

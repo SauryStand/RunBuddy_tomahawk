@@ -19,10 +19,6 @@ android {
         versionName '0.5.1'
         versionCode 1
 
-
-
-
-
     }
     /*
     allprojects {
@@ -153,8 +149,6 @@ if (propFile.canRead()) {
         android.buildTypes.debug.signingConfig = android.signingConfigs.release
     }
 }
-
-
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
