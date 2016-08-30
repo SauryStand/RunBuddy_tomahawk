@@ -24,13 +24,14 @@ android {
 
 
     }
+    /*
     allprojects {
         gradle.projectsEvaluated {
             tasks.withType(JavaCompile) {
                 options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
             }
         }
-    }
+    }*/
 
     /*构建jnl，生成.so文件的吧？*/
     compileOptions {
@@ -79,9 +80,6 @@ android {
         }
     }
 
-    signingConfigs {
-        release
-    }
 
     buildTypes {
         release {
@@ -89,14 +87,17 @@ android {
             minifyEnabled true
             proguardFiles "../proguard-android.txt"
         }
-        debug {
+        /*debug {
             versionNameSuffix "_debug"
             zipAlignEnabled true
-        }
+        }*/
     }
 
     lintOptions {
         abortOnError false
+        ignoreWarnings false
+        //disable 'MissingTranslation'
+        //checkReleaseBuilds false
     }
 
     //多渠道打包
@@ -165,11 +166,11 @@ dependencies {
         exclude group: 'xmlpull', module: 'xmlpull'
     }
     testCompile 'junit:junit:4.12'
-    compile files('libs/realm-android-library-1.1.0-sources.jar')
-    compile files('libs/realm-annotations-1.1.0.jar')
-    compile files('libs/realm-annotations-processor-1.1.0.jar')
-    compile files('libs/realm-gradle-plugin-1.1.0.jar')
-    compile files('libs/realm-transformer-1.1.0.jar')
+    //compile files('libs/realm-android-library-1.1.0-sources.jar')
+    //compile files('libs/realm-annotations-1.1.0.jar')
+    //compile files('libs/realm-annotations-processor-1.1.0.jar')
+    //compile files('libs/realm-gradle-plugin-1.1.0.jar')
+    //compile files('libs/realm-transformer-1.1.0.jar')
     compile files('libs/RemoteMetadataProvider.jar')
     compile 'com.android.support:appcompat-v7:24.1.1'
     compile 'com.android.support:support-v4:24.1.1'
@@ -205,11 +206,10 @@ dependencies {
     compile project(':MPChartLib')
 
     compile 'com.android.support:palette-v7:24.1.0'
-    compile 'com.android.support:recyclerview-v7:24.1.0'
-    compile 'com.android.support:cardview-v7:24.1.0'
+    compile 'com.android.support:recyclerview-v7:24.1.1'
     //compile 'com.github.chrisbanes:PhotoView:1.2.6'
     compile 'com.facebook.fresco:fresco:0.13.0'
-    compile 'org.apache.httpcomponents:httpclient:4.5.2'
+    //compile 'org.apache.httpcomponents:httpclient:4.5.2'
 }
 
 repositories {

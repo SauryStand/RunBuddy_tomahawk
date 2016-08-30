@@ -146,7 +146,7 @@ public class LineChartRenderer extends LineRadarRenderer {
 
             for (int j = mXBounds.min + 1; j <= mXBounds.range + mXBounds.min; j++) {
 
-                prev = dataSet.getEntryForIndex(j - 1);
+                prev = cur;
                 cur = dataSet.getEntryForIndex(j);
 
                 final float cpx = (prev.getX())
@@ -252,8 +252,8 @@ public class LineChartRenderer extends LineRadarRenderer {
         float fillMin = dataSet.getFillFormatter()
                 .getFillLinePosition(dataSet, mChart);
 
-        spline.lineTo(bounds.min + bounds.range, fillMin);
-        spline.lineTo(bounds.min, fillMin);
+        spline.lineTo(dataSet.getEntryForIndex(bounds.min + bounds.range).getX(), fillMin);
+        spline.lineTo(dataSet.getEntryForIndex(bounds.min).getX(), fillMin);
         spline.close();
 
         trans.pathValueToPixel(spline);

@@ -105,8 +105,8 @@ public class BarChartRenderer extends BarLineScatterCandleBubbleRenderer {
             float x;
 
             for (int i = 0, count = Math.min((int)(Math.ceil((float)(dataSet.getEntryCount()) * phaseX)), dataSet.getEntryCount());
-                 i < count;
-                 i++) {
+                i < count;
+                i++) {
 
                 BarEntry e = dataSet.getEntryForIndex(i);
 

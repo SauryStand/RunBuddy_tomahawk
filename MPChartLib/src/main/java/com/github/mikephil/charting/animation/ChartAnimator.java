@@ -3,6 +3,7 @@ package com.github.mikephil.charting.animation;
 
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator.AnimatorUpdateListener;
+import android.annotation.SuppressLint;
 
 /**
  * Object responsible for all animations in the Chart. ANIMATIONS ONLY WORK FOR

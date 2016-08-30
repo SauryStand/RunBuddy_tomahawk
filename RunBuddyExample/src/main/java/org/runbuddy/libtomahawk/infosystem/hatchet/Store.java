@@ -17,12 +17,13 @@
 */
 package org.runbuddy.libtomahawk.infosystem.hatchet;
 
+import android.util.Log;
+
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonIOException;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSyntaxException;
-
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
@@ -45,8 +46,6 @@ import org.runbuddy.libtomahawk.utils.GsonHelper;
 import org.runbuddy.libtomahawk.utils.ISO8601Utils;
 import org.runbuddy.libtomahawk.utils.NetworkUtils;
 import org.runbuddy.tomahawk_android.TomahawkApp;
-
-import android.util.Log;
 
 import java.io.File;
 import java.io.IOException;
@@ -219,6 +218,7 @@ public class Store {
             throws IOException {
         List<T> results = new ArrayList<>();
         JsonElement elements = object.get("images");
+
         if (elements instanceof JsonArray) {
             for (JsonElement element : (JsonArray) elements) {
                 if (element instanceof JsonObject) {

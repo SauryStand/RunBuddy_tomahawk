@@ -1,5 +1,6 @@
 package com.github.mikephil.charting.interfaces.datasets;
 
+import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
 

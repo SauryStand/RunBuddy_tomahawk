@@ -1,6 +1,8 @@
 
 package com.github.mikephil.charting.buffer;
 
+import java.util.List;
+
 /**
  * Buffer class to boost performance while drawing. Concept: Replace instead of
  * recreate.
