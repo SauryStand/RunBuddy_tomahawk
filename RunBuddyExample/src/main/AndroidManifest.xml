@@ -1,23 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><!--
-/*   == This file is part of Tomahawk Player - <http://tomahawk-player.org> ===
- *
- *   Copyright 2012, Christopher Reichert <creichert07@gmail.com>
- *   Copyright 2013, Enno Gottschalk <mrmaffen@googlemail.com>
- *
- *   Tomahawk is free software: you can redistribute it and/or modify
- *   it under the terms of the GNU General Public License as published by
- *   the Free Software Foundation, either version 3 of the License, or
- *   (at your option) any later version.
- *
- *   Tomahawk is distributed in the hope that it will be useful,
- *   but WITHOUT ANY WARRANTY; without even the implied warranty of
- *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *   GNU General Public License for more details.
- *
- *   You should have received a copy of the GNU General Public License
- *   along with Tomahawk. If not, see <http://www.gnu.org/licenses/>.
- */
--->
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.tomahawk.tomahawk_android">
 
@@ -557,13 +538,13 @@
             android:name="com.google.android.gms.car.application"
             android:resource="@xml/automotive_app_desc" />
 
-        <meta-data
+        <!--meta-data
             android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" />
+            android:value="@integer/google_play_services_version" /-->
 
         <meta-data
             android:name="com.google.android.gms.car.notification.SmallIcon"
-            android:resource="@drawable/ic_launcher" />
+            android:resource="@drawable/zombies" />
 
         <receiver android:name="android.support.v4.media.session.MediaButtonReceiver">
             <intent-filter>
@@ -823,11 +804,11 @@
             </intent-filter>
         </receiver>
 
-        <activity
+        <!--activity
             android:name="org.acra.CrashReportDialog"
             android:excludeFromRecents="true"
             android:finishOnTaskLaunch="true"
-            android:launchMode="singleInstance" />
+            android:launchMode="singleInstance" /-->
 
         <activity android:name="org.runbuddy.Device.CounterSensor.SensorActivity"></activity>
         <activity android:name="org.runbuddy.Intricate_Charts.ListViewMultiChartActivity"></activity>

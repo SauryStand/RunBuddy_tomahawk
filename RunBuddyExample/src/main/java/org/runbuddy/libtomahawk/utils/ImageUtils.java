@@ -45,11 +45,11 @@ public class ImageUtils {
     public static final String TAG = ImageUtils.class.getSimpleName();
 
     /**
-     * Load a {@link android.graphics.Bitmap} asynchronously
+     * Load a {@link Bitmap} asynchronously
      *
      * @param context   the context needed for fetching resources
      * @param imageView the {@link ImageView}, which will be used to show the {@link
-     *                  android.graphics.Bitmap}
+     *                  Bitmap}
      * @param image     the path to load the image from
      * @param width     the width in density independent pixels to scale the image down to
      */
@@ -59,11 +59,11 @@ public class ImageUtils {
     }
 
     /**
-     * Load a {@link android.graphics.Bitmap} asynchronously
+     * Load a {@link Bitmap} asynchronously
      *
      * @param context   the context needed for fetching resources
      * @param imageView the {@link ImageView}, which will be used to show the {@link
-     *                  android.graphics.Bitmap}
+     *                  Bitmap}
      * @param image     the path to load the image from
      * @param width     the width in density independent pixels to scale the image down to
      */
@@ -73,11 +73,11 @@ public class ImageUtils {
     }
 
     /**
-     * Load a {@link android.graphics.Bitmap} asynchronously
+     * Load a {@link Bitmap} asynchronously
      *
      * @param context   the context needed for fetching resources
      * @param imageView the {@link ImageView}, which will be used to show the {@link
-     *                  android.graphics.Bitmap}
+     *                  Bitmap}
      * @param image     the path to load the image from
      * @param width     the width in density independent pixels to scale the image down to
      */
@@ -103,11 +103,11 @@ public class ImageUtils {
     }
 
     /**
-     * Load a {@link android.graphics.Bitmap} asynchronously
+     * Load a {@link Bitmap} asynchronously
      *
      * @param context   the context needed for fetching resources
      * @param imageView the {@link ImageView}, which will be used to show the {@link
-     *                  android.graphics.Bitmap}
+     *                  Bitmap}
      * @param image     the path to load the image from
      * @param width     the width in pixels to scale the image down to
      */
@@ -137,18 +137,18 @@ public class ImageUtils {
     }
 
     /**
-     * Load a circle-shaped {@link android.graphics.Bitmap} asynchronously
+     * Load a circle-shaped {@link Bitmap} asynchronously
      *
      * @param context   the context needed for fetching resources
      * @param imageView the {@link ImageView}, which will be used to show the {@link
-     *                  android.graphics.Bitmap}
+     *                  Bitmap}
      * @param user      the user of which to load the data into the views
      * @param width     the width in pixels to scale the image down to
      * @param textView  the textview which is being used to display the first letter of the user's
      *                  name in the placeholder image
      */
     public static void loadUserImageIntoImageView(Context context, ImageView imageView,
-            User user, int width, TextView textView) {
+                                                  User user, int width, TextView textView) {
 
 
         /*
@@ -176,11 +176,11 @@ public class ImageUtils {
     }
 
     /**
-     * Load a {@link android.graphics.Bitmap} asynchronously
+     * Load a {@link Bitmap} asynchronously
      *
      * @param context   the context needed for fetching resources
      * @param imageView the {@link ImageView}, which will be used to show the {@link
-     *                  android.graphics.Bitmap}
+     *                  Bitmap}
      * @param path      the path to the image
      */
     public static void loadDrawableIntoImageView(Context context, ImageView imageView,
@@ -189,11 +189,11 @@ public class ImageUtils {
     }
 
     /**
-     * Load a {@link android.graphics.Bitmap} asynchronously
+     * Load a {@link Bitmap} asynchronously
      *
      * @param context    the context needed for fetching resources
      * @param imageView  the {@link ImageView}, which will be used to show the {@link
-     *                   android.graphics.Bitmap}
+     *                   Bitmap}
      * @param path       the path to the image
      * @param colorResId the color with which to tint the imageview drawable
      */
@@ -207,11 +207,11 @@ public class ImageUtils {
     }
 
     /**
-     * Load a {@link android.graphics.Bitmap} asynchronously
+     * Load a {@link Bitmap} asynchronously
      *
      * @param context    the context needed for fetching resources
      * @param view       the {@link View}, which will be used to show the {@link
-     *                   android.graphics.Bitmap} in its background
+     *                   Bitmap} in its background
      * @param path       the path to the image
      * @param colorResId the color with which to tint the imageview drawable
      */
@@ -270,7 +270,7 @@ public class ImageUtils {
     }
 
     /**
-     * Load a {@link android.graphics.Bitmap} asynchronously
+     * Load a {@link Bitmap} asynchronously
      *
      * @param context the context needed for fetching resources
      * @param image   the path to load the image from

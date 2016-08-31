@@ -17,18 +17,18 @@
  */
 package org.runbuddy.tomahawk_android.mediaplayers;
 
-import org.runbuddy.libtomahawk.resolver.Query;
-import org.runbuddy.libtomahawk.resolver.ScriptJob;
-import org.runbuddy.libtomahawk.resolver.models.ScriptResolverAccessTokenResult;
-import org.runbuddy.tomahawk_android.TomahawkApp;
-import org.runbuddy.tomahawk_android.utils.PreferenceUtils;
-
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+
+import org.runbuddy.libtomahawk.resolver.Query;
+import org.runbuddy.libtomahawk.resolver.ScriptJob;
+import org.runbuddy.libtomahawk.resolver.models.ScriptResolverAccessTokenResult;
+import org.runbuddy.tomahawk_android.TomahawkApp;
+import org.runbuddy.tomahawk_android.utils.PreferenceUtils;
 
 /**
  * This class wraps all functionality to be able to directly playback spotify-resolved tracks with

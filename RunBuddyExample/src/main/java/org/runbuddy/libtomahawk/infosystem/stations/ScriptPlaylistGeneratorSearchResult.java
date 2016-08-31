@@ -17,11 +17,11 @@
  */
 package org.runbuddy.libtomahawk.infosystem.stations;
 
+import android.support.v4.util.Pair;
+
 import org.runbuddy.libtomahawk.collection.Album;
 import org.runbuddy.libtomahawk.collection.Artist;
 import org.runbuddy.libtomahawk.collection.Track;
-
-import android.support.v4.util.Pair;
 
 import java.util.ArrayList;
 import java.util.List;

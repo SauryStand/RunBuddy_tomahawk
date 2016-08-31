@@ -98,7 +98,7 @@ public class UserCollection extends DbCollection {
         FOLDER_BLACKLIST = new HashSet<>();
         for (String item : folder_blacklist) {
             FOLDER_BLACKLIST
-                    .add(android.os.Environment.getExternalStorageDirectory().getPath() + item);
+                    .add(Environment.getExternalStorageDirectory().getPath() + item);
         }
     }
 

@@ -17,6 +17,9 @@
  */
 package org.runbuddy.libtomahawk.resolver;
 
+import android.database.Cursor;
+import android.util.Log;
+
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
@@ -40,9 +43,6 @@ import org.apache.lucene.util.Version;
 import org.runbuddy.libtomahawk.database.CollectionDb;
 import org.runbuddy.tomahawk_android.TomahawkApp;
 import org.runbuddy.tomahawk_android.utils.PreferenceUtils;
-
-import android.database.Cursor;
-import android.util.Log;
 
 import java.io.File;
 import java.io.IOException;

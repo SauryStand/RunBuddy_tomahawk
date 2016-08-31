@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
+  <string name="app_name">RunBuddy</string>
   <string name="ok">确定</string>
   <string name="cancel">取消</string>
   <string name="login">登录</string>
@@ -248,9 +249,40 @@
   <string name="suggested_stations">推荐的电台</string>
   <string name="my_stations">我的电台</string>
 
+  <!--暂时使用中文-->
+  <string name="ble_not_supported">你的手机不支持BLE</string>
+  <string name="label_data">Data:</string>
+  <string name="label_device_address">设备地址:</string>
+  <string name="label_state">State:</string>
+  <string name="no_data">No data</string>
+  <string name="connected">已连接</string>
+  <string name="disconnected">已断开连接</string>
+  <string name="title_devices">BLE 设备扫描</string>
+  <string name="error_bluetooth_not_supported">你的手机不支持蓝牙</string>
 
+  <string name="unknown_device">未知设备</string>
+  <string name="unknown_characteristic">未知特征值</string>
+  <string name="unknown_service">未知服务</string>
 
-
+  <!-- Menu items -->
+  <string name="menu_connect">Connect</string>
+  <string name="menu_disconnect">Disconnect</string>
+  <string name="menu_scan">Scan</string>
+  <string name="menu_stop">Stop</string>
+  <string name="device_rssi">rssi信号</string>
+  <string name="text_detail">detail</string>
+  <string name="testing">Testing</string>
+  <string name="drawer_title_running_page">Running Page</string>
+  <string name="drawer_title_popularpage">Popularpage</string>
+  <string name="authenticator_label" translate="false">Hatchet</string>
+  <string name="hello_blank_fragment">Hello blank fragment</string>
+  <string name="image_transition">image_transition</string>
+  <string name="sensor">Sensor</string>
+  <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam efficitur ipsum in placerat molestie. Fusce quis mauris a enim sollicitudin ultrices non eget velit. Aliquam eu pulvinar enim. Praesent libero nisl, ultricies vel maximus eu, maximus et nisi. Phasellus pharetra nec ligula vitae mollis. Quisque porttitor ornare magna, quis dignissim libero aliquam id. Donec sollicitudin ultrices ante, a semper erat tristique in. Vivamus sodales in ligula at sodales. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla tempus bibendum nibh, ac tincidunt quam convallis non. Proin dolor nunc, egestas et tortor consequat, dignissim lacinia odio. Ut ut aliquet erat.  Ut non scelerisque elit. Morbi dolor neque, iaculis eu justo rutrum, aliquet dictum mauris. Phasellus quis massa ut ligula feugiat congue a et dolor. Etiam a dui a sapien ornare accumsan ac ut lorem. Suspendisse vehicula lorem dapibus nibh rhoncus ultricies. Proin sem nulla, elementum quis pharetra quis, commodo vitae nisi. Donec urna orci, posuere et iaculis sit amet, fringilla quis sapien. Pellentesque nec posuere felis. Praesent malesuada tellus nisi, non dictum justo interdum eget. Quisque mollis euismod libero, non aliquam lorem interdum vitae. Aliquam vehicula efficitur purus eget rutrum. Sed pulvinar fermentum risus ac viverra. Cras laoreet ligula quam, ac lacinia nisl elementum in. Aenean velit arcu, euismod a venenatis non, pulvinar pulvinar massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam efficitur ipsum in placerat molestie. Fusce quis mauris a enim sollicitudin ultrices non eget velit. Aliquam eu pulvinar enim. Praesent libero nisl, ultricies vel maximus eu, maximus et nisi. Phasellus pharetra nec ligula vitae mollis. Quisque porttitor ornare magna, quis dignissim libero aliquam id. Donec sollicitudin ultrices ante, a semper erat tristique in. Vivamus sodales in ligula at sodales. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla tempus bibendum nibh, ac tincidunt quam convallis non. Proin dolor nunc, egestas et tortor consequat, dignissim lacinia odio. Ut ut aliquet erat.  Ut non scelerisque elit. Morbi dolor neque, iaculis eu justo rutrum, aliquet dictum mauris. Phasellus quis massa ut ligula feugiat congue a et dolor. Etiam a dui a sapien ornare accumsan ac ut lorem. Suspendisse vehicula lorem dapibus nibh rhoncus ultricies. Proin sem nulla, elementum quis pharetra quis, commodo vitae nisi. Donec urna orci, posuere et iaculis sit amet, fringilla quis sapien. Pellentesque nec posuere felis. Praesent malesuada tellus nisi, non dictum justo interdum eget. Quisque mollis euismod libero, non aliquam lorem interdum vitae. Aliquam vehicula efficitur purus eget rutrum. Sed pulvinar fermentum risus ac viverra. Cras laoreet ligula quam, ac lacinia nisl elementum in. Aenean velit arcu, euismod a venenatis non, pulvinar pulvinar massa.</string>
+  <string name="home">Home</string>
+  <string name="nav_bottom_l">Top Shots</string>
+  <string name="nav_bottom_m">Latest</string>
+  <string name="nav_bottom_r">Animation</string>
 
 
 

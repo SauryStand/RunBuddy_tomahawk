@@ -87,7 +87,7 @@ public class ListViewMultiChartActivity extends DemoBase {
 
     /**
      * generates a random ChartData object with just one DataSet
-     *
+     * just for sun aadadadada
      * @return
      */
     private LineData generateDataLine(int cnt) {

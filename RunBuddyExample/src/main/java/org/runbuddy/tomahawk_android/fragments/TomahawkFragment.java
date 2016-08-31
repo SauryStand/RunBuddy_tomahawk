@@ -18,6 +18,24 @@
  */
 package org.runbuddy.tomahawk_android.fragments;
 
+import android.annotation.SuppressLint;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
+import android.os.SystemClock;
+import android.support.annotation.NonNull;
+import android.support.v4.media.MediaMetadataCompat;
+import android.support.v4.media.session.MediaControllerCompat;
+import android.support.v4.media.session.MediaSessionCompat;
+import android.support.v4.media.session.PlaybackStateCompat;
+import android.support.v4.util.Pair;
+import android.text.TextUtils;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.AbsListView;
+import android.widget.AdapterView;
+
 import org.jdeferred.DoneCallback;
 import org.runbuddy.libtomahawk.collection.Album;
 import org.runbuddy.libtomahawk.collection.Artist;
@@ -44,24 +62,6 @@ import org.runbuddy.tomahawk_android.utils.ProgressBarUpdater;
 import org.runbuddy.tomahawk_android.utils.ThreadManager;
 import org.runbuddy.tomahawk_android.utils.TomahawkRunnable;
 import org.runbuddy.tomahawk_android.utils.WeakReferenceHandler;
-
-import android.annotation.SuppressLint;
-import android.os.Handler;
-import android.os.Looper;
-import android.os.Message;
-import android.os.SystemClock;
-import android.support.annotation.NonNull;
-import android.support.v4.media.MediaMetadataCompat;
-import android.support.v4.media.session.MediaControllerCompat;
-import android.support.v4.media.session.MediaSessionCompat;
-import android.support.v4.media.session.PlaybackStateCompat;
-import android.support.v4.util.Pair;
-import android.text.TextUtils;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.widget.AbsListView;
-import android.widget.AdapterView;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -522,7 +522,7 @@ public abstract class TomahawkFragment extends TomahawkListFragment
     }
 
     protected void fillAdapter(final List<Segment> segments, final View headerSpacerForwardView,
-            final Collection collection) {
+                               final Collection collection) {
         final TomahawkMainActivity activity = (TomahawkMainActivity) getActivity();
         new Handler(Looper.getMainLooper()).post(new Runnable() {
             @Override

@@ -17,9 +17,9 @@
  */
 package org.runbuddy.tomahawk_android.fragments;
 
-import org.runbuddy.tomahawk_android.adapters.Segment;
-
 import android.view.View;
+
+import org.runbuddy.tomahawk_android.adapters.Segment;
 
 import java.util.ArrayList;
 import java.util.List;

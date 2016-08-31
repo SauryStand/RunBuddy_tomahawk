@@ -68,7 +68,7 @@ public class PageIndicator extends LinearLayout implements ViewPager.OnPageChang
     }
 
     public void setup(ViewPager viewPager, List<PagerFragment.FragmentInfoList> fragmentInfosList,
-            View rootView, Selector selector, String selectorPosStorageKey) {
+                      View rootView, Selector selector, String selectorPosStorageKey) {
         mViewPager = viewPager;
         mFragmentInfosList = fragmentInfosList;
         mRootview = rootView;

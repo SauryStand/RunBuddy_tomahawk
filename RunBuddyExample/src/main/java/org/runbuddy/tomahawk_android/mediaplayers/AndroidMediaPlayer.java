@@ -18,14 +18,14 @@
  */
 package org.runbuddy.tomahawk_android.mediaplayers;
 
-import org.jdeferred.DoneCallback;
-import org.runbuddy.libtomahawk.resolver.Query;
-import org.runbuddy.tomahawk_android.utils.ThreadManager;
-
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.support.v4.media.session.PlaybackStateCompat;
 import android.util.Log;
+
+import org.jdeferred.DoneCallback;
+import org.runbuddy.libtomahawk.resolver.Query;
+import org.runbuddy.tomahawk_android.utils.ThreadManager;
 
 import java.io.IOException;
 

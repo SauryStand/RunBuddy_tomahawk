@@ -17,6 +17,8 @@
  */
 package org.runbuddy.libtomahawk.infosystem.hatchet;
 
+import android.util.Log;
+
 import com.google.gson.JsonObject;
 
 import org.apache.commons.io.Charsets;
@@ -39,8 +41,6 @@ import org.runbuddy.libtomahawk.utils.ISO8601Utils;
 import org.runbuddy.tomahawk_android.TomahawkApp;
 import org.runbuddy.tomahawk_android.utils.ThreadManager;
 import org.runbuddy.tomahawk_android.utils.TomahawkRunnable;
-
-import android.util.Log;
 
 import java.io.IOException;
 import java.util.ArrayList;

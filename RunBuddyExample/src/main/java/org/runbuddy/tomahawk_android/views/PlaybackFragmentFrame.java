@@ -17,14 +17,14 @@
  */
 package org.runbuddy.tomahawk_android.views;
 
-import com.sothree.slidinguppanel.SlidingUpPanelLayout;
-
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.util.AttributeSet;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.widget.FrameLayout;
+
+import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 
 import se.emilsjolander.stickylistheaders.StickyListHeadersListView;
 
@@ -43,7 +43,7 @@ public class PlaybackFragmentFrame extends FrameLayout {
     private boolean mTouchCancelled;
 
     /**
-     * Class to extend a {@link android.view.GestureDetector.SimpleOnGestureListener}, so that we
+     * Class to extend a {@link GestureDetector.SimpleOnGestureListener}, so that we
      * can apply our logic to manually solve the TouchEvent conflict.
      */
     private class ShouldSwipeDetector extends GestureDetector.SimpleOnGestureListener {

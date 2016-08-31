@@ -30,11 +30,11 @@ import java.util.ArrayList;
 public class ScriptUtils {
 
     /**
-     * Parses the given {@link JsonArray) into an {@link ArrayList} of {@link Result}s.
+     * Parses the given {@link JsonArray) into an {@link ArrayList} of {@link Result }s.
      *
-     * @param resolver   the {@link Resolver} which will be set in the {@link Result}'s constructor
+     * @param resolver   the {@link Resolver } which will be set in the {@link Result }'s constructor
      * @param rawResults {@link JsonArray) containing the raw result information
-     * @return a {@link ArrayList} of {@link Result}s containing the parsed data
+     * @return a {@link ArrayList} of {@link Result }s containing the parsed data
      */
     public static ArrayList<Result> parseResultList(ScriptResolver resolver, JsonArray rawResults) {
         ArrayList<Result> resultList = new ArrayList<>();

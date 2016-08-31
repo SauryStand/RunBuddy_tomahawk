@@ -14,6 +14,7 @@ import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Interpolator;
 import android.widget.RelativeLayout;
 
+import com.github.R;
 import com.github.glomadrian.dashedcircularprogress.painter.ExternalCirclePainter;
 import com.github.glomadrian.dashedcircularprogress.painter.ExternalCirclePainterImp;
 import com.github.glomadrian.dashedcircularprogress.painter.IconPainter;
@@ -21,7 +22,7 @@ import com.github.glomadrian.dashedcircularprogress.painter.InternalCirclePainte
 import com.github.glomadrian.dashedcircularprogress.painter.InternalCirclePainterImp;
 import com.github.glomadrian.dashedcircularprogress.painter.ProgressPainter;
 import com.github.glomadrian.dashedcircularprogress.painter.ProgressPainterImp;
-import com.mpchartlib.R;
+
 
 /**
  * @author Adrián García Lomas
@@ -83,8 +84,8 @@ public class DashedCircularProgress extends RelativeLayout {
             ViewGroup.LayoutParams layoutParams = child.getLayoutParams();
             child.setTranslationY(padingTop);
 
-            RelativeLayout.LayoutParams relativeLayoutParams =
-                    (RelativeLayout.LayoutParams) child.getLayoutParams();
+            LayoutParams relativeLayoutParams =
+                    (LayoutParams) child.getLayoutParams();
             relativeLayoutParams.addRule(RelativeLayout.CENTER_IN_PARENT, RelativeLayout.TRUE);
             child.setLayoutParams(relativeLayoutParams);
 

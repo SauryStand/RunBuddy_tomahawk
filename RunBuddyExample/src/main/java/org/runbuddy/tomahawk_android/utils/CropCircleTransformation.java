@@ -16,13 +16,13 @@ package org.runbuddy.tomahawk_android.utils;
  * limitations under the License.
  */
 
-import com.squareup.picasso.Transformation;
-
 import android.graphics.Bitmap;
 import android.graphics.BitmapShader;
 import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.graphics.Paint;
+
+import com.squareup.picasso.Transformation;
 
 public class CropCircleTransformation implements Transformation {
 

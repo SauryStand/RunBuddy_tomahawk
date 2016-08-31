@@ -136,7 +136,7 @@ public class InfoRequestData {
      * @param jsonStringToSend the json string which will be sent via an InfoPlugin
      */
     public InfoRequestData(String requestId, int type, QueryParams params, int loggedOpId,
-            int httpType, String jsonStringToSend) {
+                           int httpType, String jsonStringToSend) {
         this(requestId, type, params, httpType, jsonStringToSend);
 
         mLoggedOpId = loggedOpId;
@@ -155,7 +155,7 @@ public class InfoRequestData {
      *                            the lowest priority (useful for sync operations)
      */
     public InfoRequestData(String requestId, int type, QueryParams params, int loggedOpId,
-            int httpType, String jsonStringToSend, boolean isBackgroundRequest) {
+                           int httpType, String jsonStringToSend, boolean isBackgroundRequest) {
         this(requestId, type, params, loggedOpId, httpType, jsonStringToSend);
 
         mIsBackgroundRequest = isBackgroundRequest;
@@ -171,7 +171,7 @@ public class InfoRequestData {
      * @param jsonStringToSend the json string which will be sent via an InfoPlugin
      */
     public InfoRequestData(String requestId, int type, QueryParams params, int httpType,
-            String jsonStringToSend) {
+                           String jsonStringToSend) {
         mRequestId = requestId;
         mType = type;
         mQueryParams = params;

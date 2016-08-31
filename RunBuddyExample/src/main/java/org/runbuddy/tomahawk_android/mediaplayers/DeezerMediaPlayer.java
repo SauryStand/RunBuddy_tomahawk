@@ -17,13 +17,13 @@
  */
 package org.runbuddy.tomahawk_android.mediaplayers;
 
+import android.os.Build;
+import android.os.Bundle;
+
 import org.runbuddy.libtomahawk.resolver.Query;
 import org.runbuddy.libtomahawk.resolver.ScriptJob;
 import org.runbuddy.libtomahawk.resolver.models.ScriptResolverAccessTokenResult;
 import org.runbuddy.tomahawk_android.TomahawkApp;
-
-import android.os.Build;
-import android.os.Bundle;
 
 public class DeezerMediaPlayer extends PluginMediaPlayer {
 

@@ -17,15 +17,15 @@
  */
 package org.runbuddy.tomahawk_android.fragments;
 
+import android.os.Bundle;
+import android.view.View;
+
 import org.runbuddy.libtomahawk.infosystem.InfoSystem;
 import org.runbuddy.libtomahawk.infosystem.User;
 import org.runbuddy.tomahawk_android.activities.TomahawkMainActivity;
 import org.runbuddy.tomahawk_android.adapters.Segment;
 import org.runbuddy.tomahawk_android.fragments.star_page.SocialActionsFragment;
 import org.runbuddy.tomahawk_android.utils.FragmentUtils;
-
-import android.os.Bundle;
-import android.view.View;
 
 import java.util.ArrayList;
 import java.util.List;

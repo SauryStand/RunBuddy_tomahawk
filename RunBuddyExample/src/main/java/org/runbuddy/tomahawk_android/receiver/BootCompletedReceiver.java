@@ -17,12 +17,12 @@
  */
 package org.runbuddy.tomahawk_android.receiver;
 
-import org.runbuddy.tomahawk_android.services.MicroService;
-
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
+
+import org.runbuddy.tomahawk_android.services.MicroService;
 
 public class BootCompletedReceiver extends BroadcastReceiver {
 

@@ -103,12 +103,12 @@ public class DirectoryChooserAdapter extends StickyBaseAdapter {
     }
 
     /**
-     * Get the correct {@link android.view.View} for the given position.
+     * Get the correct {@link View} for the given position.
      *
-     * @param position    The position for which to get the correct {@link android.view.View}
-     * @param convertView The old {@link android.view.View}, which we might be able to recycle
-     * @param parent      parental {@link android.view.ViewGroup}
-     * @return the correct {@link android.view.View} for the given position.
+     * @param position    The position for which to get the correct {@link View}
+     * @param convertView The old {@link View}, which we might be able to recycle
+     * @param parent      parental {@link ViewGroup}
+     * @return the correct {@link View} for the given position.
      */
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -182,12 +182,12 @@ public class DirectoryChooserAdapter extends StickyBaseAdapter {
 
     /**
      * This method is being called by the StickyListHeaders library. Get the correct header {@link
-     * android.view.View} for the given position.
+     * View} for the given position.
      *
-     * @param position    The position for which to get the correct {@link android.view.View}
-     * @param convertView The old {@link android.view.View}, which we might be able to recycle
-     * @param parent      parental {@link android.view.ViewGroup}
-     * @return the correct header {@link android.view.View} for the given position.
+     * @param position    The position for which to get the correct {@link View}
+     * @param convertView The old {@link View}, which we might be able to recycle
+     * @param parent      parental {@link ViewGroup}
+     * @return the correct header {@link View} for the given position.
      */
     @Override
     public View getHeaderView(int position, View convertView, ViewGroup parent) {
@@ -229,7 +229,7 @@ public class DirectoryChooserAdapter extends StickyBaseAdapter {
     }
 
     private String getVisibleName(File file) {
-        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
             // Show "sdcard" for the user's folder when running in multi-user
             if (file.getAbsolutePath()
                     .equals(Environment.getExternalStorageDirectory().getPath())) {

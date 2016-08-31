@@ -1,4 +1,4 @@
-apply plugin: "com.android.application"
+apply plugin: 'com.android.application'
 
 repositories {
     flatDir {
@@ -8,28 +8,23 @@ repositories {
 
 android {
     compileSdkVersion 24
-    buildToolsVersion '24.0.1'
+    buildToolsVersion "24.0.1"
 
     defaultConfig {
+        applicationId "org.runbuddy"
         minSdkVersion 21
         targetSdkVersion 24
-        renderscriptTargetApi 22
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        renderscriptSupportModeEnabled true
-        versionName '0.5.1'
         versionCode 1
-
+        versionName "0.2.0"
     }
-    /*
-    allprojects {
-        gradle.projectsEvaluated {
-            tasks.withType(JavaCompile) {
-                options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
-            }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
-    }*/
+    }
+    sourceSets { main { assets.srcDirs = ['src/main/assets', 'src/main/assets/'] } }
 
-    /*构建jnl，生成.so文件的吧？*/
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_7
         targetCompatibility JavaVersion.VERSION_1_7
@@ -49,21 +44,6 @@ android {
         exclude 'META-INF/NOTICE.txt'
         exclude 'META-INF/ASL2.0'
     }
-
-    /*
-     * Tries to get the version name from the latest Git tag
-     */
-
-    /*def getNewVersionName = { ->
-        try {
-            boolean isChanged = 'git diff --cached'.execute([], projectDir).text.length() > 0 || 'git diff'.execute([], projectDir).text.length() > 0
-            return 'git describe --tags'.execute([], projectDir).text.replace('\n', '') + (isChanged ? "_modified" : "")
-        }
-        catch (IOException e) {
-            logger.error("Wasn't able to get version tag: " + e.getMessage());
-            return defaultConfig.versionName + "_nogit"
-        }
-    }*/
 
     applicationVariants.all { variant ->
         variant.outputs.each { output ->
@@ -96,16 +76,8 @@ android {
         //checkReleaseBuilds false
     }
 
-    //多渠道打包
-//    productFlavors {
-//        play {
-//            applicationId = "com.github.glomadrian.dashedprogressbar.demo"
-//        }
-//
-//    }
 
 }
-
 
 // map for the version code
 ext.versionCodes = ['armeabi-v7a': 2, 'arm64-v8a': 3, 'mips': 4, 'x86': 6, 'x86_64': 7]
@@ -129,10 +101,6 @@ android.applicationVariants.all { variant ->
     }
 }
 
-
-
-
-
 //改写敏感信息
 def Properties props = new Properties()
 def propFile = file('signing.properties')
@@ -150,8 +118,9 @@ if (propFile.canRead()) {
     }
 }
 
+
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile fileTree(dir: 'libs', include: ['*.jar'])
     compile(name: 'circularprogressview-debug', ext: 'aar')
     compile('ch.acra:acra:4.7.0') {
         transitive = false
@@ -160,17 +129,13 @@ dependencies {
         exclude group: 'xmlpull', module: 'xmlpull'
     }
     testCompile 'junit:junit:4.12'
-    //compile files('libs/realm-android-library-1.1.0-sources.jar')
-    //compile files('libs/realm-annotations-1.1.0.jar')
-    //compile files('libs/realm-annotations-processor-1.1.0.jar')
-    //compile files('libs/realm-gradle-plugin-1.1.0.jar')
-    //compile files('libs/realm-transformer-1.1.0.jar')
     compile files('libs/RemoteMetadataProvider.jar')
     compile 'com.android.support:appcompat-v7:24.1.1'
     compile 'com.android.support:support-v4:24.1.1'
     compile 'se.emilsjolander:stickylistheaders:2.7.0'
     compile 'com.google.code.gson:gson:2.5'
     compile 'com.google.android.gms:play-services-base:8.4.0'
+
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'com.squareup.okhttp:okhttp:2.7.2'
     compile 'com.squareup.okhttp:okhttp-urlconnection:2.7.2'
@@ -206,15 +171,11 @@ dependencies {
     //compile 'org.apache.httpcomponents:httpclient:4.5.2'
     //compile 'org.apache.httpcomponents:httpcore:4.4.1'
     //compile 'org.apache.httpcomponents:httpclient:4.0.1'
-    compile group: 'org.apache.httpcomponents' , name: 'httpclient-android' , version: '4.3.5.1'
+    compile group: 'org.apache.httpcomponents', name: 'httpclient-android', version: '4.3.5.1'
+
+
 }
 
-repositories {
-    maven { url "https://jitpack.io" }
-    /*maven {
-        // this is for realm-db
-        url 'http://oss.jfrog.org/artifactory/oss-snapshot-local'
-    }*/
-}
+
 
 

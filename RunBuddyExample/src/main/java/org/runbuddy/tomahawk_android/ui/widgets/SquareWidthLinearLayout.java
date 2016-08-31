@@ -22,7 +22,7 @@ import android.util.AttributeSet;
 import android.widget.LinearLayout;
 
 /**
- * A {@link android.widget.LinearLayout} which will always show as a scare {@link
+ * A {@link LinearLayout} which will always show as a scare {@link
  * android.view.View}, because its width is also used as its height.
  */
 public class SquareWidthLinearLayout extends LinearLayout {

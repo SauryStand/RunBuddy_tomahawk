@@ -279,7 +279,7 @@ public class FancyDropDown extends FrameLayout {
     }
 
     public static List<DropDownItemInfo> convertToDropDownItemInfo(List<Collection> collections) {
-        List<FancyDropDown.DropDownItemInfo> dropDownItemInfos
+        List<DropDownItemInfo> dropDownItemInfos
                 = new ArrayList<>();
         for (Collection collection : collections) {
             FancyDropDown.DropDownItemInfo dropDownItemInfo =

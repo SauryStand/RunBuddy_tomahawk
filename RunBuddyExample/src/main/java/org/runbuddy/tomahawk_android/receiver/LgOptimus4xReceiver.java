@@ -20,14 +20,14 @@
 
 package org.runbuddy.tomahawk_android.receiver;
 
+import android.content.Context;
+import android.os.Bundle;
+import android.util.Log;
+
 import org.runbuddy.libtomahawk.collection.Album;
 import org.runbuddy.libtomahawk.collection.Artist;
 import org.runbuddy.libtomahawk.collection.Track;
 import org.runbuddy.tomahawk_android.services.MicroService;
-
-import android.content.Context;
-import android.os.Bundle;
-import android.util.Log;
 
 /**
  * A BroadcastReceiver for intents sent by the LG Optimus 4X P880 music player

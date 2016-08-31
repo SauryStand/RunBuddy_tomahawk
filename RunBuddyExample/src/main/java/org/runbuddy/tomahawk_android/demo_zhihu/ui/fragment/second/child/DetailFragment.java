@@ -14,7 +14,6 @@ import org.runbuddy.tomahawk_android.demo_zhihu.basic.BaseBackFragment;
 import org.tomahawk.tomahawk_android.R;
 
 
-
 /**
  * Created by YoKeyword on 16/2/3.
  */

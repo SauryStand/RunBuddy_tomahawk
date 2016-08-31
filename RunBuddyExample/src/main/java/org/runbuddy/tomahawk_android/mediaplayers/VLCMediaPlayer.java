@@ -17,6 +17,9 @@
  */
 package org.runbuddy.tomahawk_android.mediaplayers;
 
+import android.support.v4.media.session.PlaybackStateCompat;
+import android.util.Log;
+
 import org.jdeferred.DoneCallback;
 import org.runbuddy.libtomahawk.resolver.Query;
 import org.runbuddy.tomahawk_android.TomahawkApp;
@@ -26,9 +29,6 @@ import org.videolan.libvlc.LibVLC;
 import org.videolan.libvlc.Media;
 import org.videolan.libvlc.MediaPlayer;
 import org.videolan.libvlc.util.AndroidUtil;
-
-import android.support.v4.media.session.PlaybackStateCompat;
-import android.util.Log;
 
 import java.util.ArrayList;
 

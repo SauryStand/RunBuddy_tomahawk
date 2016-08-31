@@ -77,8 +77,8 @@ public class MediaBrowserHelper {
 
     @Nullable
     public MediaBrowserServiceCompat.BrowserRoot onGetRoot(@NonNull String clientPackageName,
-            int clientUid,
-            @Nullable Bundle rootHints) {
+                                                           int clientUid,
+                                                           @Nullable Bundle rootHints) {
         Log.d(TAG, "OnGetRoot: clientPackageName=" + clientPackageName +
                 "; clientUid=" + clientUid + " ; rootHints=" + rootHints);
         // To ensure you are not allowing any arbitrary app to browse your app's contents, you
@@ -250,7 +250,7 @@ public class MediaBrowserHelper {
      * Override to handle requests to play a specific mediaId that was provided by your app.
      */
     public void onPlayFromMediaId(final MediaSessionCompat mediaSession,
-            final PlaybackManager playbackManager, final String mediaId, Bundle extras) {
+                                  final PlaybackManager playbackManager, final String mediaId, Bundle extras) {
         String[] parts;
         final MediaControllerCompat.TransportControls transportControls =
                 mediaSession.getController().getTransportControls();

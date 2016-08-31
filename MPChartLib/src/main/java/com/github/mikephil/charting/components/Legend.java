@@ -4,7 +4,6 @@ package com.github.mikephil.charting.components;
 import android.graphics.DashPathEffect;
 import android.graphics.Paint;
 
-import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.utils.ColorTemplate;
 import com.github.mikephil.charting.utils.FSize;
 import com.github.mikephil.charting.utils.Utils;

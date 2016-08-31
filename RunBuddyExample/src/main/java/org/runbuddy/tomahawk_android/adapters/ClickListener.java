@@ -17,9 +17,9 @@
  */
 package org.runbuddy.tomahawk_android.adapters;
 
-import org.runbuddy.tomahawk_android.listeners.MultiColumnClickListener;
-
 import android.view.View;
+
+import org.runbuddy.tomahawk_android.listeners.MultiColumnClickListener;
 
 public class ClickListener implements View.OnClickListener, View.OnLongClickListener {
 

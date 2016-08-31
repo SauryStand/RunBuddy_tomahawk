@@ -18,8 +18,6 @@ import com.github.mikephil.charting.utils.MPPointF;
 import com.github.mikephil.charting.utils.Utils;
 import com.github.mikephil.charting.utils.ViewPortHandler;
 
-import java.util.List;
-
 public class RadarChartRenderer extends LineRadarRenderer {
 
     protected RadarChart mChart;

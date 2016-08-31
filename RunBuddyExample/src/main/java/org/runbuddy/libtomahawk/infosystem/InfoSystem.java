@@ -17,6 +17,9 @@
  */
 package org.runbuddy.libtomahawk.infosystem;
 
+import android.text.TextUtils;
+import android.util.Log;
+
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
@@ -41,9 +44,6 @@ import org.runbuddy.libtomahawk.resolver.Query;
 import org.runbuddy.libtomahawk.utils.GsonHelper;
 import org.runbuddy.tomahawk_android.TomahawkApp;
 import org.runbuddy.tomahawk_android.utils.IdGenerator;
-
-import android.text.TextUtils;
-import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -490,7 +490,7 @@ public class InfoSystem {
     }
 
     public InfoRequestData buildPlaylistEntriesPostStruct(String localPlaylistId,
-            List<PlaylistEntry> entries) {
+                                                          List<PlaylistEntry> entries) {
         HatchetPlaylistEntriesPostStruct struct = new HatchetPlaylistEntriesPostStruct();
         struct.playlistEntries = new ArrayList<>();
         for (PlaylistEntry entry : entries) {
@@ -534,7 +534,7 @@ public class InfoSystem {
     }
 
     public void deletePlaylistEntry(AuthenticatorUtils authenticatorUtils, String localPlaylistId,
-            String entryId) {
+                                    String entryId) {
         long timeStamp = System.currentTimeMillis();
         String requestId = IdGenerator.getLifetimeUniqueStringId();
         QueryParams params = new QueryParams();
@@ -567,7 +567,7 @@ public class InfoSystem {
     }
 
     public InfoRequestData buildRelationshipPostStruct(String user, String track, String artist,
-            String album) {
+                                                       String album) {
         HatchetRelationshipStruct relationship = new HatchetRelationshipStruct();
         relationship.targetUser = user;
         relationship.targetTrackString = track;

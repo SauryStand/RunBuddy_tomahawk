@@ -17,15 +17,15 @@
  */
 package org.runbuddy.libtomahawk.collection;
 
-import org.runbuddy.libtomahawk.resolver.Query;
-import org.runbuddy.libtomahawk.resolver.Resolver;
-import org.runbuddy.libtomahawk.resolver.Result;
-import org.runbuddy.tomahawk_android.utils.IdGenerator;
-
 import android.database.Cursor;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.SparseArray;
+
+import org.runbuddy.libtomahawk.resolver.Query;
+import org.runbuddy.libtomahawk.resolver.Resolver;
+import org.runbuddy.libtomahawk.resolver.Result;
+import org.runbuddy.tomahawk_android.utils.IdGenerator;
 
 import java.util.ArrayList;
 import java.util.List;

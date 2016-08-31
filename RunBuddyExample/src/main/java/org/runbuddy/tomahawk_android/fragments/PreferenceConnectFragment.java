@@ -81,7 +81,7 @@ public class PreferenceConnectFragment extends TomahawkListFragment
 
     /**
      * Called, when this {@link org.runbuddy.tomahawk_android.fragments.PreferenceConnectFragment}'s
-     * {@link android.view.View} has been created
+     * {@link View} has been created
      */
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {

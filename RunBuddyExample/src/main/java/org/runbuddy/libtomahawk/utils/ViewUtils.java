@@ -1,7 +1,5 @@
 package org.runbuddy.libtomahawk.utils;
 
-import org.runbuddy.tomahawk_android.TomahawkApp;
-
 import android.content.Context;
 import android.content.res.Resources;
 import android.os.Build;
@@ -11,6 +9,8 @@ import android.view.ViewStub;
 import android.view.ViewTreeObserver;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+
+import org.runbuddy.tomahawk_android.TomahawkApp;
 
 public class ViewUtils {
 

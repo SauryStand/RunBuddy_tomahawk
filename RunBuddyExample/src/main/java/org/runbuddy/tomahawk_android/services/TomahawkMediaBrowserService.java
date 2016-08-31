@@ -50,7 +50,7 @@ public class TomahawkMediaBrowserService extends MediaBrowserServiceCompat {
 
     @Override
     public BrowserRoot onGetRoot(@NonNull String clientPackageName, int clientUid,
-            Bundle rootHints) {
+                                 Bundle rootHints) {
         Log.d(TAG, "onGetRoot");
         return new BrowserRoot(MEDIA_ID_ROOT, null);
     }

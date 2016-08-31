@@ -62,7 +62,7 @@ public class MenuDrawerListener implements ListView.OnItemClickListener {
     }
 
     /**
-     * Called every time an item inside the {@link android.widget.ListView} is clicked
+     * Called every time an item inside the {@link ListView} is clicked
      *
      * @param parent   The AdapterView where the click happened.
      * @param view     The view within the AdapterView that was clicked (this will be a view

@@ -17,14 +17,14 @@
  */
 package org.runbuddy.tomahawk_android.adapters;
 
-import org.runbuddy.tomahawk_android.TomahawkApp;
-import org.runbuddy.tomahawk_android.fragments.TomahawkFragment;
-import org.runbuddy.tomahawk_android.utils.FragmentInfo;
-
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
+
+import org.runbuddy.tomahawk_android.TomahawkApp;
+import org.runbuddy.tomahawk_android.fragments.TomahawkFragment;
+import org.runbuddy.tomahawk_android.utils.FragmentInfo;
 
 import java.util.List;
 
@@ -37,7 +37,7 @@ public class TomahawkPagerAdapter extends FragmentStatePagerAdapter {
     private List<FragmentInfo> mFragmentInfos;
 
     public TomahawkPagerAdapter(FragmentManager fragmentManager, List<FragmentInfo> fragmentInfos,
-            Class containerFragmentClass, long containerFragmentId) {
+                                Class containerFragmentClass, long containerFragmentId) {
         super(fragmentManager);
 
         mFragmentInfos = fragmentInfos;

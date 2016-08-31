@@ -51,7 +51,7 @@ public class ArtistPagerFragment extends PagerFragment {
 
     /**
      * Called, when this {@link org.runbuddy.tomahawk_android.fragments.ArtistPagerFragment}'s
-     * {@link android.view.View} has been created
+     * {@link View} has been created
      */
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {

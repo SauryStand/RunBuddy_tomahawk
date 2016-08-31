@@ -57,7 +57,7 @@ public class StringUtils {
      * @param str String to escape values in, may be null
      * @throws IllegalArgumentException if the Writer is <code>null</code>
      * @throws IOException              if error occurs on underlying Writer
-     * @see #escapeJavaScript(java.lang.String)
+     * @see #escapeJavaScript(String)
      */
     public static void escapeJavaScript(Writer out, String str) throws IOException {
         escapeJavaStyleString(out, str, true, true);

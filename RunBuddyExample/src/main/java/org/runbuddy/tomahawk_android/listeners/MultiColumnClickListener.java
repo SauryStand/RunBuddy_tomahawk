@@ -17,9 +17,9 @@
  */
 package org.runbuddy.tomahawk_android.listeners;
 
-import org.runbuddy.tomahawk_android.adapters.Segment;
-
 import android.view.View;
+
+import org.runbuddy.tomahawk_android.adapters.Segment;
 
 public interface MultiColumnClickListener {
 

@@ -125,7 +125,7 @@ public class EqualizerFragment extends ContentHeaderFragment {
 
     /**
      * Called, when this {@link org.runbuddy.tomahawk_android.fragments.EqualizerFragment}'s {@link
-     * android.view.View} has been created
+     * View} has been created
      */
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {

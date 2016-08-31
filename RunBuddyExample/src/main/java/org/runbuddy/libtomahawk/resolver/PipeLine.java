@@ -17,6 +17,9 @@
  */
 package org.runbuddy.libtomahawk.resolver;
 
+import android.text.TextUtils;
+import android.util.Log;
+
 import org.runbuddy.libtomahawk.collection.Collection;
 import org.runbuddy.libtomahawk.collection.CollectionManager;
 import org.runbuddy.libtomahawk.collection.DbCollection;
@@ -25,9 +28,6 @@ import org.runbuddy.libtomahawk.resolver.models.ScriptResolverUrlResult;
 import org.runbuddy.tomahawk_android.TomahawkApp;
 import org.runbuddy.tomahawk_android.utils.ThreadManager;
 import org.runbuddy.tomahawk_android.utils.TomahawkRunnable;
-
-import android.text.TextUtils;
-import android.util.Log;
 
 import java.io.File;
 import java.io.IOException;
@@ -307,7 +307,7 @@ public class PipeLine {
      * @param results the unfiltered {@link ArrayList} of {@link Result}s
      */
     public void reportResults(final Query query, final ArrayList<Result> results,
-            final String resolverId) {
+                              final String resolverId) {
         int priority;
         if (TomahawkApp.PLUGINNAME_USERCOLLECTION.equals(resolverId)) {
             priority = TomahawkRunnable.PRIORITY_IS_REPORTING_LOCALSOURCE;

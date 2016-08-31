@@ -141,7 +141,7 @@ public class FragmentUtils {
      *                       Fragment will be replaced
      */
     public static void replace(TomahawkMainActivity activity, Class clss, Bundle bundle,
-            int containerResId) {
+                               int containerResId) {
         replace(activity, clss, bundle, containerResId, FRAGMENT_TAG);
     }
 
@@ -157,7 +157,7 @@ public class FragmentUtils {
      * @param tag            a {@link String} id to tag the replaced {@link Fragment} with
      */
     public static void replace(TomahawkMainActivity activity, Class clss, Bundle bundle,
-            int containerResId, String tag) {
+                               int containerResId, String tag) {
         FragmentTransaction ft = activity.getSupportFragmentManager().beginTransaction();
         ft.replace(containerResId, Fragment.instantiate(activity, clss.getName(), bundle), tag);
         if (containerResId == R.id.content_viewer_frame) {
@@ -179,7 +179,7 @@ public class FragmentUtils {
      *                       Fragment will be added
      */
     public static void add(TomahawkMainActivity activity, Class clss, Bundle bundle,
-            int containerResId) {
+                           int containerResId) {
         FragmentTransaction ft = activity.getSupportFragmentManager().beginTransaction();
         ft.add(containerResId, Fragment.instantiate(activity, clss.getName(), bundle),
                 FRAGMENT_TAG);
@@ -199,7 +199,7 @@ public class FragmentUtils {
      *                     collection)
      */
     public static boolean showContextMenu(TomahawkMainActivity activity, Object item,
-            String collectionId, boolean isFromPlaybackFragment, boolean hideRemoveButton) {
+                                          String collectionId, boolean isFromPlaybackFragment, boolean hideRemoveButton) {
         if (item == null
                 || (item instanceof SocialAction
                 && ((SocialAction) item).getTargetObject() instanceof User)

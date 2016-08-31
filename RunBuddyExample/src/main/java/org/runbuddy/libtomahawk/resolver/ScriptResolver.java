@@ -17,11 +17,15 @@
  */
 package org.runbuddy.libtomahawk.resolver;
 
+import android.os.Looper;
+import android.os.Message;
+import android.util.Log;
+import android.widget.ImageView;
+
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonPrimitive;
 import com.google.gson.reflect.TypeToken;
-
 import com.squareup.okhttp.Response;
 
 import org.jdeferred.Promise;
@@ -37,11 +41,6 @@ import org.runbuddy.libtomahawk.utils.GsonHelper;
 import org.runbuddy.libtomahawk.utils.NetworkUtils;
 import org.runbuddy.tomahawk_android.TomahawkApp;
 import org.runbuddy.tomahawk_android.utils.WeakReferenceHandler;
-
-import android.os.Looper;
-import android.os.Message;
-import android.util.Log;
-import android.widget.ImageView;
 
 import java.io.IOException;
 import java.lang.reflect.Type;

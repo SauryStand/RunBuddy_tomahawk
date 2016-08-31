@@ -17,18 +17,18 @@
  */
 package org.runbuddy.tomahawk_android.utils;
 
+import android.content.SharedPreferences;
+import android.os.Build;
+import android.preference.PreferenceManager;
+import android.support.v4.app.FragmentActivity;
+import android.util.Log;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.runbuddy.libtomahawk.authentication.AuthenticatorManager;
 import org.runbuddy.tomahawk_android.TomahawkApp;
 import org.runbuddy.tomahawk_android.activities.TomahawkMainActivity;
 import org.runbuddy.tomahawk_android.dialogs.AskAccessConfigDialog;
-
-import android.content.SharedPreferences;
-import android.os.Build;
-import android.preference.PreferenceManager;
-import android.support.v4.app.FragmentActivity;
-import android.util.Log;
 
 import java.util.Set;
 

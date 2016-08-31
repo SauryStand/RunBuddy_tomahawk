@@ -17,6 +17,8 @@
  */
 package org.runbuddy.libtomahawk.collection;
 
+import android.widget.ImageView;
+
 import org.jdeferred.Deferred;
 import org.jdeferred.DoneCallback;
 import org.jdeferred.DonePipe;
@@ -29,8 +31,6 @@ import org.runbuddy.libtomahawk.resolver.models.ScriptResolverCollectionMetaData
 import org.runbuddy.libtomahawk.utils.ADeferredObject;
 import org.runbuddy.libtomahawk.utils.ImageUtils;
 import org.runbuddy.tomahawk_android.TomahawkApp;
-
-import android.widget.ImageView;
 
 /**
  * This class represents a Collection which contains tracks/albums/artists retrieved by a

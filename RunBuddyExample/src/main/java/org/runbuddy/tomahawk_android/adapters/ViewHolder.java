@@ -102,8 +102,8 @@ public class ViewHolder {
     }
 
     public void fillView(Query query, String numerationString, boolean showAsPlaying,
-            boolean showAsQueued, View.OnClickListener dequeueButtonListener,
-            boolean showResolverIcon) {
+                         boolean showAsQueued, View.OnClickListener dequeueButtonListener,
+                         boolean showResolverIcon) {
         TextView trackNameTextView = (TextView) findViewById(R.id.track_textview);
         trackNameTextView.setText(query.getPrettyName());
         setTextViewEnabled(trackNameTextView, query.isPlayable(), false);
@@ -363,7 +363,7 @@ public class ViewHolder {
     }
 
     private static void fillView(View view, List<Image> artistImages, int height,
-            boolean isPagerFragment) {
+                                 boolean isPagerFragment) {
         View v;
         int gridOneResId = isPagerFragment ? R.id.imageview_grid_one_pager
                 : R.id.imageview_grid_one;

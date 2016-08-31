@@ -114,7 +114,7 @@ public class Selector extends FrameLayout {
                 }
 
                 final int position = i;
-                item.setOnClickListener(new View.OnClickListener() {
+                item.setOnClickListener(new OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         hideSelectorList();
@@ -139,7 +139,7 @@ public class Selector extends FrameLayout {
             textView.setText(getResources().getString(R.string.cancel).toUpperCase());
             ImageView imageView = (ImageView) item.findViewById(R.id.imageview);
             imageView.setImageResource(R.drawable.ic_navigation_close);
-            item.setOnClickListener(new View.OnClickListener() {
+            item.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     hideSelectorList();

@@ -17,6 +17,9 @@
  */
 package org.runbuddy.libtomahawk.collection;
 
+import android.database.Cursor;
+import android.util.Log;
+
 import org.jdeferred.Deferred;
 import org.jdeferred.DoneCallback;
 import org.jdeferred.Promise;
@@ -32,9 +35,6 @@ import org.runbuddy.libtomahawk.resolver.ScriptResolver;
 import org.runbuddy.libtomahawk.utils.ADeferredObject;
 import org.runbuddy.tomahawk_android.utils.ThreadManager;
 import org.runbuddy.tomahawk_android.utils.TomahawkRunnable;
-
-import android.database.Cursor;
-import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.Collections;
