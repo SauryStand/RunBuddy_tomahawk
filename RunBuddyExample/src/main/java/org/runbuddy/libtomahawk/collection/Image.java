@@ -17,10 +17,10 @@
  */
 package org.runbuddy.libtomahawk.collection;
 
-import org.runbuddy.tomahawk_android.TomahawkApp;
-
 import android.content.res.Resources;
 import android.util.DisplayMetrics;
+
+import org.runbuddy.tomahawk_android.TomahawkApp;
 
 /**
  * Class which represents a Tomahawk {@link org.runbuddy.libtomahawk.collection.Image}.

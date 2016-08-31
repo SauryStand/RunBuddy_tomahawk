@@ -17,12 +17,12 @@
  */
 package org.runbuddy.libtomahawk.database;
 
-import org.runbuddy.libtomahawk.collection.Album;
-import org.runbuddy.libtomahawk.collection.Artist;
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+
+import org.runbuddy.libtomahawk.collection.Album;
+import org.runbuddy.libtomahawk.collection.Artist;
 
 import java.util.List;
 

@@ -7,8 +7,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+
 import org.runbuddy.Device.BlueTooth.iBeaconClass.iBeacon;
 import org.tomahawk.tomahawk_android.R;
+
 import java.util.ArrayList;
 
 public class LeDeviceListAdapter extends BaseAdapter {

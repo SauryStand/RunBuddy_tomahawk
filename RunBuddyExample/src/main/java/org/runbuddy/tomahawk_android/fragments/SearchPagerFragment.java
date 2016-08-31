@@ -113,7 +113,7 @@ public class SearchPagerFragment extends PagerFragment {
 
 
     /**
-     * Called, when this {@link SearchPagerFragment}'s {@link android.view.View} has been created
+     * Called, when this {@link SearchPagerFragment}'s {@link View} has been created
      */
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {

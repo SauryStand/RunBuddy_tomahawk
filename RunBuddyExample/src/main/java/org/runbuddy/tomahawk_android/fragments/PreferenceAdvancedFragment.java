@@ -53,7 +53,7 @@ public class PreferenceAdvancedFragment extends TomahawkListFragment
     public static final String PREFERENCE_ID_EQUALIZER = "mEqualizerValues";
 
     /**
-     * Called, when this {@link PreferenceAdvancedFragment}'s {@link android.view.View} has been
+     * Called, when this {@link PreferenceAdvancedFragment}'s {@link View} has been
      * created
      */
     @Override

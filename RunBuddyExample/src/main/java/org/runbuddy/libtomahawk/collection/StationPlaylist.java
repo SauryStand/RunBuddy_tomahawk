@@ -17,6 +17,8 @@
  */
 package org.runbuddy.libtomahawk.collection;
 
+import android.support.v4.util.Pair;
+
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -33,8 +35,6 @@ import org.runbuddy.libtomahawk.infosystem.stations.ScriptPlaylistGeneratorSearc
 import org.runbuddy.libtomahawk.resolver.Query;
 import org.runbuddy.libtomahawk.utils.ADeferredObject;
 import org.runbuddy.libtomahawk.utils.GsonHelper;
-
-import android.support.v4.util.Pair;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -62,7 +62,7 @@ public class StationPlaylist extends Playlist {
     private Deferred<List<Query>, Throwable, Void> mFillDeferred;
 
     private StationPlaylist(List<Pair<Artist, String>> artists, List<Pair<Track, String>> tracks,
-            List<String> genres) {
+                            List<String> genres) {
         super(getCacheKey(artists, tracks, genres));
 
         mArtists = artists;
@@ -114,7 +114,7 @@ public class StationPlaylist extends Playlist {
     }
 
     private static String getCacheKey(List<Pair<Artist, String>> artists,
-            List<Pair<Track, String>> tracks, List<String> genres) {
+                                      List<Pair<Track, String>> tracks, List<String> genres) {
         String key = "station_";
         if (artists != null) {
             Collections.sort(artists, new Comparator<Pair<Artist, String>>() {
@@ -201,7 +201,7 @@ public class StationPlaylist extends Playlist {
     }
 
     public static StationPlaylist get(List<Pair<Artist, String>> artists,
-            List<Pair<Track, String>> tracks, List<String> genres) {
+                                      List<Pair<Track, String>> tracks, List<String> genres) {
         Cacheable cacheable = get(Playlist.class, getCacheKey(artists, tracks, genres));
         return cacheable != null ? (StationPlaylist) cacheable
                 : new StationPlaylist(artists, tracks, genres);

@@ -518,7 +518,7 @@ public class ContextMenuFragment extends Fragment {
     }
 
     private void setupCreateStationButton(View view, final Album album, final Artist artist,
-            final Playlist playlist, final PlaylistEntry entry, final Query query) {
+                                          final Playlist playlist, final PlaylistEntry entry, final Query query) {
         View v = ViewUtils.ensureInflation(view, R.id.context_menu_createstation_stub,
                 R.id.context_menu_createstation);
         TextView textView = (TextView) v.findViewById(R.id.textview);

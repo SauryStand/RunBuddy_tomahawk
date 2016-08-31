@@ -105,7 +105,7 @@ public class HatchetLoginRegisterView extends LinearLayout {
         }
     };
 
-    private class LoginButtonListener implements View.OnClickListener {
+    private class LoginButtonListener implements OnClickListener {
 
         @Override
         public void onClick(View v) {
@@ -127,7 +127,7 @@ public class HatchetLoginRegisterView extends LinearLayout {
                 case 0:
                     LinearLayout loginContainer = new LinearLayout(getContext());
                     loginContainer.setOrientation(LinearLayout.VERTICAL);
-                    loginContainer.setLayoutParams(new LinearLayout.LayoutParams(
+                    loginContainer.setLayoutParams(new LayoutParams(
                             ViewGroup.LayoutParams.MATCH_PARENT,
                             ViewGroup.LayoutParams.WRAP_CONTENT));
 
@@ -168,7 +168,7 @@ public class HatchetLoginRegisterView extends LinearLayout {
                 case 1:
                     LinearLayout registerContainer = new LinearLayout(getContext());
                     registerContainer.setOrientation(LinearLayout.VERTICAL);
-                    registerContainer.setLayoutParams(new LinearLayout.LayoutParams(
+                    registerContainer.setLayoutParams(new LayoutParams(
                             ViewGroup.LayoutParams.MATCH_PARENT,
                             ViewGroup.LayoutParams.WRAP_CONTENT));
 

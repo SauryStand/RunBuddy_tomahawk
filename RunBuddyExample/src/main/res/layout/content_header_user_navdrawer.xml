@@ -49,7 +49,7 @@
                 android:src="@drawable/common_google_signin_btn_icon_light_pressed"
                 android:layout_gravity="center" /-->
 
-            <org.runbuddy.CircleImageView.CircleImageView
+            <org.runbuddy.tomahawk_android.CircleImageView.CircleImageView
                 android:id="@+id/userimageview1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

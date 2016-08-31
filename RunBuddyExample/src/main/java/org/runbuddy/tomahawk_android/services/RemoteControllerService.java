@@ -17,8 +17,6 @@
  */
 package org.runbuddy.tomahawk_android.services;
 
-import org.runbuddy.tomahawk_android.TomahawkApp;
-
 import android.annotation.TargetApi;
 import android.content.ComponentName;
 import android.content.Context;
@@ -35,6 +33,8 @@ import android.service.notification.NotificationListenerService;
 import android.service.notification.StatusBarNotification;
 import android.util.Log;
 import android.view.KeyEvent;
+
+import org.runbuddy.tomahawk_android.TomahawkApp;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;

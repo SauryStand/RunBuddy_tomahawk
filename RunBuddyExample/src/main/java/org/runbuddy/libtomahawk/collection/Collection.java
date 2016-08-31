@@ -17,9 +17,9 @@
  */
 package org.runbuddy.libtomahawk.collection;
 
-import org.jdeferred.Promise;
-
 import android.widget.ImageView;
+
+import org.jdeferred.Promise;
 
 public abstract class Collection {
 

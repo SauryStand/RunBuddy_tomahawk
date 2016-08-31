@@ -1,5 +1,9 @@
 package org.runbuddy.libtomahawk.utils;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+
 import com.squareup.okhttp.Credentials;
 import com.squareup.okhttp.MediaType;
 import com.squareup.okhttp.OkHttpClient;
@@ -9,10 +13,6 @@ import com.squareup.okhttp.Response;
 import com.squareup.okhttp.logging.HttpLoggingInterceptor;
 
 import org.runbuddy.tomahawk_android.TomahawkApp;
-
-import android.content.Context;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 
 import java.io.IOException;
 import java.net.CookieManager;

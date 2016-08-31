@@ -17,6 +17,8 @@
  */
 package org.runbuddy.libtomahawk.infosystem.stations;
 
+import android.support.v4.util.Pair;
+
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -32,8 +34,6 @@ import org.runbuddy.libtomahawk.resolver.ScriptJob;
 import org.runbuddy.libtomahawk.resolver.ScriptObject;
 import org.runbuddy.libtomahawk.resolver.ScriptPlugin;
 import org.runbuddy.libtomahawk.utils.ADeferredObject;
-
-import android.support.v4.util.Pair;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -135,8 +135,8 @@ public class ScriptPlaylistGenerator implements ScriptPlugin {
     }
 
     public Promise<ScriptPlaylistGeneratorResult, Throwable, Void> fillPlaylist(String sessionId,
-            List<Pair<Artist, String>> artists, List<Pair<Track, String>> tracks,
-            List<String> genres) {
+                                                                                List<Pair<Artist, String>> artists, List<Pair<Track, String>> tracks,
+                                                                                List<String> genres) {
         Map<String, Object> args = new HashMap<>();
         if (sessionId != null) {
             args.put("sessionId", sessionId);

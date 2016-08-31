@@ -17,14 +17,14 @@
  */
 package org.runbuddy.libtomahawk.resolver;
 
+import android.util.Log;
+
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonPrimitive;
 
 import org.runbuddy.libtomahawk.utils.GsonHelper;
-
-import android.util.Log;
 
 import java.lang.reflect.Type;
 import java.util.Map;
@@ -122,7 +122,7 @@ public class ScriptJob {
      * @param failureCallback A callback object that will get called when the request has failed.
      */
     public static void start(ScriptObject object, String methodName, Map<String, Object> arguments,
-            SuccessCallback successCallback, FailureCallback failureCallback) {
+                             SuccessCallback successCallback, FailureCallback failureCallback) {
         ScriptJob job = new ScriptJob(object, methodName, arguments, successCallback,
                 failureCallback);
         object.getScriptAccount().startJob(job);
@@ -141,7 +141,7 @@ public class ScriptJob {
      *                        successfully returned from the JS side.
      */
     public static void start(ScriptObject object, String methodName, Map<String, Object> arguments,
-            SuccessCallback successCallback) {
+                             SuccessCallback successCallback) {
         ScriptJob job = new ScriptJob(object, methodName, arguments, successCallback, null);
         object.getScriptAccount().startJob(job);
     }
@@ -157,7 +157,7 @@ public class ScriptJob {
      *                        successfully returned from the JS side.
      */
     public static void start(ScriptObject object, String methodName,
-            SuccessCallback successCallback) {
+                             SuccessCallback successCallback) {
         ScriptJob job = new ScriptJob(object, methodName, null, successCallback, null);
         object.getScriptAccount().startJob(job);
     }
@@ -174,7 +174,7 @@ public class ScriptJob {
      * @param failureCallback A callback object that will get called when the request has failed.
      */
     public static void start(ScriptObject object, String methodName,
-            SuccessCallback successCallback, FailureCallback failureCallback) {
+                             SuccessCallback successCallback, FailureCallback failureCallback) {
         ScriptJob job = new ScriptJob(object, methodName, null, successCallback, failureCallback);
         object.getScriptAccount().startJob(job);
     }
@@ -189,7 +189,7 @@ public class ScriptJob {
      * @param arguments  The set of arguments (parameters) that is provided to the called method.
      */
     public static void start(ScriptObject object, String methodName,
-            Map<String, Object> arguments) {
+                             Map<String, Object> arguments) {
         ScriptJob job = new ScriptJob(object, methodName, arguments, null, null);
         object.getScriptAccount().startJob(job);
     }
@@ -208,7 +208,7 @@ public class ScriptJob {
     }
 
     private ScriptJob(ScriptObject object, String methodName, Map<String, Object> arguments,
-            SuccessCallback successCallback, FailureCallback failureCallback) {
+                      SuccessCallback successCallback, FailureCallback failureCallback) {
         mScriptObject = object;
         mMethodName = methodName;
         mArguments = arguments;

@@ -17,13 +17,13 @@
  */
 package org.runbuddy.tomahawk_android.utils;
 
+import android.content.Context;
+
 import org.acra.ReportField;
 import org.acra.collector.CrashReportData;
 import org.acra.sender.HttpSender;
 import org.acra.sender.ReportSenderException;
 import org.runbuddy.tomahawk_android.dialogs.SendLogConfigDialog;
-
-import android.content.Context;
 
 import java.util.Map;
 

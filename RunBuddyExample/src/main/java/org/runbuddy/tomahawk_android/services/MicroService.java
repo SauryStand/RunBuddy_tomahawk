@@ -17,6 +17,18 @@
  */
 package org.runbuddy.tomahawk_android.services;
 
+import android.app.Service;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.graphics.Bitmap;
+import android.os.Build;
+import android.os.Bundle;
+import android.os.IBinder;
+import android.text.TextUtils;
+import android.util.Log;
+
 import org.electricwisdom.unifiedremotemetadataprovider.media.RemoteMetadataProvider;
 import org.electricwisdom.unifiedremotemetadataprovider.media.enums.PlayState;
 import org.electricwisdom.unifiedremotemetadataprovider.media.enums.RemoteControlFeature;
@@ -33,18 +45,6 @@ import org.runbuddy.libtomahawk.infosystem.InfoSystem;
 import org.runbuddy.libtomahawk.resolver.Query;
 import org.runbuddy.tomahawk_android.TomahawkApp;
 import org.runbuddy.tomahawk_android.utils.PreferenceUtils;
-
-import android.app.Service;
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
-import android.graphics.Bitmap;
-import android.os.Build;
-import android.os.Bundle;
-import android.os.IBinder;
-import android.text.TextUtils;
-import android.util.Log;
 
 import java.util.List;
 
@@ -196,7 +196,7 @@ public class MicroService extends Service {
     }
 
     private synchronized void onPlayStateChanged(Track track, MicroService.State state,
-            boolean isSameAsCurrentTrack, String source) {
+                                                 boolean isSameAsCurrentTrack, String source) {
         if (isSameAsCurrentTrack) {
             // this only happens for apps implementing Scrobble Droid's API
             Log.d(TAG, "Got a SAME_AS_CURRENT track");

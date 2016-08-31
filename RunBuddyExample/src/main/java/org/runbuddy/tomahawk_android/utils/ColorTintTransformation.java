@@ -17,16 +17,16 @@
  */
 package org.runbuddy.tomahawk_android.utils;
 
-import com.squareup.picasso.Transformation;
-
-import org.runbuddy.tomahawk_android.TomahawkApp;
-
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
+
+import com.squareup.picasso.Transformation;
+
+import org.runbuddy.tomahawk_android.TomahawkApp;
 
 import static android.graphics.Bitmap.createBitmap;
 import static android.graphics.Paint.ANTI_ALIAS_FLAG;

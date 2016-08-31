@@ -17,11 +17,11 @@
  */
 package org.runbuddy.tomahawk_android.adapters;
 
-import org.runbuddy.libtomahawk.database.TomahawkSQLiteHelper;
-
 import android.content.Context;
 import android.database.Cursor;
 import android.support.v4.widget.SimpleCursorAdapter;
+
+import org.runbuddy.libtomahawk.database.TomahawkSQLiteHelper;
 
 public class SuggestionSimpleCursorAdapter extends SimpleCursorAdapter {
 

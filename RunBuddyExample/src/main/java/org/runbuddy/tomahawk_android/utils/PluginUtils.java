@@ -17,14 +17,14 @@
  */
 package org.runbuddy.tomahawk_android.utils;
 
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+
 import com.google.android.gms.common.GooglePlayServicesUtil;
 
 import org.runbuddy.tomahawk_android.TomahawkApp;
 import org.runbuddy.tomahawk_android.mediaplayers.DeezerMediaPlayer;
 import org.runbuddy.tomahawk_android.mediaplayers.SpotifyMediaPlayer;
-
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
 
 public class PluginUtils {
 

@@ -15,7 +15,7 @@ import com.github.mikephil.charting.data.ChartData;
 import org.tomahawk.tomahawk_android.R;
 
 
-public class BarChartItem extends ChartItem{
+public class BarChartItem extends ChartItem {
 
     private Typeface mTf;
 

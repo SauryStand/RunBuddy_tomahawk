@@ -10,6 +10,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.view.View;
 import android.widget.TextView;
+
 import org.tomahawk.tomahawk_android.R;
 
 public class DetailActivity extends Activity {

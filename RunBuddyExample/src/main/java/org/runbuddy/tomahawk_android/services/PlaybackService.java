@@ -910,7 +910,7 @@ public class PlaybackService extends MediaBrowserServiceCompat {
     @Nullable
     @Override
     public BrowserRoot onGetRoot(@NonNull String clientPackageName, int clientUid,
-            @Nullable Bundle rootHints) {
+                                 @Nullable Bundle rootHints) {
         return mMediaBrowserHelper.onGetRoot(clientPackageName, clientUid, rootHints);
     }
 

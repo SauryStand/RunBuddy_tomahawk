@@ -17,7 +17,7 @@ public class ChevronDownShapeRenderer implements IShapeRenderer
 
     @Override
     public void renderShape(Canvas c, IScatterDataSet dataSet, ViewPortHandler viewPortHandler,
-                            float posX, float posY, Paint renderPaint) {
+                     float posX, float posY, Paint renderPaint) {
 
         final float shapeHalf = dataSet.getScatterShapeSize() / 2f;
 

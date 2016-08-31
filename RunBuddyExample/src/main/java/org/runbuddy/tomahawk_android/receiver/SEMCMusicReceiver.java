@@ -1,12 +1,12 @@
 package org.runbuddy.tomahawk_android.receiver;
 
-import org.runbuddy.libtomahawk.collection.Album;
-import org.runbuddy.libtomahawk.collection.Artist;
-import org.runbuddy.libtomahawk.collection.Track;
-
 import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
+
+import org.runbuddy.libtomahawk.collection.Album;
+import org.runbuddy.libtomahawk.collection.Artist;
+import org.runbuddy.libtomahawk.collection.Track;
 
 public class SEMCMusicReceiver extends BuiltInMusicAppReceiver {
 

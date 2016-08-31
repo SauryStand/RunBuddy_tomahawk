@@ -15,7 +15,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-
 /**
  * 主页HomeFragment  Adapter
  * Created by YoKeyword on 16/2/1.

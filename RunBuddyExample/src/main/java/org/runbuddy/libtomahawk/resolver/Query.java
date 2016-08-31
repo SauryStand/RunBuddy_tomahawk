@@ -173,7 +173,7 @@ public class Query extends Cacheable implements AlphaComparable, ArtistAlphaComp
      * Queries being unique by trackname/artistname/albumname/resulthint/onlyLocal
      */
     public static Query get(String trackName, String albumName, String artistName,
-            String resultHint, boolean onlyLocal, boolean isFetchedViaHatchet) {
+                            String resultHint, boolean onlyLocal, boolean isFetchedViaHatchet) {
         Cacheable cacheable = get(Query.class,
                 getCacheKey(trackName, albumName, artistName, resultHint, onlyLocal));
         return cacheable != null ? (Query) cacheable :
@@ -186,7 +186,7 @@ public class Query extends Cacheable implements AlphaComparable, ArtistAlphaComp
      * Queries being unique by trackname/artistname/albumname/resulthint/onlyLocal
      */
     public static Query get(String trackName, String albumName, String artistName,
-            boolean onlyLocal) {
+                            boolean onlyLocal) {
         return get(trackName, albumName, artistName, null, onlyLocal, false);
     }
 
@@ -195,7 +195,7 @@ public class Query extends Cacheable implements AlphaComparable, ArtistAlphaComp
      * Queries being unique by trackname/artistname/albumname/resulthint/onlyLocal
      */
     public static Query get(String trackName, String albumName, String artistName,
-            boolean onlyLocal, boolean isFetchedViaHatchet) {
+                            boolean onlyLocal, boolean isFetchedViaHatchet) {
         return get(trackName, albumName, artistName, null, onlyLocal, isFetchedViaHatchet);
     }
 

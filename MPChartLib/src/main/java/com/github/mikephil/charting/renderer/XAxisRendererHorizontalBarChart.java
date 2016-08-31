@@ -25,7 +25,7 @@ public class XAxisRendererHorizontalBarChart extends XAxisRenderer {
     protected BarChart mChart;
 
     public XAxisRendererHorizontalBarChart(ViewPortHandler viewPortHandler, XAxis xAxis,
-                                           Transformer trans, BarChart chart) {
+            Transformer trans, BarChart chart) {
         super(viewPortHandler, xAxis, trans);
 
         this.mChart = chart;

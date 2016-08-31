@@ -17,13 +17,13 @@
  */
 package org.runbuddy.tomahawk_android.adapters;
 
+import android.content.res.Resources;
+import android.widget.AdapterView;
+
 import org.runbuddy.libtomahawk.collection.CollectionCursor;
 import org.runbuddy.libtomahawk.collection.Playlist;
 import org.runbuddy.tomahawk_android.TomahawkApp;
 import org.runbuddy.tomahawk_android.utils.PlaybackManager;
-
-import android.content.res.Resources;
-import android.widget.AdapterView;
 
 import java.util.ArrayList;
 import java.util.List;

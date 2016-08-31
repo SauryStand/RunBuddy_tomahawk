@@ -1,11 +1,11 @@
 package org.runbuddy.tomahawk_android.utils;
 
+import android.net.Uri;
+import android.util.Log;
+
 import com.squareup.okhttp.Response;
 
 import org.runbuddy.libtomahawk.utils.NetworkUtils;
-
-import android.net.Uri;
-import android.util.Log;
 
 import java.io.BufferedOutputStream;
 import java.io.File;

@@ -1,5 +1,8 @@
 package org.runbuddy.libtomahawk.resolver;
 
+import android.util.Log;
+import android.webkit.JavascriptInterface;
+
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
@@ -8,9 +11,6 @@ import org.apache.commons.io.FileUtils;
 import org.runbuddy.libtomahawk.resolver.models.ScriptResolverData;
 import org.runbuddy.libtomahawk.utils.GsonHelper;
 import org.runbuddy.tomahawk_android.TomahawkApp;
-
-import android.util.Log;
-import android.webkit.JavascriptInterface;
 
 import java.io.File;
 import java.io.IOException;

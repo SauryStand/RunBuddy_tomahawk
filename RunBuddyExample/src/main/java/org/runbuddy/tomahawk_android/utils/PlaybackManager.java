@@ -17,14 +17,14 @@
  */
 package org.runbuddy.tomahawk_android.utils;
 
+import android.util.Log;
+
 import org.runbuddy.libtomahawk.collection.Cacheable;
 import org.runbuddy.libtomahawk.collection.Playlist;
 import org.runbuddy.libtomahawk.collection.PlaylistEntry;
 import org.runbuddy.libtomahawk.collection.StationPlaylist;
 import org.runbuddy.libtomahawk.collection.Track;
 import org.runbuddy.libtomahawk.resolver.Query;
-
-import android.util.Log;
 
 import java.util.List;
 

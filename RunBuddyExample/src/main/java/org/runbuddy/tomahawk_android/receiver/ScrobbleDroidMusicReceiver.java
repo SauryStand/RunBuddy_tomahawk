@@ -19,13 +19,13 @@
 
 package org.runbuddy.tomahawk_android.receiver;
 
+import android.content.Context;
+import android.os.Bundle;
+
 import org.runbuddy.libtomahawk.collection.Album;
 import org.runbuddy.libtomahawk.collection.Artist;
 import org.runbuddy.libtomahawk.collection.Track;
 import org.runbuddy.tomahawk_android.services.MicroService;
-
-import android.content.Context;
-import android.os.Bundle;
 
 /**
  * A BroadcastReceiver for the <a href="http://code.google.com/p/scrobbledroid/wiki/DeveloperAPI">

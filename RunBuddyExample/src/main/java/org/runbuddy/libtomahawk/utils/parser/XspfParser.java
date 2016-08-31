@@ -17,6 +17,9 @@
  */
 package org.runbuddy.libtomahawk.utils.parser;
 
+import android.net.Uri;
+import android.util.Log;
+
 import com.squareup.okhttp.Response;
 
 import org.apache.commons.io.FileUtils;
@@ -25,9 +28,6 @@ import org.runbuddy.libtomahawk.resolver.Query;
 import org.runbuddy.libtomahawk.utils.GsonXmlHelper;
 import org.runbuddy.libtomahawk.utils.NetworkUtils;
 import org.runbuddy.tomahawk_android.utils.IdGenerator;
-
-import android.net.Uri;
-import android.util.Log;
 
 import java.io.File;
 import java.io.IOException;

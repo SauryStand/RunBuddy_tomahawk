@@ -5,6 +5,7 @@ import android.hardware.SensorEvent;
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 import android.widget.TextView;
+
 import org.runbuddy.Device.CounterSensor.SensorHub;
 
 import javax.microedition.khronos.egl.EGLConfig;

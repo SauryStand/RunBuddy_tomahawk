@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/MPChartLib/MPChartLib.iml" filepath="$PROJECT_DIR$/MPChartLib/MPChartLib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RunBuddyExample/RunBuddyExample.iml" filepath="$PROJECT_DIR$/RunBuddyExample/RunBuddyExample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RunBuddy_tomahawk.iml" filepath="$PROJECT_DIR$/RunBuddy_tomahawk.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fragmentation/fragmentation.iml" filepath="$PROJECT_DIR$/fragmentation/fragmentation.iml" />
+    </modules>
+  </component>
+</project>

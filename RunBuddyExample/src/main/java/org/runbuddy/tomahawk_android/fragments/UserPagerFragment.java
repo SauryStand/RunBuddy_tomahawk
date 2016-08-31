@@ -42,7 +42,7 @@ public class UserPagerFragment extends PagerFragment {
 
     /**
      * Called, when this {@link org.runbuddy.tomahawk_android.fragments.UserPagerFragment}'s {@link
-     * android.view.View} has been created
+     * View} has been created
      */
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {

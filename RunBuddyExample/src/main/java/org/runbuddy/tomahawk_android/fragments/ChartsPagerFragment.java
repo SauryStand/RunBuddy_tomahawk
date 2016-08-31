@@ -17,6 +17,10 @@
  */
 package org.runbuddy.tomahawk_android.fragments;
 
+import android.os.Bundle;
+import android.support.v4.util.Pair;
+import android.view.View;
+
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
@@ -33,10 +37,6 @@ import org.runbuddy.libtomahawk.infosystem.charts.ScriptChartsResult;
 import org.runbuddy.libtomahawk.resolver.PipeLine;
 import org.runbuddy.libtomahawk.resolver.Query;
 import org.runbuddy.tomahawk_android.utils.FragmentInfo;
-
-import android.os.Bundle;
-import android.support.v4.util.Pair;
-import android.view.View;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -35,13 +35,13 @@
             android:layoutAnimation="@anim/grid_layout_animation"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 
-        <android.support.design.widget.AppBarLayout
+        <!--android.support.design.widget.AppBarLayout
             android:id="@+id/appBarLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-        </android.support.design.widget.AppBarLayout>
+        </android.support.design.widget.AppBarLayout-->
 
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/fab"

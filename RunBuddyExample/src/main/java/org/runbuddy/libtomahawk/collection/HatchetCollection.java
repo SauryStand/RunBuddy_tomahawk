@@ -203,7 +203,7 @@ public class HatchetCollection extends Collection {
     }
 
     /**
-     * @return A {@link java.util.List} of all top hits {@link Track}s from the given Artist.
+     * @return A {@link List} of all top hits {@link Track}s from the given Artist.
      */
     public Promise<Playlist, Throwable, Void> getArtistTopHits(final Artist artist) {
         Deferred<Playlist, Throwable, Void> deferred = new ADeferredObject<>();

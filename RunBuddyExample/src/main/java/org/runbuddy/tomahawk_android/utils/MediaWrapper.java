@@ -517,7 +517,7 @@ public class MediaWrapper implements Parcelable {
         dest.writeLong(getLastModified());
     }
 
-    public static final Parcelable.Creator<MediaWrapper> CREATOR = new Parcelable.Creator<MediaWrapper>() {
+    public static final Creator<MediaWrapper> CREATOR = new Creator<MediaWrapper>() {
         public MediaWrapper createFromParcel(Parcel in) {
             return new MediaWrapper(in);
         }

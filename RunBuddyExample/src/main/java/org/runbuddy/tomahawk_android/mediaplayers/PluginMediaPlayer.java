@@ -17,12 +17,6 @@
  */
 package org.runbuddy.tomahawk_android.mediaplayers;
 
-import org.runbuddy.libtomahawk.resolver.PipeLine;
-import org.runbuddy.libtomahawk.resolver.Query;
-import org.runbuddy.libtomahawk.resolver.ScriptResolver;
-import org.runbuddy.tomahawk_android.services.PlaybackService;
-import org.runbuddy.tomahawk_android.utils.WeakReferenceHandler;
-
 import android.content.ComponentName;
 import android.content.ServiceConnection;
 import android.os.Bundle;
@@ -32,6 +26,12 @@ import android.os.Messenger;
 import android.os.RemoteException;
 import android.support.v4.media.session.PlaybackStateCompat;
 import android.util.Log;
+
+import org.runbuddy.libtomahawk.resolver.PipeLine;
+import org.runbuddy.libtomahawk.resolver.Query;
+import org.runbuddy.libtomahawk.resolver.ScriptResolver;
+import org.runbuddy.tomahawk_android.services.PlaybackService;
+import org.runbuddy.tomahawk_android.utils.WeakReferenceHandler;
 
 import java.util.ArrayList;
 import java.util.HashMap;

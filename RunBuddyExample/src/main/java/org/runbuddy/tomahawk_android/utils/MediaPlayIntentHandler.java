@@ -17,6 +17,11 @@
  */
 package org.runbuddy.tomahawk_android.utils;
 
+import android.app.SearchManager;
+import android.os.Bundle;
+import android.provider.MediaStore;
+import android.support.v4.media.session.MediaControllerCompat;
+
 import org.jdeferred.DoneCallback;
 import org.runbuddy.libtomahawk.collection.Album;
 import org.runbuddy.libtomahawk.collection.Artist;
@@ -32,11 +37,6 @@ import org.runbuddy.libtomahawk.infosystem.stations.ScriptPlaylistGeneratorSearc
 import org.runbuddy.libtomahawk.resolver.PipeLine;
 import org.runbuddy.libtomahawk.resolver.Query;
 import org.runbuddy.libtomahawk.resolver.ResultScoring;
-
-import android.app.SearchManager;
-import android.os.Bundle;
-import android.provider.MediaStore;
-import android.support.v4.media.session.MediaControllerCompat;
 
 import java.util.ArrayList;
 import java.util.Collections;
