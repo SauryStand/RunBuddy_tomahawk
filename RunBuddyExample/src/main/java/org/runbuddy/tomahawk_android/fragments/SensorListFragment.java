@@ -46,7 +46,7 @@ import java.util.List;
 /**
  * Created by Jonney Chou on 2016/7/27.
  */
-public class LocalMusicListFragment extends BaseFragment implements View.OnClickListener {
+public class SensorListFragment extends BaseFragment implements View.OnClickListener {
 
     private final static String TAG = "DeviceScanActivity";// DeviceScanActivity.class.getSimpleName();
     public static final int REFRESH = 0x000001;
@@ -145,7 +145,6 @@ public class LocalMusicListFragment extends BaseFragment implements View.OnClick
 
             @Override
             public void handleMessage(Message msg) {
-
                 super.handleMessage(msg);
             }
         };
@@ -359,7 +358,7 @@ public class LocalMusicListFragment extends BaseFragment implements View.OnClick
         BluetoothGattCharacteristic Characteristic_cur = null;
 
         for (BluetoothGattService gattService : gattServices) {
-            // -----Service的字段信�?----//
+            // -----Service的字段信道----//
             int type = gattService.getType();
             Log.e(TAG, "-->service type:" + Utils.getServiceType(type));
             Log.e(TAG, "-->includedServices size:"

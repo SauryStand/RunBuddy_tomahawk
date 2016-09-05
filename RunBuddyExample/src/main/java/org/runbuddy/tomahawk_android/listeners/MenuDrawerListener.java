@@ -33,7 +33,7 @@ import org.runbuddy.tomahawk_android.demo_zhihu.ui.fragment.second.child.ViewPag
 import org.runbuddy.tomahawk_android.fragments.ChartsSelectorFragment;
 import org.runbuddy.tomahawk_android.fragments.CollectionPagerFragment;
 import org.runbuddy.tomahawk_android.fragments.ContentHeaderFragment;
-import org.runbuddy.tomahawk_android.fragments.LocalMusicListFragment;
+import org.runbuddy.tomahawk_android.fragments.SensorListFragment;
 import org.runbuddy.tomahawk_android.fragments.MomentsFragment;
 import org.runbuddy.tomahawk_android.fragments.PlaylistEntriesFragment;
 import org.runbuddy.tomahawk_android.fragments.PlaylistsFragment;
@@ -184,7 +184,7 @@ public class MenuDrawerListener implements ListView.OnItemClickListener {
         } else if (holder.id.equals(MenuDrawer.HUB_ID_MYSETTING)) {
             bundle.putInt(TomahawkFragment.CONTENT_HEADER_MODE,
                     ContentHeaderFragment.MODE_HEADER_STATIC_SMALL);//flag
-            FragmentUtils.replace(mActivity, LocalMusicListFragment.class, bundle);
+            FragmentUtils.replace(mActivity, SensorListFragment.class, bundle);
         } else if (holder.id.equals(MenuDrawer.HUB_ID_POPULARPAGE)) {
             bundle.putInt(TomahawkFragment.CONTENT_HEADER_MODE,
                     ContentHeaderFragment.MODE_HEADER_STATIC_SMALL);//2016.08.07
