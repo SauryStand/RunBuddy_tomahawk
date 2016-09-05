@@ -5,7 +5,6 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
-import android.os.AsyncTask;
 import android.util.Log;
 
 import java.util.ArrayList;
@@ -13,27 +12,8 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
- * Created by Administrator on 2016/8/6.
+ * Created by Johnny on 2016/8/6.
  */
-class FileClient implements SensorHub.DataClient {
-
-    class FileWriter extends AsyncTask<String, Integer, Integer> {
-
-        @Override
-        protected Integer doInBackground(String... params) {
-            // TODO Auto-generated method stub
-            return null;
-        }
-
-    }
-
-    @Override
-    public void onData(SensorEvent event, String data) {
-        // TODO Auto-generated method stub
-
-    }
-
-}
 
 public class SensorHub implements SensorEventListener {
 

@@ -322,7 +322,11 @@ public class CollectionDb extends SQLiteOpenHelper {
 
         Map<String, Long> artistLastModifiedMap = new HashMap<>();
         // First we insert all artists and albumArtists
-        //这个是插入方法
+
+
+
+
+        //插入
         mDb.beginTransaction();
         for (ScriptResolverTrack track : tracks) {
             if (albumArtists.get(track.album + "♠" + track.albumArtist).size() > 1) {
@@ -364,8 +368,8 @@ public class CollectionDb extends SQLiteOpenHelper {
                 new String[]{ID, ARTISTS_ARTIST, ARTISTS_ARTISTDISAMBIGUATION},
                 null, null, null, null, null);
         Map<String, Integer> cachedArtists = cursorToMap(cursor);
-
         Map<String, Long> albumLastModifiedMap = new HashMap<>();
+
         mDb.beginTransaction();
         for (ScriptResolverTrack track : tracks) {
             ContentValues values = new ContentValues();
@@ -375,8 +379,7 @@ public class CollectionDb extends SQLiteOpenHelper {
                 albumArtistId = cachedArtists.get(
                         concatKeys(track.artist, track.artistDisambiguation));
             } else {
-                albumArtistId = cachedArtists.get(
-                        concatKeys(Artist.COMPILATION_ARTIST.getName(), ""));
+                albumArtistId = cachedArtists.get(concatKeys(Artist.COMPILATION_ARTIST.getName(), ""));
             }
             values.put(ALBUMS_ALBUMARTISTID, albumArtistId);
             values.put(ALBUMS_IMAGEPATH, track.imagePath);
@@ -392,12 +395,11 @@ public class CollectionDb extends SQLiteOpenHelper {
         }
         mDb.setTransactionSuccessful();
         mDb.endTransaction();
-
+        /**********************************************/
         cursor = mDb.query(TABLE_ALBUMS,
                 new String[]{ID, ALBUMS_ALBUM, ALBUMS_ALBUMARTISTID},
                 null, null, null, null, null);
         Map<String, Integer> cachedAlbums = cursorToMap(cursor);
-
         mDb.beginTransaction();
         for (ScriptResolverTrack track : tracks) {
             ContentValues values = new ContentValues();
@@ -427,6 +429,7 @@ public class CollectionDb extends SQLiteOpenHelper {
         }
         mDb.setTransactionSuccessful();
         mDb.endTransaction();
+        /************************************************/
 
         Log.d(TAG, "Added " + tracks.size() + " tracks in " + (System.currentTimeMillis() - time)
                 + "ms");

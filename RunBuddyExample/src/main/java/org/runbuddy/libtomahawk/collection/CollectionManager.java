@@ -59,23 +59,16 @@ public class CollectionManager {
     public static final String TAG = CollectionManager.class.getSimpleName();
 
     private static class Holder {
-
         private static final CollectionManager instance = new CollectionManager();
-
     }
 
     public static class AddedOrRemovedEvent {
-
         public Collection mCollection;
-
     }
 
     public static class UpdatedEvent {
-
         public Collection mCollection;
-
         public HashSet<String> mUpdatedItemIds;
-
     }
 
     private final ConcurrentHashMap<String, Collection> mCollections
