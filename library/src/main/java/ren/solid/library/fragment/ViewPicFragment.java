@@ -115,7 +115,11 @@ public class ViewPicFragment extends BaseFragment {
     public void downloadPicture(final int action) {
         mSavePath = FileUtils.getSaveImagePath(getMContext()) + File.separator + FileUtils.getFileName(mUrlList.get(0));
         Logger.i(this, mSavePath);
+<<<<<<< HEAD
         ObservableProvider.getDefault().download(mUrlList.get(0),new DownLoadSubscribe(FileUtils.getSaveImagePath(getMContext()),FileUtils.getFileName(mUrlList.get(0))) {
+=======
+        ObservableProvider.getDefault().download(mUrlList.get(0),new DownLoadSubscribe(FileUtils.getSaveImagePath(getMContext()), FileUtils.getFileName(mUrlList.get(0))) {
+>>>>>>> b1bf6500ccc54fc3650bcfcb94500619ef32f339
             @Override
             public void onCompleted(File file) {
                 //Log.i("ThreadInfo", "onCompleted:" + Thread.currentThread().getName());

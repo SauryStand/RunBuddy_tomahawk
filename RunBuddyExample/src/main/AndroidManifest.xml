@@ -16,6 +16,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+<<<<<<< HEAD
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
@@ -30,6 +31,12 @@
         android:required="true" />
 
 
+=======
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!--Bomb推送所需的权限-->
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+>>>>>>> b1bf6500ccc54fc3650bcfcb94500619ef32f339
     <supports-screens
         android:anyDensity="true"
         android:largeScreens="true"
@@ -38,19 +45,30 @@
         android:xlargeScreens="true" />
 
     <application
+<<<<<<< HEAD
         android:name="org.runbuddy.tomahawk_android.TomahawkApp"
         android:allowBackup="true"
         android:icon="@drawable/zombies"
         android:label="@string/app_name"
         android:theme="@style/Theme.Tomahawk">
 
+=======
+            android:name="org.runbuddy.tomahawk_android.TomahawkApp"
+            android:icon="@drawable/zombies"
+            android:label="@string/app_name"
+            android:allowBackup="true"
+            android:theme="@style/Theme.Tomahawk">
+>>>>>>> b1bf6500ccc54fc3650bcfcb94500619ef32f339
         <meta-data
             android:name="UMENG_APPKEY"
             android:value="57a2b1be67e58ec1850025c5"></meta-data>
         <meta-data
             android:name="UMENG_CHANNEL"
             android:value="Tencent" />
+<<<<<<< HEAD
 
+=======
+>>>>>>> b1bf6500ccc54fc3650bcfcb94500619ef32f339
 
         <activity
             android:name="org.runbuddy.tomahawk_android.activities.TomahawkMainActivity"
