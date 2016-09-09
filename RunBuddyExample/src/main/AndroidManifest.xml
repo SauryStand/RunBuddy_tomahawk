@@ -21,6 +21,10 @@
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
 
+    <!--Bomb推送所需的权限-->
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
     <uses-feature
         android:name="android.hardware.bluetooth_le"
         android:required="true" />
@@ -39,6 +43,14 @@
         android:icon="@drawable/zombies"
         android:label="@string/app_name"
         android:theme="@style/Theme.Tomahawk">
+
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="57a2b1be67e58ec1850025c5"></meta-data>
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="Tencent" />
+
 
         <activity
             android:name="org.runbuddy.tomahawk_android.activities.TomahawkMainActivity"
@@ -816,6 +828,50 @@
         <activity android:name="org.runbuddy.Device.BlueTooth.DeviceScanActivity"></activity>
         <activity android:name="org.runbuddy.Device.BlueTooth.AmoComActivity"></activity>
         <activity android:name="org.runbuddy.Device.BlueTooth.DetailActivity"></activity>
+
+        <activity
+            android:name="com.sina.weibo.sdk.component.WeiboSdkBrowser"
+            android:configChanges="keyboardHidden|orientation"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="ren.solid.library.activity.ViewPicActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="ren.solid.library.activity.WebViewActivity"
+            android:screenOrientation="portrait" />
+
+        <!--Bomb自动更新界面-->
+        <activity
+            android:name="cn.bmob.v3.update.UpdateDialogActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"></activity>
+
+        <service
+            android:name="cn.bmob.push.lib.service.PushService"
+            android:exported="true"
+            android:label="PushService"
+            android:process="cn.bmob.push">
+            <intent-filter>
+                <action android:name="cn.bmob.push.lib.service.PushService" />
+            </intent-filter>
+        </service>
+
+        <receiver android:name="cn.bmob.push.PushReceiver">
+            <intent-filter>
+                <!-- 系统启动完成后会调用 -->
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <!-- 解锁完成后会调用 -->
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <!-- 监听网络连通性 -->
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="org.runbuddy.tomahawk_android.fragments.Category_page.receiver.BombPushMessageReceiver">
+            <intent-filter>
+                <action android:name="cn.bmob.push.action.MESSAGE" />
+            </intent-filter>
+        </receiver>
+
 
 
     </application>

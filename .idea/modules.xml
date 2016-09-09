@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/RunBuddyExample/RunBuddyExample.iml" filepath="$PROJECT_DIR$/RunBuddyExample/RunBuddyExample.iml" />
       <module fileurl="file://$PROJECT_DIR$/RunBuddy_tomahawk.iml" filepath="$PROJECT_DIR$/RunBuddy_tomahawk.iml" />
       <module fileurl="file://$PROJECT_DIR$/fragmentation/fragmentation.iml" filepath="$PROJECT_DIR$/fragmentation/fragmentation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
     </modules>
   </component>
 </project>

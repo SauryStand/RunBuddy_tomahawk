@@ -1,1 +1,1 @@
-include ':RunBuddyExample', ':MPChartLib', ':fragmentation'
+include ':RunBuddyExample', ':MPChartLib', ':fragmentation', ':library'

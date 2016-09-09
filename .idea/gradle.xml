@@ -11,6 +11,7 @@
             <option value="$PROJECT_DIR$/MPChartLib" />
             <option value="$PROJECT_DIR$/RunBuddyExample" />
             <option value="$PROJECT_DIR$/fragmentation" />
+            <option value="$PROJECT_DIR$/library" />
           </set>
         </option>
         <option name="myModules">
@@ -19,6 +20,7 @@
             <option value="$PROJECT_DIR$/MPChartLib" />
             <option value="$PROJECT_DIR$/RunBuddyExample" />
             <option value="$PROJECT_DIR$/fragmentation" />
+            <option value="$PROJECT_DIR$/library" />
           </set>
         </option>
       </GradleProjectSettings>

@@ -46,7 +46,7 @@ import java.util.List;
 /**
  * Created by Jonney Chou on 2016/7/27.
  */
-public class LocalMusicListFragment extends BaseFragment implements View.OnClickListener {
+public class SensorListFragment extends BaseFragment implements View.OnClickListener {
 
     private final static String TAG = "DeviceScanActivity";// DeviceScanActivity.class.getSimpleName();
     public static final int REFRESH = 0x000001;

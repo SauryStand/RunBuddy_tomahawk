@@ -23,7 +23,7 @@
             android:layout_gravity="center"
             android:layout_margin="5dp"
             android:background="@color/colorPrimary"
-            android:src="@drawable/ic_account_circle_white_24dp" />
+            android:src="@drawable/web" />
 
 
         <LinearLayout
@@ -62,7 +62,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/apptheme_scrubber_control_focused_holo"
+                android:src="@drawable/default_load_img"
                 android:visibility="gone" />
 
             <LinearLayout

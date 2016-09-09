@@ -304,6 +304,15 @@
     <string name="device_rssi">rssi信号</string>
     <string name="text_detail">detail</string>
 
+
+    <string name="no_login">未登录</string>
+
+    <string name="feedback_dialog_title">您宝贵的反馈建议</string>
+    <string name="feedback_input_hint">可直接到Github提Issues</string>
+    <string name="feedback_input_prefill"></string>
+    <string name="feedback_success">提交成功</string>
+    <string name="feedback_failed">提交失败</string>
+
         <string name="large_text">
         "Material is the metaphor.\n\n"
 
