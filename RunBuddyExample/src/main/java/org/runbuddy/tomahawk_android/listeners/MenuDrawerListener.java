@@ -33,15 +33,14 @@ import org.runbuddy.tomahawk_android.demo_zhihu.ui.fragment.second.child.ViewPag
 import org.runbuddy.tomahawk_android.fragments.ChartsSelectorFragment;
 import org.runbuddy.tomahawk_android.fragments.CollectionPagerFragment;
 import org.runbuddy.tomahawk_android.fragments.ContentHeaderFragment;
-import org.runbuddy.tomahawk_android.fragments.SensorListFragment;
 import org.runbuddy.tomahawk_android.fragments.MomentsFragment;
 import org.runbuddy.tomahawk_android.fragments.PlaylistEntriesFragment;
 import org.runbuddy.tomahawk_android.fragments.PlaylistsFragment;
 import org.runbuddy.tomahawk_android.fragments.PreferencePagerFragment;
+import org.runbuddy.tomahawk_android.fragments.SensorListFragment;
 import org.runbuddy.tomahawk_android.fragments.TomahawkFragment;
 import org.runbuddy.tomahawk_android.fragments.UserPagerFragment;
 import org.runbuddy.tomahawk_android.fragments.star_page.StarPageFragment;
-import org.runbuddy.tomahawk_android.ren.solid.ganhuoio.ui.fragment.CategoryFragment;
 import org.runbuddy.tomahawk_android.utils.FragmentUtils;
 import org.runbuddy.tomahawk_android.utils.MenuDrawer;
 
@@ -162,11 +161,7 @@ public class MenuDrawerListener implements ListView.OnItemClickListener {
         } else if (holder.id.equals(MenuDrawer.HUB_ID_STATIONS)) {
             bundle.putInt(TomahawkFragment.CONTENT_HEADER_MODE,
                     ContentHeaderFragment.MODE_HEADER_STATIC);
-<<<<<<< HEAD
             FragmentUtils.replace(mActivity, MomentsFragment.class, bundle);
-=======
-            FragmentUtils.replace(mActivity, CategoryFragment.class, bundle);
->>>>>>> b1bf6500ccc54fc3650bcfcb94500619ef32f339
             /*
             User.getSelf().done(new DoneCallback<User>() {
                 @Override

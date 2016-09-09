@@ -54,11 +54,10 @@
                     android:layout_gravity="right"
                     android:background="@drawable/selector_action"
                     android:padding="5dp"
-<<<<<<< HEAD
                     android:src="@drawable/icon_action" />
-=======
+
                     android:src="@drawable/acfun" />
->>>>>>> b1bf6500ccc54fc3650bcfcb94500619ef32f339
+
             </LinearLayout>
 
             <ImageView

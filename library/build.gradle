@@ -19,24 +19,23 @@ android {
 }
 
 dependencies {
-<<<<<<< HEAD
+
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:24.1.1'
-=======
->>>>>>> b1bf6500ccc54fc3650bcfcb94500619ef32f339
+
     //materialdrawer
     compile('com.mikepenz:materialdrawer:5.2.6@aar') {
         transitive = true
     }
     compile 'com.mikepenz:google-material-typeface:2.2.0.1@aar'
-<<<<<<< HEAD
+
     //以下注释了的在materialdrawer包中都存在
-=======
+
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:24.1.1'
->>>>>>> b1bf6500ccc54fc3650bcfcb94500619ef32f339
+
     compile 'com.squareup.okhttp3:okhttp:3.2.0'
     compile 'com.squareup.picasso:picasso:2.5.2'
     //compile 'com.github.chrisbanes:PhotoView:1.2.6'
@@ -54,9 +53,6 @@ dependencies {
     compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
     compile 'com.squareup.okhttp:logging-interceptor:2.6.0'
     compile 'com.umeng.analytics:analytics:latest.integration'
-<<<<<<< HEAD
-    compile files('libs/com.github.chrisbanesPhotoView.jar')
-=======
-    compile files('libs/uk.co.senab.photoview.PhotoView.jar')
->>>>>>> b1bf6500ccc54fc3650bcfcb94500619ef32f339
+
+
 }

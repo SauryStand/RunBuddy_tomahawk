@@ -1,9 +1,5 @@
 <resources>
     <string name="app_name">Library</string>
-<<<<<<< HEAD
 
-
-=======
->>>>>>> b1bf6500ccc54fc3650bcfcb94500619ef32f339
     <string name="no_network">当前无网络连接</string>
 </resources>
