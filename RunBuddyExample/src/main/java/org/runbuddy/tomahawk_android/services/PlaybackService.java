@@ -73,7 +73,7 @@ import org.runbuddy.libtomahawk.resolver.Query;
 import org.runbuddy.libtomahawk.utils.ImageUtils;
 import org.runbuddy.tomahawk_android.TomahawkApp;
 import org.runbuddy.tomahawk_android.activities.TomahawkMainActivity;
-import org.runbuddy.tomahawk_android.fragments.TomahawkFragment;
+import org.runbuddy.tomahawk_android.ui.fragments.TomahawkFragment;
 import org.runbuddy.tomahawk_android.mediaplayers.AndroidMediaPlayer;
 import org.runbuddy.tomahawk_android.mediaplayers.DeezerMediaPlayer;
 import org.runbuddy.tomahawk_android.mediaplayers.PluginMediaPlayer;

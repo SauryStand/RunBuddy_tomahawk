@@ -39,7 +39,7 @@
             android:textColor="@color/primary_textcolor"
             android:textSize="@dimen/text_size_large"/>
 
-    <org.runbuddy.tomahawk_android.ui.widgets.ConfigCheckbox
+    <org.runbuddy.tomahawk_android.widgets.ConfigCheckbox
             android:id="@+id/config_checkbox"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"

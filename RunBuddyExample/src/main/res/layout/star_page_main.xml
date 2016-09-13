@@ -28,7 +28,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <org.runbuddy.tomahawk_android.fragments.star_page.widgets.picasso.GridRecyclerView
+        <org.runbuddy.tomahawk_android.ui.fragments.star_page.widgets.picasso.GridRecyclerView
             android:id="@+id/recycler"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

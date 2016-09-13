@@ -47,7 +47,7 @@ import org.runbuddy.libtomahawk.resolver.Query;
 import org.runbuddy.libtomahawk.resolver.Resolver;
 import org.runbuddy.libtomahawk.utils.ViewUtils;
 import org.runbuddy.tomahawk_android.activities.TomahawkMainActivity;
-import org.runbuddy.tomahawk_android.fragments.TomahawkFragment;
+import org.runbuddy.tomahawk_android.ui.fragments.TomahawkFragment;
 import org.runbuddy.tomahawk_android.listeners.MultiColumnClickListener;
 import org.runbuddy.tomahawk_android.services.PlaybackService;
 import org.runbuddy.tomahawk_android.utils.PreferenceUtils;

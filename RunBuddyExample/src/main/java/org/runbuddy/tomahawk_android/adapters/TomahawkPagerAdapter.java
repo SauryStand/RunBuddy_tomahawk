@@ -23,7 +23,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
 import org.runbuddy.tomahawk_android.TomahawkApp;
-import org.runbuddy.tomahawk_android.fragments.TomahawkFragment;
+import org.runbuddy.tomahawk_android.ui.fragments.TomahawkFragment;
 import org.runbuddy.tomahawk_android.utils.FragmentInfo;
 
 import java.util.List;

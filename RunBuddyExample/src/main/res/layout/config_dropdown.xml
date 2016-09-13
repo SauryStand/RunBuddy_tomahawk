@@ -39,7 +39,7 @@
             android:textColor="@color/primary_textcolor"
             android:textSize="@dimen/text_size_large"/>
 
-    <org.runbuddy.tomahawk_android.ui.widgets.ConfigDropDown
+    <org.runbuddy.tomahawk_android.widgets.ConfigDropDown
             android:id="@+id/config_dropdown"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

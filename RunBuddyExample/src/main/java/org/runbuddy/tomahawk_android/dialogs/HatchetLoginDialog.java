@@ -30,7 +30,7 @@ import org.runbuddy.libtomahawk.authentication.AuthenticatorUtils;
 import org.runbuddy.libtomahawk.resolver.HatchetStubResolver;
 import org.runbuddy.libtomahawk.resolver.PipeLine;
 import org.runbuddy.tomahawk_android.TomahawkApp;
-import org.runbuddy.tomahawk_android.fragments.TomahawkFragment;
+import org.runbuddy.tomahawk_android.ui.fragments.TomahawkFragment;
 import org.runbuddy.tomahawk_android.views.HatchetLoginRegisterView;
 import org.tomahawk.tomahawk_android.R;
 

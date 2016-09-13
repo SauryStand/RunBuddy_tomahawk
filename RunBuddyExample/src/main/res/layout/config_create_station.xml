@@ -23,7 +23,7 @@
               android:layout_height="wrap_content"
               android:orientation="vertical">
 
-    <org.runbuddy.tomahawk_android.ui.widgets.ConfigEdittext
+    <org.runbuddy.tomahawk_android.widgets.ConfigEdittext
             android:id="@+id/create_station_edittext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

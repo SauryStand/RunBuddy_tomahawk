@@ -127,7 +127,7 @@ public class SensorActivity extends Activity implements SensorHub.DataClient {
     public void onData(SensorEvent event, final String data) {
         if (Thread.currentThread().getId() == mTID) {
             //In the main thread
-            mTextView.append("\n");
+            //mTextView.append("\n");
             String str_num = data.replace(".0", "");
             mTextView.append(str_num + "step");
             //setStep_temp_count(Integer.valueOf(str_num));

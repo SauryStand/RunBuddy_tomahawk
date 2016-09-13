@@ -26,7 +26,7 @@
               android:layout_weight="1"
               android:background="@drawable/selectable_background_tomahawk_opaque">
 
-    <org.runbuddy.tomahawk_android.ui.widgets.SquareWidthFrameLayout
+    <org.runbuddy.tomahawk_android.widgets.SquareWidthFrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -42,7 +42,7 @@
                   android:textSize="@dimen/text_size_verylarge"
                   android:textColor="@color/primary_textcolor_inverted"/>
 
-    </org.runbuddy.tomahawk_android.ui.widgets.SquareWidthFrameLayout>
+    </org.runbuddy.tomahawk_android.widgets.SquareWidthFrameLayout>
 
     <TextView android:id="@+id/textview1"
               android:layout_width="wrap_content"
