@@ -37,11 +37,11 @@ import org.runbuddy.libtomahawk.resolver.ScriptResolver;
 import org.runbuddy.libtomahawk.resolver.models.ScriptResolverConfigUiField;
 import org.runbuddy.libtomahawk.utils.ViewUtils;
 import org.runbuddy.tomahawk_android.TomahawkApp;
-import org.runbuddy.tomahawk_android.fragments.TomahawkFragment;
-import org.runbuddy.tomahawk_android.ui.widgets.ConfigCheckbox;
-import org.runbuddy.tomahawk_android.ui.widgets.ConfigDropDown;
-import org.runbuddy.tomahawk_android.ui.widgets.ConfigEdittext;
-import org.runbuddy.tomahawk_android.ui.widgets.ConfigFieldView;
+import org.runbuddy.tomahawk_android.ui.fragments.TomahawkFragment;
+import org.runbuddy.tomahawk_android.widgets.ConfigCheckbox;
+import org.runbuddy.tomahawk_android.widgets.ConfigDropDown;
+import org.runbuddy.tomahawk_android.widgets.ConfigEdittext;
+import org.runbuddy.tomahawk_android.widgets.ConfigFieldView;
 import org.tomahawk.tomahawk_android.R;
 
 import java.util.ArrayList;

@@ -39,7 +39,7 @@ import org.tomahawk.tomahawk_android.R;
 
 /**
  * {@link PagerAdapter} which provides functionality to swipe an AlbumArt image. Used in {@link
- * org.runbuddy.tomahawk_android.fragments.PlaybackFragment}
+ * org.runbuddy.tomahawk_android.ui.fragments.PlaybackFragment}
  */
 public class AlbumArtSwipeAdapter extends PagerAdapter {
 

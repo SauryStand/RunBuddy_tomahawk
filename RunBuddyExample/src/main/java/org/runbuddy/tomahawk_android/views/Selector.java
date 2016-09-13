@@ -32,7 +32,7 @@ import android.widget.TextView;
 
 import org.runbuddy.libtomahawk.infosystem.charts.ScriptChartsManager;
 import org.runbuddy.libtomahawk.infosystem.charts.ScriptChartsProvider;
-import org.runbuddy.tomahawk_android.fragments.ChartsPagerFragment;
+import org.runbuddy.tomahawk_android.ui.fragments.ChartsPagerFragment;
 import org.runbuddy.tomahawk_android.utils.AnimationUtils;
 import org.runbuddy.tomahawk_android.utils.BlurTransformation;
 import org.runbuddy.tomahawk_android.utils.FragmentInfo;

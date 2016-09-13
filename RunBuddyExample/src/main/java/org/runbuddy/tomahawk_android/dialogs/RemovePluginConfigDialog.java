@@ -27,7 +27,7 @@ import android.widget.TextView;
 import org.runbuddy.libtomahawk.resolver.PipeLine;
 import org.runbuddy.libtomahawk.resolver.ScriptResolver;
 import org.runbuddy.libtomahawk.utils.VariousUtils;
-import org.runbuddy.tomahawk_android.fragments.TomahawkFragment;
+import org.runbuddy.tomahawk_android.ui.fragments.TomahawkFragment;
 import org.tomahawk.tomahawk_android.R;
 
 import java.io.File;

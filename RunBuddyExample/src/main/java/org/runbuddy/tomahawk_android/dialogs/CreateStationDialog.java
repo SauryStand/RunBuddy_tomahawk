@@ -40,7 +40,7 @@ import org.runbuddy.tomahawk_android.activities.TomahawkMainActivity;
 import org.runbuddy.tomahawk_android.adapters.Segment;
 import org.runbuddy.tomahawk_android.adapters.TomahawkListAdapter;
 import org.runbuddy.tomahawk_android.listeners.MultiColumnClickListener;
-import org.runbuddy.tomahawk_android.ui.widgets.ConfigEdittext;
+import org.runbuddy.tomahawk_android.widgets.ConfigEdittext;
 import org.tomahawk.tomahawk_android.R;
 
 import java.util.ArrayList;

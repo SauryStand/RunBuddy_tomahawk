@@ -30,7 +30,7 @@ import android.widget.Toast;
 import org.acra.ACRA;
 import org.runbuddy.libtomahawk.utils.ViewUtils;
 import org.runbuddy.tomahawk_android.TomahawkApp;
-import org.runbuddy.tomahawk_android.ui.widgets.ConfigEdittext;
+import org.runbuddy.tomahawk_android.widgets.ConfigEdittext;
 import org.tomahawk.tomahawk_android.R;
 
 /**

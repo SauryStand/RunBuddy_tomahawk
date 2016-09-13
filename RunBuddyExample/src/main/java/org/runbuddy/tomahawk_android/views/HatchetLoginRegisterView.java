@@ -39,7 +39,7 @@ import android.widget.TextView;
 
 import org.runbuddy.libtomahawk.authentication.AuthenticatorUtils;
 import org.runbuddy.libtomahawk.utils.ViewUtils;
-import org.runbuddy.tomahawk_android.ui.widgets.ConfigEdittext;
+import org.runbuddy.tomahawk_android.widgets.ConfigEdittext;
 import org.tomahawk.tomahawk_android.R;
 
 public class HatchetLoginRegisterView extends LinearLayout {

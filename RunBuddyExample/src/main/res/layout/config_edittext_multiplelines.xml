@@ -18,7 +18,7 @@
  *   along with Tomahawk. If not, see <http://www.gnu.org/licenses/>.
  */
 -->
-<org.runbuddy.tomahawk_android.ui.widgets.ConfigEdittext
+<org.runbuddy.tomahawk_android.widgets.ConfigEdittext
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/config_edittext"
         android:layout_width="match_parent"

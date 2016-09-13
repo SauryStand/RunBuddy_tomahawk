@@ -32,11 +32,11 @@ import org.runbuddy.libtomahawk.infosystem.User;
 import org.runbuddy.libtomahawk.resolver.Query;
 import org.runbuddy.tomahawk_android.TomahawkApp;
 import org.runbuddy.tomahawk_android.activities.TomahawkMainActivity;
-import org.runbuddy.tomahawk_android.fragments.CollectionPagerFragment;
-import org.runbuddy.tomahawk_android.fragments.ContentHeaderFragment;
-import org.runbuddy.tomahawk_android.fragments.ContextMenuFragment;
-import org.runbuddy.tomahawk_android.fragments.PlaybackFragment;
-import org.runbuddy.tomahawk_android.fragments.TomahawkFragment;
+import org.runbuddy.tomahawk_android.ui.fragments.CollectionPagerFragment;
+import org.runbuddy.tomahawk_android.ui.fragments.ContentHeaderFragment;
+import org.runbuddy.tomahawk_android.ui.fragments.ContextMenuFragment;
+import org.runbuddy.tomahawk_android.ui.fragments.PlaybackFragment;
+import org.runbuddy.tomahawk_android.ui.fragments.TomahawkFragment;
 import org.tomahawk.tomahawk_android.R;
 
 /**

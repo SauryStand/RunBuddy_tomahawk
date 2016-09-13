@@ -31,10 +31,10 @@ import org.runbuddy.libtomahawk.database.DatabaseHelper;
 import org.runbuddy.libtomahawk.infosystem.User;
 import org.runbuddy.libtomahawk.utils.ViewUtils;
 import org.runbuddy.tomahawk_android.activities.TomahawkMainActivity;
-import org.runbuddy.tomahawk_android.fragments.ContentHeaderFragment;
-import org.runbuddy.tomahawk_android.fragments.PlaylistEntriesFragment;
-import org.runbuddy.tomahawk_android.fragments.TomahawkFragment;
-import org.runbuddy.tomahawk_android.ui.widgets.ConfigEdittext;
+import org.runbuddy.tomahawk_android.ui.fragments.ContentHeaderFragment;
+import org.runbuddy.tomahawk_android.ui.fragments.PlaylistEntriesFragment;
+import org.runbuddy.tomahawk_android.ui.fragments.TomahawkFragment;
+import org.runbuddy.tomahawk_android.widgets.ConfigEdittext;
 import org.runbuddy.tomahawk_android.utils.FragmentUtils;
 import org.tomahawk.tomahawk_android.R;
 
