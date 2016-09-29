@@ -239,7 +239,7 @@
   <string name="context_menu_create_station">Create Station</string>
   <string name="drawer_title_charts">Charts</string>
   <string name="drawer_title_stations">Stations</string>
-  <string name="drawer_title_running_page">Running Page</string>
+  <string name="drawer_title_running_mv_page">Running Page</string>
   <string name="drawer_title_popularpage">Popularpage</string>
   <string name="resolver_config_enable_button_enable">Enable</string>
   <string name="resolver_config_enable_button_disable">Disable</string>

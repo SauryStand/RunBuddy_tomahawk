@@ -272,7 +272,7 @@
   <string name="device_rssi">rssi信号</string>
   <string name="text_detail">detail</string>
   <string name="testing">Testing</string>
-  <string name="drawer_title_running_page">Running Page</string>
+  <string name="drawer_title_running_mv_page">Running Page</string>
   <string name="drawer_title_popularpage">Popularpage</string>
   <string name="authenticator_label" translate="false">Hatchet</string>
   <string name="hello_blank_fragment">Hello blank fragment</string>

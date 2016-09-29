@@ -111,6 +111,11 @@ public class MenuDrawer extends DrawerLayout {
                     holders.add(holder);
                 }
                 holder = new TomahawkMenuAdapter.ResourceHolder();
+                holder.id = HUB_ID_FEED;
+                holder.title = resources.getString(R.string.drawer_title_star_runner);
+                holder.iconResId = R.drawable.ic_action_dashboard;
+                holders.add(holder);
+                holder = new TomahawkMenuAdapter.ResourceHolder();
                 holder.id = HUB_ID_CHARTS;
                 holder.title = resources.getString(R.string.drawer_title_charts);
                 holder.iconResId = R.drawable.ic_action_charts;
@@ -143,13 +148,13 @@ public class MenuDrawer extends DrawerLayout {
                 holders.add(holder);
                 holder = new TomahawkMenuAdapter.ResourceHolder();
                 holder.id = HUB_ID_MYSETTING;
-                holder.title = resources.getString(R.string.drawer_title_running_page);
+                holder.title = resources.getString(R.string.drawer_title_running_mv_page);
                 holder.iconResId = R.drawable.ic_image_music_note;
                 holders.add(holder);
                 holder = new TomahawkMenuAdapter.ResourceHolder();
                 holder.id = HUB_ID_POPULARPAGE;
                 holder.title = resources.getString(R.string.drawer_title_popularpage);
-                holder.iconResId = R.drawable.ic_action_favorites;
+                holder.iconResId = R.drawable.icon_action;
                 holders.add(holder);
 
                 for (Collection collection : CollectionManager.get().getCollections()) {
