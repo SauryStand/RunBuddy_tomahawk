@@ -85,10 +85,12 @@ import org.runbuddy.libtomahawk.utils.ViewUtils;
 import org.runbuddy.libtomahawk.utils.parser.XspfParser;
 import org.runbuddy.tomahawk_android.TomahawkApp;
 import org.runbuddy.tomahawk_android.adapters.SuggestionSimpleCursorAdapter;
-import org.runbuddy.tomahawk_android.ui.demo_zhihu.basic.BaseLazyMainFragment;
 import org.runbuddy.tomahawk_android.dialogs.GMusicConfigDialog;
 import org.runbuddy.tomahawk_android.dialogs.InstallPluginConfigDialog;
 import org.runbuddy.tomahawk_android.dialogs.WarnOldPluginDialog;
+import org.runbuddy.tomahawk_android.listeners.TomahawkPanelSlideListener;
+import org.runbuddy.tomahawk_android.services.PlaybackService;
+import org.runbuddy.tomahawk_android.ui.basic.BaseLazyMainFragment;
 import org.runbuddy.tomahawk_android.ui.fragments.ArtistPagerFragment;
 import org.runbuddy.tomahawk_android.ui.fragments.ContentHeaderFragment;
 import org.runbuddy.tomahawk_android.ui.fragments.ContextMenuFragment;
@@ -97,8 +99,6 @@ import org.runbuddy.tomahawk_android.ui.fragments.PreferencePagerFragment;
 import org.runbuddy.tomahawk_android.ui.fragments.SearchPagerFragment;
 import org.runbuddy.tomahawk_android.ui.fragments.TomahawkFragment;
 import org.runbuddy.tomahawk_android.ui.fragments.WelcomeFragment;
-import org.runbuddy.tomahawk_android.listeners.TomahawkPanelSlideListener;
-import org.runbuddy.tomahawk_android.services.PlaybackService;
 import org.runbuddy.tomahawk_android.utils.AnimationUtils;
 import org.runbuddy.tomahawk_android.utils.FragmentUtils;
 import org.runbuddy.tomahawk_android.utils.IdGenerator;
@@ -464,6 +464,7 @@ public class TomahawkMainActivity extends SupportActivity implements BaseLazyMai
                 public void onDrawerClosed(View view) {
                     getSupportActionBar().setTitle(mTitle);
                 }
+
                 /** Called when a drawer has settled in a completely open state. */
                 public void onDrawerOpened(View drawerView) {
                     getSupportActionBar().setTitle(mDrawerTitle);
@@ -536,11 +537,7 @@ public class TomahawkMainActivity extends SupportActivity implements BaseLazyMai
         //initView();
 
 
-
     }
-
-
-
 
 
     @Override
@@ -1060,14 +1057,6 @@ public class TomahawkMainActivity extends SupportActivity implements BaseLazyMai
     public void showGradientActionBar() {
         findViewById(R.id.action_bar_background).setBackgroundResource(R.drawable.below_shadow);
     }
-
-
-
-
-
-
-
-
 
 
 }

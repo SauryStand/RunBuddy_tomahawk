@@ -47,7 +47,7 @@ public class StarPageFragment extends Fragment implements NavigationView.OnNavig
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getActivity().setTitle(R.string.drawer_title_running_page);
+        getActivity().setTitle(R.string.drawer_title_running_mv_page);
         View view = inflater.inflate(R.layout.star_page_main, container, false);
 
 

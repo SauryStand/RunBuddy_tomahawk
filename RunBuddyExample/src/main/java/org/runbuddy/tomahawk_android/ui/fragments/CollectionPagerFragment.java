@@ -90,6 +90,6 @@ public class CollectionPagerFragment extends PagerFragment {
         fragmentInfoLists.add(fragmentInfoList);
 
 
-        setupPager(fragmentInfoLists, initialPage, null, 2);//就一共4个子fragment啦
+        setupPager(fragmentInfoLists, initialPage, null, 2);//就一共3个子fragment啦
     }
 }

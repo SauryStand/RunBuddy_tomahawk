@@ -15,8 +15,8 @@ import com.github.glomadrian.dashedcircularprogress.DashedCircularProgress;
 import org.runbuddy.Device.BlueTooth.DeviceScanActivity;
 import org.runbuddy.Device.CounterSensor.SensorActivity;
 import org.runbuddy.Device.CounterSensor.SensorListAdapter;
-import org.runbuddy.Intricate_Charts.ListViewMultiChartActivity;
-import org.runbuddy.tomahawk_android.ui.demo_zhihu.basic.BaseFragment;
+import org.runbuddy.tomahawk_android.ui.Intricate_Charts.ListViewMultiChartActivity;
+import org.runbuddy.tomahawk_android.ui.basic.BaseFragment;
 import org.tomahawk.tomahawk_android.R;
 
 import java.text.NumberFormat;
@@ -33,7 +33,7 @@ public class SensorListFragment extends BaseFragment implements View.OnClickList
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getActivity().setTitle(R.string.drawer_title_running_page);
+        getActivity().setTitle(R.string.drawer_title_running_mv_page);
         View view = inflater.inflate(R.layout.zhihu_fragment_first_detail, container, false);
         initialView(view);
         return view;

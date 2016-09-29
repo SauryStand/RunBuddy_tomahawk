@@ -157,5 +157,7 @@
 
     <dimen name="user_info_avatar_w_h">100dp</dimen>
 
+    <dimen name="card_margin">16dp</dimen>
+
 
 </resources>

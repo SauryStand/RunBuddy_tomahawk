@@ -76,4 +76,39 @@
         <item name="rippleColor">@android:color/white</item>
     </style>
 
+
+    <style name="Widget.CardContent" parent="android:Widget">
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:paddingTop">24dp</item>
+        <item name="android:paddingBottom">24dp</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowAnimationStyle">@style/AnimationActivity</item>
+    </style>
+    <style name="ActivityTheme" parent="AppTheme">
+    </style>
+    <style name="ActivityTheme.windowIsTranslucent">
+        <!--swipeBack需要设置，windowIsTranslucent，如果A->B,B需要滑动退出，需要windowIsTranslucent，A不要设置（如设置在5.0一下会显示桌面，5.0以上，显示黑屏）-->
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+    <style name="AnimationActivity" parent="@android:style/Animation.Activity">
+        <!--当我们从 A1 启动 A2 时，A2 出现在屏幕上，这个动画叫做 android:activityOpenEnterAnimation-->
+        <item name="android:activityOpenEnterAnimation">@anim/activity_new</item>
+        <!--当我们从 A1 启动 A2 时，A1 从屏幕上消失，这个动画叫做 android:activityOpenExitAnimation-->
+        <!--<item name="android:activityOpenExitAnimation">@anim/activity_finish</item>-->
+        <!--当我们从 A2 退出回到 A1 时，A1 出现在屏幕上，这个叫做 android:activityCloseEnterAnimation-->
+        <!--<item name="android:activityCloseEnterAnimation">@anim/activity_new</item>-->
+        <!--当我们从 A2 退出回到 A1 时，A2 从屏幕上消失，这个叫做 android:activityCloseExitAnimation-->
+        <item name="android:activityCloseExitAnimation">@anim/activity_finish</item>
+    </style>
+
+
 </resources>

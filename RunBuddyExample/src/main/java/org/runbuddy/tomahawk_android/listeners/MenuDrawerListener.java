@@ -24,20 +24,21 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import org.runbuddy.tomahawk_android.ui.fragments.tai.homepage.HomePageFragment;
+import org.runbuddy.tomahawk_android.ui.fragments.tai.mv.MVFragment;
+
 import org.jdeferred.DoneCallback;
 import org.runbuddy.libtomahawk.infosystem.User;
 import org.runbuddy.tomahawk_android.TomahawkApp;
 import org.runbuddy.tomahawk_android.activities.TomahawkMainActivity;
 import org.runbuddy.tomahawk_android.adapters.TomahawkMenuAdapter;
-import org.runbuddy.tomahawk_android.ui.demo_zhihu.ui.fragment.second.child.ViewPagerFragment;
 import org.runbuddy.tomahawk_android.ui.fragments.ChartsSelectorFragment;
 import org.runbuddy.tomahawk_android.ui.fragments.CollectionPagerFragment;
 import org.runbuddy.tomahawk_android.ui.fragments.ContentHeaderFragment;
-import org.runbuddy.tomahawk_android.ui.fragments.SensorListFragment;
-import org.runbuddy.tomahawk_android.ui.fragments.MomentsFragment;
 import org.runbuddy.tomahawk_android.ui.fragments.PlaylistEntriesFragment;
 import org.runbuddy.tomahawk_android.ui.fragments.PlaylistsFragment;
 import org.runbuddy.tomahawk_android.ui.fragments.PreferencePagerFragment;
+import org.runbuddy.tomahawk_android.ui.fragments.SensorListFragment;
 import org.runbuddy.tomahawk_android.ui.fragments.TomahawkFragment;
 import org.runbuddy.tomahawk_android.ui.fragments.UserPagerFragment;
 import org.runbuddy.tomahawk_android.ui.fragments.star_page.StarPageFragment;
@@ -161,7 +162,7 @@ public class MenuDrawerListener implements ListView.OnItemClickListener {
         } else if (holder.id.equals(MenuDrawer.HUB_ID_STATIONS)) {
             bundle.putInt(TomahawkFragment.CONTENT_HEADER_MODE,
                     ContentHeaderFragment.MODE_HEADER_STATIC);
-            FragmentUtils.replace(mActivity, MomentsFragment.class, bundle);
+            FragmentUtils.replace(mActivity, SensorListFragment.class, bundle);
             /*
             User.getSelf().done(new DoneCallback<User>() {
                 @Override
@@ -184,11 +185,11 @@ public class MenuDrawerListener implements ListView.OnItemClickListener {
         } else if (holder.id.equals(MenuDrawer.HUB_ID_MYSETTING)) {
             bundle.putInt(TomahawkFragment.CONTENT_HEADER_MODE,
                     ContentHeaderFragment.MODE_HEADER_STATIC_SMALL);//flag
-            FragmentUtils.replace(mActivity, SensorListFragment.class, bundle);
+            FragmentUtils.replace(mActivity, MVFragment.class, bundle);
         } else if (holder.id.equals(MenuDrawer.HUB_ID_POPULARPAGE)) {
             bundle.putInt(TomahawkFragment.CONTENT_HEADER_MODE,
                     ContentHeaderFragment.MODE_HEADER_STATIC_SMALL);//2016.08.07
-            FragmentUtils.replace(mActivity, ViewPagerFragment.class, bundle);//测试用，临时改了
+            FragmentUtils.replace(mActivity, HomePageFragment.class, bundle);//测试用，临时改了
         }
 
         if (mMenuDrawer != null) {

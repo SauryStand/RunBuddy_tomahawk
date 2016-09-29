@@ -110,6 +110,9 @@ public class TomahawkMenuAdapter extends StickyBaseAdapter {
         Object item = getItem(position);
         ResourceHolder holder = (ResourceHolder) item;
         LayoutInflater inflater = LayoutInflater.from(TomahawkApp.getContext());
+
+
+
         if (((ResourceHolder) item).user != null) {
             View contentHeaderView =
                     inflater.inflate(R.layout.content_header_user_navdrawer, parent, false);
@@ -151,6 +154,11 @@ public class TomahawkMenuAdapter extends StickyBaseAdapter {
             }
             return view;
         }
+
+
+
+
+
     }
 
     /**

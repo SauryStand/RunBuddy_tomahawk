@@ -27,7 +27,7 @@
             app:max="100"
             app:min="0"
             app:progress_color="@color/material_pink"
-            app:progress_icon="@drawable/speed"></com.github.glomadrian.dashedcircularprogress.DashedCircularProgress>
+            app:progress_icon="@drawable/android"></com.github.glomadrian.dashedcircularprogress.DashedCircularProgress>
 
         <ImageButton
             android:id="@+id/step_counting_btn"

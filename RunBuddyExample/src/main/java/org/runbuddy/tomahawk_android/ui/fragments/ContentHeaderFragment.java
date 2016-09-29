@@ -102,6 +102,7 @@ public class ContentHeaderFragment extends Fragment {
         public int mFirstVisiblePosition;
         public int mTop;
     }
+
     //这个就是跟换页有关的
     public static class RequestSyncEvent {
         public long mContainerFragmentId;
