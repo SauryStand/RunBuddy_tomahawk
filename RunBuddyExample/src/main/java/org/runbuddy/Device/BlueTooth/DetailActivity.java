@@ -11,7 +11,8 @@ import android.os.Message;
 import android.view.View;
 import android.widget.TextView;
 
-import org.tomahawk.tomahawk_android.R;
+import org.runbuddy.R;
+
 
 public class DetailActivity extends Activity {
 	private final static String TAG = DetailActivity.class.getSimpleName();

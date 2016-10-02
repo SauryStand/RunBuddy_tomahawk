@@ -167,8 +167,8 @@
                           android:layout_width="wrap_content"
                           android:layout_height="match_parent">
 
-                <ImageView android:id="@+id/station_imageview"
-                           android:layout_width="@dimen/playback_panel_resolver_icon_size"
+                <ImageView
+                    android:layout_width="@dimen/playback_panel_resolver_icon_size"
                            android:layout_height="match_parent"
                            android:src="@drawable/ic_action_station"/>
 

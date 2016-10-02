@@ -23,13 +23,11 @@
     <color name="tomahawk_red">#FFff004c</color>
     <color name="tomahawk_red_transparent">#DDff004c</color>
     <color name="tomahawk_red_very_transparent">#44ff004c</color>
-    <color name="divider">#3B3F45</color>
     <color name="primary_background">#FFffffff</color>
     <color name="secondary_background">#FF777777</color>
     <color name="primary_background_inverted">#FF0f0f11</color>
     <color name="userpage_default_background">#FF333333</color>
     <color name="primary_transparent">#EEffffff</color>
-    <color name="secondary_transparent">#99151515</color>
     <color name="tertiary_transparent">#99000000</color>
     <color name="tertiary_transparent_playbackpanel">#AA000000</color>
     <color name="playerview_transparent">#55000000</color>
@@ -41,52 +39,23 @@
     <color name="primary_textcolor">#FF222222</color>
     <color name="secondary_textcolor">#FF777777</color>
     <color name="primary_textcolor_inverted">#FFffffff</color>
-    <color name="secondary_textcolor_inverted">#FF777777</color>
     <color name="tertiary_textcolor_inverted">#FFcccccc</color>
     <color name="list_focused_opaque">#FFe8837c</color>
     <color name="list_pressed_opaque">#FFf1f1f1</color>
     <color name="list_pressed_transparent">#88cbcbcb</color>
-    <color name="sliding_layout_background">#11000000</color>
     <color name="notification_bg">#151515</color>
 
     <color name="local_collection_resolver_bg">#3e454b</color>
-    <color name="spotify_resolver_bg">#84bd00</color>
     <color name="hatchet_resolver_bg">#3892e3</color>
-    <color name="hatchet_resolver_bg_transparent">#993892e3</color>
-    <color name="deezer_resolver_bg">#22222c</color>
     <color name="fallback_resolver_bg">#FF999999</color>
 
     <color name="colorPrimary">#F44336</color>
     <color name="colorPrimaryDark">#D32F2F</color>
     <color name="colorAccent">#536DFE</color>
-    <color name="bg_app">#F1F1F1</color>
 
-    <color name="tab_unselect">#c9c9c9</color>
-    <color name="bg_btn">#dadada</color>
-
-    <color name="red">#ffff0000</color>
-    <color name="toolbar_back">#fffafafa</color>
-    <color name="content_back">#fffafafa</color>
-    <color name="main_back">#ffeeeeee</color>
-    <color name="default_font">#ff000000</color>
-    <color name="pretty_blue">#ff0097cd</color>
-    <color name="pretty_green">#ff57ad68</color>
-    <color name="image_placeholder">#ff313131</color>
-    <color name="text_default_color">#ff737373</color>
-    <color name="text_most_grey">#ffb5b5b5</color>
-    <color name="pretty_red">#fff24789</color>
-    <color name="grey_text">#ffb9b9b9</color>
-    <color name="left_menu_btn_pressed">#ffdddddd</color>
-
-    <color name="simple_bg">#ff39065a</color>
     <color name="white">#ffffff</color>
-    <color name="pager_bg">#212121</color>
     <color name="material_pink">#FF4081</color>
     <color name="pager_base_color">#4cffffff</color>
-    <color name="size_bg">#ffdcd5d6</color>
-    <color name="size_external">#ffff001e</color>
-    <color name="size_base">#ff959595</color>
-    <color name="size_external_circle">#a3ff3443</color>
     <color name="green_light">#1ec399</color>
     <color name="black_bg">#ff4b4b4b</color>
     <color name="black_text">#ff4b4b4b</color>

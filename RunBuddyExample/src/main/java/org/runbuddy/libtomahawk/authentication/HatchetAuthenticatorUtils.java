@@ -26,6 +26,7 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import org.jdeferred.Promise;
+import org.runbuddy.R;
 import org.runbuddy.libtomahawk.authentication.models.HatchetAuthResponse;
 import org.runbuddy.libtomahawk.infosystem.InfoRequestData;
 import org.runbuddy.libtomahawk.infosystem.InfoSystem;
@@ -33,10 +34,9 @@ import org.runbuddy.libtomahawk.infosystem.User;
 import org.runbuddy.libtomahawk.utils.ADeferredObject;
 import org.runbuddy.libtomahawk.utils.GsonHelper;
 import org.runbuddy.libtomahawk.utils.VariousUtils;
-import org.runbuddy.tomahawk_android.TomahawkApp;
-import org.runbuddy.tomahawk_android.utils.ThreadManager;
-import org.runbuddy.tomahawk_android.utils.TomahawkRunnable;
-import org.tomahawk.tomahawk_android.R;
+import org.runbuddy.tomahawk.TomahawkApp;
+import org.runbuddy.tomahawk.utils.ThreadManager;
+import org.runbuddy.tomahawk.utils.TomahawkRunnable;
 
 import java.util.HashSet;
 import java.util.List;

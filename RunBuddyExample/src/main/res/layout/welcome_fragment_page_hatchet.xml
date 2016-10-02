@@ -71,7 +71,7 @@
                       android:drawableRight="@drawable/ic_hatchet"
                       android:text="@string/welcome_fragment_hatchet_text"/>
 
-            <org.runbuddy.tomahawk_android.views.HatchetLoginRegisterView
+            <org.runbuddy.tomahawk.views.HatchetLoginRegisterView
                     android:id="@+id/hatchetloginregister"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

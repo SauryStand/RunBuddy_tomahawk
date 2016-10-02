@@ -100,7 +100,7 @@
                  android:layout_marginTop="@dimen/playback_panel_height"
                  android:layout_marginBottom="@dimen/playback_clear_space_bottom">
 
-        <org.runbuddy.tomahawk_android.views.AlbumArtViewPager
+        <org.runbuddy.tomahawk.views.AlbumArtViewPager
                 android:id="@+id/albumart_viewpager"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>

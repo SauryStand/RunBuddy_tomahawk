@@ -25,7 +25,7 @@ import android.util.SparseArray;
 import org.runbuddy.libtomahawk.resolver.Query;
 import org.runbuddy.libtomahawk.resolver.Resolver;
 import org.runbuddy.libtomahawk.resolver.Result;
-import org.runbuddy.tomahawk_android.utils.IdGenerator;
+import org.runbuddy.tomahawk.utils.IdGenerator;
 
 import java.util.ArrayList;
 import java.util.List;

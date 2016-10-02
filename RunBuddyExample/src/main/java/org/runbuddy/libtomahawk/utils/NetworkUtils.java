@@ -12,7 +12,7 @@ import com.squareup.okhttp.RequestBody;
 import com.squareup.okhttp.Response;
 import com.squareup.okhttp.logging.HttpLoggingInterceptor;
 
-import org.runbuddy.tomahawk_android.TomahawkApp;
+import org.runbuddy.tomahawk.TomahawkApp;
 
 import java.io.IOException;
 import java.net.CookieManager;

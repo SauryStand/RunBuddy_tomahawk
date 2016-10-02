@@ -21,11 +21,11 @@ import org.runbuddy.libtomahawk.collection.Album;
 import org.runbuddy.libtomahawk.collection.Artist;
 import org.runbuddy.libtomahawk.collection.Cacheable;
 import org.runbuddy.libtomahawk.collection.Track;
-import org.runbuddy.tomahawk_android.TomahawkApp;
-import org.runbuddy.tomahawk_android.mediaplayers.AndroidMediaPlayer;
-import org.runbuddy.tomahawk_android.mediaplayers.DeezerMediaPlayer;
-import org.runbuddy.tomahawk_android.mediaplayers.SpotifyMediaPlayer;
-import org.runbuddy.tomahawk_android.mediaplayers.VLCMediaPlayer;
+import org.runbuddy.tomahawk.TomahawkApp;
+import org.runbuddy.tomahawk.mediaplayers.AndroidMediaPlayer;
+import org.runbuddy.tomahawk.mediaplayers.DeezerMediaPlayer;
+import org.runbuddy.tomahawk.mediaplayers.SpotifyMediaPlayer;
+import org.runbuddy.tomahawk.mediaplayers.VLCMediaPlayer;
 
 /**
  * This class represents a {@link Result}, which will be returned by a {@link Resolver}.

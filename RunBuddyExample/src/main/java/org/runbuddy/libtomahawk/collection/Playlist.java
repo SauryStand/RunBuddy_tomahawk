@@ -20,7 +20,7 @@ package org.runbuddy.libtomahawk.collection;
 import android.util.Log;
 
 import org.runbuddy.libtomahawk.resolver.Query;
-import org.runbuddy.tomahawk_android.utils.IdGenerator;
+import org.runbuddy.tomahawk.utils.IdGenerator;
 
 import java.util.ArrayList;
 import java.util.Collections;

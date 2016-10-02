@@ -26,7 +26,7 @@
              android:clickable="true"
              android:descendantFocusability="afterDescendants">
 
-    <org.runbuddy.tomahawk_android.views.TopCropImageView
+    <org.runbuddy.tomahawk.views.TopCropImageView
             android:id="@+id/background"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>

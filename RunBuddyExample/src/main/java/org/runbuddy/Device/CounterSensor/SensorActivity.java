@@ -13,7 +13,8 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.tomahawk.tomahawk_android.R;
+import org.runbuddy.R;
+
 
 /**
  * Created by Jonney Chou on 2016/8/7.
@@ -39,9 +40,11 @@ public class SensorActivity extends Activity implements SensorHub.DataClient {
         //这里应该加个title,flag2016.08.14
 
         Bundle data = getIntent().getExtras();
-        Long sid = data.getLong("sensorID");
+        //Long sid = data.getLong("sensorID");
+        Long sid = (long)4864;
         mSensorHub = SensorHub.getInstance(getApplicationContext());
         mSensor = mSensorHub.getSensor((int) (sid >> 8), (int) (sid & 0xff));
+
     }
 
     private void resetConsole() {
@@ -129,7 +132,8 @@ public class SensorActivity extends Activity implements SensorHub.DataClient {
             //In the main thread
             //mTextView.append("\n");
             String str_num = data.replace(".0", "");
-            mTextView.append(str_num + "step");
+            //mTextView.append(str_num + "step");
+            mTextView.setText(str_num);
             //setStep_temp_count(Integer.valueOf(str_num));
             Toast.makeText(getApplicationContext(), getStep_temp_count() + "", Toast.LENGTH_LONG).show();
         } else {
@@ -139,7 +143,6 @@ public class SensorActivity extends Activity implements SensorHub.DataClient {
                     mTextView.append("\n");
                     mTextView.append(data + "asd");
                 }
-
             });
         }
     }

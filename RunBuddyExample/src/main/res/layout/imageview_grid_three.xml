@@ -18,7 +18,7 @@
  *   along with Tomahawk. If not, see <http://www.gnu.org/licenses/>.
  */
 -->
-<org.runbuddy.tomahawk_android.widgets.SquareWidthRelativeLayout
+<org.runbuddy.tomahawk.widgets.SquareWidthRelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -69,4 +69,4 @@
 
     </LinearLayout>
 
-</org.runbuddy.tomahawk_android.widgets.SquareWidthRelativeLayout>
+</org.runbuddy.tomahawk.widgets.SquareWidthRelativeLayout>

@@ -18,8 +18,8 @@
 package org.runbuddy.libtomahawk.collection;
 
 
-import org.runbuddy.tomahawk_android.TomahawkApp;
-import org.tomahawk.tomahawk_android.R;
+import org.runbuddy.R;
+import org.runbuddy.tomahawk.TomahawkApp;
 
 import java.util.concurrent.ConcurrentHashMap;
 

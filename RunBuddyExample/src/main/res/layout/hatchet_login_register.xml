@@ -23,7 +23,7 @@
               android:layout_width="match_parent"
               android:orientation="vertical">
 
-    <org.runbuddy.tomahawk_android.views.SimplePagerTabs
+    <org.runbuddy.tomahawk.views.SimplePagerTabs
             android:id="@+id/simplepagertabs"
             android:layout_width="match_parent"
             android:layout_height="@dimen/row_height_large"

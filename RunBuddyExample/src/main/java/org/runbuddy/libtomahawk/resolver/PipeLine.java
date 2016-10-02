@@ -25,9 +25,9 @@ import org.runbuddy.libtomahawk.collection.CollectionManager;
 import org.runbuddy.libtomahawk.collection.DbCollection;
 import org.runbuddy.libtomahawk.collection.UserCollection;
 import org.runbuddy.libtomahawk.resolver.models.ScriptResolverUrlResult;
-import org.runbuddy.tomahawk_android.TomahawkApp;
-import org.runbuddy.tomahawk_android.utils.ThreadManager;
-import org.runbuddy.tomahawk_android.utils.TomahawkRunnable;
+import org.runbuddy.tomahawk.TomahawkApp;
+import org.runbuddy.tomahawk.utils.ThreadManager;
+import org.runbuddy.tomahawk.utils.TomahawkRunnable;
 
 import java.io.File;
 import java.io.IOException;

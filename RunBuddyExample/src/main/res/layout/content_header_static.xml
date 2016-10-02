@@ -22,7 +22,7 @@
              android:layout_width="match_parent"
              android:layout_height="@dimen/header_clear_space_nonscrollable_static">
 
-    <org.runbuddy.tomahawk_android.views.PageIndicator
+    <org.runbuddy.tomahawk.views.PageIndicator
             android:id="@+id/page_indicator"
             android:layout_width="match_parent"
             android:layout_height="@dimen/pager_indicator_height"

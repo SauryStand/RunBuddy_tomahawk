@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.tomahawk.tomahawk_android">
+    package="org.runbuddy">
 
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -17,9 +17,16 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+
 
     <uses-feature
         android:name="android.hardware.bluetooth_le"
@@ -34,14 +41,19 @@
         android:xlargeScreens="true" />
 
     <application
-        android:name="org.runbuddy.tomahawk_android.TomahawkApp"
+        android:name="org.runbuddy.tomahawk.TomahawkApp"
         android:allowBackup="true"
         android:icon="@drawable/zombies"
         android:label="@string/app_name"
         android:theme="@style/Theme.Tomahawk">
 
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="29970c3965d9df104a63a0204ac2bef6" />
+
+
         <activity
-            android:name="org.runbuddy.tomahawk_android.activities.TomahawkMainActivity"
+            android:name="org.runbuddy.tomahawk.activities.TomahawkMainActivity"
             android:label="@string/app_name"
             android:launchMode="singleTask"
             android:theme="@style/Theme.Tomahawk.Transparent.ActionBar"
@@ -282,7 +294,6 @@
                 <data android:host="*" />
 
                 <!-- video -->
-
                 <data android:pathPattern=".*\\.3g2" />
                 <data android:pathPattern=".*\\.3gp" />
                 <data android:pathPattern=".*\\.3gp2" />
@@ -531,7 +542,7 @@
         </activity>
 
         <activity
-            android:name="org.runbuddy.tomahawk_android.activities.WebViewActivity"
+            android:name="org.runbuddy.tomahawk.activities.WebViewActivity"
             android:theme="@style/Theme.Tomahawk" />
 
         <meta-data
@@ -553,7 +564,7 @@
         </receiver>
 
         <service
-            android:name="org.runbuddy.tomahawk_android.services.PlaybackService"
+            android:name="org.runbuddy.tomahawk.services.PlaybackService"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MEDIA_BUTTON" />
@@ -573,7 +584,7 @@
         </service>
 
         <service
-            android:name="org.runbuddy.tomahawk_android.services.RemoteControllerService"
+            android:name="org.runbuddy.tomahawk.services.RemoteControllerService"
             android:enabled="@bool/remotecontrollerservice_enabled"
             android:label="Tomahawk Scrobbling Service"
             android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
@@ -583,7 +594,7 @@
         </service>
 
         <service
-            android:name="org.runbuddy.tomahawk_android.services.MicroService"
+            android:name="org.runbuddy.tomahawk.services.MicroService"
             android:enabled="true"
             android:exported="false">
             <intent-filter>
@@ -594,7 +605,7 @@
             </intent-filter>
         </service>
 
-        <receiver android:name="org.runbuddy.tomahawk_android.receiver.BootCompletedReceiver">
+        <receiver android:name="org.runbuddy.tomahawk.receiver.BootCompletedReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <action android:name="android.intent.action.ACTION_EXTERNAL_APPLICATIONS_AVAILABLE" />
@@ -603,7 +614,7 @@
         </receiver>
 
         <receiver
-            android:name="org.runbuddy.tomahawk_android.receiver.AndroidMusicReceiver"
+            android:name="org.runbuddy.tomahawk.receiver.AndroidMusicReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
@@ -614,7 +625,7 @@
         </receiver>
 
         <receiver
-            android:name="org.runbuddy.tomahawk_android.receiver.AndroidMusicJRTStudioBuildReceiver"
+            android:name="org.runbuddy.tomahawk.receiver.AndroidMusicJRTStudioBuildReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
@@ -625,7 +636,7 @@
         </receiver>
 
         <receiver
-            android:name="org.runbuddy.tomahawk_android.receiver.HeroMusicReceiver"
+            android:name="org.runbuddy.tomahawk.receiver.HeroMusicReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
@@ -636,7 +647,7 @@
         </receiver>
 
         <receiver
-            android:name="org.runbuddy.tomahawk_android.receiver.WinampMusicReceiver"
+            android:name="org.runbuddy.tomahawk.receiver.WinampMusicReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
@@ -647,7 +658,7 @@
         </receiver>
 
         <receiver
-            android:name="org.runbuddy.tomahawk_android.receiver.MyTouch4GMusicReceiver"
+            android:name="org.runbuddy.tomahawk.receiver.MyTouch4GMusicReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
@@ -659,7 +670,7 @@
         </receiver>
 
         <receiver
-            android:name="org.runbuddy.tomahawk_android.receiver.MIUIMusicReceiver"
+            android:name="org.runbuddy.tomahawk.receiver.MIUIMusicReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
@@ -670,7 +681,7 @@
         </receiver>
 
         <receiver
-            android:name="org.runbuddy.tomahawk_android.receiver.SEMCMusicReceiver"
+            android:name="org.runbuddy.tomahawk.receiver.SEMCMusicReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
@@ -688,7 +699,7 @@
         </receiver>
 
         <receiver
-            android:name="org.runbuddy.tomahawk_android.receiver.RdioMusicReceiver"
+            android:name="org.runbuddy.tomahawk.receiver.RdioMusicReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
@@ -698,7 +709,7 @@
         </receiver>
 
         <receiver
-            android:name="org.runbuddy.tomahawk_android.receiver.SamsungMusicReceiver"
+            android:name="org.runbuddy.tomahawk.receiver.SamsungMusicReceiver"
             android:enabled="true"
             android:exported="true">
             <!-- doesn't work -->
@@ -722,7 +733,7 @@
         </receiver>
 
         <receiver
-            android:name="org.runbuddy.tomahawk_android.receiver.ScrobbleDroidMusicReceiver"
+            android:name="org.runbuddy.tomahawk.receiver.ScrobbleDroidMusicReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
@@ -731,7 +742,7 @@
         </receiver>
 
         <receiver
-            android:name="org.runbuddy.tomahawk_android.receiver.SLSAPIReceiver"
+            android:name="org.runbuddy.tomahawk.receiver.SLSAPIReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
@@ -740,7 +751,7 @@
         </receiver>
 
         <receiver
-            android:name="org.runbuddy.tomahawk_android.receiver.SpotifyReceiver"
+            android:name="org.runbuddy.tomahawk.receiver.SpotifyReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
@@ -750,7 +761,7 @@
         </receiver>
 
         <receiver
-            android:name="org.runbuddy.tomahawk_android.receiver.LgOptimus4xReceiver"
+            android:name="org.runbuddy.tomahawk.receiver.LgOptimus4xReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
@@ -761,7 +772,7 @@
         </receiver>
 
         <receiver
-            android:name="org.runbuddy.tomahawk_android.receiver.PlayerProReceiver"
+            android:name="org.runbuddy.tomahawk.receiver.PlayerProReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
@@ -772,7 +783,7 @@
         </receiver>
 
         <receiver
-            android:name="org.runbuddy.tomahawk_android.receiver.PlayerProTrialReceiver"
+            android:name="org.runbuddy.tomahawk.receiver.PlayerProTrialReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
@@ -783,7 +794,7 @@
         </receiver>
 
         <receiver
-            android:name="org.runbuddy.tomahawk_android.receiver.DoubleTwistReceiver"
+            android:name="org.runbuddy.tomahawk.receiver.DoubleTwistReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
@@ -794,7 +805,7 @@
         </receiver>
 
         <receiver
-            android:name="org.runbuddy.tomahawk_android.receiver.RocketPlayerReceiver"
+            android:name="org.runbuddy.tomahawk.receiver.RocketPlayerReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
@@ -811,32 +822,49 @@
             android:launchMode="singleInstance" />
 
         <activity android:name="org.runbuddy.Device.CounterSensor.SensorActivity"></activity>
-        <activity android:name="org.runbuddy.tomahawk_android.ui.Intricate_Charts.ListViewMultiChartActivity"></activity>
-        <activity android:name="org.runbuddy.tomahawk_android.ui.fragments.star_page.widgets.DetailActivity"></activity>
+        <activity android:name="org.runbuddy.tomahawk.ui.Intricate_Charts.ListViewMultiChartActivity"></activity>
+        <activity android:name="org.runbuddy.tomahawk.ui.fragments.star_page.widgets.DetailActivity"></activity>
         <activity android:name="org.runbuddy.Device.BlueTooth.DeviceScanActivity"></activity>
         <activity android:name="org.runbuddy.Device.BlueTooth.AmoComActivity"></activity>
         <activity android:name="org.runbuddy.Device.BlueTooth.DetailActivity"></activity>
 
-        <activity android:name="org.runbuddy.tomahawk_android.activities.tai.MVDetailActivity"
+        <activity
+            android:name="org.runbuddy.tomahawk.activities.tai.MVDetailActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"
-            android:theme="@style/ActivityTheme.windowIsTranslucent"
-            android:configChanges="orientation|keyboardHidden|screenSize">
+            android:theme="@style/ActivityTheme.windowIsTranslucent">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
-        <activity android:name="org.runbuddy.tomahawk_android.activities.tai.YueDanDetailActivity"
+        <activity
+            android:name="org.runbuddy.tomahawk.activities.tai.YueDanDetailActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"
-            android:theme="@style/ActivityTheme.windowIsTranslucent"
-            android:configChanges="orientation|keyboardHidden|screenSize">
+            android:theme="@style/ActivityTheme.windowIsTranslucent">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
+        <!-- 定位需要的服务 使用2.0的定位需要加上这个 -->
+        <service android:name="com.amap.api.location.APSService"></service>
+
+        <activity
+            android:name="org.runbuddy.tomahawk.activities.BasicMapActivity"
+            android:label="@string/map"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="org.runbuddy.tomahawk.activities.RecordActivity"
+            android:label="@string/record"></activity>
+        <activity
+            android:name="org.runbuddy.tomahawk.activities.RecordShowActivity"
+            android:label="@string/recordShow"></activity>
+
+        <activity android:name=".tomahawk.activities.AmapActivity"></activity>
 
 
     </application>

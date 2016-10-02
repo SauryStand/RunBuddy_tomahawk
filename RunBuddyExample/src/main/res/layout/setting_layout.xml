@@ -49,7 +49,6 @@
         android:layout_height="0.5dp"
         android:background="@android:color/darker_gray"/>
     <RelativeLayout
-        android:id="@+id/push_toggle_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp"

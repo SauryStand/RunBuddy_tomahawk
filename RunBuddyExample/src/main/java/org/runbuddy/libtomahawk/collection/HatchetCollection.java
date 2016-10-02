@@ -21,10 +21,10 @@ import android.widget.ImageView;
 
 import org.jdeferred.Deferred;
 import org.jdeferred.Promise;
+import org.runbuddy.R;
 import org.runbuddy.libtomahawk.utils.ADeferredObject;
 import org.runbuddy.libtomahawk.utils.ImageUtils;
-import org.runbuddy.tomahawk_android.TomahawkApp;
-import org.tomahawk.tomahawk_android.R;
+import org.runbuddy.tomahawk.TomahawkApp;
 
 import java.util.ArrayList;
 import java.util.Collections;
