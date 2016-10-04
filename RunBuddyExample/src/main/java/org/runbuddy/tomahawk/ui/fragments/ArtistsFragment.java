@@ -27,7 +27,7 @@ import org.runbuddy.libtomahawk.collection.Artist;
 import org.runbuddy.libtomahawk.collection.Collection;
 import org.runbuddy.libtomahawk.collection.CollectionCursor;
 import org.runbuddy.libtomahawk.collection.ScriptResolverCollection;
-import org.runbuddy.tomahawk.TomahawkApp;
+import org.runbuddy.tomahawk.app.TomahawkApp;
 import org.runbuddy.tomahawk.activities.TomahawkMainActivity;
 import org.runbuddy.tomahawk.adapters.Segment;
 import org.runbuddy.tomahawk.utils.FragmentUtils;

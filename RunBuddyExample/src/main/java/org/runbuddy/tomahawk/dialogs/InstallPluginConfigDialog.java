@@ -34,7 +34,7 @@ import org.runbuddy.libtomahawk.resolver.ScriptAccount;
 import org.runbuddy.libtomahawk.resolver.models.ScriptResolverMetaData;
 import org.runbuddy.libtomahawk.utils.GsonHelper;
 import org.runbuddy.libtomahawk.utils.VariousUtils;
-import org.runbuddy.tomahawk.TomahawkApp;
+import org.runbuddy.tomahawk.app.TomahawkApp;
 import org.runbuddy.tomahawk.utils.UnzipUtils;
 
 import java.io.File;

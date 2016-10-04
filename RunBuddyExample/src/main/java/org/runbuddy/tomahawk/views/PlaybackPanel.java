@@ -44,7 +44,7 @@ import org.runbuddy.R;
 import org.runbuddy.libtomahawk.collection.StationPlaylist;
 import org.runbuddy.libtomahawk.resolver.Resolver;
 import org.runbuddy.libtomahawk.utils.ViewUtils;
-import org.runbuddy.tomahawk.TomahawkApp;
+import org.runbuddy.tomahawk.app.TomahawkApp;
 import org.runbuddy.tomahawk.services.PlaybackService;
 import org.runbuddy.tomahawk.utils.AnimationUtils;
 import org.runbuddy.tomahawk.utils.PlaybackManager;

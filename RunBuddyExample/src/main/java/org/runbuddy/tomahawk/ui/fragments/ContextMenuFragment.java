@@ -54,7 +54,7 @@ import org.runbuddy.libtomahawk.infosystem.User;
 import org.runbuddy.libtomahawk.resolver.Query;
 import org.runbuddy.libtomahawk.utils.ImageUtils;
 import org.runbuddy.libtomahawk.utils.ViewUtils;
-import org.runbuddy.tomahawk.TomahawkApp;
+import org.runbuddy.tomahawk.app.TomahawkApp;
 import org.runbuddy.tomahawk.activities.TomahawkMainActivity;
 import org.runbuddy.tomahawk.services.PlaybackService;
 import org.runbuddy.tomahawk.utils.AnimationUtils;

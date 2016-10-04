@@ -43,7 +43,7 @@ import org.runbuddy.libtomahawk.collection.Artist;
 import org.runbuddy.libtomahawk.collection.Track;
 import org.runbuddy.libtomahawk.infosystem.InfoSystem;
 import org.runbuddy.libtomahawk.resolver.Query;
-import org.runbuddy.tomahawk.TomahawkApp;
+import org.runbuddy.tomahawk.app.TomahawkApp;
 import org.runbuddy.tomahawk.utils.PreferenceUtils;
 
 import java.util.List;

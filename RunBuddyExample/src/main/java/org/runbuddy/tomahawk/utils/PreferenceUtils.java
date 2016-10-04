@@ -26,7 +26,7 @@ import android.util.Log;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.runbuddy.libtomahawk.authentication.AuthenticatorManager;
-import org.runbuddy.tomahawk.TomahawkApp;
+import org.runbuddy.tomahawk.app.TomahawkApp;
 import org.runbuddy.tomahawk.activities.TomahawkMainActivity;
 import org.runbuddy.tomahawk.dialogs.AskAccessConfigDialog;
 

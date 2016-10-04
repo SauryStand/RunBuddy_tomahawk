@@ -24,7 +24,7 @@ import org.jdeferred.Promise;
 import org.runbuddy.R;
 import org.runbuddy.libtomahawk.utils.ADeferredObject;
 import org.runbuddy.libtomahawk.utils.ImageUtils;
-import org.runbuddy.tomahawk.TomahawkApp;
+import org.runbuddy.tomahawk.app.TomahawkApp;
 
 import java.util.ArrayList;
 import java.util.Collections;

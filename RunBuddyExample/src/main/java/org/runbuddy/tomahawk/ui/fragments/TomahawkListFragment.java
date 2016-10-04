@@ -32,7 +32,7 @@ import android.widget.FrameLayout;
 
 import org.runbuddy.R;
 import org.runbuddy.libtomahawk.utils.ViewUtils;
-import org.runbuddy.tomahawk.TomahawkApp;
+import org.runbuddy.tomahawk.app.TomahawkApp;
 import org.runbuddy.tomahawk.adapters.StickyBaseAdapter;
 
 import de.greenrobot.event.EventBus;

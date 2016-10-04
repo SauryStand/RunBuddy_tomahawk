@@ -36,7 +36,7 @@ import com.squareup.picasso.Target;
 import org.runbuddy.R;
 import org.runbuddy.libtomahawk.collection.Image;
 import org.runbuddy.libtomahawk.infosystem.User;
-import org.runbuddy.tomahawk.TomahawkApp;
+import org.runbuddy.tomahawk.app.TomahawkApp;
 import org.runbuddy.tomahawk.utils.BlurTransformation;
 import org.runbuddy.tomahawk.utils.ColorTintTransformation;
 

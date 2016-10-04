@@ -30,7 +30,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import org.runbuddy.R;
-import org.runbuddy.tomahawk.TomahawkApp;
+import org.runbuddy.tomahawk.app.TomahawkApp;
 import org.runbuddy.tomahawk.utils.FakePreferenceGroup;
 import org.runbuddy.tomahawk.utils.PreferenceUtils;
 

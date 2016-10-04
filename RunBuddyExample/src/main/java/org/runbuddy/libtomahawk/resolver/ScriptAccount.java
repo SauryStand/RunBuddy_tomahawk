@@ -49,7 +49,7 @@ import org.runbuddy.libtomahawk.resolver.plugins.ScriptResolverPluginFactory;
 import org.runbuddy.libtomahawk.utils.GsonHelper;
 import org.runbuddy.libtomahawk.utils.ImageUtils;
 import org.runbuddy.libtomahawk.utils.NetworkUtils;
-import org.runbuddy.tomahawk.TomahawkApp;
+import org.runbuddy.tomahawk.app.TomahawkApp;
 import org.runbuddy.tomahawk.activities.TomahawkMainActivity;
 import org.runbuddy.tomahawk.utils.IdGenerator;
 import org.runbuddy.tomahawk.utils.PreferenceUtils;

@@ -22,7 +22,7 @@ import android.util.Log;
 
 import org.jdeferred.DoneCallback;
 import org.runbuddy.libtomahawk.resolver.Query;
-import org.runbuddy.tomahawk.TomahawkApp;
+import org.runbuddy.tomahawk.app.TomahawkApp;
 import org.runbuddy.tomahawk.utils.PreferenceUtils;
 import org.runbuddy.tomahawk.utils.ThreadManager;
 import org.videolan.libvlc.LibVLC;

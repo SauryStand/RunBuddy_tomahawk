@@ -40,7 +40,7 @@ import org.runbuddy.libtomahawk.collection.Playlist;
 import org.runbuddy.libtomahawk.collection.PlaylistEntry;
 import org.runbuddy.libtomahawk.collection.ScriptResolverCollection;
 import org.runbuddy.libtomahawk.infosystem.User;
-import org.runbuddy.tomahawk.TomahawkApp;
+import org.runbuddy.tomahawk.app.TomahawkApp;
 import org.runbuddy.tomahawk.activities.TomahawkMainActivity;
 import org.runbuddy.tomahawk.adapters.Segment;
 import org.runbuddy.tomahawk.adapters.TomahawkListAdapter;

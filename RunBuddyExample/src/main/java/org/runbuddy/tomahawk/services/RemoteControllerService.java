@@ -34,7 +34,7 @@ import android.service.notification.StatusBarNotification;
 import android.util.Log;
 import android.view.KeyEvent;
 
-import org.runbuddy.tomahawk.TomahawkApp;
+import org.runbuddy.tomahawk.app.TomahawkApp;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;

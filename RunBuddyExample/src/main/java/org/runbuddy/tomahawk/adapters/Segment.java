@@ -22,7 +22,7 @@ import android.widget.AdapterView;
 
 import org.runbuddy.libtomahawk.collection.CollectionCursor;
 import org.runbuddy.libtomahawk.collection.Playlist;
-import org.runbuddy.tomahawk.TomahawkApp;
+import org.runbuddy.tomahawk.app.TomahawkApp;
 import org.runbuddy.tomahawk.utils.PlaybackManager;
 
 import java.util.ArrayList;

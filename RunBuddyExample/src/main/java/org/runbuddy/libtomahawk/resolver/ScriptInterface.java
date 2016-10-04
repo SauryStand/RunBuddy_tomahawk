@@ -10,7 +10,7 @@ import org.apache.commons.io.Charsets;
 import org.apache.commons.io.FileUtils;
 import org.runbuddy.libtomahawk.resolver.models.ScriptResolverData;
 import org.runbuddy.libtomahawk.utils.GsonHelper;
-import org.runbuddy.tomahawk.TomahawkApp;
+import org.runbuddy.tomahawk.app.TomahawkApp;
 
 import java.io.File;
 import java.io.IOException;

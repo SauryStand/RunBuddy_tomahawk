@@ -38,7 +38,7 @@ import org.runbuddy.libtomahawk.infosystem.User;
 import org.runbuddy.libtomahawk.infosystem.hatchet.models.HatchetPlaylistEntries;
 import org.runbuddy.libtomahawk.resolver.Query;
 import org.runbuddy.libtomahawk.utils.ISO8601Utils;
-import org.runbuddy.tomahawk.TomahawkApp;
+import org.runbuddy.tomahawk.app.TomahawkApp;
 import org.runbuddy.tomahawk.utils.ThreadManager;
 import org.runbuddy.tomahawk.utils.TomahawkRunnable;
 

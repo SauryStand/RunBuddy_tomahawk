@@ -28,7 +28,7 @@ import org.runbuddy.libtomahawk.authentication.HatchetAuthenticatorUtils;
 import org.runbuddy.libtomahawk.infosystem.InfoRequestData;
 import org.runbuddy.libtomahawk.infosystem.InfoSystem;
 import org.runbuddy.libtomahawk.infosystem.User;
-import org.runbuddy.tomahawk.TomahawkApp;
+import org.runbuddy.tomahawk.app.TomahawkApp;
 import org.runbuddy.tomahawk.ui.fragments.star_page.SocialActionsFragment;
 import org.runbuddy.tomahawk.utils.FragmentInfo;
 import org.runbuddy.tomahawk.utils.PreferenceUtils;

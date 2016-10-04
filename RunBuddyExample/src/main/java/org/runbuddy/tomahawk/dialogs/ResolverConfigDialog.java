@@ -37,7 +37,7 @@ import org.runbuddy.libtomahawk.resolver.PipeLine;
 import org.runbuddy.libtomahawk.resolver.ScriptResolver;
 import org.runbuddy.libtomahawk.resolver.models.ScriptResolverConfigUiField;
 import org.runbuddy.libtomahawk.utils.ViewUtils;
-import org.runbuddy.tomahawk.TomahawkApp;
+import org.runbuddy.tomahawk.app.TomahawkApp;
 import org.runbuddy.tomahawk.ui.fragments.TomahawkFragment;
 import org.runbuddy.tomahawk.widgets.ConfigCheckbox;
 import org.runbuddy.tomahawk.widgets.ConfigDropDown;

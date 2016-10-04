@@ -17,7 +17,7 @@
  */
 package org.runbuddy.libtomahawk.infosystem.stations;
 
-import org.runbuddy.tomahawk.TomahawkApp;
+import org.runbuddy.tomahawk.app.TomahawkApp;
 
 import java.util.HashMap;
 import java.util.Map;

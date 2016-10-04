@@ -42,7 +42,7 @@ import org.runbuddy.libtomahawk.infosystem.charts.ScriptChartsCountryCodes;
 import org.runbuddy.libtomahawk.infosystem.charts.ScriptChartsManager;
 import org.runbuddy.libtomahawk.infosystem.charts.ScriptChartsProvider;
 import org.runbuddy.libtomahawk.resolver.models.ScriptResolverMetaData;
-import org.runbuddy.tomahawk.TomahawkApp;
+import org.runbuddy.tomahawk.app.TomahawkApp;
 import org.runbuddy.tomahawk.activities.TomahawkMainActivity;
 import org.runbuddy.tomahawk.adapters.CountryCodeSpinnerAdapter;
 import org.runbuddy.tomahawk.utils.FragmentInfo;

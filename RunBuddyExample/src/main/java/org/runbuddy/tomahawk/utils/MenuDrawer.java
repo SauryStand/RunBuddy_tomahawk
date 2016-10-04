@@ -33,7 +33,7 @@ import org.runbuddy.libtomahawk.collection.Collection;
 import org.runbuddy.libtomahawk.collection.CollectionManager;
 import org.runbuddy.libtomahawk.collection.ScriptResolverCollection;
 import org.runbuddy.libtomahawk.infosystem.User;
-import org.runbuddy.tomahawk.TomahawkApp;
+import org.runbuddy.tomahawk.app.TomahawkApp;
 import org.runbuddy.tomahawk.activities.TomahawkMainActivity;
 import org.runbuddy.tomahawk.adapters.TomahawkMenuAdapter;
 import org.runbuddy.tomahawk.listeners.MenuDrawerListener;

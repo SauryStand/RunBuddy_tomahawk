@@ -29,7 +29,7 @@ import org.runbuddy.tomahawk.ui.fragments.tai.mv.MVFragment;
 
 import org.jdeferred.DoneCallback;
 import org.runbuddy.libtomahawk.infosystem.User;
-import org.runbuddy.tomahawk.TomahawkApp;
+import org.runbuddy.tomahawk.app.TomahawkApp;
 import org.runbuddy.tomahawk.activities.TomahawkMainActivity;
 import org.runbuddy.tomahawk.adapters.TomahawkMenuAdapter;
 import org.runbuddy.tomahawk.ui.fragments.ChartsSelectorFragment;

@@ -42,7 +42,7 @@ import org.runbuddy.libtomahawk.infosystem.hatchet.models.HatchetRelationshipPos
 import org.runbuddy.libtomahawk.infosystem.hatchet.models.HatchetRelationshipStruct;
 import org.runbuddy.libtomahawk.resolver.Query;
 import org.runbuddy.libtomahawk.utils.GsonHelper;
-import org.runbuddy.tomahawk.TomahawkApp;
+import org.runbuddy.tomahawk.app.TomahawkApp;
 import org.runbuddy.tomahawk.utils.IdGenerator;
 
 import java.util.ArrayList;

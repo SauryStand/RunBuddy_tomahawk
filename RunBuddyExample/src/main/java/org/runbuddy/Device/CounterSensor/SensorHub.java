@@ -96,10 +96,10 @@ public class SensorHub implements SensorEventListener {
     @Override
     public void onSensorChanged(SensorEvent event) {
         // TODO Auto-generated method stub
-        String text = "-->>" + event.timestamp;
-
+        //String text = "-->>" + event.timestamp;
+        String text = "";
         for (int i = 0; i < event.values.length; i++) {
-            text += " echo:" + event.values[i];//这里原来是把芯片计步的数据都算出来再显示，应该是算一个时间戳之类的
+            text += event.values[i];//这里原来是把芯片计步的数据都算出来再显示，应该是算一个时间戳之类的
         }
 
         ArrayList<DataClient> clientList = mClients.get(event.sensor);

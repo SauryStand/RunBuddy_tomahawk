@@ -45,7 +45,7 @@ import org.runbuddy.libtomahawk.resolver.Resolver;
 import org.runbuddy.libtomahawk.resolver.ScriptResolver;
 import org.runbuddy.libtomahawk.utils.ImageUtils;
 import org.runbuddy.libtomahawk.utils.ViewUtils;
-import org.runbuddy.tomahawk.TomahawkApp;
+import org.runbuddy.tomahawk.app.TomahawkApp;
 import org.runbuddy.tomahawk.listeners.MultiColumnClickListener;
 import org.runbuddy.tomahawk.views.PlaybackPanel;
 

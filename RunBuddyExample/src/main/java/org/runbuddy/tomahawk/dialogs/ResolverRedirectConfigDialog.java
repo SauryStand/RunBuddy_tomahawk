@@ -32,7 +32,7 @@ import org.runbuddy.R;
 import org.runbuddy.libtomahawk.authentication.AuthenticatorManager;
 import org.runbuddy.libtomahawk.resolver.PipeLine;
 import org.runbuddy.libtomahawk.resolver.ScriptResolver;
-import org.runbuddy.tomahawk.TomahawkApp;
+import org.runbuddy.tomahawk.app.TomahawkApp;
 import org.runbuddy.tomahawk.mediaplayers.DeezerMediaPlayer;
 import org.runbuddy.tomahawk.mediaplayers.SpotifyMediaPlayer;
 import org.runbuddy.tomahawk.ui.fragments.TomahawkFragment;

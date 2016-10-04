@@ -30,7 +30,7 @@ import android.widget.Toast;
 import org.runbuddy.R;
 import org.runbuddy.libtomahawk.authentication.HatchetAuthenticatorUtils;
 import org.runbuddy.libtomahawk.resolver.HatchetStubResolver;
-import org.runbuddy.tomahawk.TomahawkApp;
+import org.runbuddy.tomahawk.app.TomahawkApp;
 
 
 /**

@@ -27,7 +27,7 @@ import android.util.Log;
 import org.runbuddy.libtomahawk.resolver.Query;
 import org.runbuddy.libtomahawk.resolver.ScriptJob;
 import org.runbuddy.libtomahawk.resolver.models.ScriptResolverAccessTokenResult;
-import org.runbuddy.tomahawk.TomahawkApp;
+import org.runbuddy.tomahawk.app.TomahawkApp;
 import org.runbuddy.tomahawk.utils.PreferenceUtils;
 
 /**

@@ -41,7 +41,7 @@
         android:xlargeScreens="true" />
 
     <application
-        android:name="org.runbuddy.tomahawk.TomahawkApp"
+        android:name=".tomahawk.app.TomahawkApp"
         android:allowBackup="true"
         android:icon="@drawable/zombies"
         android:label="@string/app_name"
@@ -821,8 +821,6 @@
             android:finishOnTaskLaunch="true"
             android:launchMode="singleInstance" />
 
-        <activity android:name="org.runbuddy.Device.CounterSensor.SensorActivity"></activity>
-        <activity android:name="org.runbuddy.tomahawk.ui.Intricate_Charts.ListViewMultiChartActivity"></activity>
         <activity android:name="org.runbuddy.tomahawk.ui.fragments.star_page.widgets.DetailActivity"></activity>
         <activity android:name="org.runbuddy.Device.BlueTooth.DeviceScanActivity"></activity>
         <activity android:name="org.runbuddy.Device.BlueTooth.AmoComActivity"></activity>

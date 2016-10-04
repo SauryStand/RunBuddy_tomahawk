@@ -26,7 +26,7 @@ import android.graphics.PorterDuffColorFilter;
 
 import com.squareup.picasso.Transformation;
 
-import org.runbuddy.tomahawk.TomahawkApp;
+import org.runbuddy.tomahawk.app.TomahawkApp;
 
 import static android.graphics.Bitmap.createBitmap;
 import static android.graphics.Paint.ANTI_ALIAS_FLAG;

@@ -84,7 +84,7 @@ import org.runbuddy.libtomahawk.resolver.UserCollectionStubResolver;
 import org.runbuddy.libtomahawk.resolver.models.ScriptResolverUrlResult;
 import org.runbuddy.libtomahawk.utils.ViewUtils;
 import org.runbuddy.libtomahawk.utils.parser.XspfParser;
-import org.runbuddy.tomahawk.TomahawkApp;
+import org.runbuddy.tomahawk.app.TomahawkApp;
 import org.runbuddy.tomahawk.adapters.SuggestionSimpleCursorAdapter;
 import org.runbuddy.tomahawk.dialogs.GMusicConfigDialog;
 import org.runbuddy.tomahawk.dialogs.InstallPluginConfigDialog;

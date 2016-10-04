@@ -36,7 +36,7 @@ import org.runbuddy.libtomahawk.resolver.Query;
 import org.runbuddy.libtomahawk.resolver.UserCollectionStubResolver;
 import org.runbuddy.libtomahawk.resolver.models.ScriptResolverTrack;
 import org.runbuddy.libtomahawk.utils.ADeferredObject;
-import org.runbuddy.tomahawk.TomahawkApp;
+import org.runbuddy.tomahawk.app.TomahawkApp;
 import org.runbuddy.tomahawk.mediaplayers.VLCMediaPlayer;
 import org.runbuddy.tomahawk.utils.MediaWrapper;
 import org.runbuddy.tomahawk.utils.PreferenceUtils;

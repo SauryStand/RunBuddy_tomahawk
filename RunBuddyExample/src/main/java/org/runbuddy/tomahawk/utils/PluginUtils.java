@@ -22,7 +22,7 @@ import android.content.pm.PackageManager;
 
 import com.google.android.gms.common.GooglePlayServicesUtil;
 
-import org.runbuddy.tomahawk.TomahawkApp;
+import org.runbuddy.tomahawk.app.TomahawkApp;
 import org.runbuddy.tomahawk.mediaplayers.DeezerMediaPlayer;
 import org.runbuddy.tomahawk.mediaplayers.SpotifyMediaPlayer;
 

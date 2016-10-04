@@ -21,7 +21,7 @@ import org.runbuddy.libtomahawk.collection.Album;
 import org.runbuddy.libtomahawk.collection.Artist;
 import org.runbuddy.libtomahawk.collection.Cacheable;
 import org.runbuddy.libtomahawk.collection.Track;
-import org.runbuddy.tomahawk.TomahawkApp;
+import org.runbuddy.tomahawk.app.TomahawkApp;
 import org.runbuddy.tomahawk.mediaplayers.AndroidMediaPlayer;
 import org.runbuddy.tomahawk.mediaplayers.DeezerMediaPlayer;
 import org.runbuddy.tomahawk.mediaplayers.SpotifyMediaPlayer;

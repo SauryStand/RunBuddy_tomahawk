@@ -1,4 +1,4 @@
-package org.runbuddy.tomahawk.ui.Intricate_Charts.listviewItems;
+package org.runbuddy.tomahawk.ui.IntricateCharts.listviewItems;
 
 import android.content.Context;
 import android.view.View;

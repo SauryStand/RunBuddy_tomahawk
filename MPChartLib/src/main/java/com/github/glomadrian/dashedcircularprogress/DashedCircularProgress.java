@@ -3,8 +3,6 @@ package com.github.glomadrian.dashedcircularprogress;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.util.AttributeSet;
@@ -17,7 +15,6 @@ import android.widget.RelativeLayout;
 import com.github.R;
 import com.github.glomadrian.dashedcircularprogress.painter.ExternalCirclePainter;
 import com.github.glomadrian.dashedcircularprogress.painter.ExternalCirclePainterImp;
-import com.github.glomadrian.dashedcircularprogress.painter.IconPainter;
 import com.github.glomadrian.dashedcircularprogress.painter.InternalCirclePainter;
 import com.github.glomadrian.dashedcircularprogress.painter.InternalCirclePainterImp;
 import com.github.glomadrian.dashedcircularprogress.painter.ProgressPainter;
@@ -26,14 +23,15 @@ import com.github.glomadrian.dashedcircularprogress.painter.ProgressPainterImp;
 
 /**
  * @author Adrián García Lomas
+ * 注释掉bitmap，2016.10.3
  */
 public class DashedCircularProgress extends RelativeLayout {
 
     private ExternalCirclePainter externalCirclePainter;
     private InternalCirclePainter internalCirclePainter;
     private ProgressPainter progressPainter;
-    private IconPainter iconPainter;
-    private Bitmap image;
+    //private IconPainter iconPainter;
+    //private Bitmap image;
     private Interpolator interpolator = new AccelerateDecelerateInterpolator();
     private int externalColor = Color.WHITE;
     private int internalBaseColor = Color.YELLOW;
@@ -47,7 +45,7 @@ public class DashedCircularProgress extends RelativeLayout {
     private int duration = 1000;
     private int padingTop = 22;
     private int heightNormalittation = 10;
-    private int progressStrokeWidth = 48;
+    private int progressStrokeWidth = 50;
 
     public DashedCircularProgress(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -117,9 +115,9 @@ public class DashedCircularProgress extends RelativeLayout {
                 progressColor);
         max = attributes.getFloat(R.styleable.DashedCircularProgress_max, max);
         duration = attributes.getInt(R.styleable.DashedCircularProgress_duration, duration);
-        image = BitmapFactory.decodeResource(getResources(), attributes
-                .getResourceId(R.styleable.DashedCircularProgress_progress_icon,
-                        R.drawable.android));
+//        image = BitmapFactory.decodeResource(getResources(), attributes
+//                .getResourceId(R.styleable.DashedCircularProgress_progress_icon,
+//                        R.drawable.android));
         progressStrokeWidth = attributes.getInt(R.styleable.DashedCircularProgress_progress_stroke_width,
             progressStrokeWidth);
     }
@@ -130,7 +128,7 @@ public class DashedCircularProgress extends RelativeLayout {
         progressPainter.onSizeChanged(h, w);
         externalCirclePainter.onSizeChanged(h, w);
         internalCirclePainter.onSizeChanged(h, w);
-        iconPainter.onSizeChanged(h, w);
+        //iconPainter.onSizeChanged(h, w);
         animateValue();
     }
 
@@ -138,7 +136,7 @@ public class DashedCircularProgress extends RelativeLayout {
         progressPainter = new ProgressPainterImp(progressColor, min, max, progressStrokeWidth);
         externalCirclePainter = new ExternalCirclePainterImp(externalColor);
         internalCirclePainter = new InternalCirclePainterImp(internalBaseColor);
-        iconPainter = new IconPainter(image);
+        //iconPainter = new IconPainter(image);
     }
 
     private void initValueAnimator() {
@@ -153,7 +151,7 @@ public class DashedCircularProgress extends RelativeLayout {
         externalCirclePainter.draw(canvas);
         internalCirclePainter.draw(canvas);
         progressPainter.draw(canvas);
-        iconPainter.draw(canvas);
+        //iconPainter.draw(canvas);
         invalidate();
     }
 
@@ -226,10 +224,10 @@ public class DashedCircularProgress extends RelativeLayout {
     }
 
     public void setIcon(int drawable) {
-        if (iconPainter != null) {
-            iconPainter.setImage(BitmapFactory.decodeResource(getContext().getResources(),
-                    drawable));
-        }
+//        if (iconPainter != null) {
+//            iconPainter.setImage(BitmapFactory.decodeResource(getContext().getResources(),
+//                    drawable));
+//        }
     }
 
     public void reset() {

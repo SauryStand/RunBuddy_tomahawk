@@ -32,7 +32,7 @@ import org.runbuddy.libtomahawk.collection.ScriptResolverCollection;
 import org.runbuddy.libtomahawk.infosystem.User;
 import org.runbuddy.libtomahawk.resolver.models.ScriptResolverCollectionMetaData;
 import org.runbuddy.libtomahawk.utils.ImageUtils;
-import org.runbuddy.tomahawk.TomahawkApp;
+import org.runbuddy.tomahawk.app.TomahawkApp;
 
 import java.util.ArrayList;
 import java.util.List;

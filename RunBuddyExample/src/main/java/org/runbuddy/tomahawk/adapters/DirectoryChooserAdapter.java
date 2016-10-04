@@ -30,7 +30,7 @@ import android.widget.TextView;
 
 import org.runbuddy.R;
 import org.runbuddy.libtomahawk.utils.ImageUtils;
-import org.runbuddy.tomahawk.TomahawkApp;
+import org.runbuddy.tomahawk.app.TomahawkApp;
 import org.runbuddy.tomahawk.views.DirectoryChooser;
 
 import java.io.File;

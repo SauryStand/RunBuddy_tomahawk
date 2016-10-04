@@ -30,7 +30,7 @@ import org.runbuddy.libtomahawk.resolver.ScriptPlugin;
 import org.runbuddy.libtomahawk.resolver.models.ScriptResolverCollectionMetaData;
 import org.runbuddy.libtomahawk.utils.ADeferredObject;
 import org.runbuddy.libtomahawk.utils.ImageUtils;
-import org.runbuddy.tomahawk.TomahawkApp;
+import org.runbuddy.tomahawk.app.TomahawkApp;
 
 /**
  * This class represents a Collection which contains tracks/albums/artists retrieved by a

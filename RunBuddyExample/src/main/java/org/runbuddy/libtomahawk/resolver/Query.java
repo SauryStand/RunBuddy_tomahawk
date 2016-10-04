@@ -28,7 +28,7 @@ import org.runbuddy.libtomahawk.collection.Cacheable;
 import org.runbuddy.libtomahawk.collection.Image;
 import org.runbuddy.libtomahawk.collection.Playlist;
 import org.runbuddy.libtomahawk.collection.Track;
-import org.runbuddy.tomahawk.TomahawkApp;
+import org.runbuddy.tomahawk.app.TomahawkApp;
 import org.runbuddy.tomahawk.utils.IdGenerator;
 
 import java.util.ArrayList;
