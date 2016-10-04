@@ -40,7 +40,7 @@ import android.widget.Toast;
 import org.runbuddy.Device.BlueTooth.BluetoothLeClass.OnDataAvailableListener;
 import org.runbuddy.Device.BlueTooth.BluetoothLeClass.OnServiceDiscoverListener;
 import org.runbuddy.Device.BlueTooth.iBeaconClass.iBeacon;
-import org.tomahawk.tomahawk_android.R;
+import org.runbuddy.R;
 
 import java.util.List;
 

@@ -33,9 +33,9 @@ import org.runbuddy.libtomahawk.infosystem.InfoRequestData;
 import org.runbuddy.libtomahawk.infosystem.QueryParams;
 import org.runbuddy.libtomahawk.resolver.Query;
 import org.runbuddy.libtomahawk.utils.GsonHelper;
-import org.runbuddy.tomahawk_android.TomahawkApp;
-import org.runbuddy.tomahawk_android.utils.IdGenerator;
-import org.runbuddy.tomahawk_android.utils.MediaWrapper;
+import org.runbuddy.tomahawk.app.TomahawkApp;
+import org.runbuddy.tomahawk.utils.IdGenerator;
+import org.runbuddy.tomahawk.utils.MediaWrapper;
 import org.videolan.libvlc.util.AndroidUtil;
 
 import java.io.File;

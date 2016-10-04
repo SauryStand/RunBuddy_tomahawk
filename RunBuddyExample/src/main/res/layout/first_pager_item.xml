@@ -13,7 +13,6 @@
         android:src="@drawable/empty_logo" />
 
     <LinearLayout
-        android:id="@+id/home_recommend_item_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">

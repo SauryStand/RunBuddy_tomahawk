@@ -20,7 +20,6 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/content_header_user_navdrawer"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/tomahawk_red_transparent"
@@ -49,7 +48,7 @@
                 android:src="@drawable/common_google_signin_btn_icon_light_pressed"
                 android:layout_gravity="center" /-->
 
-            <org.runbuddy.tomahawk_android.utils.CircleImageView.CircleImageView
+            <org.runbuddy.tomahawk.utils.CircleImageView.CircleImageView
                 android:id="@+id/userimageview1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

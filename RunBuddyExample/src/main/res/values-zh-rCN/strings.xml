@@ -14,20 +14,11 @@
   <string name="artists">艺术家</string>
   <string name="users">用户</string>
   <string name="top_hits">热单</string>
-  <string name="top_albums">热门专辑</string>
   <string name="albums_and_eps">专辑和EP</string>
-  <string name="other_releases">其他发行版</string>
   <string name="playlist_details">播放列表详情</string>
-  <string name="album_details">专辑详情</string>
   <string name="search">搜索</string>
   <string name="playlist">播放列表</string>
-  <string name="shuffle_on_label">随机开</string>
-  <string name="shuffle_off_label">随机关</string>
-  <string name="repeat_on_label">重复开</string>
-  <string name="repeat_off_label">重复关</string>
   <string name="unknown">未知</string>
-  <string name="no_track">无曲目</string>
-  <string name="save_playlist">保存当前播放列表</string>
   <string name="create_playlist">创建播放列表</string>
   <!--Shown as a textfield hint in the "create playlist"-dialog. Indicates that the user should type the playlist's title into the textfield.-->
   <string name="name_playlist">名称</string>
@@ -35,7 +26,6 @@
   <string name="create_station_search_hint">搜索艺术家/歌曲/风格</string>
   <string name="genres">风格</string>
   <string name="moods">情绪</string>
-  <string name="login_name_label">邮箱/用户名</string>
   <string name="login_username">用户名</string>
   <string name="login_password">密码</string>
   <string name="login_password_confirmation">密码确认</string>
@@ -54,9 +44,7 @@
   <string name="local_collection_pretty_name">本地收藏</string>
   <string name="local">本地</string>
   <string name="all">所有</string>
-  <string name="preferences_local_collection_text">请选择需要扫描的本地文件夹</string>
   <string name="preferences_hatchet_text">使用 %1$s 同步数据</string>
-  <string name="preferences_playback">回放</string>
   <string name="preferences_equalizer">均衡器</string>
   <string name="preferences_equalizer_text">自定义音频输出。</string>
   <string name="preferences_playback_data">收藏所有内容</string>
@@ -65,7 +53,6 @@
   <string name="preferences_plug_and_play_text">只要插入耳机就开始播放音乐</string>
   <string name="preferences_audio_quality">优先采用音质</string>
   <string name="preferences_audio_quality_text">如果未连接到 WiFi 优先使用的音质</string>
-  <string name="preferences_info">信息</string>
   <string name="preferences_app_version">软件版本</string>
   <string name="preferences_app_uservoice">反馈</string>
   <string name="preferences_app_uservoice_text">分享您的想法或获取帮助</string>
@@ -82,7 +69,6 @@
   <string name="crash_dialog_text">因为不可意料的错误导致程序停止运行。请通过发送错误信息帮助我们修复此问题，您只需点击确定即可</string>
   <string name="crash_dialog_comment_prompt">你可以在下面添加关于问题的描述：</string>
   <string name="crash_dialog_ok_toast">感谢您！</string>
-  <string name="context_menu_play">播放</string>
   <string name="context_menu_add_to_queue">添加到队列</string>
   <string name="context_menu_add_to_playlist">添加到播放列表</string>
   <string name="context_menu_create_station">创建电台</string>
@@ -108,8 +94,6 @@
   <string name="drawer_header_cloudcollections">云收藏</string>
   <string name="collection_dropdown_recently_added">最近添加</string>
   <string name="collection_dropdown_alpha_artists">艺术家 A-Z</string>
-  <string name="collection_dropdown_play_count">播发统计</string>
-  <string name="collection_dropdown_alpha_albums">专辑 A-Z</string>
   <string name="collection_dropdown_alpha">A-Z</string>
   <string name="history">历史</string>
   <string name="preferences_bitrate_low">正常</string>
@@ -130,9 +114,6 @@
     <item quantity="other">%1$s 喜欢了 %2$d 个曲目</item>
   </plurals>
   <!--Shown in the user's social feed (e.g. "mrmaffen collected a track" followed by a link to the collected track(s))-->
-  <plurals name="socialaction_type_collected_track">
-    <item quantity="other">%1$s 收藏了 %2$d 个曲目</item>
-  </plurals>
   <!--Shown in the user's social feed (e.g. "mrmaffen collected an album" followed by a link to the collected album(s))-->
   <plurals name="socialaction_type_collected_album">
     <item quantity="other">%1$s 收藏了%2$d 张专辑</item>
@@ -142,7 +123,6 @@
     <item quantity="other">%1$s 收藏了%2$d 个艺术家</item>
   </plurals>
   <!--Shown in the user's social feed (e.g. "mrmaffen commented on "Greatest Hits" by Queen")-->
-  <string name="socialaction_type_createcomment">%1$s 评论了</string>
   <!--Shown in the user's social feed (e.g. "mrmaffen listened along to a friend" followed by a single user or a list of users)-->
   <plurals name="socialaction_type_latchon">
     <item quantity="other">%1$s 跟随收听 %2$d 个好友</item>
@@ -172,7 +152,6 @@
   <string name="music">音乐</string>
   <string name="biography">简介</string>
   <!--"Similar" in the sense of "similar artists" or "similar songs" on an artist/track page.-->
-  <string name="similar">类似的</string>
   <!--Shown as a title for a list of songs in the search results view.-->
   <string name="songs">歌曲</string>
   <!--Shown as part of a count string. E.g.: "3 Songs", "1 Song"-->
@@ -219,7 +198,6 @@
   <plurals name="add_to_playlist_headertext">
     <item quantity="other">将 %1$d 添加到播放列表：</item>
   </plurals>
-  <string name="seeking_not_supported">抱歉，此解析器不支持寻位。</string>
   <string name="install_plugin_title">插件安装</string>
   <string name="install_plugin_warning">将会从未知源安装 Tomahawk 插件。此操作存在安全风险。</string>
   <string name="install_plugin_warning2">您是否想安装此插件？</string>
@@ -251,127 +229,16 @@
 
   <!--暂时使用中文-->
   <string name="ble_not_supported">你的手机不支持BLE</string>
-  <string name="label_data">Data:</string>
-  <string name="label_device_address">设备地址:</string>
-  <string name="label_state">State:</string>
-  <string name="no_data">No data</string>
-  <string name="connected">已连接</string>
-  <string name="disconnected">已断开连接</string>
-  <string name="title_devices">BLE 设备扫描</string>
   <string name="error_bluetooth_not_supported">你的手机不支持蓝牙</string>
 
   <string name="unknown_device">未知设备</string>
-  <string name="unknown_characteristic">未知特征值</string>
-  <string name="unknown_service">未知服务</string>
 
   <!-- Menu items -->
-  <string name="menu_connect">Connect</string>
-  <string name="menu_disconnect">Disconnect</string>
-  <string name="menu_scan">Scan</string>
-  <string name="menu_stop">Stop</string>
-  <string name="device_rssi">rssi信号</string>
-  <string name="text_detail">detail</string>
-  <string name="testing">Testing</string>
   <string name="drawer_title_running_mv_page">Running Page</string>
   <string name="drawer_title_popularpage">Popularpage</string>
   <string name="authenticator_label" translate="false">Hatchet</string>
-  <string name="hello_blank_fragment">Hello blank fragment</string>
-  <string name="image_transition">image_transition</string>
   <string name="sensor">Sensor</string>
   <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam efficitur ipsum in placerat molestie. Fusce quis mauris a enim sollicitudin ultrices non eget velit. Aliquam eu pulvinar enim. Praesent libero nisl, ultricies vel maximus eu, maximus et nisi. Phasellus pharetra nec ligula vitae mollis. Quisque porttitor ornare magna, quis dignissim libero aliquam id. Donec sollicitudin ultrices ante, a semper erat tristique in. Vivamus sodales in ligula at sodales. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla tempus bibendum nibh, ac tincidunt quam convallis non. Proin dolor nunc, egestas et tortor consequat, dignissim lacinia odio. Ut ut aliquet erat.  Ut non scelerisque elit. Morbi dolor neque, iaculis eu justo rutrum, aliquet dictum mauris. Phasellus quis massa ut ligula feugiat congue a et dolor. Etiam a dui a sapien ornare accumsan ac ut lorem. Suspendisse vehicula lorem dapibus nibh rhoncus ultricies. Proin sem nulla, elementum quis pharetra quis, commodo vitae nisi. Donec urna orci, posuere et iaculis sit amet, fringilla quis sapien. Pellentesque nec posuere felis. Praesent malesuada tellus nisi, non dictum justo interdum eget. Quisque mollis euismod libero, non aliquam lorem interdum vitae. Aliquam vehicula efficitur purus eget rutrum. Sed pulvinar fermentum risus ac viverra. Cras laoreet ligula quam, ac lacinia nisl elementum in. Aenean velit arcu, euismod a venenatis non, pulvinar pulvinar massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam efficitur ipsum in placerat molestie. Fusce quis mauris a enim sollicitudin ultrices non eget velit. Aliquam eu pulvinar enim. Praesent libero nisl, ultricies vel maximus eu, maximus et nisi. Phasellus pharetra nec ligula vitae mollis. Quisque porttitor ornare magna, quis dignissim libero aliquam id. Donec sollicitudin ultrices ante, a semper erat tristique in. Vivamus sodales in ligula at sodales. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla tempus bibendum nibh, ac tincidunt quam convallis non. Proin dolor nunc, egestas et tortor consequat, dignissim lacinia odio. Ut ut aliquet erat.  Ut non scelerisque elit. Morbi dolor neque, iaculis eu justo rutrum, aliquet dictum mauris. Phasellus quis massa ut ligula feugiat congue a et dolor. Etiam a dui a sapien ornare accumsan ac ut lorem. Suspendisse vehicula lorem dapibus nibh rhoncus ultricies. Proin sem nulla, elementum quis pharetra quis, commodo vitae nisi. Donec urna orci, posuere et iaculis sit amet, fringilla quis sapien. Pellentesque nec posuere felis. Praesent malesuada tellus nisi, non dictum justo interdum eget. Quisque mollis euismod libero, non aliquam lorem interdum vitae. Aliquam vehicula efficitur purus eget rutrum. Sed pulvinar fermentum risus ac viverra. Cras laoreet ligula quam, ac lacinia nisl elementum in. Aenean velit arcu, euismod a venenatis non, pulvinar pulvinar massa.</string>
-  <string name="home">Home</string>
-  <string name="nav_bottom_l">Top Shots</string>
-  <string name="nav_bottom_m">Latest</string>
-  <string name="nav_bottom_r">Animation</string>
-     <string name="large_text">
-        "Material is the metaphor.\n\n"
-
-        "A material metaphor is the unifying theory of a rationalized space and a system of motion."
-        "The material is grounded in tactile reality, inspired by the study of paper and ink, yet "
-        "technologically advanced and open to imagination and magic.\n"
-        "Surfaces and edges of the material provide visual cues that are grounded in reality. The "
-        "use of familiar tactile attributes helps users quickly understand affordances. Yet the "
-        "flexibility of the material creates new affordances that supercede those in the physical "
-        "world, without breaking the rules of physics.\n"
-        "The fundamentals of light, surface, and movement are key to conveying how objects move, "
-        "interact, and exist in space and in relation to each other. Realistic lighting shows "
-        "seams, divides space, and indicates moving parts.\n\n"
-
-        "Bold, graphic, intentional.\n\n"
-
-        "The foundational elements of print based design typography, grids, space, scale, color, "
-        "and use of imagery guide visual treatments. These elements do far more than please the "
-        "eye. They create hierarchy, meaning, and focus. Deliberate color choices, edge to edge "
-        "imagery, large scale typography, and intentional white space create a bold and graphic "
-        "interface that immerse the user in the experience.\n"
-        "An emphasis on user actions makes core functionality immediately apparent and provides "
-        "waypoints for the user.\n\n"
-
-        "Motion provides meaning.\n\n"
-
-        "Motion respects and reinforces the user as the prime mover. Primary user actions are "
-        "inflection points that initiate motion, transforming the whole design.\n"
-        "All action takes place in a single environment. Objects are presented to the user without "
-        "breaking the continuity of experience even as they transform and reorganize.\n"
-        "Motion is meaningful and appropriate, serving to focus attention and maintain continuity. "
-        "Feedback is subtle yet clear. Transitions are efﬁcient yet coherent.\n\n"
-
-        "3D world.\n\n"
-
-        "The material environment is a 3D space, which means all objects have x, y, and z "
-        "dimensions. The z-axis is perpendicularly aligned to the plane of the display, with the "
-        "positive z-axis extending towards the viewer. Every sheet of material occupies a single "
-        "position along the z-axis and has a standard 1dp thickness.\n"
-        "On the web, the z-axis is used for layering and not for perspective. The 3D world is "
-        "emulated by manipulating the y-axis.\n\n"
-
-        "Light and shadow.\n\n"
-
-        "Within the material environment, virtual lights illuminate the scene. Key lights create "
-        "directional shadows, while ambient light creates soft shadows from all angles.\n"
-        "Shadows in the material environment are cast by these two light sources. In Android "
-        "development, shadows occur when light sources are blocked by sheets of material at "
-        "various positions along the z-axis. On the web, shadows are depicted by manipulating the "
-        "y-axis only. The following example shows the card with a height of 6dp.\n\n"
-
-        "Resting elevation.\n\n"
-
-        "All material objects, regardless of size, have a resting elevation, or default elevation "
-        "that does not change. If an object changes elevation, it should return to its resting "
-        "elevation as soon as possible.\n\n"
-
-        "Component elevations.\n\n"
-
-        "The resting elevation for a component type is consistent across apps (e.g., FAB elevation "
-        "does not vary from 6dp in one app to 16dp in another app).\n"
-        "Components may have different resting elevations across platforms, depending on the depth "
-        "of the environment (e.g., TV has a greater depth than mobile or desktop).\n\n"
-
-        "Responsive elevation and dynamic elevation offsets.\n\n"
-
-        "Some component types have responsive elevation, meaning they change elevation in response "
-        "to user input (e.g., normal, focused, and pressed) or system events. These elevation "
-        "changes are consistently implemented using dynamic elevation offsets.\n"
-        "Dynamic elevation offsets are the goal elevation that a component moves towards, relative "
-        "to the component’s resting state. They ensure that elevation changes are consistent "
-        "across actions and component types. For example, all components that lift on press have "
-        "the same elevation change relative to their resting elevation.\n"
-        "Once the input event is completed or cancelled, the component will return to its resting "
-        "elevation.\n\n"
-
-        "Avoiding elevation interference.\n\n"
-
-        "Components with responsive elevations may encounter other components as they move between "
-        "their resting elevations and dynamic elevation offsets. Because material cannot pass "
-        "through other material, components avoid interfering with one another any number of ways, "
-        "whether on a per component basis or using the entire app layout.\n"
-        "On a component level, components can move or be removed before they cause interference. "
-        "For example, a floating action button (FAB) can disappear or move off screen before a "
-        "user picks up a card, or it can move if a snackbar appears.\n"
-        "On the layout level, design your app layout to minimize opportunities for interference. "
-        "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
-        "when a user tries to pick up one of cards.\n\n"
-    </string>
 
 
 </resources>

@@ -7,8 +7,8 @@
     <TextView
         android:layout_centerInParent="true"
         android:textColor="@color/material_pink"
-        android:textSize="20sp"
-        android:text="@string/advanced"
+        android:textSize="40sp"
+        android:text="@string/strong"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 

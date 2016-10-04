@@ -18,7 +18,7 @@
  *   along with Tomahawk. If not, see <http://www.gnu.org/licenses/>.
  */
 -->
-<org.runbuddy.tomahawk_android.views.HatchetLoginRegisterView
+<org.runbuddy.tomahawk.views.HatchetLoginRegisterView
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

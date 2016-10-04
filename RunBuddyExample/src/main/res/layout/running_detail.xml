@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar"></include>
+
+    <com.github.glomadrian.dashedcircularprogress.DashedCircularProgress
+        android:id="@+id/simple_circle"
+        android:layout_width="280dp"
+        android:layout_height="295dp"
+        android:layout_marginTop="35dp"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center_horizontal|top"
+        app:base_color="@color/pager_base_color"
+        app:duration="1000"
+        app:external_color="#1affffff"
+        app:max="100"
+        app:min="0"
+        app:progress_color="@color/material_pink"
+        app:progress_icon="@drawable/speed">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/circular_view_pager"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:overScrollMode="never">
+
+            </android.support.v4.view.ViewPager>
+
+            <TextView
+                android:id="@+id/textView_steps"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="step"
+                android:textSize="20dp" />
+
+        </RelativeLayout>
+
+    </com.github.glomadrian.dashedcircularprogress.DashedCircularProgress>
+
+
+    <Button
+        android:id="@+id/Map_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|center_vertical"
+        android:text="@string/map" />
+
+    <Button
+        android:id="@+id/ble_conn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left|center_vertical"
+        android:text="Ble connect" />
+
+    <ListView
+        android:id="@+id/listView1"
+        android:layout_width="match_parent"
+        android:layout_height="235dp"
+        android:layout_gravity="center_horizontal|bottom"></ListView>
+
+
+</FrameLayout>

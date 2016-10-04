@@ -22,7 +22,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <org.runbuddy.tomahawk_android.utils.MenuDrawer
+    <org.runbuddy.tomahawk.utils.MenuDrawer
         android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -44,7 +44,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"/>
 
-                <org.runbuddy.tomahawk_android.views.PlaybackFragmentFrame
+                <org.runbuddy.tomahawk.views.PlaybackFragmentFrame
                     android:id="@+id/playback_fragment_frame"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"/>
@@ -55,7 +55,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>
 
-            <org.runbuddy.tomahawk_android.views.PlaybackPanel
+            <org.runbuddy.tomahawk.views.PlaybackPanel
                 android:id="@+id/playback_panel"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -74,7 +74,7 @@
             android:dividerHeight="0px"
             android:background="@color/navdrawer_background"/>
 
-    </org.runbuddy.tomahawk_android.utils.MenuDrawer>
+    </org.runbuddy.tomahawk.utils.MenuDrawer>
 
     <View android:id="@+id/action_bar_background"
         android:layout_width="match_parent"

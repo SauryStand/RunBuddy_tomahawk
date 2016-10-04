@@ -30,7 +30,7 @@ import org.runbuddy.libtomahawk.collection.DbCollection;
 import org.runbuddy.libtomahawk.resolver.FuzzyIndex;
 import org.runbuddy.libtomahawk.resolver.models.ScriptResolverTrack;
 import org.runbuddy.libtomahawk.utils.StringUtils;
-import org.runbuddy.tomahawk_android.utils.PreferenceUtils;
+import org.runbuddy.tomahawk.utils.PreferenceUtils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -225,11 +225,8 @@ public class CollectionDb extends SQLiteOpenHelper {
     }
 
     private static class JoinInfo {
-
         String table;
-
         Map<String, String> conditions = new HashMap<>();
-
     }
 
     private String mCollectionId;

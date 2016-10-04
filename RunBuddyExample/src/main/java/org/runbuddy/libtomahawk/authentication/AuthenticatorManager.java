@@ -22,8 +22,8 @@ import android.os.Handler;
 import android.os.Looper;
 import android.widget.Toast;
 
-import org.runbuddy.tomahawk_android.TomahawkApp;
-import org.tomahawk.tomahawk_android.R;
+import org.runbuddy.R;
+import org.runbuddy.tomahawk.app.TomahawkApp;
 
 import java.util.HashMap;
 

@@ -39,8 +39,8 @@ import org.runbuddy.libtomahawk.resolver.models.ScriptResolverUrlResult;
 import org.runbuddy.libtomahawk.utils.ADeferredObject;
 import org.runbuddy.libtomahawk.utils.GsonHelper;
 import org.runbuddy.libtomahawk.utils.NetworkUtils;
-import org.runbuddy.tomahawk_android.TomahawkApp;
-import org.runbuddy.tomahawk_android.utils.WeakReferenceHandler;
+import org.runbuddy.tomahawk.app.TomahawkApp;
+import org.runbuddy.tomahawk.utils.WeakReferenceHandler;
 
 import java.io.IOException;
 import java.lang.reflect.Type;

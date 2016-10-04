@@ -38,9 +38,9 @@ import org.runbuddy.libtomahawk.infosystem.User;
 import org.runbuddy.libtomahawk.infosystem.hatchet.models.HatchetPlaylistEntries;
 import org.runbuddy.libtomahawk.resolver.Query;
 import org.runbuddy.libtomahawk.utils.ISO8601Utils;
-import org.runbuddy.tomahawk_android.TomahawkApp;
-import org.runbuddy.tomahawk_android.utils.ThreadManager;
-import org.runbuddy.tomahawk_android.utils.TomahawkRunnable;
+import org.runbuddy.tomahawk.app.TomahawkApp;
+import org.runbuddy.tomahawk.utils.ThreadManager;
+import org.runbuddy.tomahawk.utils.TomahawkRunnable;
 
 import java.io.IOException;
 import java.util.ArrayList;

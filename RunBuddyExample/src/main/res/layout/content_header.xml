@@ -22,7 +22,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-    <org.runbuddy.tomahawk_android.views.PageIndicator
+    <org.runbuddy.tomahawk.views.PageIndicator
             android:id="@+id/page_indicator"
             android:layout_width="match_parent"
             android:layout_height="@dimen/pager_indicator_height"
@@ -58,7 +58,7 @@
 
     </LinearLayout>
 
-    <org.runbuddy.tomahawk_android.views.FancyDropDown
+    <org.runbuddy.tomahawk.views.FancyDropDown
             android:id="@+id/fancydropdown"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

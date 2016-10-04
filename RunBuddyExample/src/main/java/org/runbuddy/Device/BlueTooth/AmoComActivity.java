@@ -17,7 +17,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
-import org.tomahawk.tomahawk_android.R;
+import org.runbuddy.R;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -218,8 +218,8 @@ public class AmoComActivity extends Activity implements View.OnClickListener {
 						}
 					}
 				}
-
-				getActionBar().setTitle("RSSI:" + rssi_avg + "dbm" + "," + "距离:" + (int) distance + "cm");//actionbar这里会闪退的，项目主要需要解决的地方
+				//2016.10.1屏蔽下面这行代码，错误问题未知
+				//getActionBar().setTitle("RSSI:" + rssi_avg + "dbm" + "," + "距离:" + (int) distance + "cm");//actionbar这里会闪退的，项目主要需要解决的地方
 			} else if (action.equals(ACTION_CONNECT)) {
 				int status = intent.getIntExtra("CONNECT_STATUC", 0);
 				if (status == 0) {

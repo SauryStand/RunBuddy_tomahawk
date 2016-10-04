@@ -17,7 +17,7 @@
  */
 package org.runbuddy.libtomahawk.database;
 
-import org.runbuddy.tomahawk_android.TomahawkApp;
+import org.runbuddy.tomahawk.app.TomahawkApp;
 
 import java.util.HashMap;
 import java.util.Map;

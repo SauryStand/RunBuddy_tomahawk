@@ -19,8 +19,7 @@
  */
 -->
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:id="@+id/fragment_layout"
-             android:layout_width="match_parent"
+    android:layout_width="match_parent"
              android:layout_height="match_parent">
 
     <ViewStub android:id="@+id/imageview_grid_one_stub"

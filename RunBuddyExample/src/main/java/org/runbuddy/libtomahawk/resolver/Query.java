@@ -19,6 +19,7 @@ package org.runbuddy.libtomahawk.resolver;
 
 import android.text.TextUtils;
 
+import org.runbuddy.R;
 import org.runbuddy.libtomahawk.collection.Album;
 import org.runbuddy.libtomahawk.collection.AlphaComparable;
 import org.runbuddy.libtomahawk.collection.Artist;
@@ -27,9 +28,8 @@ import org.runbuddy.libtomahawk.collection.Cacheable;
 import org.runbuddy.libtomahawk.collection.Image;
 import org.runbuddy.libtomahawk.collection.Playlist;
 import org.runbuddy.libtomahawk.collection.Track;
-import org.runbuddy.tomahawk_android.TomahawkApp;
-import org.runbuddy.tomahawk_android.utils.IdGenerator;
-import org.tomahawk.tomahawk_android.R;
+import org.runbuddy.tomahawk.app.TomahawkApp;
+import org.runbuddy.tomahawk.utils.IdGenerator;
 
 import java.util.ArrayList;
 import java.util.Comparator;

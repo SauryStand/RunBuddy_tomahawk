@@ -20,10 +20,11 @@ package org.runbuddy.libtomahawk.resolver;
 import android.graphics.drawable.ColorDrawable;
 import android.widget.ImageView;
 
+import org.runbuddy.R;
 import org.runbuddy.libtomahawk.utils.ImageUtils;
-import org.runbuddy.tomahawk_android.TomahawkApp;
-import org.runbuddy.tomahawk_android.utils.ColorTintTransformation;
-import org.tomahawk.tomahawk_android.R;
+import org.runbuddy.tomahawk.app.TomahawkApp;
+import org.runbuddy.tomahawk.utils.ColorTintTransformation;
+
 
 /**
  * A stub {@link Resolver} that is associated with all local tracks.

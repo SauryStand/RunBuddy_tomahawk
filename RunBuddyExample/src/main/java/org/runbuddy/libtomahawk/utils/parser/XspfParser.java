@@ -27,7 +27,7 @@ import org.runbuddy.libtomahawk.collection.Playlist;
 import org.runbuddy.libtomahawk.resolver.Query;
 import org.runbuddy.libtomahawk.utils.GsonXmlHelper;
 import org.runbuddy.libtomahawk.utils.NetworkUtils;
-import org.runbuddy.tomahawk_android.utils.IdGenerator;
+import org.runbuddy.tomahawk.utils.IdGenerator;
 
 import java.io.File;
 import java.io.IOException;

@@ -9,7 +9,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import org.runbuddy.Device.BlueTooth.iBeaconClass.iBeacon;
-import org.tomahawk.tomahawk_android.R;
+import org.runbuddy.R;
 
 import java.util.ArrayList;
 

@@ -50,7 +50,7 @@
 
     </LinearLayout>
 
-    <org.runbuddy.tomahawk_android.views.SimplePagerIndicator
+    <org.runbuddy.tomahawk.views.SimplePagerIndicator
             android:id="@+id/simplepagerindicator"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -33,8 +33,8 @@ import org.runbuddy.libtomahawk.resolver.Result;
 import org.runbuddy.libtomahawk.resolver.ScriptAccount;
 import org.runbuddy.libtomahawk.resolver.ScriptResolver;
 import org.runbuddy.libtomahawk.utils.ADeferredObject;
-import org.runbuddy.tomahawk_android.utils.ThreadManager;
-import org.runbuddy.tomahawk_android.utils.TomahawkRunnable;
+import org.runbuddy.tomahawk.utils.ThreadManager;
+import org.runbuddy.tomahawk.utils.TomahawkRunnable;
 
 import java.util.ArrayList;
 import java.util.Collections;

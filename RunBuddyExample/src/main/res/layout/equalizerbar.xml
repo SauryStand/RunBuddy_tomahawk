@@ -6,7 +6,7 @@
               android:orientation="vertical">
 
     <!-- Be careful: the view is rotated by 90 degrees. -->
-    <org.runbuddy.tomahawk_android.views.VerticalSeekBar
+    <org.runbuddy.tomahawk.views.VerticalSeekBar
             android:id="@+id/equalizer_seek"
             style="@style/SeekBarAppTheme"
             android:layout_width="wrap_content"

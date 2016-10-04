@@ -19,8 +19,7 @@
  */
 -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/fragment_layout"
-                android:layout_width="match_parent"
+    android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
@@ -73,7 +72,7 @@
 
     </FrameLayout>
 
-    <org.runbuddy.tomahawk_android.views.Selector
+    <org.runbuddy.tomahawk.views.Selector
             android:id="@+id/selector"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
