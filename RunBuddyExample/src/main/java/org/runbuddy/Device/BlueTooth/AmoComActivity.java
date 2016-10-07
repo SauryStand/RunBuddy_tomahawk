@@ -149,7 +149,7 @@ public class AmoComActivity extends Activity implements View.OnClickListener {
 				}
 
 				Text_Recv.setText("");
-				scrollView.fullScroll(ScrollView.FOCUS_UP);// 滚动到底�?
+				scrollView.fullScroll(ScrollView.FOCUS_UP);// 滚动到底
 				Totol_Send_bytes = 0;
 				Totol_recv_bytes = 0;
 				Totol_recv_bytes_temp = 0;
