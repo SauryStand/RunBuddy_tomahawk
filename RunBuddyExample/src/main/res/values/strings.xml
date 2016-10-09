@@ -259,7 +259,9 @@
     <string name="error_bluetooth_not_supported">你的手机不支持蓝牙</string>
 
     <string name="unknown_device">未知设备</string>
-
+    <string name="paired">paired</string>
+    <string name="select_device">select_device</string>
+    <string name="scanning">scanning</string>
     <string name="steps"></string>
     <string name="speed">speed</string>
     <string name="strong">strong</string>

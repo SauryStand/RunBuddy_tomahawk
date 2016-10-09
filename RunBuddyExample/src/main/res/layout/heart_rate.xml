@@ -1,14 +1,22 @@
-<?xml version="1.0" encoding="utf-8"?><!-- 该文件是OtherActivity.java文件所使用的布局文件 -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/strong"
+        android:textColor="@color/material_pink"
+        android:textSize="40sp" />
 
     <ScrollView
         android:id="@+id/scroll"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.27"
+        android:layout_height="100dp"
+        android:layout_weight="2"
         android:textColorHint="#238745">
 
         <TextView
@@ -31,6 +39,5 @@
     </ScrollView>
 
 
-</LinearLayout>
 
-
+</RelativeLayout>

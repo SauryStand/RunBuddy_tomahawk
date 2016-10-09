@@ -35,7 +35,6 @@ import com.squareup.okhttp.Response;
 
 import org.apache.commons.io.Charsets;
 import org.apache.commons.io.IOUtils;
-import org.runbuddy.R;
 import org.runbuddy.libtomahawk.database.CollectionDb;
 import org.runbuddy.libtomahawk.database.CollectionDbManager;
 import org.runbuddy.libtomahawk.resolver.models.ScriptInterfaceRequestOptions;
@@ -49,8 +48,9 @@ import org.runbuddy.libtomahawk.resolver.plugins.ScriptResolverPluginFactory;
 import org.runbuddy.libtomahawk.utils.GsonHelper;
 import org.runbuddy.libtomahawk.utils.ImageUtils;
 import org.runbuddy.libtomahawk.utils.NetworkUtils;
-import org.runbuddy.tomahawk.app.TomahawkApp;
+import org.runbuddy.tomahawk.R;
 import org.runbuddy.tomahawk.activities.TomahawkMainActivity;
+import org.runbuddy.tomahawk.app.TomahawkApp;
 import org.runbuddy.tomahawk.utils.IdGenerator;
 import org.runbuddy.tomahawk.utils.PreferenceUtils;
 

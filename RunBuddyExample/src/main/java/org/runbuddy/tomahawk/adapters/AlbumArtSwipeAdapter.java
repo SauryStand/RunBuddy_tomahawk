@@ -28,12 +28,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import org.runbuddy.R;
 import org.runbuddy.libtomahawk.collection.Image;
 import org.runbuddy.libtomahawk.collection.Playlist;
 import org.runbuddy.libtomahawk.collection.PlaylistEntry;
 import org.runbuddy.libtomahawk.collection.StationPlaylist;
 import org.runbuddy.libtomahawk.utils.ImageUtils;
+import org.runbuddy.tomahawk.R;
 import org.runbuddy.tomahawk.services.PlaybackService;
 import org.runbuddy.tomahawk.utils.PlaybackManager;
 

@@ -12,7 +12,7 @@ import android.widget.LinearLayout;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.google.gson.Gson;
 
-import org.runbuddy.R;
+import org.runbuddy.tomahawk.R;
 import org.runbuddy.tomahawk.model.domain.MVDetailBean;
 import org.runbuddy.tomahawk.model.http.OkHttpManager;
 import org.runbuddy.tomahawk.model.http.callback.StringCallBack;

@@ -26,8 +26,8 @@ import com.amap.api.maps.model.CameraPosition;
 import com.amap.api.maps.model.LatLng;
 import com.amap.api.maps.model.PolylineOptions;
 
-import org.runbuddy.R;
 import org.runbuddy.libtomahawk.database.MapRecordDb;
+import org.runbuddy.tomahawk.R;
 import org.runbuddy.tomahawk.utils.TrackRecord.PathRecord;
 
 import java.text.SimpleDateFormat;
@@ -75,8 +75,9 @@ public class BasicMapActivity extends Activity implements LocationSource, AMapLo
         init();
         initpolyline();
 
-
     }
+
+
 
     /**
      * 初始化AMap对象
@@ -124,6 +125,7 @@ public class BasicMapActivity extends Activity implements LocationSource, AMapLo
     @Override
     protected void onResume() {
         super.onResume();
+
         mapView.onResume();
     }
 

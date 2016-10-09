@@ -26,12 +26,12 @@ import android.widget.TextView;
 import com.github.rahatarmanahmed.cpv.CircularProgressView;
 
 import org.jdeferred.DoneCallback;
-import org.runbuddy.R;
 import org.runbuddy.libtomahawk.collection.Image;
 import org.runbuddy.libtomahawk.collection.ScriptResolverCollection;
 import org.runbuddy.libtomahawk.infosystem.User;
 import org.runbuddy.libtomahawk.resolver.models.ScriptResolverCollectionMetaData;
 import org.runbuddy.libtomahawk.utils.ImageUtils;
+import org.runbuddy.tomahawk.R;
 import org.runbuddy.tomahawk.app.TomahawkApp;
 
 import java.util.ArrayList;

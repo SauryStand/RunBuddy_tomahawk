@@ -9,7 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import org.runbuddy.R;
+import org.runbuddy.tomahawk.R;
 import org.runbuddy.tomahawk.adapters.tai.RelativeMvRecycleAdapter;
 import org.runbuddy.tomahawk.model.domain.MVDetailBean;
 import org.runbuddy.tomahawk.widgets.tai.RecycleViewDivider;

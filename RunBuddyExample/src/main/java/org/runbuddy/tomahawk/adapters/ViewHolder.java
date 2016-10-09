@@ -27,7 +27,6 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import org.jdeferred.DoneCallback;
-import org.runbuddy.R;
 import org.runbuddy.libtomahawk.collection.Album;
 import org.runbuddy.libtomahawk.collection.Artist;
 import org.runbuddy.libtomahawk.collection.Collection;
@@ -45,6 +44,7 @@ import org.runbuddy.libtomahawk.resolver.Resolver;
 import org.runbuddy.libtomahawk.resolver.ScriptResolver;
 import org.runbuddy.libtomahawk.utils.ImageUtils;
 import org.runbuddy.libtomahawk.utils.ViewUtils;
+import org.runbuddy.tomahawk.R;
 import org.runbuddy.tomahawk.app.TomahawkApp;
 import org.runbuddy.tomahawk.listeners.MultiColumnClickListener;
 import org.runbuddy.tomahawk.views.PlaybackPanel;

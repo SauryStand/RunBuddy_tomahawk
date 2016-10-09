@@ -11,8 +11,8 @@ import android.widget.ListView;
 
 import com.amap.api.maps.model.LatLng;
 
-import org.runbuddy.R;
 import org.runbuddy.libtomahawk.database.MapRecordDb;
+import org.runbuddy.tomahawk.R;
 import org.runbuddy.tomahawk.adapters.RecordAdapter;
 import org.runbuddy.tomahawk.utils.TrackRecord.PathRecord;
 

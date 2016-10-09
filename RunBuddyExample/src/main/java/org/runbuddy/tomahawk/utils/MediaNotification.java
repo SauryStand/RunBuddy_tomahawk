@@ -38,7 +38,7 @@ import android.util.Log;
 import android.util.SparseArray;
 
 import org.apache.lucene.util.ArrayUtil;
-import org.runbuddy.R;
+import org.runbuddy.tomahawk.R;
 import org.runbuddy.tomahawk.activities.TomahawkMainActivity;
 import org.runbuddy.tomahawk.services.PlaybackService;
 

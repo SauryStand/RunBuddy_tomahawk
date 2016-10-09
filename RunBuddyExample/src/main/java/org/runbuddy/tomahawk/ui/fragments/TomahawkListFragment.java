@@ -30,10 +30,10 @@ import android.widget.AbsListView;
 import android.widget.BaseAdapter;
 import android.widget.FrameLayout;
 
-import org.runbuddy.R;
 import org.runbuddy.libtomahawk.utils.ViewUtils;
-import org.runbuddy.tomahawk.app.TomahawkApp;
+import org.runbuddy.tomahawk.R;
 import org.runbuddy.tomahawk.adapters.StickyBaseAdapter;
+import org.runbuddy.tomahawk.app.TomahawkApp;
 
 import de.greenrobot.event.EventBus;
 import se.emilsjolander.stickylistheaders.StickyListHeadersListView;

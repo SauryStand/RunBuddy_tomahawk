@@ -27,7 +27,7 @@ import org.acra.ACRA;
 import org.acra.ReportingInteractionMode;
 import org.acra.annotation.ReportsCrashes;
 import org.acra.sender.HttpSender;
-import org.runbuddy.R;
+import org.runbuddy.tomahawk.R;
 import org.runbuddy.tomahawk.services.PlaybackService;
 import org.runbuddy.tomahawk.utils.TomahawkHttpSender;
 

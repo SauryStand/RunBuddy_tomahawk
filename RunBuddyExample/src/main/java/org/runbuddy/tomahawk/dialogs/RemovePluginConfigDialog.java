@@ -24,10 +24,10 @@ import android.support.annotation.NonNull;
 import android.util.Log;
 import android.widget.TextView;
 
-import org.runbuddy.R;
 import org.runbuddy.libtomahawk.resolver.PipeLine;
 import org.runbuddy.libtomahawk.resolver.ScriptResolver;
 import org.runbuddy.libtomahawk.utils.VariousUtils;
+import org.runbuddy.tomahawk.R;
 import org.runbuddy.tomahawk.ui.fragments.TomahawkFragment;
 
 import java.io.File;

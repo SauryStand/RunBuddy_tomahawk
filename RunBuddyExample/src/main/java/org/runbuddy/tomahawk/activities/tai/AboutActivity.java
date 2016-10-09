@@ -7,7 +7,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
-import org.runbuddy.R;
+import org.runbuddy.tomahawk.R;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;

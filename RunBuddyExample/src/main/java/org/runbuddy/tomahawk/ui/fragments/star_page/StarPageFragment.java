@@ -14,7 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-import org.runbuddy.R;
+import org.runbuddy.tomahawk.R;
 import org.runbuddy.tomahawk.ui.fragments.star_page.widgets.DetailActivity;
 import org.runbuddy.tomahawk.ui.fragments.star_page.widgets.RecyclerViewAdapter;
 import org.runbuddy.tomahawk.ui.fragments.star_page.widgets.ViewModel;

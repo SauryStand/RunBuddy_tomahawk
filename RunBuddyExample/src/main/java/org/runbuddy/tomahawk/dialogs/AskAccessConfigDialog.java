@@ -27,9 +27,9 @@ import android.os.Looper;
 import android.support.annotation.NonNull;
 import android.widget.Toast;
 
-import org.runbuddy.R;
 import org.runbuddy.libtomahawk.authentication.HatchetAuthenticatorUtils;
 import org.runbuddy.libtomahawk.resolver.HatchetStubResolver;
+import org.runbuddy.tomahawk.R;
 import org.runbuddy.tomahawk.app.TomahawkApp;
 
 

@@ -62,7 +62,6 @@ import com.uservoice.uservoicesdk.Config;
 import com.uservoice.uservoicesdk.UserVoice;
 
 import org.jdeferred.DoneCallback;
-import org.runbuddy.R;
 import org.runbuddy.libtomahawk.authentication.AuthenticatorManager;
 import org.runbuddy.libtomahawk.authentication.AuthenticatorUtils;
 import org.runbuddy.libtomahawk.authentication.HatchetAuthenticatorUtils;
@@ -84,8 +83,9 @@ import org.runbuddy.libtomahawk.resolver.UserCollectionStubResolver;
 import org.runbuddy.libtomahawk.resolver.models.ScriptResolverUrlResult;
 import org.runbuddy.libtomahawk.utils.ViewUtils;
 import org.runbuddy.libtomahawk.utils.parser.XspfParser;
-import org.runbuddy.tomahawk.app.TomahawkApp;
+import org.runbuddy.tomahawk.R;
 import org.runbuddy.tomahawk.adapters.SuggestionSimpleCursorAdapter;
+import org.runbuddy.tomahawk.app.TomahawkApp;
 import org.runbuddy.tomahawk.dialogs.GMusicConfigDialog;
 import org.runbuddy.tomahawk.dialogs.InstallPluginConfigDialog;
 import org.runbuddy.tomahawk.dialogs.WarnOldPluginDialog;
@@ -464,7 +464,6 @@ public class TomahawkMainActivity extends SupportActivity implements BaseLazyMai
                 public void onDrawerClosed(View view) {
                     getSupportActionBar().setTitle(mTitle);
                 }
-
                 /** Called when a drawer has settled in a completely open state. */
                 public void onDrawerOpened(View drawerView) {
                     getSupportActionBar().setTitle(mDrawerTitle);
@@ -535,6 +534,8 @@ public class TomahawkMainActivity extends SupportActivity implements BaseLazyMai
 
 
         //initView();
+
+
 
 
     }
@@ -741,6 +742,10 @@ public class TomahawkMainActivity extends SupportActivity implements BaseLazyMai
                     }
                 });
         updateActionBarState(true);
+
+
+
+
     }
 
     @Override

@@ -25,7 +25,6 @@ import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.view.View;
 
-import org.runbuddy.R;
 import org.runbuddy.libtomahawk.collection.Album;
 import org.runbuddy.libtomahawk.collection.Artist;
 import org.runbuddy.libtomahawk.collection.Image;
@@ -37,6 +36,7 @@ import org.runbuddy.libtomahawk.infosystem.hatchet.Search;
 import org.runbuddy.libtomahawk.infosystem.hatchet.SearchResult;
 import org.runbuddy.libtomahawk.resolver.PipeLine;
 import org.runbuddy.libtomahawk.resolver.Query;
+import org.runbuddy.tomahawk.R;
 import org.runbuddy.tomahawk.activities.TomahawkMainActivity;
 import org.runbuddy.tomahawk.utils.FragmentInfo;
 import org.runbuddy.tomahawk.utils.IdGenerator;

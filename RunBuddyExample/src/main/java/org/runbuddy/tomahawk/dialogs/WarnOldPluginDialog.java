@@ -23,9 +23,9 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.widget.TextView;
 
-import org.runbuddy.R;
 import org.runbuddy.libtomahawk.resolver.PipeLine;
 import org.runbuddy.libtomahawk.resolver.ScriptResolver;
+import org.runbuddy.tomahawk.R;
 import org.runbuddy.tomahawk.ui.fragments.TomahawkFragment;
 
 

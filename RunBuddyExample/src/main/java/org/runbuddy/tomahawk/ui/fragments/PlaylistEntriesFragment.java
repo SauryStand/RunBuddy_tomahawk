@@ -22,7 +22,6 @@ import android.util.Log;
 import android.view.View;
 
 import org.jdeferred.DoneCallback;
-import org.runbuddy.R;
 import org.runbuddy.libtomahawk.collection.Artist;
 import org.runbuddy.libtomahawk.collection.Collection;
 import org.runbuddy.libtomahawk.collection.CollectionManager;
@@ -32,6 +31,7 @@ import org.runbuddy.libtomahawk.collection.ScriptResolverCollection;
 import org.runbuddy.libtomahawk.database.DatabaseHelper;
 import org.runbuddy.libtomahawk.infosystem.InfoSystem;
 import org.runbuddy.libtomahawk.infosystem.User;
+import org.runbuddy.tomahawk.R;
 import org.runbuddy.tomahawk.adapters.Segment;
 import org.runbuddy.tomahawk.utils.ThreadManager;
 import org.runbuddy.tomahawk.utils.TomahawkRunnable;

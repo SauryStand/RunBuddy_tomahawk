@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.runbuddy">
+    package="org.runbuddy.tomahawk">
 
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -41,15 +41,15 @@
         android:xlargeScreens="true" />
 
     <application
-        android:name=".tomahawk.app.TomahawkApp"
+        android:name=".app.TomahawkApp"
         android:allowBackup="true"
-        android:icon="@drawable/zombies"
+        android:icon="@drawable/ic_run"
         android:label="@string/app_name"
         android:theme="@style/Theme.Tomahawk">
 
         <meta-data
             android:name="com.amap.api.v2.apikey"
-            android:value="29970c3965d9df104a63a0204ac2bef6" />
+            android:value="204039835928987be6dd39976c63912d" />
 
 
         <activity
@@ -555,7 +555,7 @@
 
         <meta-data
             android:name="com.google.android.gms.car.notification.SmallIcon"
-            android:resource="@drawable/zombies" />
+            android:resource="@drawable/ic_run" />
 
         <receiver android:name="android.support.v4.media.session.MediaButtonReceiver">
             <intent-filter>
@@ -861,8 +861,6 @@
         <activity
             android:name="org.runbuddy.tomahawk.activities.RecordShowActivity"
             android:label="@string/recordShow"></activity>
-
-        <activity android:name=".tomahawk.activities.AmapActivity"></activity>
 
 
     </application>

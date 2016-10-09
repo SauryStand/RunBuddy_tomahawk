@@ -5,11 +5,13 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/speed_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/speed"
+        android:layout_centerInParent="true"
+        android:text="@string/strong"
         android:textColor="@color/material_pink"
+        android:id="@+id/speed_id"
         android:textSize="40sp" />
+
 
 </RelativeLayout>

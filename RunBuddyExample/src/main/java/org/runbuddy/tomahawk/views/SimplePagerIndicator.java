@@ -28,8 +28,8 @@ import android.widget.FrameLayout;
 import com.nineoldandroids.animation.ObjectAnimator;
 import com.nineoldandroids.animation.ValueAnimator;
 
-import org.runbuddy.R;
 import org.runbuddy.libtomahawk.utils.ViewUtils;
+import org.runbuddy.tomahawk.R;
 
 
 public class SimplePagerIndicator extends FrameLayout {

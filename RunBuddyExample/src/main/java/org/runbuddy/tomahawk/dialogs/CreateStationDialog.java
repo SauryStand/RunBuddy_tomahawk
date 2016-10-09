@@ -27,7 +27,6 @@ import android.view.View;
 import android.widget.EditText;
 
 import org.jdeferred.DoneCallback;
-import org.runbuddy.R;
 import org.runbuddy.libtomahawk.collection.Artist;
 import org.runbuddy.libtomahawk.collection.ListItemString;
 import org.runbuddy.libtomahawk.collection.StationPlaylist;
@@ -37,6 +36,7 @@ import org.runbuddy.libtomahawk.infosystem.stations.ScriptPlaylistGenerator;
 import org.runbuddy.libtomahawk.infosystem.stations.ScriptPlaylistGeneratorManager;
 import org.runbuddy.libtomahawk.infosystem.stations.ScriptPlaylistGeneratorSearchResult;
 import org.runbuddy.libtomahawk.utils.ViewUtils;
+import org.runbuddy.tomahawk.R;
 import org.runbuddy.tomahawk.activities.TomahawkMainActivity;
 import org.runbuddy.tomahawk.adapters.Segment;
 import org.runbuddy.tomahawk.adapters.TomahawkListAdapter;

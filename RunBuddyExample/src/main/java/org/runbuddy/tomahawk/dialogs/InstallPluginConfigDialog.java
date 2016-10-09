@@ -28,12 +28,12 @@ import android.util.Log;
 
 import org.apache.commons.io.Charsets;
 import org.apache.commons.io.FileUtils;
-import org.runbuddy.R;
 import org.runbuddy.libtomahawk.resolver.PipeLine;
 import org.runbuddy.libtomahawk.resolver.ScriptAccount;
 import org.runbuddy.libtomahawk.resolver.models.ScriptResolverMetaData;
 import org.runbuddy.libtomahawk.utils.GsonHelper;
 import org.runbuddy.libtomahawk.utils.VariousUtils;
+import org.runbuddy.tomahawk.R;
 import org.runbuddy.tomahawk.app.TomahawkApp;
 import org.runbuddy.tomahawk.utils.UnzipUtils;
 

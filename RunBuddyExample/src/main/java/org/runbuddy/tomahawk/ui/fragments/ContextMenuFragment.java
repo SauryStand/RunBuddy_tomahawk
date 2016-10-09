@@ -36,7 +36,6 @@ import android.widget.Toast;
 import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 
 import org.jdeferred.DoneCallback;
-import org.runbuddy.R;
 import org.runbuddy.libtomahawk.collection.Album;
 import org.runbuddy.libtomahawk.collection.Artist;
 import org.runbuddy.libtomahawk.collection.Collection;
@@ -54,8 +53,9 @@ import org.runbuddy.libtomahawk.infosystem.User;
 import org.runbuddy.libtomahawk.resolver.Query;
 import org.runbuddy.libtomahawk.utils.ImageUtils;
 import org.runbuddy.libtomahawk.utils.ViewUtils;
-import org.runbuddy.tomahawk.app.TomahawkApp;
+import org.runbuddy.tomahawk.R;
 import org.runbuddy.tomahawk.activities.TomahawkMainActivity;
+import org.runbuddy.tomahawk.app.TomahawkApp;
 import org.runbuddy.tomahawk.services.PlaybackService;
 import org.runbuddy.tomahawk.utils.AnimationUtils;
 import org.runbuddy.tomahawk.utils.BlurTransformation;

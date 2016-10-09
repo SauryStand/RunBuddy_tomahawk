@@ -15,7 +15,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
-import org.runbuddy.R;
+import org.runbuddy.tomahawk.R;
 import org.runbuddy.tomahawk.activities.tai.MVDetailActivity;
 import org.runbuddy.tomahawk.activities.tai.WebActivity;
 import org.runbuddy.tomahawk.activities.tai.YueDanDetailActivity;

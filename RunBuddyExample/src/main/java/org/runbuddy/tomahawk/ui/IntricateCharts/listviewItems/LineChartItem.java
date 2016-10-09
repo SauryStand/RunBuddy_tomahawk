@@ -13,7 +13,7 @@ import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.ChartData;
 import com.github.mikephil.charting.data.LineData;
 
-import org.runbuddy.R;
+import org.runbuddy.tomahawk.R;
 
 
 public class LineChartItem extends ChartItem {

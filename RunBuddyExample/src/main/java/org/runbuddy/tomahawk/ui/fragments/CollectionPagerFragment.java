@@ -20,11 +20,11 @@ package org.runbuddy.tomahawk.ui.fragments;
 import android.os.Bundle;
 import android.view.View;
 
-import org.runbuddy.R;
 import org.runbuddy.libtomahawk.collection.Collection;
 import org.runbuddy.libtomahawk.collection.CollectionManager;
 import org.runbuddy.libtomahawk.collection.DbCollection;
 import org.runbuddy.libtomahawk.collection.UserCollection;
+import org.runbuddy.tomahawk.R;
 import org.runbuddy.tomahawk.utils.FragmentInfo;
 
 import java.util.ArrayList;

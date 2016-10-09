@@ -8,10 +8,9 @@ import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.view.View;
 import android.widget.TextView;
 
-import org.runbuddy.R;
+import org.runbuddy.tomahawk.R;
 
 
 public class DetailActivity extends Activity {
@@ -159,7 +158,6 @@ public class DetailActivity extends Activity {
 		registerReceiver(mBroadcastReceiver, myIntentFilter);
 	}
 
-	public void onClick(View v) {
-	}
+
 
 }

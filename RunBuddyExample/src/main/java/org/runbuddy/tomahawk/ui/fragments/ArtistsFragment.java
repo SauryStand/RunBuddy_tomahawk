@@ -21,15 +21,15 @@ import android.os.Bundle;
 import android.view.View;
 
 import org.jdeferred.DoneCallback;
-import org.runbuddy.R;
 import org.runbuddy.libtomahawk.collection.Album;
 import org.runbuddy.libtomahawk.collection.Artist;
 import org.runbuddy.libtomahawk.collection.Collection;
 import org.runbuddy.libtomahawk.collection.CollectionCursor;
 import org.runbuddy.libtomahawk.collection.ScriptResolverCollection;
-import org.runbuddy.tomahawk.app.TomahawkApp;
+import org.runbuddy.tomahawk.R;
 import org.runbuddy.tomahawk.activities.TomahawkMainActivity;
 import org.runbuddy.tomahawk.adapters.Segment;
+import org.runbuddy.tomahawk.app.TomahawkApp;
 import org.runbuddy.tomahawk.utils.FragmentUtils;
 import org.runbuddy.tomahawk.utils.IdGenerator;
 

@@ -23,7 +23,7 @@ import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.view.View;
 
-import org.runbuddy.R;
+import org.runbuddy.tomahawk.R;
 
 
 public class AnimationUtils {

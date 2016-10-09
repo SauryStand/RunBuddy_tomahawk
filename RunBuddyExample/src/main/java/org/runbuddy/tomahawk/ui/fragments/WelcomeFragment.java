@@ -29,11 +29,11 @@ import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import org.runbuddy.R;
 import org.runbuddy.libtomahawk.authentication.AuthenticatorManager;
 import org.runbuddy.libtomahawk.authentication.HatchetAuthenticatorUtils;
-import org.runbuddy.tomahawk.app.TomahawkApp;
+import org.runbuddy.tomahawk.R;
 import org.runbuddy.tomahawk.activities.TomahawkMainActivity;
+import org.runbuddy.tomahawk.app.TomahawkApp;
 import org.runbuddy.tomahawk.utils.PreferenceUtils;
 import org.runbuddy.tomahawk.views.HatchetLoginRegisterView;
 import org.runbuddy.tomahawk.views.SimplePagerIndicator;

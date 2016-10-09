@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
-import org.runbuddy.R;
+import org.runbuddy.tomahawk.R;
 import org.runbuddy.tomahawk.activities.tai.MVDetailActivity;
 import org.runbuddy.tomahawk.model.domain.MVDetailBean;
 

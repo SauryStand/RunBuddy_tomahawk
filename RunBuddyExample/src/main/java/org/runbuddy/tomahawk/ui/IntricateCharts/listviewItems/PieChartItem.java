@@ -18,7 +18,7 @@ import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.formatter.PercentFormatter;
 import com.github.mikephil.charting.utils.ColorTemplate;
 
-import org.runbuddy.R;
+import org.runbuddy.tomahawk.R;
 
 
 public class PieChartItem extends ChartItem {

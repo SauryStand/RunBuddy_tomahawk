@@ -9,7 +9,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import org.runbuddy.Device.BlueTooth.iBeaconClass.iBeacon;
-import org.runbuddy.R;
+import org.runbuddy.tomahawk.R;
 
 import java.util.ArrayList;
 
@@ -72,7 +72,7 @@ public class LeDeviceListAdapter extends BaseAdapter {
         ViewHolder viewHolder;
         // General ListView optimization code.
         if (view == null) {
-            view = mInflator.inflate(R.layout.itemlist_device, null);
+            view = mInflator.inflate(R.layout.ble_device_itemlist, null);
             viewHolder = new ViewHolder();
             viewHolder.deviceAddress = (TextView) view
                     .findViewById(R.id.device_address);

@@ -32,9 +32,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import org.runbuddy.R;
-import org.runbuddy.tomahawk.app.TomahawkApp;
+import org.runbuddy.tomahawk.R;
 import org.runbuddy.tomahawk.adapters.TomahawkPagerAdapter;
+import org.runbuddy.tomahawk.app.TomahawkApp;
 import org.runbuddy.tomahawk.listeners.OnSizeChangedListener;
 import org.runbuddy.tomahawk.ui.fragments.PagerFragment;
 import org.runbuddy.tomahawk.utils.AnimationUtils;

@@ -25,8 +25,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 
-import org.runbuddy.R;
 import org.runbuddy.libtomahawk.authentication.HatchetAuthenticatorUtils;
+import org.runbuddy.tomahawk.R;
 import org.runbuddy.tomahawk.activities.TomahawkMainActivity;
 import org.runbuddy.tomahawk.adapters.FakePreferencesAdapter;
 import org.runbuddy.tomahawk.utils.FakePreferenceGroup;

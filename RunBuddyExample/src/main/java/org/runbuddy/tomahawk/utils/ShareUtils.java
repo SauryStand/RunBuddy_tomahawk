@@ -23,13 +23,13 @@ import android.util.Log;
 
 import org.jdeferred.DoneCallback;
 import org.jdeferred.Promise;
-import org.runbuddy.R;
 import org.runbuddy.libtomahawk.collection.Album;
 import org.runbuddy.libtomahawk.collection.Artist;
 import org.runbuddy.libtomahawk.collection.Playlist;
 import org.runbuddy.libtomahawk.infosystem.User;
 import org.runbuddy.libtomahawk.resolver.Query;
 import org.runbuddy.libtomahawk.utils.ADeferredObject;
+import org.runbuddy.tomahawk.R;
 import org.runbuddy.tomahawk.app.TomahawkApp;
 
 import java.net.MalformedURLException;

@@ -36,7 +36,7 @@ import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.Spinner;
 
-import org.runbuddy.R;
+import org.runbuddy.tomahawk.R;
 import org.runbuddy.tomahawk.mediaplayers.VLCMediaPlayer;
 import org.runbuddy.tomahawk.utils.PreferenceUtils;
 import org.runbuddy.tomahawk.views.EqualizerBar;

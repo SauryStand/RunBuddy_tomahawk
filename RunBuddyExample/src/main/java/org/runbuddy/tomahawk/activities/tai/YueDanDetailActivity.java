@@ -13,7 +13,7 @@ import com.afollestad.materialdialogs.MaterialDialog;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 
-import org.runbuddy.R;
+import org.runbuddy.tomahawk.R;
 import org.runbuddy.tomahawk.listeners.PlayVideoListener;
 import org.runbuddy.tomahawk.model.domain.YueDanDetailBean;
 import org.runbuddy.tomahawk.model.http.OkHttpManager;

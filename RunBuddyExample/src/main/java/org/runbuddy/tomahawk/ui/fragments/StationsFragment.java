@@ -28,11 +28,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import org.jdeferred.DoneCallback;
-import org.runbuddy.R;
 import org.runbuddy.libtomahawk.collection.ListItemDrawable;
 import org.runbuddy.libtomahawk.collection.StationPlaylist;
 import org.runbuddy.libtomahawk.database.DatabaseHelper;
 import org.runbuddy.libtomahawk.infosystem.User;
+import org.runbuddy.tomahawk.R;
 import org.runbuddy.tomahawk.activities.TomahawkMainActivity;
 import org.runbuddy.tomahawk.adapters.Segment;
 import org.runbuddy.tomahawk.adapters.TomahawkListAdapter;

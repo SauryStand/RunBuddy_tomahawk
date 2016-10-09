@@ -22,7 +22,7 @@ import android.widget.TextView;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
-import org.runbuddy.R;
+import org.runbuddy.tomahawk.R;
 
 
 /**
