@@ -9,7 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import org.runbuddy.R;
+import org.runbuddy.tomahawk.R;
 import org.runbuddy.tomahawk.adapters.tai.YueDanDetailRecycleViewAdapter;
 import org.runbuddy.tomahawk.listeners.PlayVideoListener;
 import org.runbuddy.tomahawk.model.domain.YueDanDetailBean;

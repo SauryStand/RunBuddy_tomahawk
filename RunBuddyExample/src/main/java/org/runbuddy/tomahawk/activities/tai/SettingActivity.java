@@ -16,7 +16,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
-import org.runbuddy.R;
+import org.runbuddy.tomahawk.R;
 
 import java.io.File;
 import java.text.DecimalFormat;

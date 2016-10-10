@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 
-import org.runbuddy.R;
+import org.runbuddy.tomahawk.R;
 import org.runbuddy.tomahawk.adapters.tai.MVViewPagerAdapter;
 import org.runbuddy.tomahawk.model.domain.AreaBean;
 import org.runbuddy.tomahawk.presenter.MVFragmentContract;

@@ -28,11 +28,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import org.runbuddy.R;
 import org.runbuddy.libtomahawk.authentication.AuthenticatorManager;
 import org.runbuddy.libtomahawk.resolver.Resolver;
 import org.runbuddy.libtomahawk.resolver.ScriptResolver;
 import org.runbuddy.libtomahawk.utils.ImageUtils;
+import org.runbuddy.tomahawk.R;
 
 import de.greenrobot.event.EventBus;
 import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;

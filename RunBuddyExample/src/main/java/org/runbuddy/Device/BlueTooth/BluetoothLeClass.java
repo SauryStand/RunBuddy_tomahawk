@@ -380,7 +380,7 @@ public class BluetoothLeClass extends Service {
 
 	@Override
 	public IBinder onBind(Intent intent) {
-		// TODO �Զ����ɵķ������
+
 		return null;
 	}
 }

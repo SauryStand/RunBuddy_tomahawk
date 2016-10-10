@@ -25,9 +25,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
 
-import org.runbuddy.R;
 import org.runbuddy.libtomahawk.collection.UserCollection;
 import org.runbuddy.libtomahawk.database.DatabaseHelper;
+import org.runbuddy.tomahawk.R;
 import org.runbuddy.tomahawk.adapters.DirectoryChooserAdapter;
 
 import java.io.File;

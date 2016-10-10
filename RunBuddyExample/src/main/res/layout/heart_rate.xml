@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/strong"
+        android:textColor="@color/material_pink"
+        android:textSize="40sp" />
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:layout_weight="2"
+        android:textColorHint="#238745">
+
+        <TextView
+            android:id="@+id/device_address"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:ellipsize="start"
+            android:fadeScrollbars="false"
+            android:maxLength="100000"
+            android:maxLines="10000"
+            android:scrollHorizontally="true"
+            android:scrollbars="vertical"
+            android:singleLine="false"
+            android:textColor="#00ff00"
+            android:textColorHint="#238745"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+    </ScrollView>
+
+
+
+</RelativeLayout>

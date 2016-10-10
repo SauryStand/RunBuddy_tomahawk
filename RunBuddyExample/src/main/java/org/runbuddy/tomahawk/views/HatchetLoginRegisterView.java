@@ -37,9 +37,9 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import org.runbuddy.R;
 import org.runbuddy.libtomahawk.authentication.AuthenticatorUtils;
 import org.runbuddy.libtomahawk.utils.ViewUtils;
+import org.runbuddy.tomahawk.R;
 import org.runbuddy.tomahawk.widgets.ConfigEdittext;
 
 

@@ -26,16 +26,16 @@ import android.util.AttributeSet;
 import android.util.Log;
 
 import org.jdeferred.DoneCallback;
-import org.runbuddy.R;
 import org.runbuddy.libtomahawk.authentication.AuthenticatorManager;
 import org.runbuddy.libtomahawk.authentication.HatchetAuthenticatorUtils;
 import org.runbuddy.libtomahawk.collection.Collection;
 import org.runbuddy.libtomahawk.collection.CollectionManager;
 import org.runbuddy.libtomahawk.collection.ScriptResolverCollection;
 import org.runbuddy.libtomahawk.infosystem.User;
-import org.runbuddy.tomahawk.app.TomahawkApp;
+import org.runbuddy.tomahawk.R;
 import org.runbuddy.tomahawk.activities.TomahawkMainActivity;
 import org.runbuddy.tomahawk.adapters.TomahawkMenuAdapter;
+import org.runbuddy.tomahawk.app.TomahawkApp;
 import org.runbuddy.tomahawk.listeners.MenuDrawerListener;
 
 import java.util.ArrayList;
@@ -154,7 +154,7 @@ public class MenuDrawer extends DrawerLayout {
                 holder = new TomahawkMenuAdapter.ResourceHolder();
                 holder.id = HUB_ID_POPULARPAGE;
                 holder.title = resources.getString(R.string.drawer_title_popularpage);
-                holder.iconResId = R.drawable.icon_action;
+                holder.iconResId = R.drawable.home_page_star;
                 holders.add(holder);
 
                 for (Collection collection : CollectionManager.get().getCollections()) {

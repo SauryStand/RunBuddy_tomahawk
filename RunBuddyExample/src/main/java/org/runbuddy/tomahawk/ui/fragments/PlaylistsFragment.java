@@ -25,7 +25,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import org.jdeferred.DoneCallback;
-import org.runbuddy.R;
 import org.runbuddy.libtomahawk.collection.CollectionManager;
 import org.runbuddy.libtomahawk.collection.ListItemString;
 import org.runbuddy.libtomahawk.collection.Playlist;
@@ -34,6 +33,7 @@ import org.runbuddy.libtomahawk.database.DatabaseHelper;
 import org.runbuddy.libtomahawk.infosystem.InfoSystem;
 import org.runbuddy.libtomahawk.infosystem.User;
 import org.runbuddy.libtomahawk.resolver.Query;
+import org.runbuddy.tomahawk.R;
 import org.runbuddy.tomahawk.activities.TomahawkMainActivity;
 import org.runbuddy.tomahawk.adapters.Segment;
 import org.runbuddy.tomahawk.adapters.TomahawkListAdapter;

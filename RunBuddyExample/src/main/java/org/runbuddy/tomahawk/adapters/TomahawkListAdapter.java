@@ -32,7 +32,6 @@ import com.daimajia.swipe.interfaces.SwipeAdapterInterface;
 import com.daimajia.swipe.interfaces.SwipeItemMangerInterface;
 import com.daimajia.swipe.util.Attributes;
 
-import org.runbuddy.R;
 import org.runbuddy.libtomahawk.collection.Album;
 import org.runbuddy.libtomahawk.collection.Artist;
 import org.runbuddy.libtomahawk.collection.Collection;
@@ -47,6 +46,7 @@ import org.runbuddy.libtomahawk.infosystem.User;
 import org.runbuddy.libtomahawk.resolver.Query;
 import org.runbuddy.libtomahawk.resolver.Resolver;
 import org.runbuddy.libtomahawk.utils.ViewUtils;
+import org.runbuddy.tomahawk.R;
 import org.runbuddy.tomahawk.activities.TomahawkMainActivity;
 import org.runbuddy.tomahawk.listeners.MultiColumnClickListener;
 import org.runbuddy.tomahawk.services.PlaybackService;

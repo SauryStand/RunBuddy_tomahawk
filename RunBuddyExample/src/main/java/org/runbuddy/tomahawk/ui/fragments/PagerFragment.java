@@ -26,9 +26,9 @@ import android.widget.FrameLayout;
 
 import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 
-import org.runbuddy.R;
 import org.runbuddy.libtomahawk.infosystem.InfoRequestData;
 import org.runbuddy.libtomahawk.infosystem.InfoSystem;
+import org.runbuddy.tomahawk.R;
 import org.runbuddy.tomahawk.activities.TomahawkMainActivity;
 import org.runbuddy.tomahawk.adapters.TomahawkPagerAdapter;
 import org.runbuddy.tomahawk.listeners.TomahawkPanelSlideListener;

@@ -29,7 +29,6 @@ import android.support.v4.media.session.MediaSessionCompat;
 import android.util.Log;
 
 import org.jdeferred.DoneCallback;
-import org.runbuddy.R;
 import org.runbuddy.libtomahawk.collection.Album;
 import org.runbuddy.libtomahawk.collection.Artist;
 import org.runbuddy.libtomahawk.collection.Collection;
@@ -40,6 +39,7 @@ import org.runbuddy.libtomahawk.collection.Playlist;
 import org.runbuddy.libtomahawk.collection.StationPlaylist;
 import org.runbuddy.libtomahawk.database.DatabaseHelper;
 import org.runbuddy.libtomahawk.infosystem.User;
+import org.runbuddy.tomahawk.R;
 
 import java.util.ArrayList;
 import java.util.List;

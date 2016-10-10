@@ -21,7 +21,7 @@ import android.support.annotation.DrawableRes;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 
-import org.runbuddy.R;
+import org.runbuddy.tomahawk.R;
 
 
 /**

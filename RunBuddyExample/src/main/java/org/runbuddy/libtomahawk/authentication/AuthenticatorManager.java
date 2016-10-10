@@ -22,7 +22,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.widget.Toast;
 
-import org.runbuddy.R;
+import org.runbuddy.tomahawk.R;
 import org.runbuddy.tomahawk.app.TomahawkApp;
 
 import java.util.HashMap;

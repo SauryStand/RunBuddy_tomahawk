@@ -33,14 +33,15 @@ import android.os.Message;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import org.runbuddy.Device.BlueTooth.BluetoothLeClass.OnDataAvailableListener;
 import org.runbuddy.Device.BlueTooth.BluetoothLeClass.OnServiceDiscoverListener;
 import org.runbuddy.Device.BlueTooth.iBeaconClass.iBeacon;
-import org.runbuddy.R;
+import org.runbuddy.tomahawk.R;
+import org.runbuddy.tomahawk.activities.TomahawkMainActivity;
+import org.runbuddy.tomahawk.ui.fragments.SensorListFragment;
 
 import java.util.List;
 
@@ -63,7 +64,7 @@ public class DeviceScanActivity extends ListActivity {
     public static String UUID_CHAR5 = "0000fff5-0000-1000-8000-00805f9b34fb";
     public static String UUID_CHAR6 = "0000fff6-0000-1000-8000-00805f9b34fb";
     public static String UUID_CHAR7 = "0000fff7-0000-1000-8000-00805f9b34fb";
-    public static String UUID_HERATRATE = "00002a37-0000-1000-8000-00805f9b34fb";
+    public static String UUID_HERATRATE = "00002a37-0000-1000-8000-00805f9b34fb"; // 心率计uuid
     public static String UUID_TEMPERATURE = "00002a1c-0000-1000-8000-00805f9b34fb";
     public static String UUID_0XFFA6 = "0000ffa6-0000-1000-8000-00805f9b34fb";
 
@@ -84,7 +85,7 @@ public class DeviceScanActivity extends ListActivity {
     static private byte writeValue_char1 = 0;
     private boolean mScanning;
     private Handler mHandler = null;
-    private Button btn;
+
 
     private MyThread mythread = null;
     private byte color = 0;
@@ -97,13 +98,9 @@ public class DeviceScanActivity extends ListActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.ble_list_layout);
+
         //getActionBar().setTitle(R.string.title_devices);
         //getActionBar().setTitle("正在扫描设备中...");
-        // findViewById(R.id.button_new_encoder).setOnClickListener(this);
-        // Use this check to determine whether BLE is supported on the device.
-        // Then you can
-        // selectively disable BLE-related features.
         if (!getPackageManager().hasSystemFeature(
                 PackageManager.FEATURE_BLUETOOTH_LE)) {
             Toast.makeText(this, R.string.ble_not_supported, Toast.LENGTH_SHORT)
@@ -112,7 +109,6 @@ public class DeviceScanActivity extends ListActivity {
         } else {
             Log.i(TAG, "initialize Bluetooth, has BLE system");
         }
-
         // Initializes a Bluetooth adapter. For API level 18 and above, get a
         // reference to
         // BluetoothAdapter through BluetoothManager.
@@ -140,18 +136,16 @@ public class DeviceScanActivity extends ListActivity {
         }
         Log.i(TAG, "mBLE = e" + mBLE);
 
-        // 发现BLE终端的Service时回�?
+        // 发现BLE终端的Service时回调
         mBLE.setOnServiceDiscoverListener(mOnServiceDiscover);
 
-        // 收到BLE终端数据交互的事�?
+        // 收到BLE终端数据交互的时候回调
         mBLE.setOnDataAvailableListener(mOnDataAvailable);
 
         mHandler = new Handler() {
             int count = 0;
-
             @Override
             public void handleMessage(Message msg) {
-
                 super.handleMessage(msg);
             }
         };
@@ -159,51 +153,10 @@ public class DeviceScanActivity extends ListActivity {
         new MyThread().start();
     }
 
-    static public void writeChar1() {
-        byte[] writeValue = new byte[1];
-        Log.i(TAG, "gattCharacteristic_char1 = " + gattCharacteristic_char1);
-        if (gattCharacteristic_char1 != null) {
-            writeValue[0] = writeValue_char1++;
-            Log.i(TAG, "gattCharacteristic_char1.setValue writeValue[0] ="
-                    + writeValue[0]);
-            boolean bRet = gattCharacteristic_char1.setValue(writeValue);
-            mBLE.writeCharacteristic(gattCharacteristic_char1);
-        }
-    }
-
-    static public void writeChar6(String string) {
-        // byte[] writeValue = new byte[1];
-        Log.i(TAG, "gattCharacteristic_char6 = " + gattCharacteristic_char6);
-        if (gattCharacteristic_char6 != null) {
-            // writeValue[0] = writeValue_char1++;
-            // Log.i(TAG, "gattCharacteristic_char6.setValue writeValue[0] =" +
-            // writeValue[0]);
-            // byte[] writebyte = new byte[4];
-
-            boolean bRet = gattCharacteristic_char6.setValue(string.getBytes());
-            mBLE.writeCharacteristic(gattCharacteristic_char6);
-        }
-    }
-
-    static public void read_char1() {
-        byte[] writeValue = new byte[1];
-        Log.i(TAG, "readCharacteristic = ");
-        if (gattCharacteristic_char1 != null) {
-            mBLE.readCharacteristic(gattCharacteristic_char1);
-        }
-    }
-
-    static public void read_uuid_0xffa6() {
-        Log.i(TAG, "readCharacteristic = ");
-        if (gattCharacteristic_0xffa6 != null) {
-            mBLE.readCharacteristic(gattCharacteristic_0xffa6);
-        }
-    }
 
     public class MyThread extends Thread {
         public void run() {
             while (!Thread.currentThread().isInterrupted()) {
-
                 Message msg = new Message();
                 msg.what = REFRESH;
                 mHandler.sendMessage(msg);
@@ -216,23 +169,8 @@ public class DeviceScanActivity extends ListActivity {
         }
     }
 
-    public void DisplayStart() {
-        Log.i(TAG, "DisplayStart+++");
-
-        if (mythread == null) {
-            mythread = new MyThread();
-            mythread.start();
-            // mythread.setThread(true);
-        } else {
-            // mythread.setThread(true);
-        }
-    }
 
     public void DisplayStop() {
-        if (mythread != null) {
-            // mythread.setThread(false);
-            // delay(3000);
-        }
         Log.i(TAG, "DisplayStop---");
     }
 
@@ -251,9 +189,6 @@ public class DeviceScanActivity extends ListActivity {
     protected void onPause() {
         Log.i(TAG, "---> onPause");
         super.onPause();
-        // scanLeDevice(false);
-        // mLeDeviceListAdapter.clear();
-        // mBLE.disconnect();
     }
 
     @Override
@@ -318,7 +253,7 @@ public class DeviceScanActivity extends ListActivity {
     }
 
     /**
-     * 搜索到BLE终端服务的事�?
+     * 搜索到BLE终端服务的事件
      */
     private BluetoothLeClass.OnServiceDiscoverListener mOnServiceDiscover = new OnServiceDiscoverListener() {
 
@@ -346,7 +281,8 @@ public class DeviceScanActivity extends ListActivity {
                             + characteristic.getUuid().toString() + " -> "
                             + Utils.bytesToHexString(characteristic.getValue()));
 
-            AmoComActivity.char6_display(Utils.bytesToString(characteristic
+            //尝试下改成SensorList的
+            SensorListFragment.char6_display(Utils.bytesToString(characteristic
                     .getValue()), characteristic.getValue(), characteristic
                     .getUuid().toString());
         }
@@ -361,9 +297,8 @@ public class DeviceScanActivity extends ListActivity {
                     + characteristic.getUuid().toString() + " -> "
                     + new String(characteristic.getValue()));
 
-            // OtherActivity.char6_display(Utils.bytesToHexString(characteristic.getValue()));
 
-            AmoComActivity.char6_display(Utils.bytesToString(characteristic
+            SensorListFragment.char6_display(Utils.bytesToString(characteristic
                     .getValue()), characteristic.getValue(), characteristic
                     .getUuid().toString());
         }
@@ -417,12 +352,10 @@ public class DeviceScanActivity extends ListActivity {
                     .getCharacteristics();
             for (final BluetoothGattCharacteristic gattCharacteristic : gattCharacteristics) {
                 Log.e(TAG, "---->char uuid:" + gattCharacteristic.getUuid());
-
                 int permission = gattCharacteristic.getPermissions();
                 Log.e(TAG,
                         "---->char permission:"
                                 + Utils.getCharPermission(permission));
-
                 int property = gattCharacteristic.getProperties();
                 Log.e(TAG,
                         "---->char property:"
@@ -432,11 +365,9 @@ public class DeviceScanActivity extends ListActivity {
                 if (data != null && data.length > 0) {
                     Log.e(TAG, "---->char value:" + new String(data));
                 }
-
                 if (gattCharacteristic.getUuid().toString().equals(UUID_CHAR5)) {
                     gattCharacteristic_char5 = gattCharacteristic;
                 }
-
                 if (gattCharacteristic.getUuid().toString().equals(UUID_CHAR6)) {
                     // 把char1 保存起来�?以方便后面读写数据时使用
                     gattCharacteristic_char6 = gattCharacteristic;
@@ -444,7 +375,6 @@ public class DeviceScanActivity extends ListActivity {
                     mBLE.setCharacteristicNotification(gattCharacteristic, true);
                     Log.i(TAG, "+++++++++UUID_CHAR6");
                 }
-
                 if (gattCharacteristic.getUuid().toString()
                         .equals(UUID_HERATRATE)) {
                     // 把heartrate 保存起来�?以方便后面读写数据时使用
@@ -454,7 +384,6 @@ public class DeviceScanActivity extends ListActivity {
                     mBLE.setCharacteristicNotification(gattCharacteristic, true);
                     Log.i(TAG, "+++++++++UUID_HERATRATE");
                 }
-
                 if (gattCharacteristic.getUuid().toString()
                         .equals(UUID_KEY_DATA)) {
                     // 把heartrate 保存起来�?以方便后面读写数据时使用
@@ -464,7 +393,6 @@ public class DeviceScanActivity extends ListActivity {
                     mBLE.setCharacteristicNotification(gattCharacteristic, true);
                     Log.i(TAG, "+++++++++UUID_KEY_DATA");
                 }
-
                 if (gattCharacteristic.getUuid().toString()
                         .equals(UUID_TEMPERATURE)) {
                     // 把heartrate 保存起来�?以方便后面读写数据时使用
@@ -474,8 +402,6 @@ public class DeviceScanActivity extends ListActivity {
                     mBLE.setCharacteristicNotification(gattCharacteristic, true);
                     Log.i(TAG, "+++++++++UUID_TEMPERATURE");
                 }
-
-
                 if (gattCharacteristic.getUuid().toString()
                         .equals(UUID_0XFFA6)) {
                     // 把heartrate 保存起来�?以方便后面读写数据时使用
@@ -483,7 +409,6 @@ public class DeviceScanActivity extends ListActivity {
                     Characteristic_cur = gattCharacteristic;
                     Log.i(TAG, "+++++++++UUID_0XFFA6");
                 }
-
                 // -----Descriptors的字段信�?----//
                 List<BluetoothGattDescriptor> gattDescriptors = gattCharacteristic
                         .getDescriptors();
@@ -493,7 +418,6 @@ public class DeviceScanActivity extends ListActivity {
                     Log.e(TAG,
                             "-------->desc permission:"
                                     + Utils.getDescPermission(descPermission));
-
                     byte[] desData = gattDescriptor.getValue();
                     if (desData != null && desData.length > 0) {
                         Log.e(TAG, "-------->desc value:" + new String(desData));
@@ -503,23 +427,15 @@ public class DeviceScanActivity extends ListActivity {
         }//
 
         Intent intent = new Intent();
-        intent.setClass(DeviceScanActivity.this, AmoComActivity.class);
+        intent.setClass(DeviceScanActivity.this, TomahawkMainActivity.class);
+        intent.putExtra("ble_signal",12);
         intent.putExtra("mac_addr", bluetoothAddress);
         intent.putExtra("char_uuid", Characteristic_cur.getUuid().toString());
         startActivityForResult(intent, REQUEST_CODE);
+        //finish();
 
-        // startActivity(new Intent (DeviceScanActivity.this,
-        // AmoComActivity.class) );
 
     }
 
-    // public void onClick(View v)
-    // {
-    // switch(v.getId())
-    // {
-    // case R.id.button_new_encoder:
-    // break;
-    // }
-    // }
 
 }

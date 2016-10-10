@@ -22,7 +22,7 @@ import android.view.View;
 
 import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 
-import org.runbuddy.R;
+import org.runbuddy.tomahawk.R;
 import org.runbuddy.tomahawk.activities.TomahawkMainActivity;
 import org.runbuddy.tomahawk.utils.AnimationUtils;
 import org.runbuddy.tomahawk.utils.PreferenceUtils;

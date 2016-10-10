@@ -40,10 +40,10 @@ import com.nineoldandroids.animation.ObjectAnimator;
 import com.nineoldandroids.animation.PropertyValuesHolder;
 import com.nineoldandroids.animation.ValueAnimator;
 
-import org.runbuddy.R;
 import org.runbuddy.libtomahawk.collection.StationPlaylist;
 import org.runbuddy.libtomahawk.resolver.Resolver;
 import org.runbuddy.libtomahawk.utils.ViewUtils;
+import org.runbuddy.tomahawk.R;
 import org.runbuddy.tomahawk.app.TomahawkApp;
 import org.runbuddy.tomahawk.services.PlaybackService;
 import org.runbuddy.tomahawk.utils.AnimationUtils;

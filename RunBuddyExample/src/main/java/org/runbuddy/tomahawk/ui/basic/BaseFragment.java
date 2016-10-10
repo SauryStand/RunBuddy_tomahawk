@@ -5,7 +5,7 @@ import android.view.MenuItem;
 
 import com.fragmentation.SupportFragment;
 
-import org.runbuddy.R;
+import org.runbuddy.tomahawk.R;
 
 
 /**

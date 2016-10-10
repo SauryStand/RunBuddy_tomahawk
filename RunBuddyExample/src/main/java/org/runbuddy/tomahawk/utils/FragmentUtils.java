@@ -22,7 +22,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 
-import org.runbuddy.R;
 import org.runbuddy.libtomahawk.collection.Album;
 import org.runbuddy.libtomahawk.collection.Artist;
 import org.runbuddy.libtomahawk.collection.Playlist;
@@ -31,12 +30,13 @@ import org.runbuddy.libtomahawk.collection.StationPlaylist;
 import org.runbuddy.libtomahawk.infosystem.SocialAction;
 import org.runbuddy.libtomahawk.infosystem.User;
 import org.runbuddy.libtomahawk.resolver.Query;
-import org.runbuddy.tomahawk.app.TomahawkApp;
+import org.runbuddy.tomahawk.R;
 import org.runbuddy.tomahawk.activities.TomahawkMainActivity;
-import org.runbuddy.tomahawk.ui.fragments.CollectionPagerFragment;
+import org.runbuddy.tomahawk.app.TomahawkApp;
 import org.runbuddy.tomahawk.ui.fragments.ContentHeaderFragment;
 import org.runbuddy.tomahawk.ui.fragments.ContextMenuFragment;
 import org.runbuddy.tomahawk.ui.fragments.PlaybackFragment;
+import org.runbuddy.tomahawk.ui.fragments.SensorListFragment;
 import org.runbuddy.tomahawk.ui.fragments.TomahawkFragment;
 
 
@@ -73,9 +73,9 @@ public class FragmentUtils {
                         TomahawkApp.PLUGINNAME_USERCOLLECTION);
                 bundle.putInt(TomahawkFragment.CONTENT_HEADER_MODE,
                         ContentHeaderFragment.MODE_HEADER_STATIC);
-                fragment = Fragment.instantiate(activity, CollectionPagerFragment.class.getName(),
+                fragment = Fragment.instantiate(activity, SensorListFragment.class.getName(),
                         bundle);
-                Log.d(TAG, "Added " + CollectionPagerFragment.class.getSimpleName()
+                Log.d(TAG, "Added " + SensorListFragment.class.getSimpleName()
                         + " as root fragment.");
                 /*
                 Bundle bundle = new Bundle();
@@ -95,9 +95,9 @@ public class FragmentUtils {
                         TomahawkApp.PLUGINNAME_USERCOLLECTION);
                 bundle.putInt(TomahawkFragment.CONTENT_HEADER_MODE,
                         ContentHeaderFragment.MODE_HEADER_STATIC);
-                fragment = Fragment.instantiate(activity, CollectionPagerFragment.class.getName(),
-                        bundle);
-                Log.d(TAG, "Added " + CollectionPagerFragment.class.getSimpleName()
+                fragment = Fragment.instantiate(activity, SensorListFragment.class.getName(),
+                        bundle);//// TODO: 2016/10/7  
+                Log.d(TAG, "Added " + SensorListFragment.class.getSimpleName()
                         + " as root fragment.");
             }
             ft.add(R.id.content_viewer_frame, fragment, ROOT_FRAGMENT_TAG);

@@ -7,17 +7,22 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.text.method.ScrollingMovementMethod;
+import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.github.glomadrian.dashedcircularprogress.DashedCircularProgress;
@@ -32,13 +37,15 @@ import com.github.mikephil.charting.utils.ColorTemplate;
 
 import org.runbuddy.Device.BlueTooth.DeviceScanActivity;
 import org.runbuddy.Device.CounterSensor.SensorHub;
-import org.runbuddy.R;
-import org.runbuddy.tomahawk.activities.AmapActivity;
+import org.runbuddy.lbs_location.BaiduMainActivity;
+import org.runbuddy.tomahawk.R;
 import org.runbuddy.tomahawk.ui.IntricateCharts.listviewItems.BarChartItem;
 import org.runbuddy.tomahawk.ui.IntricateCharts.listviewItems.ChartItem;
 import org.runbuddy.tomahawk.ui.IntricateCharts.listviewItems.LineChartItem;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -51,12 +58,26 @@ public class SensorListFragment extends Fragment implements View.OnClickListener
     private ViewPager viewPager;
     private SensorHub mSensorHub;
     private Sensor mSensor;
-    private TextView mTextView;
+    private static TextView step_TextView;
     private Handler mHandler;
+    private static Handler step_Handler;
     private long mTID;
     private static int step_pre = 0;
     private ListView mlistView;
     ArrayList<ChartItem> list = new ArrayList<ChartItem>();
+
+    /************ble********************/
+    private final static String TAG = "SensorListFragment";
+    static TextView Text_Recv;
+    static String Str_Recv;
+    static String ReciveStr;
+    static ScrollView scrollView;
+    static Handler Heart_Handler = new Handler();
+    static boolean ifDisplayInHexStringOnOff = true;
+    static boolean ifDisplayTimeOnOff = true;
+    static int Totol_recv_bytes = 0;
+    static int Totol_recv_bytes_temp = 0;
+    /*********************************/
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -68,7 +89,6 @@ public class SensorListFragment extends Fragment implements View.OnClickListener
         mSensorHub = SensorHub.getInstance(getContext());
         mSensor = mSensorHub.getSensor((int) (sid >> 8), (int) (sid & 0xff));
 
-
         initialView(view);
         GetStepCount();
         return view;
@@ -79,7 +99,6 @@ public class SensorListFragment extends Fragment implements View.OnClickListener
         super.onViewCreated(view, savedInstanceState);
         dashedCircularProgress = (DashedCircularProgress) view.findViewById(R.id.simple_circle);
         dashedCircularProgress.setValue(getStepCountDatePresent(step_pre));//这个操作需要从库里面取数
-
         viewPager = (ViewPager) view.findViewById(R.id.circular_view_pager);
         viewPager.setAdapter(new PagerAdapter(getChildFragmentManager()));
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -103,32 +122,58 @@ public class SensorListFragment extends Fragment implements View.OnClickListener
                 //Empty
             }
         });
-
-
+        //Charts
         for (int i = 0; i < 10; i++) {
             if (i % 3 == 0) {
                 list.add(new LineChartItem(generateDataLine(i + 1), getContext()));
             } else if (i % 3 == 1) {
                 list.add(new BarChartItem(generateDataBar(i + 1), getContext()));
             }
-//            else if (i % 3 == 2) {
-//                list.add(new PieChartItem(generateDataPie(i + 1), getContext()));
-//            }
         }
 
         ChartDataAdapter cda = new ChartDataAdapter(getContext(), list);
         mlistView.setAdapter(cda);
 
+        step_Handler = new Handler() {
+            @Override
+            public void handleMessage(Message msg) {
+                switch (msg.what) {
+                    case 1:
+                        step_TextView.setText(SensorListFragment.step_pre + "步");//这个有bug
+                        break;
+                    default:
+                        break;
+                }
+            }
+        };
+
+
+
+    }
+
+
+
+
+
+    private void updateStepUI() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Message msg = new Message();
+                msg.what = 1;
+                SensorListFragment.step_Handler.sendMessage(msg);
+            }
+        }).start();
     }
 
 
     private void onSpeed() {
-        dashedCircularProgress.setIcon(R.drawable.speed);
+        //dashedCircularProgress.setIcon(R.drawable.speed);
         dashedCircularProgress.setValue(getStepCountDatePresent(step_pre));
     }
 
     private void onStrong() {
-        dashedCircularProgress.setIcon(R.drawable.strong);
+        //dashedCircularProgress.setIcon(R.drawable.heartRate);
         dashedCircularProgress.setValue(100);
     }
 
@@ -160,33 +205,6 @@ public class SensorListFragment extends Fragment implements View.OnClickListener
     }
 
 
-    public static class SpeedFragment extends Fragment {
-
-        TextView textView;
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
-                                 @Nullable Bundle savedInstanceState) {
-            return inflater.inflate(R.layout.speed, container, false);
-        }
-
-        @Override
-        public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-            textView = (TextView) view.findViewById(R.id.speed_id);
-            textView.setText(SensorListFragment.step_pre + "步");
-        }
-
-    }
-
-    public static class StrongFragment extends Fragment {
-        @Override
-        public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
-                                 @Nullable Bundle savedInstanceState) {
-            return inflater.inflate(R.layout.strong, container, false);
-        }
-    }
-
-
     //将步数转化成百分比
     private int getStepCountDatePresent(int data) {
         int i = 1, temp = data;
@@ -205,9 +223,14 @@ public class SensorListFragment extends Fragment implements View.OnClickListener
         ble_btn.setOnClickListener(this);
         map_btn = (Button) view.findViewById(R.id.Map_btn);
         map_btn.setOnClickListener(this);
-        mTextView = (TextView) view.findViewById(R.id.textView_steps);
-        mTextView.setOnClickListener(this);
 
+        Text_Recv = (TextView) view.findViewById(R.id.device_address);//接收到的字符串
+        Text_Recv.setGravity(Gravity.CLIP_VERTICAL | Gravity.CLIP_HORIZONTAL);
+        ReciveStr = "";
+        Text_Recv.setMovementMethod(ScrollingMovementMethod.getInstance());
+
+        ifDisplayInHexStringOnOff = true;
+        ifDisplayTimeOnOff = true;
 
     }
 
@@ -221,7 +244,7 @@ public class SensorListFragment extends Fragment implements View.OnClickListener
             mIntent3 = new Intent(getActivity(), DeviceScanActivity.class);
             startActivity(mIntent3);
         } else if (v.getId() == R.id.Map_btn) {
-            mIntent4 = new Intent(getActivity(), AmapActivity.class);
+           mIntent4 = new Intent(getActivity(), BaiduMainActivity.class);
             startActivity(mIntent4);
         }
     }
@@ -238,21 +261,24 @@ public class SensorListFragment extends Fragment implements View.OnClickListener
     @Override
     public void onData(SensorEvent event, final String data) {
         if (Thread.currentThread().getId() == mTID) {
-            //In the main thread
             //mTextView.append("\n");
             String str_num = data.replace(".0", "");
-            //mTextView.append(str_num + "step");
-            mTextView.setText(str_num);//显示在屏幕的数值
+            //mTextView.setText(str_num);//显示在屏幕的数值
             step_pre = Integer.valueOf(str_num);//进度条的百分比
-            //setStep_temp_count(Integer.valueOf(str_num));
             dashedCircularProgress.setValue(getStepCountDatePresent(step_pre));//这个操作需要从库里面取数
+            updateStepUI();
 
         } else {
             mHandler.post(new Runnable() {
                 @Override
                 public void run() {
-                    mTextView.append("\n");
-                    mTextView.append(data + "steps");
+//                    mTextView.append("\n");
+//                    mTextView.append(data + "steps");
+                    String str_num = data.replace(".0", "");
+                    //mTextView.setText(str_num);//显示在屏幕的数值
+                    step_pre = Integer.valueOf(str_num);//进度条的百分比
+                    dashedCircularProgress.setValue(getStepCountDatePresent(step_pre));//这个操作需要从库里面取数
+                    updateStepUI();
                 }
             });
         }
@@ -353,6 +379,83 @@ public class SensorListFragment extends Fragment implements View.OnClickListener
         cd.setBarWidth(0.9f);
         return cd;
     }
+
+
+    public static class SpeedFragment extends Fragment {
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
+                                 @Nullable Bundle savedInstanceState) {
+            return inflater.inflate(R.layout.speed, container, false);
+        }
+
+        @Override
+        public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+
+            step_TextView = (TextView) view.findViewById(R.id.speed_id);
+            step_TextView.setText(SensorListFragment.step_pre + "步");
+
+        }
+
+    }
+
+    //内部类
+    //2016/10/6
+    public static class StrongFragment extends Fragment {
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
+                                 @Nullable Bundle savedInstanceState) {
+            return inflater.inflate(R.layout.heart_rate, container, false);
+        }
+
+
+    }
+
+    /***********************************/
+    //负责读出心率数据
+    public static synchronized void char6_display(String str, byte[] data,
+                                                  String uuid) {
+        Log.i(TAG, "char6_display str = " + str);
+
+        if (uuid.equals(DeviceScanActivity.UUID_HERATRATE)) {
+            SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss ");
+            Date curDate = new Date(System.currentTimeMillis());// 获取当前时间
+            String TimeStr = formatter.format(curDate);
+            String DisplayStr = "[" + TimeStr + "] " + "HeartRate : " + data[0]
+                    + "=" + data[1];
+            // Text_Recv.append(DisplayStr + "\r\n");
+            Str_Recv = DisplayStr + "\r\n";
+        }
+
+        Totol_recv_bytes += str.length();
+        Totol_recv_bytes_temp += str.length();
+
+        Heart_Handler.post(new Runnable() {
+            @Override
+            public synchronized void run() {
+                //scrollView.fullScroll(ScrollView.FOCUS_DOWN);// 滚动到底
+                //Text_Recv.append(Str_Recv);
+                Text_Recv.setText(Str_Recv);
+                // 数据太多时清空数据
+                if (Totol_recv_bytes_temp > 10000) {
+                    Totol_recv_bytes_temp = 0;
+                    Text_Recv.setText("");
+                }
+
+            }
+        });
+    }
+
+    public synchronized static String GetLastData() {
+        String string = Str_Recv;
+        return string;
+    }
+    /*********************************/
+
+
+
+
 
 
 }

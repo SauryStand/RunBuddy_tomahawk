@@ -11,7 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebView;
 
-import org.runbuddy.R;
+import org.runbuddy.tomahawk.R;
 import org.runbuddy.tomahawk.utils.tai.ComWebViewChromeClient;
 import org.runbuddy.tomahawk.utils.tai.ComWebViewClient;
 

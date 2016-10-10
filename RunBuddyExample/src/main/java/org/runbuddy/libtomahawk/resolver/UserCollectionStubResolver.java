@@ -20,8 +20,8 @@ package org.runbuddy.libtomahawk.resolver;
 import android.graphics.drawable.ColorDrawable;
 import android.widget.ImageView;
 
-import org.runbuddy.R;
 import org.runbuddy.libtomahawk.utils.ImageUtils;
+import org.runbuddy.tomahawk.R;
 import org.runbuddy.tomahawk.app.TomahawkApp;
 import org.runbuddy.tomahawk.utils.ColorTintTransformation;
 

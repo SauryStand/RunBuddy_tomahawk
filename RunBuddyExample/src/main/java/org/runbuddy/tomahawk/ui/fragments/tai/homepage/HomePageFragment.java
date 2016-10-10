@@ -14,7 +14,7 @@ import android.widget.Toast;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.bumptech.glide.Glide;
 
-import org.runbuddy.R;
+import org.runbuddy.tomahawk.R;
 import org.runbuddy.tomahawk.adapters.tai.FirstRecycleViewAdapter;
 import org.runbuddy.tomahawk.model.domain.VideoBean;
 import org.runbuddy.tomahawk.presenter.HomePageFragmentContract;

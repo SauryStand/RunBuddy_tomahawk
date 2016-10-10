@@ -31,7 +31,7 @@ import android.widget.AdapterView.OnItemClickListener;
 
 import com.uservoice.uservoicesdk.UserVoice;
 
-import org.runbuddy.R;
+import org.runbuddy.tomahawk.R;
 import org.runbuddy.tomahawk.adapters.FakePreferencesAdapter;
 import org.runbuddy.tomahawk.dialogs.ConfigDialog;
 import org.runbuddy.tomahawk.dialogs.SendLogConfigDialog;

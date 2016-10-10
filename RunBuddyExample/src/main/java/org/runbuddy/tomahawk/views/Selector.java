@@ -30,9 +30,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import org.runbuddy.R;
 import org.runbuddy.libtomahawk.infosystem.charts.ScriptChartsManager;
 import org.runbuddy.libtomahawk.infosystem.charts.ScriptChartsProvider;
+import org.runbuddy.tomahawk.R;
 import org.runbuddy.tomahawk.ui.fragments.ChartsPagerFragment;
 import org.runbuddy.tomahawk.utils.AnimationUtils;
 import org.runbuddy.tomahawk.utils.BlurTransformation;

@@ -25,12 +25,12 @@ import android.support.v4.app.DialogFragment;
 import android.text.TextUtils;
 import android.widget.EditText;
 
-import org.runbuddy.R;
 import org.runbuddy.libtomahawk.collection.CollectionManager;
 import org.runbuddy.libtomahawk.collection.Playlist;
 import org.runbuddy.libtomahawk.database.DatabaseHelper;
 import org.runbuddy.libtomahawk.infosystem.User;
 import org.runbuddy.libtomahawk.utils.ViewUtils;
+import org.runbuddy.tomahawk.R;
 import org.runbuddy.tomahawk.activities.TomahawkMainActivity;
 import org.runbuddy.tomahawk.ui.fragments.ContentHeaderFragment;
 import org.runbuddy.tomahawk.ui.fragments.PlaylistEntriesFragment;

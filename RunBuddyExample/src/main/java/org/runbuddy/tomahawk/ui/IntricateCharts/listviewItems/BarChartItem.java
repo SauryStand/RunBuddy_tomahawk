@@ -12,7 +12,7 @@ import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.ChartData;
 
-import org.runbuddy.R;
+import org.runbuddy.tomahawk.R;
 
 
 public class BarChartItem extends ChartItem {

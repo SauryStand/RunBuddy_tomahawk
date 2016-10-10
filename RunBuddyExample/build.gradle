@@ -11,7 +11,7 @@ android {
     buildToolsVersion "24.0.1"
 
     defaultConfig {
-        applicationId "org.runbuddy"
+        applicationId "org.runbuddy.tomahawk"
         minSdkVersion 21
         targetSdkVersion 24
         versionCode 1
@@ -26,9 +26,9 @@ android {
     sourceSets {
         main {
             assets.srcDirs = ['src/main/assets', 'src/main/assets/']
-            main {
-                jniLibs.srcDirs = ['libs']
-            }
+//            main {
+//                jniLibs.srcDirs = ['libs']
+//            }
         }
     }
 
@@ -127,8 +127,9 @@ if (propFile.canRead()) {
 
 
 dependencies {
+
     //compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile fileTree(dir: 'libs', include: '*.jar')
+    compile fileTree(include: '*.jar', dir: 'libs')
     compile(name: 'circularprogressview-debug', ext: 'aar')
     compile('ch.acra:acra:4.7.0') {
         transitive = false
@@ -171,9 +172,6 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:24.1.1'
     //compile 'com.github.chrisbanes:PhotoView:1.2.6'
     compile 'com.facebook.fresco:fresco:0.13.0'
-    //compile 'org.apache.httpcomponents:httpclient:4.5.2'
-    //compile 'org.apache.httpcomponents:httpcore:4.4.1'
-    //compile 'org.apache.httpcomponents:httpclient:4.0.1'
     compile 'org.apache.httpcomponents:httpclient-android:4.3.5.1'
     compile(name: 'android.wheel', ext: 'aar')
     compile(name: 'swipebacklayout', ext: 'aar')
@@ -195,10 +193,8 @@ dependencies {
     compile 'de.hdodenhof:circleimageview:2.0.0'
     compile 'io.reactivex:rxjava:1.2.0'
     compile 'me.zhanghai.android.materialprogressbar:library:1.1.7'
-    compile files('libs/AMap_3DMap_V4.0.1_20160923.jar')
-    compile files('libs/AMap_Location_V2.4.1_20160414.jar')
-    compile files('libs/AMap_Search_V3.5.0_20160927.jar')
-
+    compile files('libs/BaiduTraceSDK_v2_1_15.jar')
+    compile files('libs/BaiduLBS_Android.jar')
 }
 
 

@@ -24,7 +24,7 @@ import android.os.Process;
 import android.util.Base64;
 import android.util.Log;
 
-import org.runbuddy.R;
+import org.runbuddy.tomahawk.R;
 import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;

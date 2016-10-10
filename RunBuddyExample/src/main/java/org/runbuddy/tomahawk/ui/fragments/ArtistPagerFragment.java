@@ -21,12 +21,12 @@ import android.os.Bundle;
 import android.view.View;
 
 import org.jdeferred.DoneCallback;
-import org.runbuddy.R;
 import org.runbuddy.libtomahawk.collection.Artist;
 import org.runbuddy.libtomahawk.collection.Collection;
 import org.runbuddy.libtomahawk.collection.CollectionManager;
 import org.runbuddy.libtomahawk.infosystem.InfoRequestData;
 import org.runbuddy.libtomahawk.infosystem.InfoSystem;
+import org.runbuddy.tomahawk.R;
 import org.runbuddy.tomahawk.utils.FragmentInfo;
 import org.runbuddy.tomahawk.views.FancyDropDown;
 

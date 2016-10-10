@@ -22,9 +22,9 @@ import android.app.Dialog;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 
-import org.runbuddy.R;
 import org.runbuddy.libtomahawk.collection.CollectionManager;
 import org.runbuddy.libtomahawk.resolver.UserCollectionStubResolver;
+import org.runbuddy.tomahawk.R;
 import org.runbuddy.tomahawk.views.DirectoryChooser;
 
 

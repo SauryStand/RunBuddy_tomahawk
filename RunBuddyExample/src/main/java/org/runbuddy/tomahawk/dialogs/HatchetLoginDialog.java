@@ -25,11 +25,11 @@ import android.support.v4.app.DialogFragment;
 import android.view.WindowManager;
 import android.widget.TextView;
 
-import org.runbuddy.R;
 import org.runbuddy.libtomahawk.authentication.AuthenticatorManager;
 import org.runbuddy.libtomahawk.authentication.AuthenticatorUtils;
 import org.runbuddy.libtomahawk.resolver.HatchetStubResolver;
 import org.runbuddy.libtomahawk.resolver.PipeLine;
+import org.runbuddy.tomahawk.R;
 import org.runbuddy.tomahawk.app.TomahawkApp;
 import org.runbuddy.tomahawk.ui.fragments.TomahawkFragment;
 import org.runbuddy.tomahawk.views.HatchetLoginRegisterView;

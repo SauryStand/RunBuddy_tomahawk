@@ -18,7 +18,7 @@
 package org.runbuddy.libtomahawk.collection;
 
 
-import org.runbuddy.R;
+import org.runbuddy.tomahawk.R;
 import org.runbuddy.tomahawk.app.TomahawkApp;
 
 

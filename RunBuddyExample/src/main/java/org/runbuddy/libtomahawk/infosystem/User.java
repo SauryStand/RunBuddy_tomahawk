@@ -20,7 +20,6 @@ package org.runbuddy.libtomahawk.infosystem;
 import org.jdeferred.DoneCallback;
 import org.jdeferred.FailCallback;
 import org.jdeferred.Promise;
-import org.runbuddy.R;
 import org.runbuddy.libtomahawk.authentication.AuthenticatorManager;
 import org.runbuddy.libtomahawk.authentication.HatchetAuthenticatorUtils;
 import org.runbuddy.libtomahawk.collection.Album;
@@ -32,6 +31,7 @@ import org.runbuddy.libtomahawk.collection.Playlist;
 import org.runbuddy.libtomahawk.collection.PlaylistEntry;
 import org.runbuddy.libtomahawk.resolver.Query;
 import org.runbuddy.libtomahawk.utils.ADeferredObject;
+import org.runbuddy.tomahawk.R;
 import org.runbuddy.tomahawk.app.TomahawkApp;
 import org.runbuddy.tomahawk.ui.fragments.star_page.SocialActionsFragment;
 
