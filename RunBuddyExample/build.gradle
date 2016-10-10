@@ -26,9 +26,9 @@ android {
     sourceSets {
         main {
             assets.srcDirs = ['src/main/assets', 'src/main/assets/']
-            main {
-                jniLibs.srcDirs = ['libs']
-            }
+//            main {
+//                jniLibs.srcDirs = ['libs']
+//            }
         }
     }
 
@@ -193,10 +193,8 @@ dependencies {
     compile 'de.hdodenhof:circleimageview:2.0.0'
     compile 'io.reactivex:rxjava:1.2.0'
     compile 'me.zhanghai.android.materialprogressbar:library:1.1.7'
-    compile files('libs/AMap_Location_V2.4.1_20160414.jar')
-    compile files('libs/AMap_Search_V3.5.0_20160927.jar')
-    compile files('libs/AMap_3DMap_V4.0.1_20160923.jar')
-    compile files('libs/Volley.jar')
+    compile files('libs/BaiduTraceSDK_v2_1_15.jar')
+    compile files('libs/BaiduLBS_Android.jar')
 }
 
 

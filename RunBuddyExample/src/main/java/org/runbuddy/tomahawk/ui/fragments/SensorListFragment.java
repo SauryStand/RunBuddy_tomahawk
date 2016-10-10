@@ -37,8 +37,8 @@ import com.github.mikephil.charting.utils.ColorTemplate;
 
 import org.runbuddy.Device.BlueTooth.DeviceScanActivity;
 import org.runbuddy.Device.CounterSensor.SensorHub;
+import org.runbuddy.lbs_location.BaiduMainActivity;
 import org.runbuddy.tomahawk.R;
-import org.runbuddy.tomahawk.activities.BasicMapActivity;
 import org.runbuddy.tomahawk.ui.IntricateCharts.listviewItems.BarChartItem;
 import org.runbuddy.tomahawk.ui.IntricateCharts.listviewItems.ChartItem;
 import org.runbuddy.tomahawk.ui.IntricateCharts.listviewItems.LineChartItem;
@@ -244,7 +244,7 @@ public class SensorListFragment extends Fragment implements View.OnClickListener
             mIntent3 = new Intent(getActivity(), DeviceScanActivity.class);
             startActivity(mIntent3);
         } else if (v.getId() == R.id.Map_btn) {
-            mIntent4 = new Intent(getActivity(), BasicMapActivity.class);
+           mIntent4 = new Intent(getActivity(), BaiduMainActivity.class);
             startActivity(mIntent4);
         }
     }
