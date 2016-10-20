@@ -36,7 +36,7 @@ import org.runbuddy.tomahawk.app.TomahawkApp;
 import org.runbuddy.tomahawk.ui.fragments.ContentHeaderFragment;
 import org.runbuddy.tomahawk.ui.fragments.ContextMenuFragment;
 import org.runbuddy.tomahawk.ui.fragments.PlaybackFragment;
-import org.runbuddy.tomahawk.ui.fragments.SensorListFragment;
+import org.runbuddy.tomahawk.ui.fragments.SensorFragment;
 import org.runbuddy.tomahawk.ui.fragments.TomahawkFragment;
 
 
@@ -73,9 +73,9 @@ public class FragmentUtils {
                         TomahawkApp.PLUGINNAME_USERCOLLECTION);
                 bundle.putInt(TomahawkFragment.CONTENT_HEADER_MODE,
                         ContentHeaderFragment.MODE_HEADER_STATIC);
-                fragment = Fragment.instantiate(activity, SensorListFragment.class.getName(),
+                fragment = Fragment.instantiate(activity, SensorFragment.class.getName(),
                         bundle);
-                Log.d(TAG, "Added " + SensorListFragment.class.getSimpleName()
+                Log.d(TAG, "Added " + SensorFragment.class.getSimpleName()
                         + " as root fragment.");
                 /*
                 Bundle bundle = new Bundle();
@@ -95,9 +95,9 @@ public class FragmentUtils {
                         TomahawkApp.PLUGINNAME_USERCOLLECTION);
                 bundle.putInt(TomahawkFragment.CONTENT_HEADER_MODE,
                         ContentHeaderFragment.MODE_HEADER_STATIC);
-                fragment = Fragment.instantiate(activity, SensorListFragment.class.getName(),
+                fragment = Fragment.instantiate(activity, SensorFragment.class.getName(),
                         bundle);//// TODO: 2016/10/7  
-                Log.d(TAG, "Added " + SensorListFragment.class.getSimpleName()
+                Log.d(TAG, "Added " + SensorFragment.class.getSimpleName()
                         + " as root fragment.");
             }
             ft.add(R.id.content_viewer_frame, fragment, ROOT_FRAGMENT_TAG);

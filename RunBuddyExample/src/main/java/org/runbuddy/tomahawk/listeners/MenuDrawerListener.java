@@ -38,7 +38,7 @@ import org.runbuddy.tomahawk.ui.fragments.ContentHeaderFragment;
 import org.runbuddy.tomahawk.ui.fragments.PlaylistEntriesFragment;
 import org.runbuddy.tomahawk.ui.fragments.PlaylistsFragment;
 import org.runbuddy.tomahawk.ui.fragments.PreferencePagerFragment;
-import org.runbuddy.tomahawk.ui.fragments.SensorListFragment;
+import org.runbuddy.tomahawk.ui.fragments.SensorFragment;
 import org.runbuddy.tomahawk.ui.fragments.TomahawkFragment;
 import org.runbuddy.tomahawk.ui.fragments.UserPagerFragment;
 import org.runbuddy.tomahawk.ui.fragments.star_page.StarPageFragment;
@@ -160,7 +160,7 @@ public class MenuDrawerListener implements ListView.OnItemClickListener {
         } else if (holder.id.equals(MenuDrawer.HUB_ID_STATIONS)) {
             bundle.putInt(TomahawkFragment.CONTENT_HEADER_MODE,
                     ContentHeaderFragment.MODE_HEADER_STATIC);
-            FragmentUtils.replace(mActivity, SensorListFragment.class, bundle);
+            FragmentUtils.replace(mActivity, SensorFragment.class, bundle);
             /*
             User.getSelf().done(new DoneCallback<User>() {
                 @Override

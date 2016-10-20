@@ -22,7 +22,6 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.github.glomadrian.dashedcircularprogress.DashedCircularProgress;
@@ -51,7 +50,7 @@ import java.util.List;
 /**
  * Created by Johnny Chow on 2016/7/27.
  */
-public class SensorListFragment extends Fragment implements View.OnClickListener, SensorHub.DataClient {
+public class SensorFragment extends Fragment implements View.OnClickListener, SensorHub.DataClient {
 
     private Button ble_btn, map_btn;
     private DashedCircularProgress dashedCircularProgress;
@@ -67,11 +66,10 @@ public class SensorListFragment extends Fragment implements View.OnClickListener
     ArrayList<ChartItem> list = new ArrayList<ChartItem>();
 
     /************ble********************/
-    private final static String TAG = "SensorListFragment";
+    private final static String TAG = "SensorFragment";
     static TextView Text_Recv;
     static String Str_Recv;
     static String ReciveStr;
-    static ScrollView scrollView;
     static Handler Heart_Handler = new Handler();
     static boolean ifDisplayInHexStringOnOff = true;
     static boolean ifDisplayTimeOnOff = true;
@@ -139,7 +137,7 @@ public class SensorListFragment extends Fragment implements View.OnClickListener
             public void handleMessage(Message msg) {
                 switch (msg.what) {
                     case 1:
-                        step_TextView.setText(SensorListFragment.step_pre + "步");//这个有bug
+                        step_TextView.setText(SensorFragment.step_pre + "步");//这个有bug
                         break;
                     default:
                         break;
@@ -161,7 +159,7 @@ public class SensorListFragment extends Fragment implements View.OnClickListener
             public void run() {
                 Message msg = new Message();
                 msg.what = 1;
-                SensorListFragment.step_Handler.sendMessage(msg);
+                SensorFragment.step_Handler.sendMessage(msg);
             }
         }).start();
     }
@@ -177,8 +175,8 @@ public class SensorListFragment extends Fragment implements View.OnClickListener
         dashedCircularProgress.setValue(100);
     }
 
-    public static SensorListFragment getInstance() {
-        return new SensorListFragment();
+    public static SensorFragment getInstance() {
+        return new SensorFragment();
     }
 
     private class PagerAdapter extends FragmentPagerAdapter {
@@ -250,7 +248,7 @@ public class SensorListFragment extends Fragment implements View.OnClickListener
     }
 
     //可能存在bug
-    final SensorListFragment inst = this;
+    final SensorFragment inst = this;
 
     private void GetStepCount() {
         mTID = Thread.currentThread().getId();
@@ -288,6 +286,7 @@ public class SensorListFragment extends Fragment implements View.OnClickListener
     public void onPause() {
         super.onPause();
         mSensorHub.stopSensor(mSensor, this);
+        onSpeed();//保存计步百分比状态？
     }
 
 
@@ -393,7 +392,7 @@ public class SensorListFragment extends Fragment implements View.OnClickListener
         public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
 
             step_TextView = (TextView) view.findViewById(R.id.speed_id);
-            step_TextView.setText(SensorListFragment.step_pre + "步");
+            step_TextView.setText(SensorFragment.step_pre + "步");
 
         }
 
@@ -447,10 +446,7 @@ public class SensorListFragment extends Fragment implements View.OnClickListener
         });
     }
 
-    public synchronized static String GetLastData() {
-        String string = Str_Recv;
-        return string;
-    }
+
     /*********************************/
 
 

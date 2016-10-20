@@ -41,7 +41,7 @@ import org.runbuddy.Device.BlueTooth.BluetoothLeClass.OnServiceDiscoverListener;
 import org.runbuddy.Device.BlueTooth.iBeaconClass.iBeacon;
 import org.runbuddy.tomahawk.R;
 import org.runbuddy.tomahawk.activities.TomahawkMainActivity;
-import org.runbuddy.tomahawk.ui.fragments.SensorListFragment;
+import org.runbuddy.tomahawk.ui.fragments.SensorFragment;
 
 import java.util.List;
 
@@ -282,7 +282,7 @@ public class DeviceScanActivity extends ListActivity {
                             + Utils.bytesToHexString(characteristic.getValue()));
 
             //尝试下改成SensorList的
-            SensorListFragment.char6_display(Utils.bytesToString(characteristic
+            SensorFragment.char6_display(Utils.bytesToString(characteristic
                     .getValue()), characteristic.getValue(), characteristic
                     .getUuid().toString());
         }
@@ -298,7 +298,7 @@ public class DeviceScanActivity extends ListActivity {
                     + new String(characteristic.getValue()));
 
 
-            SensorListFragment.char6_display(Utils.bytesToString(characteristic
+            SensorFragment.char6_display(Utils.bytesToString(characteristic
                     .getValue()), characteristic.getValue(), characteristic
                     .getUuid().toString());
         }

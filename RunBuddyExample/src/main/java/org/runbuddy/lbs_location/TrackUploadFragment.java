@@ -535,7 +535,7 @@ public class TrackUploadFragment extends Fragment {
 
         if (null == realtimeBitmap) {
             realtimeBitmap = BitmapDescriptorFactory
-                    .fromResource(R.drawable.icon_geo);
+                    .fromResource(R.drawable.walk);
         }
 
         overlayOptions = new MarkerOptions().position(point)
