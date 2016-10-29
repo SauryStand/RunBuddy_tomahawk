@@ -45,7 +45,6 @@ public class QueryComparator implements Comparator<Query> {
 
     /**
      * The actual comparison method
-     *
      * @param q1 First {@link org.runbuddy.libtomahawk.resolver.Query} object
      * @param q2 Second {@link org.runbuddy.libtomahawk.resolver.Query} Object
      * @return int containing comparison score

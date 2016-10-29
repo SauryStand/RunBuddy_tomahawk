@@ -261,7 +261,7 @@ public class CollectionDb extends SQLiteOpenHelper {
         db.execSQL(CREATE_TABLE_ARTISTALBUMS);
         db.execSQL(CREATE_TABLE_TRACKS);
         db.execSQL(CREATE_TABLE_REVISIONHISTORY);
-        db.execSQL(CREATE_TABLE_STEPCOUNT);
+        db.execSQL(CREATE_TABLE_STEPCOUNT);//执行创step表
         Log.d(TAG, "onCreate finished - CollectionDb '" + db.getPath() + "' with version "
                 + db.getVersion() + ", objectId: " + this.hashCode());
     }

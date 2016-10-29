@@ -97,6 +97,8 @@ public class CollectionCursor<T> {
         }
     }
 
+    //set cache for what?
+    //2016.10.20
     public void setCursorCache(SparseArray<T> cursorCache) {
         mCursorCache = cursorCache;
     }

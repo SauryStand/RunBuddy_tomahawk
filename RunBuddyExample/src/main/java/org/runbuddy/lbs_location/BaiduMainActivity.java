@@ -84,6 +84,7 @@ public class BaiduMainActivity extends FragmentActivity implements OnClickListen
 
     /**
      * 处理tab点击事件
+     *
      * @param id
      */
     private void handlerButtonClick(int id) {

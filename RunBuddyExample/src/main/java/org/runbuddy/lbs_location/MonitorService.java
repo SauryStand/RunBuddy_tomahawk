@@ -38,7 +38,6 @@ public class MonitorService extends Service {
             @Override
             public void run() {
                 // TODO Auto-generated method stub
-
                 while (isCheck) {
                     try {
                         Thread.sleep(5 * 1000);

@@ -48,6 +48,7 @@ import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
 import android.text.TextUtils;
 import android.util.Log;
@@ -56,7 +57,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.fragmentation.SupportActivity;
 import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 import com.uservoice.uservoicesdk.Config;
 import com.uservoice.uservoicesdk.UserVoice;
@@ -91,7 +91,7 @@ import org.runbuddy.tomahawk.dialogs.InstallPluginConfigDialog;
 import org.runbuddy.tomahawk.dialogs.WarnOldPluginDialog;
 import org.runbuddy.tomahawk.listeners.TomahawkPanelSlideListener;
 import org.runbuddy.tomahawk.services.PlaybackService;
-import org.runbuddy.tomahawk.ui.basic.BaseLazyMainFragment;
+
 import org.runbuddy.tomahawk.ui.fragments.ArtistPagerFragment;
 import org.runbuddy.tomahawk.ui.fragments.ContentHeaderFragment;
 import org.runbuddy.tomahawk.ui.fragments.ContextMenuFragment;
@@ -124,7 +124,7 @@ import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
  * The main Tomahawk activity
  * 原本继承的是appcompaActivity的
  */
-public class TomahawkMainActivity extends SupportActivity implements BaseLazyMainFragment.OnBackToFirstListener {
+public class TomahawkMainActivity extends AppCompatActivity {
 
     private final static String TAG = TomahawkMainActivity.class.getSimpleName();
     public static final String SAVED_PLAYBACK_STATE = "saved_playback_state";
@@ -219,10 +219,6 @@ public class TomahawkMainActivity extends SupportActivity implements BaseLazyMai
         }
     };
 
-    @Override
-    public void onBackToFirstFragment() {
-
-    }
 
     public static class ShowWebViewEvent {
 
@@ -464,6 +460,7 @@ public class TomahawkMainActivity extends SupportActivity implements BaseLazyMai
                 public void onDrawerClosed(View view) {
                     getSupportActionBar().setTitle(mTitle);
                 }
+
                 /** Called when a drawer has settled in a completely open state. */
                 public void onDrawerOpened(View drawerView) {
                     getSupportActionBar().setTitle(mDrawerTitle);
@@ -534,8 +531,6 @@ public class TomahawkMainActivity extends SupportActivity implements BaseLazyMai
 
 
         //initView();
-
-
 
 
     }
@@ -742,8 +737,6 @@ public class TomahawkMainActivity extends SupportActivity implements BaseLazyMai
                     }
                 });
         updateActionBarState(true);
-
-
 
 
     }
