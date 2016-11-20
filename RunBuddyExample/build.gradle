@@ -14,6 +14,13 @@ android {
         applicationId "org.runbuddy.tomahawk"
         minSdkVersion 21
         targetSdkVersion 24
+        //todo
+//        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+//        externalNativeBuild{
+//            cmake{
+//                cppFlags ""
+//            }
+//        }
         versionCode 2
         versionName "0.3.1"
     }
@@ -23,6 +30,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+//    externalNativeBuild {
+//        cmake {
+//            path "CMakeLists.txt"
+//        }
+//    }
+
     sourceSets {
         main {
             assets.srcDirs = ['src/main/assets', 'src/main/assets/']
