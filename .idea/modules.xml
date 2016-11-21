@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MPChartLib/MPChartLib.iml" filepath="$PROJECT_DIR$/MPChartLib/MPChartLib.iml" />
       <module fileurl="file://$PROJECT_DIR$/RunBuddyExample/RunBuddyExample.iml" filepath="$PROJECT_DIR$/RunBuddyExample/RunBuddyExample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RunBuddy_tomahawk.iml" filepath="$PROJECT_DIR$/RunBuddy_tomahawk.iml" />
     </modules>
   </component>
 </project>

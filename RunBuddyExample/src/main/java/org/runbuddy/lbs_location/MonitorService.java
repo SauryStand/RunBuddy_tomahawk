@@ -9,6 +9,13 @@ import android.os.IBinder;
 
 import java.util.List;
 
+
+/*
+monistor contain error
+bug was found in 2016.11.21
+ */
+
+
 public class MonitorService extends Service {
 
     private TrackApplication trackApp = null;

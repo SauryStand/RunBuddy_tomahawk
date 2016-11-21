@@ -120,7 +120,7 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
                 //Empty
             }
         });
-        //Charts
+        //Charts just 7 panal
         for (int i = 0; i < 10; i++) {
             if (i % 3 == 0) {
                 list.add(new LineChartItem(generateDataLine(i + 1), getContext()));
@@ -148,10 +148,6 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
 
 
     }
-
-
-
-
 
     private void updateStepUI() {
         new Thread(new Runnable() {
@@ -326,7 +322,7 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
         ArrayList<Entry> e1 = new ArrayList<Entry>();
 
         for (int i = 0; i < 12; i++) {
-            e1.add(new Entry(i, (int) (Math.random() * 65) + 40));
+            e1.add(new Entry(i, (int) (Math.random() * 65) + 40));//这里生成随机数
         }
 
         LineDataSet d1 = new LineDataSet(e1, "New DataSet " + cnt + ", (1)");
