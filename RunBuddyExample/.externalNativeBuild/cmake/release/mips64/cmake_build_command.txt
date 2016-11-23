@@ -1,0 +1,15 @@
+Executable : /root/Android/Sdk/cmake/3.6.3155560/bin/cmake
+arguments : 
+-H/home/source_codes/RunBuddy/RunBuddyExample
+-B/home/source_codes/RunBuddy/RunBuddyExample/.externalNativeBuild/cmake/release/mips64
+-GAndroid Gradle - Ninja
+-DANDROID_ABI=mips64
+-DANDROID_NDK=/root/Android/Sdk/ndk-bundle
+-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=/home/source_codes/RunBuddy/RunBuddyExample/.externalNativeBuild/cmake/release/obj/mips64
+-DCMAKE_BUILD_TYPE=Release
+-DCMAKE_MAKE_PROGRAM=/root/Android/Sdk/cmake/3.6.3155560/bin/ninja
+-DCMAKE_TOOLCHAIN_FILE=/root/Android/Sdk/ndk-bundle/build/cmake/android.toolchain.cmake
+-DANDROID_NATIVE_API_LEVEL=21
+-DCMAKE_CXX_FLAGS=
+jvmArgs : 
+

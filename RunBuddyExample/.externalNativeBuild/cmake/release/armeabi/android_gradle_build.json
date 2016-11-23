@@ -1,0 +1,38 @@
+
+{
+	"buildFiles" : [ "/home/source_codes/RunBuddy/RunBuddyExample/CMakeLists.txt" ],
+	"cleanCommands" : 
+	[
+		"/root/Android/Sdk/cmake/3.6.3155560/bin/cmake --build /home/source_codes/RunBuddy/RunBuddyExample/.externalNativeBuild/cmake/release/armeabi --target clean"
+	],
+	"cppFileExtensions" : [ "cpp" ],
+	"libraries" : 
+	{
+		"native-lib-Release-armeabi" : 
+		{
+			"abi" : "armeabi",
+			"artifactName" : "native-lib",
+			"buildCommand" : "/root/Android/Sdk/cmake/3.6.3155560/bin/cmake --build /home/source_codes/RunBuddy/RunBuddyExample/.externalNativeBuild/cmake/release/armeabi --target native-lib",
+			"buildType" : "release",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  -target armv5te-none-linux-androideabi -gcc-toolchain /root/Android/Sdk/ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64 --sysroot=/root/Android/Sdk/ndk-bundle/platforms/android-21/arch-arm  -Dnative_lib_EXPORTS -isystem /root/Android/Sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /root/Android/Sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi/include -isystem /root/Android/Sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv5te -mtune=xscale -msoft-float -fno-integrated-as -mthumb -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti  -Os -DNDEBUG  -fPIC    -c ",
+					"src" : "/home/source_codes/RunBuddy/RunBuddyExample/src/main/cpp/native-lib.cpp",
+					"workingDirectory" : "/home/source_codes/RunBuddy/RunBuddyExample/.externalNativeBuild/cmake/release/armeabi"
+				}
+			],
+			"output" : "/home/source_codes/RunBuddy/RunBuddyExample/.externalNativeBuild/cmake/release/obj/armeabi/libnative-lib.so",
+			"toolchain" : "11623287784116073175"
+		}
+	},
+	"toolchains" : 
+	{
+		"11623287784116073175" : 
+		{
+			"cCompilerExecutable" : "/root/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/bin/clang",
+			"cppCompilerExecutable" : "/root/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++"
+		}
+	}
+}
