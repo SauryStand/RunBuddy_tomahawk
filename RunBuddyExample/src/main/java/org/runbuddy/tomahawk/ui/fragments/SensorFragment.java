@@ -36,8 +36,9 @@ import com.github.mikephil.charting.utils.ColorTemplate;
 
 import org.runbuddy.Device.BlueTooth.DeviceScanActivity;
 import org.runbuddy.Device.CounterSensor.SensorHub;
-import org.runbuddy.lbs_location.BaiduMainActivity;
+
 import org.runbuddy.tomahawk.R;
+import org.runbuddy.tomahawk.model.HeartRate;
 import org.runbuddy.tomahawk.ui.IntricateCharts.listviewItems.BarChartItem;
 import org.runbuddy.tomahawk.ui.IntricateCharts.listviewItems.ChartItem;
 import org.runbuddy.tomahawk.ui.IntricateCharts.listviewItems.LineChartItem;
@@ -238,8 +239,8 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
             mIntent3 = new Intent(getActivity(), DeviceScanActivity.class);
             startActivity(mIntent3);
         } else if (v.getId() == R.id.Map_btn) {
-           mIntent4 = new Intent(getActivity(), BaiduMainActivity.class);
-            startActivity(mIntent4);
+//           mIntent4 = new Intent(getActivity(), BaiduMainActivity.class);
+//            startActivity(mIntent4);
         }
     }
 
@@ -315,7 +316,8 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
     /**
      * generates a random ChartData object with just one DataSet
      * just for sun aadadadada
-     *
+     * 根据日期划分数据才行啊，一共展示12天的数据
+     * 判断0点就把数据保存至本地数据库
      * @return
      */
     private LineData generateDataLine(int cnt) {
@@ -325,7 +327,7 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
             e1.add(new Entry(i, (int) (Math.random() * 65) + 40));//这里生成随机数
         }
 
-        LineDataSet d1 = new LineDataSet(e1, "New DataSet " + cnt + ", (1)");
+        LineDataSet d1 = new LineDataSet(e1, "今日状态" + cnt + ", (1)");
         d1.setLineWidth(2.5f);
         d1.setCircleRadius(4.5f);
         d1.setHighLightColor(Color.rgb(244, 117, 117));
@@ -337,7 +339,7 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
             e2.add(new Entry(i, e1.get(i).getY() - 30));
         }
 
-        LineDataSet d2 = new LineDataSet(e2, "New DataSet " + cnt + ", (2)");
+        LineDataSet d2 = new LineDataSet(e2, "历史平均水平" + cnt + ", (2)");
         d2.setLineWidth(2.5f);
         d2.setCircleRadius(4.5f);
         d2.setHighLightColor(Color.rgb(244, 117, 117));
@@ -377,13 +379,11 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
 
 
     public static class SpeedFragment extends Fragment {
-
         @Override
         public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                                  @Nullable Bundle savedInstanceState) {
             return inflater.inflate(R.layout.speed, container, false);
         }
-
         @Override
         public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
 
@@ -391,8 +391,20 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
             step_TextView.setText(SensorFragment.step_pre + "步");
 
         }
+    }
+
+    /*
+    这个方法负责计算平均心率的
+     */
+    public void CountHeartRate(){
+        ArrayList<HeartRate> heartRates = new ArrayList<>();
+
+
+
 
     }
+
+
 
     //内部类
     //2016/10/6
@@ -403,8 +415,6 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
                                  @Nullable Bundle savedInstanceState) {
             return inflater.inflate(R.layout.heart_rate, container, false);
         }
-
-
     }
 
     /***********************************/
@@ -444,10 +454,5 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
 
 
     /*********************************/
-
-
-
-
-
 
 }

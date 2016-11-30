@@ -14,13 +14,14 @@ android {
         applicationId "org.runbuddy.tomahawk"
         minSdkVersion 21
         targetSdkVersion 24
-        //todo
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        externalNativeBuild{
-            cmake{
-                cppFlags ""
-            }
-        }
+        //cmake
+        // win platform cant build
+//        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+//        externalNativeBuild{
+//            cmake{
+//                cppFlags ""
+//            }
+//        }
         versionCode 2
         versionName "0.3.2"
     }
@@ -31,18 +32,18 @@ android {
         }
     }
 
-    externalNativeBuild {
-        cmake {
-            path "CMakeLists.txt"
-        }
-    }
+//    externalNativeBuild {
+//        cmake {
+//            path "CMakeLists.txt"
+//        }
+//    }
 
     sourceSets {
         main {
             assets.srcDirs = ['src/main/assets', 'src/main/assets/']
-//            main {
-//                jniLibs.srcDirs = ['libs']
-//            }
+            main {
+                jniLibs.srcDirs = ['libs']
+            }
             jni.srcDirs = ['src/main/jni', 'src/main/jni/']
         }
     }
@@ -206,8 +207,8 @@ dependencies {
     compile 'de.hdodenhof:circleimageview:2.0.0'
     compile 'io.reactivex:rxjava:1.2.0'
     compile 'me.zhanghai.android.materialprogressbar:library:1.1.7'
-    compile files('libs/BaiduTraceSDK_v2_1_15.jar')
-    compile files('libs/BaiduLBS_Android.jar')
+//    compile files('libs/BaiduTraceSDK_v2_1_15.jar')
+//    compile files('libs/BaiduLBS_Android.jar')
 }
 
 
