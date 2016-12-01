@@ -44,6 +44,7 @@
         android:xlargeScreens="true" />
 
     <application
+
         android:name=".app.TomahawkApp"
         android:allowBackup="true"
         android:icon="@drawable/ic_run"

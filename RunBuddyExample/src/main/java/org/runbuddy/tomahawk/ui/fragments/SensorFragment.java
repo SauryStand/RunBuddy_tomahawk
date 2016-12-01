@@ -8,6 +8,7 @@ import android.hardware.SensorEvent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.renderscript.Sampler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -66,7 +67,9 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
     private ListView mlistView;
     ArrayList<ChartItem> list = new ArrayList<ChartItem>();
 
-    /************ble********************/
+    /************
+     * ble
+     ********************/
     private final static String TAG = "SensorFragment";
     static TextView Text_Recv;
     static String Str_Recv;
@@ -76,6 +79,7 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
     static boolean ifDisplayTimeOnOff = true;
     static int Totol_recv_bytes = 0;
     static int Totol_recv_bytes_temp = 0;
+
     /*********************************/
 
     @Override
@@ -145,7 +149,6 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
                 }
             }
         };
-
 
 
     }
@@ -318,6 +321,7 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
      * just for sun aadadadada
      * 根据日期划分数据才行啊，一共展示12天的数据
      * 判断0点就把数据保存至本地数据库
+     *
      * @return
      */
     private LineData generateDataLine(int cnt) {
@@ -384,6 +388,7 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
                                  @Nullable Bundle savedInstanceState) {
             return inflater.inflate(R.layout.speed, container, false);
         }
+
         @Override
         public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
 
@@ -396,14 +401,25 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
     /*
     这个方法负责计算平均心率的
      */
-    public void CountHeartRate(){
+    public static void CountHeartRate(String heartRate_byte, String TimeRecord) {
+
+
         ArrayList<HeartRate> heartRates = new ArrayList<>();
-
-
-
+        HeartRate heartRate_single = new HeartRate();
+        heartRate_single.setHeart_rate(heartRate_byte);
+        heartRate_single.setRecord_time(TimeRecord);
+        heartRates.add(heartRate_single);
+        if(heartRates.size() >= 30){
+            //every 30 times save it to DB
+            SaveToDB(heartRates);
+        }
 
     }
 
+    //入库处理
+    public static void SaveToDB(ArrayList array){
+
+    }
 
 
     //内部类
@@ -421,8 +437,8 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
     //负责读出心率数据
     public static synchronized void char6_display(String str, byte[] data,
                                                   String uuid) {
-        Log.i(TAG, "char6_display str = " + str);
 
+        int temp_Rate[] = new int[30];
         if (uuid.equals(DeviceScanActivity.UUID_HERATRATE)) {
             SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss ");
             Date curDate = new Date(System.currentTimeMillis());// 获取当前时间
@@ -431,8 +447,16 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
                     + "=" + data[1];
             // Text_Recv.append(DisplayStr + "\r\n");
             Str_Recv = DisplayStr + "\r\n";
-        }
 
+            String heartRate_byte = data[0] + "";
+            CountHeartRate(heartRate_byte, TimeStr);//计算平均心率，没来一次记录一次心率和时间
+
+            for (int i = 0; i < 30; i++) {
+                temp_Rate[i]= Integer.valueOf(heartRate_byte);
+            }
+
+        }
+        Log.i(TAG, "char6_display str = " + str);
         Totol_recv_bytes += str.length();
         Totol_recv_bytes_temp += str.length();
 
@@ -450,6 +474,8 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
 
             }
         });
+
+
     }
 
 

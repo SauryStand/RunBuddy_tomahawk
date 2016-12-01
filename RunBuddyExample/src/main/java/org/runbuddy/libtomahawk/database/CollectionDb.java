@@ -209,6 +209,12 @@ public class CollectionDb extends SQLiteOpenHelper {
             + CURRENT_COUNT + " INTEGER,"
             + FINAL_STEPS + " INTEGER,"
             + SUBMISSION_DATE + " DATE );";
+    /**
+    *需要创建心率库
+    *
+     **/
+
+
 
 
     private static final int DB_VERSION = 5;
