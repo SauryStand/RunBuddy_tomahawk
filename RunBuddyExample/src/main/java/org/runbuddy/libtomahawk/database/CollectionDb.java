@@ -211,11 +211,16 @@ public class CollectionDb extends SQLiteOpenHelper {
             + SUBMISSION_DATE + " DATE );";
     /**
     *需要创建心率库
-    *
+    *创建heartCount
      **/
-
-
-
+    //// TODO: 2016/12/2  
+    public static final String TABLE_HEARTCOUNT = "heartCount";
+    public static final String RECORD_COUNT = "recordTime";
+    private static final String CREATE_TABLE_HEARTCOUNT = "CREATE TABLE IF NOT EXISTS "
+            + TABLE_HEARTCOUNT + " ("
+            + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + RECORD_COUNT + " INTEGER,"
+            + SUBMISSION_DATE + " DATE );";
 
     private static final int DB_VERSION = 5;
 

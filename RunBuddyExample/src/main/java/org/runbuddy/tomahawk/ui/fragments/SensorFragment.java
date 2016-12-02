@@ -8,7 +8,6 @@ import android.hardware.SensorEvent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.renderscript.Sampler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -37,7 +36,6 @@ import com.github.mikephil.charting.utils.ColorTemplate;
 
 import org.runbuddy.Device.BlueTooth.DeviceScanActivity;
 import org.runbuddy.Device.CounterSensor.SensorHub;
-
 import org.runbuddy.tomahawk.R;
 import org.runbuddy.tomahawk.model.HeartRate;
 import org.runbuddy.tomahawk.ui.IntricateCharts.listviewItems.BarChartItem;
@@ -400,24 +398,26 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
 
     /*
     这个方法负责计算平均心率的
+    事实上这个方法每次显示的时候都会被执行的
      */
     public static void CountHeartRate(String heartRate_byte, String TimeRecord) {
 
-
-        ArrayList<HeartRate> heartRates = new ArrayList<>();
-        HeartRate heartRate_single = new HeartRate();
-        heartRate_single.setHeart_rate(heartRate_byte);
-        heartRate_single.setRecord_time(TimeRecord);
-        heartRates.add(heartRate_single);
-        if(heartRates.size() >= 30){
-            //every 30 times save it to DB
-            SaveToDB(heartRates);
+        int temp_value = 0;
+        temp_value = Integer.valueOf(heartRate_byte);//先把心率换算成整形
+        if(temp_value > 0 && temp_value < 220){
+            ArrayList<HeartRate> heartRates = new ArrayList<>();
+            HeartRate heartRate_single = new HeartRate();
+            heartRate_single.setHeart_rate(heartRate_byte);
+            heartRate_single.setRecord_time(TimeRecord);
+            heartRates.add(heartRate_single);
+            SaveToDB(heartRates);//未对数据做处理
         }
 
     }
 
     //入库处理
     public static void SaveToDB(ArrayList array){
+        //// TODO: 2016/12/2
 
     }
 
@@ -438,7 +438,8 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
     public static synchronized void char6_display(String str, byte[] data,
                                                   String uuid) {
 
-        int temp_Rate[] = new int[30];
+        int temp_Rate[] = new int[30];//每次调用都会new这些变量，这是需要优化的地方
+
         if (uuid.equals(DeviceScanActivity.UUID_HERATRATE)) {
             SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss ");
             Date curDate = new Date(System.currentTimeMillis());// 获取当前时间
@@ -452,7 +453,9 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
             CountHeartRate(heartRate_byte, TimeStr);//计算平均心率，没来一次记录一次心率和时间
 
             for (int i = 0; i < 30; i++) {
+
                 temp_Rate[i]= Integer.valueOf(heartRate_byte);
+
             }
 
         }
