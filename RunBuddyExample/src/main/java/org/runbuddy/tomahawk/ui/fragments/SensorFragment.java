@@ -449,7 +449,7 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
             // Text_Recv.append(DisplayStr + "\r\n");
             Str_Recv = DisplayStr + "\r\n";
 
-            String heartRate_byte = data[0] + "";
+            String heartRate_byte = data[1] + "";
             CountHeartRate(heartRate_byte, TimeStr);//计算平均心率，没来一次记录一次心率和时间
 
             for (int i = 0; i < 30; i++) {

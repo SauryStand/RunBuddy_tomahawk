@@ -222,6 +222,8 @@ public class CollectionDb extends SQLiteOpenHelper {
             + RECORD_COUNT + " INTEGER,"
             + SUBMISSION_DATE + " DATE );";
 
+
+
     private static final int DB_VERSION = 5;
 
     private static final String DB_FILE_SUFFIX = "_collection.db";//db name
@@ -273,6 +275,7 @@ public class CollectionDb extends SQLiteOpenHelper {
         db.execSQL(CREATE_TABLE_TRACKS);
         db.execSQL(CREATE_TABLE_REVISIONHISTORY);
         db.execSQL(CREATE_TABLE_STEPCOUNT);//执行创step表
+        db.execSQL(CREATE_TABLE_HEARTCOUNT);//执行创heartRate表
         Log.d(TAG, "onCreate finished - CollectionDb '" + db.getPath() + "' with version "
                 + db.getVersion() + ", objectId: " + this.hashCode());
     }
