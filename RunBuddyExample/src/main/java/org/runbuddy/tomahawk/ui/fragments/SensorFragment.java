@@ -404,7 +404,7 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
 
         int temp_value = 0;
         temp_value = Integer.valueOf(heartRate_byte);//先把心率换算成整形
-        if(temp_value > 0 && temp_value < 220){
+        if (temp_value > 0 && temp_value < 220) {
             ArrayList<HeartRate> heartRates = new ArrayList<>();
             HeartRate heartRate_single = new HeartRate();
             heartRate_single.setHeart_rate(heartRate_byte);
@@ -416,7 +416,7 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
     }
 
     //入库处理
-    public static void SaveToDB(ArrayList array){
+    public static void SaveToDB(ArrayList array) {
         //// TODO: 2016/12/2
 
     }
@@ -444,8 +444,7 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
             SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss ");
             Date curDate = new Date(System.currentTimeMillis());// 获取当前时间
             String TimeStr = formatter.format(curDate);
-            String DisplayStr = "[" + TimeStr + "] " + "HeartRate : " + data[0]
-                    + "=" + data[1];
+            String DisplayStr = "[" + TimeStr + "] " + "HR:" + "=" + data[1];
             // Text_Recv.append(DisplayStr + "\r\n");
             Str_Recv = DisplayStr + "\r\n";
 
@@ -454,7 +453,7 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
 
             for (int i = 0; i < 30; i++) {
 
-                temp_Rate[i]= Integer.valueOf(heartRate_byte);
+                temp_Rate[i] = Integer.valueOf(heartRate_byte);
 
             }
 
