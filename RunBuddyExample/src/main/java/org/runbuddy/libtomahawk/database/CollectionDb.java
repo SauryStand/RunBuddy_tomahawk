@@ -210,8 +210,8 @@ public class CollectionDb extends SQLiteOpenHelper {
             + FINAL_STEPS + " INTEGER,"
             + SUBMISSION_DATE + " DATE );";
     /**
-    *需要创建心率库
-    *创建heartCount
+     * 需要创建心率库
+     * 创建heartCount
      **/
     //// TODO: 2016/12/2  
     public static final String TABLE_HEARTCOUNT = "heartCount";
@@ -221,7 +221,6 @@ public class CollectionDb extends SQLiteOpenHelper {
             + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
             + RECORD_COUNT + " INTEGER,"
             + SUBMISSION_DATE + " DATE );";
-
 
 
     private static final int DB_VERSION = 5;
@@ -334,9 +333,6 @@ public class CollectionDb extends SQLiteOpenHelper {
         Map<String, Long> artistLastModifiedMap = new HashMap<>();
         // First we insert all artists and albumArtists
 
-
-
-
         //插入
         mDb.beginTransaction();
         for (ScriptResolverTrack track : tracks) {
@@ -352,7 +348,7 @@ public class CollectionDb extends SQLiteOpenHelper {
                 }
                 values.put(ARTISTS_LASTMODIFIED, lastModified);
                 values.put(ARTISTS_TYPE, TYPE_DEFAULT);
-                mDb.insert(TABLE_ARTISTS, null, values);
+                mDb.insert(TABLE_ARTISTS, null, values);//finally I got insert codes
             }
             ContentValues values = new ContentValues();
             values.put(ARTISTS_ARTIST, track.artist);
