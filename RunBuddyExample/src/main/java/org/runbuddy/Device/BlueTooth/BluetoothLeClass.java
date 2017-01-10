@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.runbuddy.Device.BlueTooth;
+package org.runbuddy.device.BlueTooth;
 
 import android.app.Service;
 import android.bluetooth.BluetoothAdapter;

@@ -34,10 +34,10 @@ import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 import com.github.mikephil.charting.utils.ColorTemplate;
 
-import org.runbuddy.Device.BlueTooth.DeviceScanActivity;
-import org.runbuddy.Device.CounterSensor.SensorHub;
+import org.runbuddy.device.BlueTooth.DeviceScanActivity;
+import org.runbuddy.device.CounterSensor.SensorHub;
 import org.runbuddy.tomahawk.R;
-import org.runbuddy.tomahawk.model.HeartRate;
+import org.runbuddy.libtomahawk.collection.HeartRate;
 import org.runbuddy.tomahawk.ui.IntricateCharts.listviewItems.BarChartItem;
 import org.runbuddy.tomahawk.ui.IntricateCharts.listviewItems.ChartItem;
 import org.runbuddy.tomahawk.ui.IntricateCharts.listviewItems.LineChartItem;

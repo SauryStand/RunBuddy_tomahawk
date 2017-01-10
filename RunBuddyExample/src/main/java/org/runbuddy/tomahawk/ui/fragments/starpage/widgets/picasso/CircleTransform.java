@@ -1,4 +1,4 @@
-package org.runbuddy.tomahawk.ui.fragments.star_page.widgets.picasso;
+package org.runbuddy.tomahawk.ui.fragments.starpage.widgets.picasso;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapShader;

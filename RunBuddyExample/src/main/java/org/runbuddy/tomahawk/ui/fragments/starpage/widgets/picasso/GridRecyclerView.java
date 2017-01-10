@@ -1,4 +1,4 @@
-package org.runbuddy.tomahawk.ui.fragments.star_page.widgets.picasso;
+package org.runbuddy.tomahawk.ui.fragments.starpage.widgets.picasso;
 
 /**
  * Created by Administrator on 2016/6/5.

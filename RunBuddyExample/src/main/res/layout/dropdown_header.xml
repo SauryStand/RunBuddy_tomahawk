@@ -34,13 +34,6 @@
              android:paddingBottom="@dimen/padding_small"
              style="@style/PopupMenu.Tomahawk"/>
 
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="dropdown_header"
-        android:layout_gravity="center_horizontal"
-        android:checked="false" />
-
     <View android:layout_width="match_parent"
           android:layout_height="1px"
           android:background="@color/secondary_background"/>

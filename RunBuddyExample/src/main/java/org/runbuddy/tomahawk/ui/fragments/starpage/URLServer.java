@@ -1,4 +1,4 @@
-package org.runbuddy.tomahawk.ui.fragments.star_page;
+package org.runbuddy.tomahawk.ui.fragments.starpage;
 
 import android.os.Handler;
 

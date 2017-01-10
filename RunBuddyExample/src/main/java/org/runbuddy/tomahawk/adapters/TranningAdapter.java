@@ -18,6 +18,7 @@ import java.util.List;
 
 /**
  * Created by Jonney Chou on 2016/7/29.
+ * unused
  */
 public class TranningAdapter extends RecyclerView.Adapter<TranningAdapter.ViewHolder> {
 

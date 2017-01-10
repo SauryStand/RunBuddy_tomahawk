@@ -15,7 +15,7 @@
  *   You should have received a copy of the GNU General Public License
  *   along with Tomahawk. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.runbuddy.tomahawk.ui.fragments.star_page;
+package org.runbuddy.tomahawk.ui.fragments.starpage;
 
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;

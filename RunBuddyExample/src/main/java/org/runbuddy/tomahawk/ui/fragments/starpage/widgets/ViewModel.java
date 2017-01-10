@@ -1,4 +1,4 @@
-package org.runbuddy.tomahawk.ui.fragments.star_page.widgets;
+package org.runbuddy.tomahawk.ui.fragments.starpage.widgets;
 
 /**
  * Created by Johnny Chow on 2016/8/21.

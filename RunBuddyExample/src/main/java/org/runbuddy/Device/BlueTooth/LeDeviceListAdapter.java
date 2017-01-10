@@ -1,4 +1,4 @@
-package org.runbuddy.Device.BlueTooth;
+package org.runbuddy.device.BlueTooth;
 
 import android.app.Activity;
 import android.graphics.Color;
@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import org.runbuddy.Device.BlueTooth.iBeaconClass.iBeacon;
+import org.runbuddy.device.BlueTooth.iBeaconClass.iBeacon;
 import org.runbuddy.tomahawk.R;
 
 import java.util.ArrayList;

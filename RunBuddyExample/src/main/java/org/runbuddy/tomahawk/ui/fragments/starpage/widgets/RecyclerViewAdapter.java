@@ -1,4 +1,4 @@
-package org.runbuddy.tomahawk.ui.fragments.star_page.widgets;
+package org.runbuddy.tomahawk.ui.fragments.starpage.widgets;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;

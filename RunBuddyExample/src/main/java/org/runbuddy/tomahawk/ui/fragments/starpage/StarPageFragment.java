@@ -1,4 +1,4 @@
-package org.runbuddy.tomahawk.ui.fragments.star_page;
+package org.runbuddy.tomahawk.ui.fragments.starpage;
 
 import android.annotation.SuppressLint;
 import android.os.Build;
@@ -22,9 +22,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.runbuddy.tomahawk.R;
-import org.runbuddy.tomahawk.ui.fragments.star_page.widgets.DetailActivity;
-import org.runbuddy.tomahawk.ui.fragments.star_page.widgets.RecyclerViewAdapter;
-import org.runbuddy.tomahawk.ui.fragments.star_page.widgets.ViewModel;
+import org.runbuddy.tomahawk.ui.fragments.starpage.widgets.DetailActivity;
+import org.runbuddy.tomahawk.ui.fragments.starpage.widgets.RecyclerViewAdapter;
+import org.runbuddy.tomahawk.ui.fragments.starpage.widgets.ViewModel;
 
 import java.util.ArrayList;
 import java.util.List;

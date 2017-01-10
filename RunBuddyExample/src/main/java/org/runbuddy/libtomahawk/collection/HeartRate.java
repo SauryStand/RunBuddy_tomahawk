@@ -1,4 +1,4 @@
-package org.runbuddy.tomahawk.model;
+package org.runbuddy.libtomahawk.collection;
 
 /**
  * Created by root on 16-11-16.
@@ -23,4 +23,5 @@ public class HeartRate {
     public void setRecord_time(String record_time) {
         this.record_time = record_time;
     }
+
 }

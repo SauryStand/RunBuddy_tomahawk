@@ -1,4 +1,4 @@
-package org.runbuddy.Device.BlueTooth;
+package org.runbuddy.device.BlueTooth;
 
 import android.bluetooth.BluetoothDevice;
 import android.util.Log;

@@ -41,7 +41,7 @@ import org.runbuddy.tomahawk.ui.fragments.PreferencePagerFragment;
 import org.runbuddy.tomahawk.ui.fragments.SensorFragment;
 import org.runbuddy.tomahawk.ui.fragments.TomahawkFragment;
 import org.runbuddy.tomahawk.ui.fragments.UserPagerFragment;
-import org.runbuddy.tomahawk.ui.fragments.star_page.StarPageFragment;
+import org.runbuddy.tomahawk.ui.fragments.starpage.StarPageFragment;
 import org.runbuddy.tomahawk.utils.FragmentUtils;
 import org.runbuddy.tomahawk.utils.MenuDrawer;
 

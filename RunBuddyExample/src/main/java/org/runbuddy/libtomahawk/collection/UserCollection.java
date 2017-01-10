@@ -468,7 +468,7 @@ public class UserCollection extends DbCollection {
         }
         return false;
     }
-
+    /********* setl flag*********/
     public void addLovedArtists(List<Artist> artists, List<Long> lastModifieds) {
         UserCollectionDb db = (UserCollectionDb) CollectionDbManager.get().getCollectionDb(
                 TomahawkApp.PLUGINNAME_USERCOLLECTION);

@@ -84,7 +84,7 @@ public class CollectionCursor<T> {
         } else {
             List<T> itemsCopy = new ArrayList<>();
             for (T item : mItems) {
-                itemsCopy.add(item);
+                itemsCopy.add(item);//复制歌曲列表？
             }
             copy = new CollectionCursor<>(itemsCopy, mClass);
         }
@@ -123,7 +123,7 @@ public class CollectionCursor<T> {
                     query.addTrackResult(result, 1.0f);
                     PlaylistEntry entry = PlaylistEntry.get(mPlaylist.getId(), query,
                             IdGenerator.getLifetimeUniqueStringId());
-                    cachedItem = (T) entry;
+                    cachedItem = (T) entry;//
                 } else if (mClass == Result.class) {
                     Artist artist = Artist.get(mCursor.getString(0));
                     Album album = Album.get(mCursor.getString(2), artist);

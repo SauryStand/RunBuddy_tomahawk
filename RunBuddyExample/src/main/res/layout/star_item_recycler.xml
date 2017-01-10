@@ -27,7 +27,7 @@
                   android:layout_height="wrap_content"
                   android:padding="@dimen/spacing_xsmall">
 
-        <org.runbuddy.tomahawk.ui.fragments.star_page.widgets.picasso.SquareImageView
+        <org.runbuddy.tomahawk.ui.fragments.starpage.widgets.picasso.SquareImageView
             android:id="@+id/image"
             android:layout_width="match_parent"
             android:layout_height="200dp"
