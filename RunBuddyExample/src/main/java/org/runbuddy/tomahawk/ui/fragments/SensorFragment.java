@@ -36,8 +36,9 @@ import com.github.mikephil.charting.utils.ColorTemplate;
 
 import org.runbuddy.device.BlueTooth.DeviceScanActivity;
 import org.runbuddy.device.CounterSensor.SensorHub;
-import org.runbuddy.tomahawk.R;
 import org.runbuddy.libtomahawk.collection.HeartRate;
+import org.runbuddy.tomahawk.R;
+import org.runbuddy.tomahawk.services.URLServer;
 import org.runbuddy.tomahawk.ui.IntricateCharts.listviewItems.BarChartItem;
 import org.runbuddy.tomahawk.ui.IntricateCharts.listviewItems.ChartItem;
 import org.runbuddy.tomahawk.ui.IntricateCharts.listviewItems.LineChartItem;
@@ -48,6 +49,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
+ * 传感器关键fragment
  * Created by Johnny Chow on 2016/7/27.
  */
 public class SensorFragment extends Fragment implements View.OnClickListener, SensorHub.DataClient {
@@ -58,15 +60,20 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
     private SensorHub mSensorHub;
     private Sensor mSensor;
     private static TextView step_TextView;
+    /**线程与handler*/
     private Handler mHandler;
+    protected Thread mThread;
+
     private static Handler step_Handler;
     private long mTID;
     private static int step_pre = 0;
     private ListView mlistView;
     ArrayList<ChartItem> list = new ArrayList<ChartItem>();
 
+    private String tagUpload = "TAGUPLOAD";
+
     /************
-     * ble
+     * ble config
      ********************/
     private final static String TAG = "SensorFragment";
     static TextView Text_Recv;
@@ -77,7 +84,6 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
     static boolean ifDisplayTimeOnOff = true;
     static int Totol_recv_bytes = 0;
     static int Totol_recv_bytes_temp = 0;
-
     /*********************************/
 
     @Override
@@ -86,7 +92,7 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
         //getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getActivity().setTitle(R.string.running_page);
         View view = inflater.inflate(R.layout.running_detail, container, false);
-        Long sid = (long) 4864;
+        Long sid = (long) 4864;//根据sensor算出的long值
         mSensorHub = SensorHub.getInstance(getContext());
         mSensor = mSensorHub.getSensor((int) (sid >> 8), (int) (sid & 0xff));
 
@@ -150,6 +156,17 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
 
 
     }
+
+
+
+    private Runnable heartRateRunnable = new Runnable() {
+        @Override
+        public void run() {
+            URLServer uploadServer = new URLServer();
+            uploadServer.fastUpLoad("testing_message");
+            Log.d(tagUpload,"对面的女孩看过来！！！");
+        }
+    };
 
     private void updateStepUI() {
         new Thread(new Runnable() {
@@ -231,7 +248,7 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
     }
 
 
-    private Intent mIntent3, mIntent4;
+    private Intent mIntent3;
 
     @Override
     public void onClick(View v) {
@@ -240,6 +257,8 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
             mIntent3 = new Intent(getActivity(), DeviceScanActivity.class);
             startActivity(mIntent3);
         } else if (v.getId() == R.id.Map_btn) {
+            mThread = new Thread(heartRateRunnable);//开启上传数据到服务器的线程
+            mThread.start();
 //           mIntent4 = new Intent(getActivity(), BaiduMainActivity.class);
 //            startActivity(mIntent4);
         }

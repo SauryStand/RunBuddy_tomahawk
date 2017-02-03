@@ -79,5 +79,14 @@
         android:layout_gravity="left|center_vertical"
         android:text="Ble connect" />
 
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/device_address"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="left|center_vertical"
+        android:text="Ble connect" />
+
 
 </FrameLayout>
