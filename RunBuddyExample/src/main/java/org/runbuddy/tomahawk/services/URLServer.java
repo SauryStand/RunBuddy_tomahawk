@@ -11,7 +11,6 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
-
 import java.net.URL;
 import java.util.Iterator;
 import java.util.Map;
@@ -30,9 +29,9 @@ import java.util.Map;
 
 public class URLServer {
     //remote
-    public static final String SERVER_ADDRESS = "http://www.voyager2511.top:8073/RunBuddy_ops";
+    //public static final String SERVER_ADDRESS = "http://www.voyager2511.top:8073/RunBuddy_ops";
     //local
-    //public static final String SERVER_ADDRESS = "http://localhost:8080/RunBuddy_ops/";
+    public static final String SERVER_ADDRESS = "http://192.168.0.107:8080/RunBuddy_ops/";
 
     private Handler mHandler;
 
@@ -46,13 +45,12 @@ public class URLServer {
 
     public void fastUpLoad(String ratebyte) {
 
-        String test = "testing_heartRate";//测试数据
+        String heart_byte = "testing_heartRate";//测试数据
 
         JSONObject paramJson = new JSONObject();
         try {
-            //URL url = new URL(SERVER_ADDRESS + "/heartrate/upload");
-            URL url = new URL(SERVER_ADDRESS );//这样不行
-            paramJson.put("ratebyte", test);
+            URL url = new URL(SERVER_ADDRESS + "/heartrate");
+            paramJson.put("ratebyte", heart_byte);
             sendRequest(url, null, paramJson.toString().getBytes());
         } catch (JSONException e) {
             e.printStackTrace();
@@ -84,7 +82,7 @@ public class URLServer {
     /**
      * 向服务端发送字符请求消息
      *
-     * @param url         服务端地址
+     * @param url 服务端地址
      * @param headerParam HTTP头参数
      * @param requestData 请求参数
      */
@@ -92,16 +90,16 @@ public class URLServer {
         HttpURLConnection httpURLConnection = null;
         OutputStream outputStream = null;
         try {
-            httpURLConnection = (HttpURLConnection) url.openConnection();
+            httpURLConnection = (HttpURLConnection)url.openConnection();
             httpURLConnection.setConnectTimeout(3000);
             httpURLConnection.setDoOutput(true);
             httpURLConnection.setDoInput(true);
             httpURLConnection.setRequestMethod("POST");
             httpURLConnection.setUseCaches(false);
-            httpURLConnection.setRequestProperty("Content-Type", "application/json ");
+            httpURLConnection.setRequestProperty("Content-Type", "application/json");
 //	        httpURLConnection.connect();
             // 设置HTTP头信息
-            if (headerParam != null && headerParam.size() > 0) {
+            if(headerParam != null && headerParam.size() > 0) {
                 Iterator<Map.Entry<String, Object>> it = headerParam.entrySet().iterator();
                 while (it.hasNext()) {
                     Map.Entry<String, Object> entry = it.next();
@@ -113,15 +111,15 @@ public class URLServer {
             outputStream.write(requestData);
 
             int response = httpURLConnection.getResponseCode();
-            if (response == HttpURLConnection.HTTP_OK) {
+            if(response == HttpURLConnection.HTTP_OK) {
                 InputStream inptStream = httpURLConnection.getInputStream();
                 BufferedReader reader = new BufferedReader(new InputStreamReader(inptStream));
-                StringBuffer builder = new StringBuffer();
+                StringBuffer builder =new StringBuffer();
                 for (String s = reader.readLine(); s != null; s = reader.readLine()) {
                     builder.append(s);
                 }
                 String respStr = builder.toString();
-                mHandler.obtainMessage(0, respStr).sendToTarget();
+                mHandler.obtainMessage(0, respStr).sendToTarget();//错误应该出在这里
             }
         } catch (IOException e) {
             e.printStackTrace();

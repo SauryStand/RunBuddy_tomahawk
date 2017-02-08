@@ -1,5 +1,6 @@
 package org.runbuddy.tomahawk.ui.fragments;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -34,6 +35,8 @@ import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 import com.github.mikephil.charting.utils.ColorTemplate;
 
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.runbuddy.device.BlueTooth.DeviceScanActivity;
 import org.runbuddy.device.CounterSensor.SensorHub;
 import org.runbuddy.libtomahawk.collection.HeartRate;
@@ -71,7 +74,7 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
     ArrayList<ChartItem> list = new ArrayList<ChartItem>();
 
     private String tagUpload = "TAGUPLOAD";
-
+    private Intent mIntent3;
     /************
      * ble config
      ********************/
@@ -157,16 +160,53 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
 
     }
 
-
+    /**
+     * todo 2017.02.06
+     * 与服务器通信已经完成，剩下的就是完成数据传输，跟android端的问题了
+     * 效率超级慢
+     * modify in 2017.02.08
+     */
 
     private Runnable heartRateRunnable = new Runnable() {
         @Override
         public void run() {
-            URLServer uploadServer = new URLServer();
+            URLServer uploadServer = new URLServer(commitHandler);
             uploadServer.fastUpLoad("testing_message");
-            Log.d(tagUpload,"对面的女孩看过来！！！");
+            //Log.d(tagUpload,"对面的女孩看过来！！！");
         }
     };
+
+    /**
+     * 上传数据相关
+     * add in 2017.02.08
+     */
+    @SuppressLint("HandlerLeak")
+    private Handler commitHandler = new Handler(){
+
+        @Override
+        public void handleMessage(Message msg){
+            switch (msg.what){
+                case 0:
+                    break;
+                case 1:
+                    break;
+            }
+        }
+
+        private void execute(Message msg){
+            try{
+                JSONObject resultJson = new JSONObject(msg.obj.toString());
+
+
+
+            }catch(JSONException e){
+                e.printStackTrace();
+            }
+
+        }
+
+    };
+
 
     private void updateStepUI() {
         new Thread(new Runnable() {
@@ -247,8 +287,6 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
 
     }
 
-
-    private Intent mIntent3;
 
     @Override
     public void onClick(View v) {
