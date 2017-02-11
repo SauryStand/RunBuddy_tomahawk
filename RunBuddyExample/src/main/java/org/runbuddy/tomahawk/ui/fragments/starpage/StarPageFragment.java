@@ -31,6 +31,7 @@ import java.util.List;
 
 /**
  * Created by Johnny Chow on 2016/8/21.
+ * it seems thsi method did not use
  */
 public class StarPageFragment extends Fragment implements NavigationView.OnNavigationItemSelectedListener, RecyclerViewAdapter.OnItemClickListener {
 
@@ -89,10 +90,6 @@ public class StarPageFragment extends Fragment implements NavigationView.OnNavig
         }
     }
 
-
-    public void testingImage() {
-
-    }
     /**************************************/
     private Runnable runnable = new Runnable() {
         @Override

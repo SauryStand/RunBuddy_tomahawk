@@ -27,25 +27,23 @@ import java.util.Map;
  *
  */
 
-public class URLServer {
+public class HeartRateUrlServer {
     //remote
     //public static final String SERVER_ADDRESS = "http://www.voyager2511.top:8073/RunBuddy_ops";
     //local
-    public static final String SERVER_ADDRESS = "http://192.168.0.107:8080/RunBuddy_ops/";
-
+    public static final String SERVER_ADDRESS = "http://192.168.0.109:8080/RunBuddy_ops/";
+    public static final String EXECUTED_SUCCESS = "8888";
     private Handler mHandler;
-
-    public URLServer() {
-
+    public HeartRateUrlServer() {
     }
 
-    public URLServer(Handler handler) {
+    public HeartRateUrlServer(Handler handler) {
         mHandler = handler;
     }
 
     public void fastUpLoad(String ratebyte) {
 
-        String heart_byte = "testing_heartRate";//测试数据
+        String heart_byte = "testing_heartRate~~";//测试数据
 
         JSONObject paramJson = new JSONObject();
         try {

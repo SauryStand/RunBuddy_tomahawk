@@ -24,6 +24,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.github.glomadrian.dashedcircularprogress.DashedCircularProgress;
 import com.github.mikephil.charting.data.BarData;
@@ -41,7 +42,7 @@ import org.runbuddy.device.BlueTooth.DeviceScanActivity;
 import org.runbuddy.device.CounterSensor.SensorHub;
 import org.runbuddy.libtomahawk.collection.HeartRate;
 import org.runbuddy.tomahawk.R;
-import org.runbuddy.tomahawk.services.URLServer;
+import org.runbuddy.tomahawk.services.HeartRateUrlServer;
 import org.runbuddy.tomahawk.ui.IntricateCharts.listviewItems.BarChartItem;
 import org.runbuddy.tomahawk.ui.IntricateCharts.listviewItems.ChartItem;
 import org.runbuddy.tomahawk.ui.IntricateCharts.listviewItems.LineChartItem;
@@ -63,7 +64,9 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
     private SensorHub mSensorHub;
     private Sensor mSensor;
     private static TextView step_TextView;
-    /**线程与handler*/
+    /**
+     * 线程与handler
+     */
     private Handler mHandler;
     protected Thread mThread;
 
@@ -87,6 +90,7 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
     static boolean ifDisplayTimeOnOff = true;
     static int Totol_recv_bytes = 0;
     static int Totol_recv_bytes_temp = 0;
+
     /*********************************/
 
     @Override
@@ -170,7 +174,7 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
     private Runnable heartRateRunnable = new Runnable() {
         @Override
         public void run() {
-            URLServer uploadServer = new URLServer(commitHandler);
+            HeartRateUrlServer uploadServer = new HeartRateUrlServer(commitHandler);//调用反馈线程
             uploadServer.fastUpLoad("testing_message");
             //Log.d(tagUpload,"对面的女孩看过来！！！");
         }
@@ -181,25 +185,27 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
      * add in 2017.02.08
      */
     @SuppressLint("HandlerLeak")
-    private Handler commitHandler = new Handler(){
+    private Handler commitHandler = new Handler() {
 
         @Override
-        public void handleMessage(Message msg){
-            switch (msg.what){
+        public void handleMessage(Message msg) {
+            switch (msg.what) {
                 case 0:
+                    execute(msg);
                     break;
                 case 1:
                     break;
             }
         }
 
-        private void execute(Message msg){
-            try{
+        private void execute(Message msg) {
+            try {
                 JSONObject resultJson = new JSONObject(msg.obj.toString());
+                if (resultJson.get("code").toString().equals(HeartRateUrlServer.EXECUTED_SUCCESS)) {
+                    Toast.makeText(getActivity(), "----->>RunBuddy_ops callback:" + resultJson.toString() + "and code is " + resultJson.get("code").toString(), Toast.LENGTH_SHORT).show();
+                }
 
-
-
-            }catch(JSONException e){
+            } catch (JSONException e) {
                 e.printStackTrace();
             }
 
