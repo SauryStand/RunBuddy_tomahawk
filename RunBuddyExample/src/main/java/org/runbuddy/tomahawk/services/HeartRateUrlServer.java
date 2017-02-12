@@ -55,8 +55,23 @@ public class HeartRateUrlServer {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
 
-
+    private void fastUpload(String highestRate,String lowestRate,String averageRate){
+        
+        JSONObject paramJson = new JSONObject();
+        try {
+            URL url = new URL(SERVER_ADDRESS + "/heartrate");
+            paramJson.put("highestRate", highestRate);
+            paramJson.put("lowestRate",lowestRate);
+            paramJson.put("averageRate",averageRate);
+            //// TODO: 2017/2/12  
+            sendRequest(url, null, paramJson.toString().getBytes());
+        } catch (JSONException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 
