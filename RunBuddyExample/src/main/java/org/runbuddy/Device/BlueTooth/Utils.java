@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.runbuddy.Device.BlueTooth;
+package org.runbuddy.device.BlueTooth;
 
 import android.bluetooth.BluetoothGattCharacteristic;
 import android.bluetooth.BluetoothGattDescriptor;

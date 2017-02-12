@@ -31,8 +31,9 @@
               android:layout_height="wrap_content"
               android:padding="@dimen/padding_medium"
               android:descendantFocusability="afterDescendants"
-              android:background="@color/tomahawk_red"
+              android:background="@color/black_bg"
               android:textColor="@color/primary_textcolor_inverted"
               android:textSize="@dimen/text_size_medium"/>
+    <!-- set flag in here 1224 -->
 
 </FrameLayout>

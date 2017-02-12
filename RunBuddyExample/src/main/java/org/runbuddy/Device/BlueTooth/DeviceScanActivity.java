@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.runbuddy.Device.BlueTooth;
+package org.runbuddy.device.BlueTooth;
 
 import android.app.ListActivity;
 import android.bluetooth.BluetoothAdapter;
@@ -36,9 +36,9 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import org.runbuddy.Device.BlueTooth.BluetoothLeClass.OnDataAvailableListener;
-import org.runbuddy.Device.BlueTooth.BluetoothLeClass.OnServiceDiscoverListener;
-import org.runbuddy.Device.BlueTooth.iBeaconClass.iBeacon;
+import org.runbuddy.device.BlueTooth.BluetoothLeClass.OnDataAvailableListener;
+import org.runbuddy.device.BlueTooth.BluetoothLeClass.OnServiceDiscoverListener;
+import org.runbuddy.device.BlueTooth.iBeaconClass.iBeacon;
 import org.runbuddy.tomahawk.R;
 import org.runbuddy.tomahawk.activities.TomahawkMainActivity;
 import org.runbuddy.tomahawk.ui.fragments.SensorFragment;

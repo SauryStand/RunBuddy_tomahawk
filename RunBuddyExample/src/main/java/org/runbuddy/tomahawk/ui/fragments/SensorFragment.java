@@ -1,5 +1,6 @@
 package org.runbuddy.tomahawk.ui.fragments;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -23,6 +24,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.github.glomadrian.dashedcircularprogress.DashedCircularProgress;
 import com.github.mikephil.charting.data.BarData;
@@ -34,10 +36,13 @@ import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 import com.github.mikephil.charting.utils.ColorTemplate;
 
-import org.runbuddy.Device.BlueTooth.DeviceScanActivity;
-import org.runbuddy.Device.CounterSensor.SensorHub;
-import org.runbuddy.lbs_location.BaiduMainActivity;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.runbuddy.device.BlueTooth.DeviceScanActivity;
+import org.runbuddy.device.CounterSensor.SensorHub;
+import org.runbuddy.libtomahawk.collection.HeartRate;
 import org.runbuddy.tomahawk.R;
+import org.runbuddy.tomahawk.services.HeartRateUrlServer;
 import org.runbuddy.tomahawk.ui.IntricateCharts.listviewItems.BarChartItem;
 import org.runbuddy.tomahawk.ui.IntricateCharts.listviewItems.ChartItem;
 import org.runbuddy.tomahawk.ui.IntricateCharts.listviewItems.LineChartItem;
@@ -48,6 +53,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
+ * 传感器关键fragment
  * Created by Johnny Chow on 2016/7/27.
  */
 public class SensorFragment extends Fragment implements View.OnClickListener, SensorHub.DataClient {
@@ -58,14 +64,23 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
     private SensorHub mSensorHub;
     private Sensor mSensor;
     private static TextView step_TextView;
+    /**
+     * 线程与handler
+     */
     private Handler mHandler;
+    protected Thread mThread;
+
     private static Handler step_Handler;
     private long mTID;
     private static int step_pre = 0;
     private ListView mlistView;
     ArrayList<ChartItem> list = new ArrayList<ChartItem>();
 
-    /************ble********************/
+    private String tagUpload = "TAGUPLOAD";
+    private Intent mIntent3;
+    /************
+     * ble config
+     ********************/
     private final static String TAG = "SensorFragment";
     static TextView Text_Recv;
     static String Str_Recv;
@@ -75,6 +90,7 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
     static boolean ifDisplayTimeOnOff = true;
     static int Totol_recv_bytes = 0;
     static int Totol_recv_bytes_temp = 0;
+
     /*********************************/
 
     @Override
@@ -83,7 +99,7 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
         //getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getActivity().setTitle(R.string.running_page);
         View view = inflater.inflate(R.layout.running_detail, container, false);
-        Long sid = (long) 4864;
+        Long sid = (long) 4864;//根据sensor算出的long值
         mSensorHub = SensorHub.getInstance(getContext());
         mSensor = mSensorHub.getSensor((int) (sid >> 8), (int) (sid & 0xff));
 
@@ -120,7 +136,7 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
                 //Empty
             }
         });
-        //Charts
+        //Charts just 7 panal
         for (int i = 0; i < 10; i++) {
             if (i % 3 == 0) {
                 list.add(new LineChartItem(generateDataLine(i + 1), getContext()));
@@ -146,11 +162,56 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
         };
 
 
-
     }
 
+    /**
+     * todo 2017.02.06
+     * 与服务器通信已经完成，剩下的就是完成数据传输，跟android端的问题了
+     * 效率超级慢
+     * modify in 2017.02.08
+     */
 
+    private Runnable heartRateRunnable = new Runnable() {
+        @Override
+        public void run() {
+            HeartRateUrlServer uploadServer = new HeartRateUrlServer(commitHandler);//调用反馈线程
+            uploadServer.fastUpLoad("testing_message");
+            //Log.d(tagUpload,"对面的女孩看过来！！！");
+        }
+    };
 
+    /**
+     * 上传数据相关
+     * add in 2017.02.08
+     */
+    @SuppressLint("HandlerLeak")
+    private Handler commitHandler = new Handler() {
+
+        @Override
+        public void handleMessage(Message msg) {
+            switch (msg.what) {
+                case 0:
+                    execute(msg);
+                    break;
+                case 1:
+                    break;
+            }
+        }
+
+        private void execute(Message msg) {
+            try {
+                JSONObject resultJson = new JSONObject(msg.obj.toString());
+                if (resultJson.get("code").toString().equals(HeartRateUrlServer.EXECUTED_SUCCESS)) {
+                    Toast.makeText(getActivity(), "----->>RunBuddy_ops callback:" + resultJson.toString() + "and code is " + resultJson.get("code").toString(), Toast.LENGTH_SHORT).show();
+                }
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+        }
+
+    };
 
 
     private void updateStepUI() {
@@ -233,8 +294,6 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
     }
 
 
-    private Intent mIntent3, mIntent4;
-
     @Override
     public void onClick(View v) {
 
@@ -242,8 +301,10 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
             mIntent3 = new Intent(getActivity(), DeviceScanActivity.class);
             startActivity(mIntent3);
         } else if (v.getId() == R.id.Map_btn) {
-           mIntent4 = new Intent(getActivity(), BaiduMainActivity.class);
-            startActivity(mIntent4);
+            mThread = new Thread(heartRateRunnable);//开启上传数据到服务器的线程
+            mThread.start();
+//           mIntent4 = new Intent(getActivity(), BaiduMainActivity.class);
+//            startActivity(mIntent4);
         }
     }
 
@@ -319,6 +380,8 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
     /**
      * generates a random ChartData object with just one DataSet
      * just for sun aadadadada
+     * 根据日期划分数据才行啊，一共展示12天的数据
+     * 判断0点就把数据保存至本地数据库
      *
      * @return
      */
@@ -326,10 +389,10 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
         ArrayList<Entry> e1 = new ArrayList<Entry>();
 
         for (int i = 0; i < 12; i++) {
-            e1.add(new Entry(i, (int) (Math.random() * 65) + 40));
+            e1.add(new Entry(i, (int) (Math.random() * 65) + 40));//这里生成随机数
         }
 
-        LineDataSet d1 = new LineDataSet(e1, "New DataSet " + cnt + ", (1)");
+        LineDataSet d1 = new LineDataSet(e1, "今日状态" + cnt + ", (1)");
         d1.setLineWidth(2.5f);
         d1.setCircleRadius(4.5f);
         d1.setHighLightColor(Color.rgb(244, 117, 117));
@@ -341,7 +404,7 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
             e2.add(new Entry(i, e1.get(i).getY() - 30));
         }
 
-        LineDataSet d2 = new LineDataSet(e2, "New DataSet " + cnt + ", (2)");
+        LineDataSet d2 = new LineDataSet(e2, "历史平均水平" + cnt + ", (2)");
         d2.setLineWidth(2.5f);
         d2.setCircleRadius(4.5f);
         d2.setHighLightColor(Color.rgb(244, 117, 117));
@@ -381,7 +444,6 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
 
 
     public static class SpeedFragment extends Fragment {
-
         @Override
         public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                                  @Nullable Bundle savedInstanceState) {
@@ -395,8 +457,33 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
             step_TextView.setText(SensorFragment.step_pre + "步");
 
         }
+    }
+
+    /*
+    这个方法负责计算平均心率的
+    事实上这个方法每次显示的时候都会被执行的
+     */
+    public static void CountHeartRate(String heartRate_byte, String TimeRecord) {
+
+        int temp_value = 0;
+        temp_value = Integer.valueOf(heartRate_byte);//先把心率换算成整形
+        if (temp_value > 0 && temp_value < 220) {
+            ArrayList<HeartRate> heartRates = new ArrayList<>();
+            HeartRate heartRate_single = new HeartRate();
+            heartRate_single.setHeart_rate(heartRate_byte);
+            heartRate_single.setRecord_time(TimeRecord);
+            heartRates.add(heartRate_single);
+            SaveToDB(heartRates);//未对数据做处理
+        }
 
     }
+
+    //入库处理
+    public static void SaveToDB(ArrayList array) {
+        //// TODO: 2016/12/2
+
+    }
+
 
     //内部类
     //2016/10/6
@@ -407,26 +494,34 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
                                  @Nullable Bundle savedInstanceState) {
             return inflater.inflate(R.layout.heart_rate, container, false);
         }
-
-
     }
 
     /***********************************/
     //负责读出心率数据
     public static synchronized void char6_display(String str, byte[] data,
                                                   String uuid) {
-        Log.i(TAG, "char6_display str = " + str);
+
+        int temp_Rate[] = new int[30];//每次调用都会new这些变量，这是需要优化的地方
 
         if (uuid.equals(DeviceScanActivity.UUID_HERATRATE)) {
             SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss ");
             Date curDate = new Date(System.currentTimeMillis());// 获取当前时间
             String TimeStr = formatter.format(curDate);
-            String DisplayStr = "[" + TimeStr + "] " + "HeartRate : " + data[0]
-                    + "=" + data[1];
+            String DisplayStr = "[" + TimeStr + "] " + "HR:" + "=" + data[1];
             // Text_Recv.append(DisplayStr + "\r\n");
             Str_Recv = DisplayStr + "\r\n";
-        }
 
+            String heartRate_byte = data[1] + "";
+            CountHeartRate(heartRate_byte, TimeStr);//计算平均心率，没来一次记录一次心率和时间
+
+            for (int i = 0; i < 30; i++) {
+
+                temp_Rate[i] = Integer.valueOf(heartRate_byte);
+
+            }
+
+        }
+        Log.i(TAG, "char6_display str = " + str);
         Totol_recv_bytes += str.length();
         Totol_recv_bytes_temp += str.length();
 
@@ -444,14 +539,11 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
 
             }
         });
+
+
     }
 
 
     /*********************************/
-
-
-
-
-
 
 }

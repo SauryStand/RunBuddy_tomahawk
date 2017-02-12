@@ -1,4 +1,4 @@
-package org.runbuddy.Device.GravitySensor;
+package org.runbuddy.device.GravitySensor;
 
 import android.app.Activity;
 import android.hardware.SensorEvent;
@@ -6,7 +6,7 @@ import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 import android.widget.TextView;
 
-import org.runbuddy.Device.CounterSensor.SensorHub;
+import org.runbuddy.device.CounterSensor.SensorHub;
 
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;

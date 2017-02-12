@@ -22,8 +22,7 @@
              android:id="@+id/mainclickarea"
              android:layout_width="match_parent"
              android:layout_height="@dimen/list_item_track_height"
-             android:paddingLeft="@dimen/padding_superlarge"
-             android:background="@color/tomahawk_red">
+             android:paddingLeft="@dimen/padding_superlarge">
     <!--primary_background-->
     <LinearLayout android:layout_width="match_parent"
                   android:layout_height="match_parent"

@@ -1,5 +1,5 @@
 <!--
-  ~ Copyright (C) 2015 Antonio Leiva
+  ~ Copyright (Contes) 2015 Antonio Leiva
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <org.runbuddy.tomahawk.ui.fragments.star_page.widgets.picasso.GridRecyclerView
+        <org.runbuddy.tomahawk.ui.fragments.starpage.widgets.picasso.GridRecyclerView
             android:id="@+id/recycler"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

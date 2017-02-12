@@ -24,7 +24,7 @@ import org.runbuddy.libtomahawk.infosystem.InfoSystem;
 import org.runbuddy.libtomahawk.infosystem.User;
 import org.runbuddy.tomahawk.activities.TomahawkMainActivity;
 import org.runbuddy.tomahawk.adapters.Segment;
-import org.runbuddy.tomahawk.ui.fragments.star_page.SocialActionsFragment;
+import org.runbuddy.tomahawk.ui.fragments.starpage.SocialActionsFragment;
 import org.runbuddy.tomahawk.utils.FragmentUtils;
 
 import java.util.ArrayList;

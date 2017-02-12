@@ -14,8 +14,18 @@ android {
         applicationId "org.runbuddy.tomahawk"
         minSdkVersion 21
         targetSdkVersion 24
-        versionCode 2
-        versionName "0.3.1"
+        versionCode 105
+        versionName "0.3.3"
+        //cmake in linux IDE
+        // win platform cant build
+//        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+//        externalNativeBuild{
+//            cmake{
+//                cppFlags ""
+//            }
+//        }
+//        multiDexEnabled true
+
     }
     buildTypes {
         release {
@@ -23,12 +33,20 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+//    externalNativeBuild {
+//        cmake {
+//            path "CMakeLists.txt"
+//        }
+//    }
+
     sourceSets {
         main {
             assets.srcDirs = ['src/main/assets', 'src/main/assets/']
-//            main {
-//                jniLibs.srcDirs = ['libs']
-//            }
+            main {
+                jniLibs.srcDirs = ['libs']
+            }
+            jni.srcDirs = ['src/main/jni', 'src/main/jni/']
         }
     }
 
@@ -191,8 +209,13 @@ dependencies {
     compile 'de.hdodenhof:circleimageview:2.0.0'
     compile 'io.reactivex:rxjava:1.2.0'
     compile 'me.zhanghai.android.materialprogressbar:library:1.1.7'
-    compile files('libs/BaiduTraceSDK_v2_1_15.jar')
-    compile files('libs/BaiduLBS_Android.jar')
+//    compile files('libs/BaiduTraceSDK_v2_1_15.jar')
+//    compile files('libs/BaiduLBS_Android.jar')
+    //解决cannot exceed 64k 的问题
+    //插件化apk
+    compile 'com.android.support:multidex:1.0.1'
+
+
 }
 
 

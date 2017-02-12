@@ -1,4 +1,4 @@
-package org.runbuddy.Device.CounterSensor;
+package org.runbuddy.device.CounterSensor;
 
 import android.content.Context;
 import android.hardware.Sensor;

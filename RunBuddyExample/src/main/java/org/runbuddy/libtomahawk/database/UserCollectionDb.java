@@ -33,7 +33,10 @@ public class UserCollectionDb extends CollectionDb {
     public UserCollectionDb(Context context, String collectionId) {
         super(context, collectionId);
     }
-
+    /**
+    其实你不应该再新建数据库，直接在这个类里面继续写就好了
+     */
+    //增加艺术家的
     public void addArtists(List<Artist> artists, List<Long> lastModifieds) {
         mDb.beginTransaction();
         for (int i = 0, artistsSize = artists.size(); i < artistsSize; i++) {

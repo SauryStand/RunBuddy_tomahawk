@@ -33,7 +33,7 @@ import org.runbuddy.libtomahawk.resolver.Query;
 import org.runbuddy.libtomahawk.utils.ADeferredObject;
 import org.runbuddy.tomahawk.R;
 import org.runbuddy.tomahawk.app.TomahawkApp;
-import org.runbuddy.tomahawk.ui.fragments.star_page.SocialActionsFragment;
+import org.runbuddy.tomahawk.ui.fragments.starpage.SocialActionsFragment;
 
 import java.util.ArrayList;
 import java.util.Date;

@@ -1,4 +1,4 @@
-package org.runbuddy.Device.CounterSensor.model;
+package org.runbuddy.device.CounterSensor.model;
 
 import android.content.ContentProvider;
 import android.content.ContentValues;
