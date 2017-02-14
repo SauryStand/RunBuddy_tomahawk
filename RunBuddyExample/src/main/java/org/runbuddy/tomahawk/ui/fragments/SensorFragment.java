@@ -174,8 +174,20 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
     private Runnable heartRateRunnable = new Runnable() {
         @Override
         public void run() {
+
+            String highestRate = "128";
+            String lowestRate="61";
+            String averageRate="78";
+            int motionState = 1;
+            int recommendState = 0;
+            int execiseTime = 23;
+            int execiseLoad = 13;
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            String recordDate = dateFormat.format(new Date()).toString();
+
             HeartRateUrlServer uploadServer = new HeartRateUrlServer(commitHandler);//调用反馈线程
-            uploadServer.fastUpLoad("testing_message");
+            uploadServer.fastUpLoad( highestRate,lowestRate,averageRate,motionState,recommendState,execiseTime,execiseLoad,recordDate);
+
             //Log.d(tagUpload,"对面的女孩看过来！！！");
         }
     };
