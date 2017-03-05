@@ -1,9 +1,12 @@
 package org.runbuddy.tomahawk.services;
 
 import android.os.Handler;
+import android.util.Log;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.runbuddy.tomahawk.entity.LittleHeartRateUnit;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -13,6 +16,7 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -21,7 +25,6 @@ import java.util.Map;
  * todo
  * 目前手机与服务器的连接有问题
  * 其次是论文压根没开始写，不知道怎么写，特别是开头
- * 明天返鹏城，时间只剩下2个月，时间安排，专注力，都大大降低
  * 2017.02.02
  */
 
@@ -32,7 +35,7 @@ public class HeartRateUrlServer {
     public static final String SERVER_ADDRESS = "http://192.168.0.109:8080/RunBuddy_ops/";
     public static final String EXECUTED_SUCCESS = "8888";
     private Handler mHandler;
-
+    private final static String TAG = "HeartRateUrlServer";
     public HeartRateUrlServer() {
     }
 
@@ -58,7 +61,6 @@ public class HeartRateUrlServer {
 
     public void fastUpLoad(String highestRate, String lowestRate, String averageRate,
                            int motionState, int recommendState, int execiseTime, int execiseLoad, String recordDate) {
-
         JSONObject paramJson = new JSONObject();
         try {
             URL url = new URL(SERVER_ADDRESS + "/heartrate");
@@ -66,10 +68,11 @@ public class HeartRateUrlServer {
             paramJson.put("lowestRate", lowestRate);
             paramJson.put("averageRate", averageRate);
             paramJson.put("motionState", motionState);
-            paramJson.put("recommendState",recommendState);
-            paramJson.put("execiseTime",execiseTime);
-            paramJson.put("execiseLoad",execiseLoad);
-            paramJson.put("recordDate",recordDate);
+            paramJson.put("recommendState", recommendState);
+            paramJson.put("execiseTime", execiseTime);
+            paramJson.put("execiseLoad", execiseLoad);
+            paramJson.put("recordDate", recordDate);
+
             //// TODO: 2017/2/12  
             sendRequest(url, null, paramJson.toString().getBytes());
         } catch (JSONException e) {
@@ -77,6 +80,37 @@ public class HeartRateUrlServer {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void fastUploadRealRate(List<LittleHeartRateUnit> realRate, String uploadTime)  {
+        JSONObject paramJson = new JSONObject();
+        Log.i(TAG,"-->>显示List："+realRate.toString());
+        try{
+            if(realRate != null && realRate.size() > 0){
+                JSONArray jsonArray = new JSONArray();//要传过去的jsonArr
+                for(LittleHeartRateUnit unit : realRate){
+                    JSONObject json = new JSONObject();
+                    Log.i(TAG,"-->>id:"+unit.getId());
+                    Log.i(TAG,"-->>value:"+unit.getValue());
+                    Log.i(TAG,"-->>status:"+unit.getStatus());
+                    json.put("id",unit.getId());
+                    json.put("value",unit.getValue());
+                    json.put("status",unit.getStatus());
+                    jsonArray.put(json);
+                }
+                paramJson.put("realTimeRate",jsonArray);//加入json数组
+                paramJson.put("uploadTime", uploadTime);
+            }
+
+            URL url = new URL(SERVER_ADDRESS + "/heartrate");
+            sendRequest(url, null, paramJson.toString().getBytes());//上传
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
     }
 
 
