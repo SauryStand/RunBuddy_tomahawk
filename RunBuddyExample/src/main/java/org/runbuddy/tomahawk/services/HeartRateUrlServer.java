@@ -32,7 +32,7 @@ public class HeartRateUrlServer {
     //remote
     //public static final String SERVER_ADDRESS = "http://www.voyager2511.top:8073/RunBuddy_ops";
     //local
-    public static final String SERVER_ADDRESS = "http://192.168.0.109:8080/RunBuddy_ops/";
+    public static final String SERVER_ADDRESS = "http://192.168.0.111:8080/RunBuddy_ops/";
     public static final String EXECUTED_SUCCESS = "8888";
     private Handler mHandler;
     private final static String TAG = "HeartRateUrlServer";
