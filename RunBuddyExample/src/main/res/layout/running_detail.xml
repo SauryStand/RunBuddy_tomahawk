@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-
+    <!--I dont know whether it is bug-->
     <include layout="@layout/toolbar"></include>
 
     <com.github.glomadrian.dashedcircularprogress.DashedCircularProgress
@@ -26,14 +26,6 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true">
 
-            <android.support.v4.view.ViewPager
-                android:id="@+id/circular_view_pager"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:overScrollMode="never">
-
-            </android.support.v4.view.ViewPager>
-
             <TextView
                 android:id="@+id/device_address"
                 android:layout_width="fill_parent"
@@ -53,6 +45,16 @@
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
+            <android.support.v4.view.ViewPager
+                android:id="@+id/circular_view_pager"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:overScrollMode="never"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true">
+
+            </android.support.v4.view.ViewPager>
+
         </RelativeLayout>
 
     </com.github.glomadrian.dashedcircularprogress.DashedCircularProgress>
@@ -64,12 +66,6 @@
         android:layout_gravity="right|center_vertical"
         android:text="@string/map" />
 
-    <ListView
-        android:id="@+id/listView1"
-        android:layout_width="match_parent"
-        android:layout_height="202dp"
-        android:layout_gravity="center_horizontal|bottom"></ListView>
-
     <Button
         android:id="@+id/ble_conn"
         android:layout_width="wrap_content"
@@ -78,6 +74,12 @@
         android:layout_alignParentEnd="true"
         android:layout_gravity="left|center_vertical"
         android:text="Ble connect" />
+
+    <ListView
+        android:id="@+id/listView1"
+        android:layout_width="match_parent"
+        android:layout_height="235dp"
+        android:layout_gravity="center_horizontal|bottom"></ListView>
 
     <Button
         android:id="@+id/button"

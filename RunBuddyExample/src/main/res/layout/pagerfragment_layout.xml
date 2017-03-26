@@ -45,11 +45,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 
-    <org.runbuddy.tomahawk.views.Selector
-            android:id="@+id/selector"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-
     <LinearLayout android:layout_width="match_parent"
                   android:layout_height="wrap_content"
                   android:orientation="vertical">
@@ -90,5 +85,10 @@
                 app:cpv_animAutostart="true"/>
 
     </LinearLayout>
+
+    <org.runbuddy.tomahawk.views.Selector
+            android:id="@+id/selector"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
 
 </FrameLayout>
