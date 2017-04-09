@@ -23,8 +23,7 @@ import java.util.Map;
  * Created by Jonney Chou on 2017/1/29.
  * <p>
  * todo
- * 目前手机与服务器的连接有问题
- * 其次是论文压根没开始写，不知道怎么写，特别是开头
+ * 目前手机与服务器的连接有问题，虽然功能实现了，但是鲁棒性很差
  * 2017.02.02
  */
 
@@ -32,7 +31,7 @@ public class HeartRateUrlServer {
     //remote
     //public static final String SERVER_ADDRESS = "http://www.voyager2511.top:8073/RunBuddy_ops";
     //local
-    public static final String SERVER_ADDRESS = "http://192.168.0.111:8080/RunBuddy_ops/";
+    public static final String SERVER_ADDRESS = "http://192.168.0.110:8080/RunBuddy_ops/";
     public static final String EXECUTED_SUCCESS = "8888";
     private Handler mHandler;
     private final static String TAG = "HeartRateUrlServer";
@@ -43,27 +42,11 @@ public class HeartRateUrlServer {
         mHandler = handler;
     }
 
-//    public void fastUpLoad(String ratebyte) {
-//
-//        String heart_byte = "testing_heartRate~~";//测试数据
-//
-//        JSONObject paramJson = new JSONObject();
-//        try {
-//            URL url = new URL(SERVER_ADDRESS + "/heartrate");
-//            paramJson.put("ratebyte", heart_byte);
-//            sendRequest(url, null, paramJson.toString().getBytes());
-//        } catch (JSONException e) {
-//            e.printStackTrace();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//    }
-
     public void fastUpLoad(String highestRate, String lowestRate, String averageRate,
                            int motionState, int recommendState, int execiseTime, int execiseLoad, String recordDate) {
         JSONObject paramJson = new JSONObject();
         try {
-            URL url = new URL(SERVER_ADDRESS + "/heartrate");
+            URL url = new URL(SERVER_ADDRESS + "/hearts");
             paramJson.put("highestRate", highestRate);
             paramJson.put("lowestRate", lowestRate);
             paramJson.put("averageRate", averageRate);
@@ -171,7 +154,7 @@ public class HeartRateUrlServer {
                     builder.append(s);
                 }
                 String respStr = builder.toString();
-                mHandler.obtainMessage(0, respStr).sendToTarget();//错误应该出在这里
+                mHandler.obtainMessage(0, respStr).sendToTarget();//错误应该出在这里,这里有什么错误？？
             }
         } catch (IOException e) {
             e.printStackTrace();

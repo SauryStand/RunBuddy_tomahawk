@@ -174,18 +174,17 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
     private Runnable heartRateRunnable = new Runnable() {
         @Override
         public void run() {
-            String highestRate = "128";
+            String highestRate = "116";
             String lowestRate = "61";
-            String averageRate = "78";
+            String averageRate = "73";
             int motionState = 1;
             int recommendState = 0;
-            int execiseTime = 23;
-            int execiseLoad = 13;
+            int execiseTime = 18;
+            int execiseLoad = 23;
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             String recordDate = dateFormat.format(new Date()).toString();
             HeartRateUrlServer uploadServer = new HeartRateUrlServer(commitHandler);//调用反馈线程
             uploadServer.fastUpLoad(highestRate, lowestRate, averageRate, motionState, recommendState, execiseTime, execiseLoad, recordDate);
-            //Log.d(tagUpload,"对面的女孩看过来！！！");
         }
     };
     /**
@@ -198,17 +197,17 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             String recordDate = dateFormat.format(new Date()).toString();
             List<LittleHeartRateUnit> realArr = new ArrayList<>();
-            int ran = 0,max=140,min=45;
+            int ran = 0, max = 140, min = 45;
             for (int i = 1; i <= 20; i++) {
                 LittleHeartRateUnit real = new LittleHeartRateUnit();
                 Random random = new Random();
-                ran = random.nextInt(max)%(max-min+1)+min;//生成50-140以内的随机数
+                ran = random.nextInt(max) % (max - min + 1) + min;//生成50-140以内的随机数
                 real.setId(i + "");
-                real.setValue(ran+"");
-                if(ran < 50)
-                    real.setStatus(0+"");//小雨50无效，置0
+                real.setValue(ran + "");
+                if (ran < 50)
+                    real.setStatus(0 + "");//小雨50无效，置0
                 else
-                    real.setStatus(1+"");
+                    real.setStatus(1 + "");
                 realArr.add(real);//模拟出心率数据
             }
             HeartRateUrlServer uploadServer = new HeartRateUrlServer(commitHandler);
@@ -221,6 +220,7 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
     /**
      * 上传数据相关
      * add in 2017.02.08
+     * 修改于2017.04.08
      */
     @SuppressLint("HandlerLeak")
     private Handler commitHandler = new Handler() {
@@ -234,11 +234,12 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
                     break;
             }
         }
+
         private void execute(Message msg) {
             try {
                 JSONObject resultJson = new JSONObject(msg.obj.toString());
                 if (resultJson.get("code").toString().equals(HeartRateUrlServer.EXECUTED_SUCCESS)) {
-                    Toast.makeText(getActivity(), "----->>RunBuddy_ops callback:" + resultJson.toString() + "and code is " + resultJson.get("code").toString(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "RunBuddy_ops callback:" + resultJson.toString() + "and code is " + resultJson.get("code").toString(), Toast.LENGTH_SHORT).show();
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -328,8 +329,8 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
             mIntent3 = new Intent(getActivity(), DeviceScanActivity.class);
             startActivity(mIntent3);
         } else if (v.getId() == R.id.Map_btn) {
-            //mThread = new Thread(heartRateRunnable);//开启上传数据到服务器的线程
-            mThread = new Thread(realHeartRateRunnable);//这里切换线程
+            mThread = new Thread(heartRateRunnable);//开启上传数据到服务器的线程
+            //mThread = new Thread(realHeartRateRunnable);//这里切换线程
             mThread.start();
         }
     }
@@ -376,7 +377,6 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
         onSpeed();//保存计步百分比状态？
     }
 
-
     /**
      * adapter that supports 3 different item types
      */
@@ -413,7 +413,6 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
      */
     private LineData generateDataLine(int cnt) {
         ArrayList<Entry> e1 = new ArrayList<Entry>();
-
         for (int i = 0; i < 12; i++) {
             e1.add(new Entry(i, (int) (Math.random() * 65) + 40));//这里生成随机数
         }
@@ -445,6 +444,16 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
         LineData cd = new LineData(sets);
         return cd;
     }
+
+
+    //// TODO: 2017/4/4  
+    private LineData generateDataLine() {
+
+
+        LineData re = new LineData();
+        return re;
+    }
+
 
     /**
      * generates a random ChartData object with just one DataSet
@@ -485,9 +494,12 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
         }
     }
 
-    /*
-    这个方法负责计算平均心率的
-    事实上这个方法每次显示的时候都会被执行的
+
+    /**
+     * 计算心率，但是实际上这个方法没有一点用处
+     *
+     * @param heartRate_byte
+     * @param TimeRecord
      */
     public static void CountHeartRate(String heartRate_byte, String TimeRecord) {
 
@@ -522,11 +534,16 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
         }
     }
 
-    /***********************************/
-    //负责读出心率数据
+    /**********************************
+     * /**
+     * 负责读出心率数据，这个是线程同步的，也就是原子性的，你需要注意代码逻辑才能写出来
+     * 这个方法比较重要
+     * @param str
+     * @param data
+     * @param uuid
+     */
     public static synchronized void char6_display(String str, byte[] data,
                                                   String uuid) {
-
         int temp_Rate[] = new int[30];//每次调用都会new这些变量，这是需要优化的地方
 
         if (uuid.equals(DeviceScanActivity.UUID_HERATRATE)) {
@@ -539,9 +556,6 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
             String heartRate_byte = data[1] + "";
 
             rate.add(heartRate_byte);//定义在上面的String数组,加工心率数据
-            if(rate.size()!=0){
-                processHeartRateString(rate);
-            }
 
             CountHeartRate(heartRate_byte, TimeStr);//计算平均心率，没来一次记录一次心率和时间
 
@@ -549,7 +563,13 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
                 temp_Rate[i] = Integer.valueOf(heartRate_byte);
             }
 
+
         }
+        if (rate.size() != 0) {
+            processHeartRateString(rate);
+        }
+
+
         Log.i(TAG, "char6_display str = " + str);
         Totol_recv_bytes += str.length();
         Totol_recv_bytes_temp += str.length();
@@ -565,16 +585,18 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
                     Totol_recv_bytes_temp = 0;
                     Text_Recv.setText("");
                 }
-
             }
         });
-
-
     }
 
-
-    public static void processHeartRateString(List<String> str){
-
+    /**
+     * 测试，同样要保证线程安全才行
+     * @param str
+     */
+    public static synchronized void processHeartRateString(List<String> str) {
+        for (int i = 0; i < str.size(); i++) {
+            Log.d(TAG, "%%%%%%%%%%%看这里打印的数据%%%%%%%%%%%%%generateDataLine: " + str.get(i).toString());
+        }
     }
 
     /*********************************/

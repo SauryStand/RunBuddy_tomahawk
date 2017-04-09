@@ -231,7 +231,6 @@ public class BluetoothLeClass extends Service {
 
 		Intent mIntent = new Intent(ACTION_NAME_RSSI);
 		mIntent.putExtra("RSSI", rssi);
-		// ���͹㲥
 		mContext.sendBroadcast(mIntent);
 	}
 
