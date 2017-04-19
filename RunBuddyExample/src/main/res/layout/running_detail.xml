@@ -60,7 +60,7 @@
     </com.github.glomadrian.dashedcircularprogress.DashedCircularProgress>
 
     <Button
-        android:id="@+id/Map_btn"
+        android:id="@+id/map_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="right|center_vertical"
@@ -81,14 +81,7 @@
         android:layout_height="235dp"
         android:layout_gravity="center_horizontal|bottom"></ListView>
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/device_address"
-        android:layout_alignParentEnd="true"
-        android:layout_gravity="left|center_vertical"
-        android:text="Ble connect" />
+
 
 
 </FrameLayout>

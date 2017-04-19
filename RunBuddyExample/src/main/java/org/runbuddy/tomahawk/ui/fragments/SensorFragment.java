@@ -38,8 +38,8 @@ import com.github.mikephil.charting.utils.ColorTemplate;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.runbuddy.device.BlueTooth.DeviceScanActivity;
-import org.runbuddy.device.CounterSensor.SensorHub;
+import org.runbuddy.Device.BlueTooth.DeviceScanActivity;
+import org.runbuddy.Device.CounterSensor.SensorHub;
 import org.runbuddy.libtomahawk.collection.HeartRate;
 import org.runbuddy.tomahawk.R;
 import org.runbuddy.tomahawk.entity.LittleHeartRateUnit;
@@ -162,7 +162,6 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
             }
         };
 
-
     }
 
     /**
@@ -215,7 +214,6 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
 
         }
     };
-
 
     /**
      * 上传数据相关
@@ -311,7 +309,7 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
         mlistView = (ListView) view.findViewById(R.id.listView1);
         ble_btn = (Button) view.findViewById(R.id.ble_conn);
         ble_btn.setOnClickListener(this);
-        map_btn = (Button) view.findViewById(R.id.Map_btn);
+        map_btn = (Button) view.findViewById(R.id.map_btn);
         map_btn.setOnClickListener(this);
 
         Text_Recv = (TextView) view.findViewById(R.id.device_address);//接收到的字符串
@@ -325,10 +323,12 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
 
     @Override
     public void onClick(View v) {
+        //Toast.makeText(getActivity(),"look here",Toast.LENGTH_LONG).show();
         if (v.getId() == R.id.ble_conn) {
-            mIntent3 = new Intent(getActivity(), DeviceScanActivity.class);
+            mIntent3 =new Intent(getActivity(), DeviceScanActivity.class);
+            //Toast.makeText(getActivity(),"asdasd",Toast.LENGTH_LONG).show();
             startActivity(mIntent3);
-        } else if (v.getId() == R.id.Map_btn) {
+        } else if (v.getId() == R.id.map_btn) {
             mThread = new Thread(heartRateRunnable);//开启上传数据到服务器的线程
             //mThread = new Thread(realHeartRateRunnable);//这里切换线程
             mThread.start();
@@ -556,10 +556,8 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
             String heartRate_byte = data[1] + "";
 
             rate.add(heartRate_byte);//定义在上面的String数组,加工心率数据
-
             CountHeartRate(heartRate_byte, TimeStr);//计算平均心率，没来一次记录一次心率和时间
-
-            for (int i = 0; i < 30; i++) {
+             for (int i = 0; i < 30; i++) {
                 temp_Rate[i] = Integer.valueOf(heartRate_byte);
             }
 
