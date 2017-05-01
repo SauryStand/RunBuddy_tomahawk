@@ -251,10 +251,10 @@
 
     <!--Navbar bottom -->
     <string name="map">Upload</string>
+    <string name="map2">Upload2</string>
 
     <!--暂时使用中文-->
     <string name="ble_not_supported">your phone not support BLE</string>
-
     <string name="unknown_device">unknow deviec</string>
     <string name="paired">paired</string>
     <string name="select_device">select_device</string>

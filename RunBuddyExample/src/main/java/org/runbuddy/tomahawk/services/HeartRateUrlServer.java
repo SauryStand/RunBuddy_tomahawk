@@ -22,7 +22,6 @@ import java.util.Map;
 /**
  * Created by Jonney Chou on 2017/1/29.
  * <p>
- * todo
  * 目前手机与服务器的连接有问题，虽然功能实现了，但是鲁棒性很差
  * 2017.02.02
  */
@@ -31,7 +30,7 @@ public class HeartRateUrlServer {
     //remote
     //public static final String SERVER_ADDRESS = "http://www.voyager2511.top:8073/RunBuddy_ops";
     //local
-    public static final String SERVER_ADDRESS = "http://192.168.0.106:8080/RunBuddy_ops/";
+    public static final String SERVER_ADDRESS = "http://192.168.1.105:8080/RunBuddy_ops/";
     public static final String EXECUTED_SUCCESS = "8888";
     private Handler mHandler;
     private final static String TAG = "HeartRateUrlServer";
@@ -157,6 +156,7 @@ public class HeartRateUrlServer {
                 mHandler.obtainMessage(0, respStr).sendToTarget();//错误应该出在这里,这里有什么错误？？
             }
         } catch (IOException e) {
+            Log.d(TAG, "sendRequest: please check the network,someting go wrong");
             e.printStackTrace();
         } finally {
             closeStream(outputStream);

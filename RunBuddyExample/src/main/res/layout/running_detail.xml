@@ -49,9 +49,9 @@
                 android:id="@+id/circular_view_pager"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:overScrollMode="never"
+                android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:layout_alignParentStart="true">
+                android:overScrollMode="never">
 
             </android.support.v4.view.ViewPager>
 
@@ -75,13 +75,19 @@
         android:layout_gravity="left|center_vertical"
         android:text="Ble connect" />
 
+    <Button
+        android:id="@+id/map_btn2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|center_vertical"
+        android:layout_marginTop="-40dp"
+        android:text="@string/map2" />
+
     <ListView
         android:id="@+id/listView1"
         android:layout_width="match_parent"
         android:layout_height="235dp"
         android:layout_gravity="center_horizontal|bottom"></ListView>
-
-
 
 
 </FrameLayout>

@@ -69,7 +69,7 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
      * 线程与handler
      */
     private Handler mHandler;
-    protected Thread mThread;
+    protected Thread mThread,mThread1;
 
     private static Handler step_Handler;
     private long mTID;
@@ -87,6 +87,7 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
     static String Str_Recv;
     static String ReciveStr;
     static Handler Heart_Handler = new Handler();
+    static Handler Upload_Heart_Handler = new Handler();
     static boolean ifDisplayInHexStringOnOff = true;
     static boolean ifDisplayTimeOnOff = true;
     static int Totol_recv_bytes = 0;
@@ -237,13 +238,46 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
             try {
                 JSONObject resultJson = new JSONObject(msg.obj.toString());
                 if (resultJson.get("code").toString().equals(HeartRateUrlServer.EXECUTED_SUCCESS)) {
-                    Toast.makeText(getActivity(), "RunBuddy_ops callback:" + resultJson.toString() + "and code is " + resultJson.get("code").toString(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "System callback:" + resultJson.toString() + "and code is " + resultJson.get("code").toString(), Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(getActivity(), "System callback:" + resultJson.toString() + "and code is " + resultJson.get("code").toString(), Toast.LENGTH_SHORT).show();
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
             }
         }
     };
+
+    /**
+     * 实时上传数据相关，测试上传用，勿删
+     * add in 2017.04.22
+     */
+    @SuppressLint("HandlerLeak")
+    private static Handler commitHandler2 = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            switch (msg.what) {
+                case 0:
+                    execute(msg);
+                    break;
+                case 1:
+                    break;
+            }
+        }
+        private void execute(Message msg) {
+            try {
+                JSONObject resultJson = new JSONObject(msg.obj.toString());
+                if (resultJson.get("code").toString().equals(HeartRateUrlServer.EXECUTED_SUCCESS)) {
+                    //Toast.makeText(get, "System callback:" + resultJson.toString() + "and code is " + resultJson.get("code").toString(), Toast.LENGTH_SHORT).show();
+                }else{
+                    //Toast.makeText(getActivity(), "System callback:" + resultJson.toString() + "and code is " + resultJson.get("code").toString(), Toast.LENGTH_SHORT).show();
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+    };
+
 
     private void updateStepUI() {
         new Thread(new Runnable() {
@@ -326,12 +360,15 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
         //Toast.makeText(getActivity(),"look here",Toast.LENGTH_LONG).show();
         if (v.getId() == R.id.ble_conn) {
             mIntent3 =new Intent(getActivity(), DeviceScanActivity.class);
-            //Toast.makeText(getActivity(),"asdasd",Toast.LENGTH_LONG).show();
             startActivity(mIntent3);
         } else if (v.getId() == R.id.map_btn) {
             mThread = new Thread(heartRateRunnable);//开启上传数据到服务器的线程
             //mThread = new Thread(realHeartRateRunnable);//这里切换线程
             mThread.start();
+        }else if(v.getId() == R.id.map_btn2){
+            Toast.makeText(getActivity(),"flag",Toast.LENGTH_SHORT).show();
+            mThread1 = new Thread(realHeartRateRunnable);//这个是实时心率的
+            mThread1.start();
         }
     }
 
@@ -449,7 +486,6 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
     //// TODO: 2017/4/4  
     private LineData generateDataLine() {
 
-
         LineData re = new LineData();
         return re;
     }
@@ -497,7 +533,6 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
 
     /**
      * 计算心率，但是实际上这个方法没有一点用处
-     *
      * @param heartRate_byte
      * @param TimeRecord
      */
@@ -519,7 +554,6 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
     //入库处理
     public static void SaveToDB(ArrayList array) {
         //// TODO: 2016/12/2
-
     }
 
 
@@ -534,8 +568,7 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
         }
     }
 
-    /**********************************
-     * /**
+     /**
      * 负责读出心率数据，这个是线程同步的，也就是原子性的，你需要注意代码逻辑才能写出来
      * 这个方法比较重要
      * @param str
@@ -545,7 +578,6 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
     public static synchronized void char6_display(String str, byte[] data,
                                                   String uuid) {
         int temp_Rate[] = new int[30];//每次调用都会new这些变量，这是需要优化的地方
-
         if (uuid.equals(DeviceScanActivity.UUID_HERATRATE)) {
             SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss ");
             Date curDate = new Date(System.currentTimeMillis());// 获取当前时间
@@ -561,12 +593,22 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
                 temp_Rate[i] = Integer.valueOf(heartRate_byte);
             }
 
-
         }
         if (rate.size() != 0) {
             processHeartRateString(rate);
         }
 
+        String highestRate = "100";
+        String lowestRate = "60";
+        String averageRate = "75";
+        int motionState = 1;
+        int recommendState = 0;
+        int execiseTime = 18;
+        int execiseLoad = 25;
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String recordDate = dateFormat.format(new Date()).toString();
+        HeartRateUrlServer uploadServer = new HeartRateUrlServer(commitHandler2);//调用反馈线程
+        uploadServer.fastUpLoad(highestRate, lowestRate, averageRate, motionState, recommendState, execiseTime, execiseLoad, recordDate);
 
         Log.i(TAG, "char6_display str = " + str);
         Totol_recv_bytes += str.length();
@@ -597,6 +639,5 @@ public class SensorFragment extends Fragment implements View.OnClickListener, Se
         }
     }
 
-    /*********************************/
 
 }

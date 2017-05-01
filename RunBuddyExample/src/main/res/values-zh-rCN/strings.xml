@@ -273,6 +273,7 @@
 
     <!--Navbar bottom -->
     <string name="map">上传数据</string>
+    <string name="map2">上传数据2</string>
 
     <!--暂时使用中文-->
     <string name="paired">已配对</string>
